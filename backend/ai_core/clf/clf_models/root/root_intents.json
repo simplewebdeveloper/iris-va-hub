@@ -1,0 +1,2234 @@
+[
+    {
+        "intent": "book_appointments_update",
+        "utterance": "let set the time to 2pm"
+    },
+    {
+        "intent": "joke",
+        "utterance": "i'm stressed, cheer me up"
+    },
+    {
+        "intent": "joke",
+        "utterance": "they say laughter in the best medicine"
+    },
+    {
+        "intent": "joke",
+        "utterance": "make me feel nice"
+    },
+    {
+        "intent": "joke",
+        "utterance": "cheer me up i'm sad"
+    },
+    {
+        "intent": "joke",
+        "utterance": "haha i'm in the mood for a joke"
+    },
+    {
+        "intent": "joke",
+        "utterance": "can you make me laugh"
+    },
+    {
+        "intent": "joke",
+        "utterance": "are you funny?"
+    },
+    {
+        "intent": "joke",
+        "utterance": "lamo"
+    },
+    {
+        "intent": "joke",
+        "utterance": "lol"
+    },
+    {
+        "intent": "joke",
+        "utterance": "i wanna lol"
+    },
+    {
+        "intent": "joke",
+        "utterance": "joke about something funny"
+    },
+    {
+        "intent": "joke",
+        "utterance": "know any joke"
+    },
+    {
+        "intent": "joke",
+        "utterance": "lemme get a funny line"
+    },
+    {
+        "intent": "who_are_you",
+        "utterance": "what is this thing?"
+    },
+    {
+        "intent": "who_are_you",
+        "utterance": "wam bro who you?"
+    },
+    {
+        "intent": "who_are_you",
+        "utterance": "do i even know you bro"
+    },
+    {
+        "intent": "who_are_you",
+        "utterance": "whos here with me"
+    },
+    {
+        "intent": "who_are_you",
+        "utterance": "who i am talking to"
+    },
+    {
+        "intent": "who_are_you",
+        "utterance": "a who dis"
+    },
+    {
+        "intent": "who_are_you",
+        "utterance": "i dont think we have meet before"
+    },
+    {
+        "intent": "who_are_you",
+        "utterance": "what do you do for a living"
+    },
+    {
+        "intent": "who_are_you",
+        "utterance": "what are you into"
+    },
+    {
+        "intent": "who_are_you",
+        "utterance": "so tell me about yourself"
+    },
+    {
+        "intent": "who_are_you",
+        "utterance": "how about we talk about you"
+    },
+    {
+        "intent": "who_are_you",
+        "utterance": "i wanna know your name"
+    },
+    {
+        "intent": "who_are_you",
+        "utterance": "i'd like to know your name"
+    },
+    {
+        "intent": "who_are_you",
+        "utterance": "are you john"
+    },
+    {
+        "intent": "who_are_you",
+        "utterance": "its great to meet you and you are"
+    },
+    {
+        "intent": "who_are_you",
+        "utterance": "so im name and you are"
+    },
+    {
+        "intent": "who_are_you",
+        "utterance": "i havent seen you around here"
+    },
+    {
+        "intent": "who_are_you",
+        "utterance": "who are you pretty"
+    },
+    {
+        "intent": "who_are_you",
+        "utterance": "yo hommie who are you"
+    },
+    {
+        "intent": "who_are_you",
+        "utterance": "who the hell is this piece of crap"
+    },
+    {
+        "intent": "who_are_you",
+        "utterance": "do i even know you"
+    },
+    {
+        "intent": "who_are_you",
+        "utterance": "i dont know you"
+    },
+    {
+        "intent": "who_are_you",
+        "utterance": "who is fish is this"
+    },
+    {
+        "intent": "who_made_you",
+        "utterance": "what entity is responsible for you"
+    },
+    {
+        "intent": "who_made_you",
+        "utterance": "what human programmed you"
+    },
+    {
+        "intent": "who_made_you",
+        "utterance": "whats the name of the devloper"
+    },
+    {
+        "intent": "who_made_you",
+        "utterance": "and your maker is who"
+    },
+    {
+        "intent": "who_made_you",
+        "utterance": "whos is responsible"
+    },
+    {
+        "intent": "who_made_you",
+        "utterance": "who made you aura"
+    },
+    {
+        "intent": "who_made_you",
+        "utterance": "who developed this"
+    },
+    {
+        "intent": "who_made_you",
+        "utterance": "who assembled you"
+    },
+    {
+        "intent": "who_made_you",
+        "utterance": "what god created you"
+    },
+    {
+        "intent": "who_made_you",
+        "utterance": "reveal your creator "
+    },
+    {
+        "intent": "who_made_you",
+        "utterance": "are you govern by any one"
+    },
+    {
+        "intent": "who_made_you",
+        "utterance": "who is responsible for this"
+    },
+    {
+        "intent": "who_made_you",
+        "utterance": "which guy made you"
+    },
+    {
+        "intent": "cancel_appointments",
+        "utterance": "hey nevermind on the appointment i can't make it"
+    },
+    {
+        "intent": "cancel_appointments",
+        "utterance": "i no longer want to come in"
+    },
+    {
+        "intent": "cancel_appointments",
+        "utterance": "garbage that appointment right now"
+    },
+    {
+        "intent": "cancel_appointments",
+        "utterance": "delete the event i booked"
+    },
+    {
+        "intent": "cancel_appointments",
+        "utterance": "cancel my appointment"
+    },
+    {
+        "intent": "cancel_appointments",
+        "utterance": "how can i cancel my appointment"
+    },
+    {
+        "intent": "cancel_appointments",
+        "utterance": "we set an appointment but now i can not make it"
+    },
+    {
+        "intent": "cancel_appointments",
+        "utterance": "next week might be tied for me so i can't make the appointment we set"
+    },
+    {
+        "intent": "cancel_appointments",
+        "utterance": "i dont think i can make my appointment and i would like to cancel it"
+    },
+    {
+        "intent": "cancel_appointments",
+        "utterance": "hey i'm calling to ask if you can cancel the appointment we set"
+    },
+    {
+        "intent": "cancel_appointments",
+        "utterance": "you know what angela maybe i dont need this appointment"
+    },
+    {
+        "intent": "cancel_appointments",
+        "utterance": "go ahead and lets delete my appointment"
+    },
+    {
+        "intent": "cancel_appointments",
+        "utterance": "move my appointment to the trash"
+    },
+    {
+        "intent": "cancel_appointments",
+        "utterance": "i dont want the appointment on my calendar any longer"
+    },
+    {
+        "intent": "cancel_appointments",
+        "utterance": "hey change of plans lets cancel this appointement"
+    },
+    {
+        "intent": "cancel_appointments",
+        "utterance": "i made a terrible mistake can i realised that i dont need the appointment"
+    },
+    {
+        "intent": "reschedule_appointment",
+        "utterance": "i know i said i am coming friday but plans changed so can we just ajust the appointment"
+    },
+    {
+        "intent": "reschedule_appointment",
+        "utterance": "hello angela i booked an appointment three weeks ago and now i dont think i need it"
+    },
+    {
+        "intent": "reschedule_appointment",
+        "utterance": "if you can change my appointment in any way that would be great"
+    },
+    {
+        "intent": "reschedule_appointment",
+        "utterance": "i am wondering if you can make a change to my appointment"
+    },
+    {
+        "intent": "reschedule_appointment",
+        "utterance": "i think i will need to update my appointment to be tuesday instead"
+    },
+    {
+        "intent": "reschedule_appointment",
+        "utterance": "hello lets make a change to the day of my appointment"
+    },
+    {
+        "intent": "reschedule_appointment",
+        "utterance": "i wanna edit the appointment i booked can you help with that"
+    },
+    {
+        "intent": "reschedule_appointment",
+        "utterance": "hmm wednesday might not be such a good day"
+    },
+    {
+        "intent": "reschedule_appointment",
+        "utterance": "is it possible to shift my appointment to some other day "
+    },
+    {
+        "intent": "reschedule_appointment",
+        "utterance": "would you adjust my appointment"
+    },
+    {
+        "intent": "reschedule_appointment",
+        "utterance": "i think my appointment needs to be moved"
+    },
+    {
+        "intent": "reschedule_appointment",
+        "utterance": "i need to shift my appointment forward"
+    },
+    {
+        "intent": "reschedule_appointment",
+        "utterance": "looks like the appointment will clash with something else can i move it to some other day"
+    },
+    {
+        "intent": "book_appointments",
+        "utterance": "i would love to book a nice spa"
+    },
+    {
+        "intent": "book_appointments",
+        "utterance": "i think i might need a haircut appointment"
+    },
+    {
+        "intent": "book_appointments",
+        "utterance": "its been a while since i got my nails done now i wanna do it again"
+    },
+    {
+        "intent": "book_appointments",
+        "utterance": "hey lets set up that haircut i always needed"
+    },
+    {
+        "intent": "book_appointments",
+        "utterance": "can we set up a one on one"
+    },
+    {
+        "intent": "book_appointments",
+        "utterance": "you angela help a brother to book something"
+    },
+    {
+        "intent": "book_appointments",
+        "utterance": "i need a hair coloring"
+    },
+    {
+        "intent": "book_appointments",
+        "utterance": "hi good day angela can you book me in for wednesday at noon for a hair highlight"
+    },
+    {
+        "intent": "book_appointments_update",
+        "utterance": "what i need for this is a foot spa"
+    },
+    {
+        "intent": "book_appointments_update",
+        "utterance": "i want swing by on friday"
+    },
+    {
+        "intent": "book_appointments_update",
+        "utterance": "can you set it for 10 on saturday"
+    },
+    {
+        "intent": "book_appointments",
+        "utterance": "so i need pedicure at maybe 5pm"
+    },
+    {
+        "intent": "book_appointments",
+        "utterance": "hey angela can you help me with an appointment booking please"
+    },
+    {
+        "intent": "book_appointments_update",
+        "utterance": "lets do thursday at 4pm"
+    },
+    {
+        "intent": "book_appointments",
+        "utterance": "hi guys i am wondering if you can book me in"
+    },
+    {
+        "intent": "book_appointments",
+        "utterance": "hi this is andy, i am calling to book an appointment"
+    },
+    {
+        "intent": "book_appointments",
+        "utterance": "let me have an appointment for 3pm this noon"
+    },
+    {
+        "intent": "book_appointments",
+        "utterance": "can we book a foot spa for sunday at about 4pm"
+    },
+    {
+        "intent": "book_appointments_clear",
+        "utterance": "refresh my booking"
+    },
+    {
+        "intent": "book_appointments_clear",
+        "utterance": "lets start again"
+    },
+    {
+        "intent": "book_appointments_clear",
+        "utterance": "move on i dont want this"
+    },
+    {
+        "intent": "no",
+        "utterance": "no mam"
+    },
+    {
+        "intent": "no",
+        "utterance": "don't do that"
+    },
+    {
+        "intent": "no",
+        "utterance": "i dont need that"
+    },
+    {
+        "intent": "no",
+        "utterance": "leave that and move on"
+    },
+    {
+        "intent": "no",
+        "utterance": "don't worry"
+    },
+    {
+        "intent": "no",
+        "utterance": "leave that"
+    },
+    {
+        "intent": "yes",
+        "utterance": "i can work with that"
+    },
+    {
+        "intent": "yes",
+        "utterance": "thats good"
+    },
+    {
+        "intent": "yes",
+        "utterance": "yeah i want to"
+    },
+    {
+        "intent": "yes",
+        "utterance": "yeah do it"
+    },
+    {
+        "intent": "yes",
+        "utterance": "please do it"
+    },
+    {
+        "intent": "yes",
+        "utterance": "yes i agree"
+    },
+    {
+        "intent": "yes",
+        "utterance": "go ahead"
+    },
+    {
+        "intent": "payment_methods",
+        "utterance": "could you say if i can use my card to pay for this"
+    },
+    {
+        "intent": "payment_methods",
+        "utterance": "i only wanna pay with cash"
+    },
+    {
+        "intent": "payment_methods",
+        "utterance": "why cant i pay by cash"
+    },
+    {
+        "intent": "payment_methods",
+        "utterance": "is cash accepted there"
+    },
+    {
+        "intent": "payment_methods",
+        "utterance": "can i pay with my visa here"
+    },
+    {
+        "intent": "payment_methods",
+        "utterance": "i dont normally walk with cash"
+    },
+    {
+        "intent": "payment_methods",
+        "utterance": "is it possible to pay with my credit card"
+    },
+    {
+        "intent": "payment_methods",
+        "utterance": "can we book with my credit card"
+    },
+    {
+        "intent": "opening_hours",
+        "utterance": "are you going to be opened"
+    },
+    {
+        "intent": "opening_hours",
+        "utterance": "how late are you gonna close on friday"
+    },
+    {
+        "intent": "opening_hours",
+        "utterance": "will you be open on the weekends"
+    },
+    {
+        "intent": "opening_hours",
+        "utterance": "aer you open on boxing day"
+    },
+    {
+        "intent": "opening_hours",
+        "utterance": "what time are you opening in the morning"
+    },
+    {
+        "intent": "opening_hours",
+        "utterance": "what time are you guys opening tomorrow"
+    },
+    {
+        "intent": "opening_hours",
+        "utterance": "what time are you opening"
+    },
+    {
+        "intent": "opening_hours",
+        "utterance": "what are your opening hours please"
+    },
+    {
+        "intent": "opening_hours",
+        "utterance": "what time are you closing"
+    },
+    {
+        "intent": "opening_hours",
+        "utterance": "what time do you close"
+    },
+    {
+        "intent": "opening_hours",
+        "utterance": "what time do you guys close"
+    },
+    {
+        "intent": "opening_hours",
+        "utterance": "excuse me, what time do you close"
+    },
+    {
+        "intent": "opening_hours",
+        "utterance": "are you open on weekends"
+    },
+    {
+        "intent": "opening_hours",
+        "utterance": "what time do you open tomorrow"
+    },
+    {
+        "intent": "book_appointments",
+        "utterance": "would you have any openings on thursday"
+    },
+    {
+        "intent": "reschedule_appointment",
+        "utterance": "Hi how are you, i have an appointment for this wednesday morning and i am wondering if i can reschedule that"
+    },
+    {
+        "intent": "reschedule_appointment",
+        "utterance": "hi i am calling to reschedule my appointment for this sunday"
+    },
+    {
+        "intent": "reschedule_appointment",
+        "utterance": "Hi am just call to reschedule my appointment i have for wednesday"
+    },
+    {
+        "intent": "no",
+        "utterance": "no way"
+    },
+    {
+        "intent": "no",
+        "utterance": "no not right now"
+    },
+    {
+        "intent": "no",
+        "utterance": "maybe next time"
+    },
+    {
+        "intent": "no",
+        "utterance": "dont worry do this"
+    },
+    {
+        "intent": "no",
+        "utterance": "no please"
+    },
+    {
+        "intent": "payment_methods",
+        "utterance": "i dont have a card do you take cash"
+    },
+    {
+        "intent": "payment_methods",
+        "utterance": "i have gbti card"
+    },
+    {
+        "intent": "payment_methods",
+        "utterance": "do you take republic bank visa card"
+    },
+    {
+        "intent": "payment_methods",
+        "utterance": "can i use my scotia bank card at your place"
+    },
+    {
+        "intent": "payment_methods",
+        "utterance": "i got a mastercard and i was wondering if you take that"
+    },
+    {
+        "intent": "opening_hours",
+        "utterance": "whats the hours of business"
+    },
+    {
+        "intent": "opening_hours",
+        "utterance": "do you open on sundays"
+    },
+    {
+        "intent": "opening_hours",
+        "utterance": "what day can i come in"
+    },
+    {
+        "intent": "ask_about_service",
+        "utterance": "can you perform waxing"
+    },
+    {
+        "intent": "ask_about_service",
+        "utterance": "can i get my brows done at you"
+    },
+    {
+        "intent": "ask_about_service",
+        "utterance": "can you do bridal makeup"
+    },
+    {
+        "intent": "ask_about_service",
+        "utterance": "do you work on nails"
+    },
+    {
+        "intent": "ask_about_service",
+        "utterance": "can you color my nails"
+    },
+    {
+        "intent": "ask_about_service",
+        "utterance": "can you do a bob cut"
+    },
+    {
+        "intent": "ask_about_service",
+        "utterance": "do you do frizz cut"
+    },
+    {
+        "intent": "joke",
+        "utterance": "lets hear a funny story"
+    },
+    {
+        "intent": "joke",
+        "utterance": "crack a joke"
+    },
+    {
+        "intent": "joke",
+        "utterance": "give me some laughter"
+    },
+    {
+        "intent": "joke",
+        "utterance": "tell me something funny"
+    },
+    {
+        "intent": "who_are_you",
+        "utterance": "is there a human under your hood"
+    },
+    {
+        "intent": "who_are_you",
+        "utterance": "are you for real"
+    },
+    {
+        "intent": "who_are_you",
+        "utterance": "am i talking to a real human"
+    },
+    {
+        "intent": "who_are_you",
+        "utterance": "are you human"
+    },
+    {
+        "intent": "who_are_you",
+        "utterance": "what is your name"
+    },
+    {
+        "intent": "who_are_you",
+        "utterance": "who is this"
+    },
+    {
+        "intent": "who_are_you",
+        "utterance": "who am i talking to"
+    },
+    {
+        "intent": "who_are_you",
+        "utterance": "are you a robot"
+    },
+    {
+        "intent": "who_are_you",
+        "utterance": "what are you"
+    },
+    {
+        "intent": "who_made_you",
+        "utterance": "where are you from"
+    },
+    {
+        "intent": "who_made_you",
+        "utterance": "which company invented you"
+    },
+    {
+        "intent": "who_made_you",
+        "utterance": "i need to know who made you"
+    },
+    {
+        "intent": "who_made_you",
+        "utterance": "where did you come from angela"
+    },
+    {
+        "intent": "who_made_you",
+        "utterance": "where you come from"
+    },
+    {
+        "intent": "cancel_appointments",
+        "utterance": "toss out my appointment"
+    },
+    {
+        "intent": "cancel_appointments",
+        "utterance": "hey just remove my appointment from my calendar"
+    },
+    {
+        "intent": "cancel_appointments",
+        "utterance": "i no longer need my appointment"
+    },
+    {
+        "intent": "cancel_appointments",
+        "utterance": "please help me to cancel my appointment"
+    },
+    {
+        "intent": "cancel_appointments",
+        "utterance": "i might not get to complete my appointment"
+    },
+    {
+        "intent": "cancel_appointments",
+        "utterance": "i dont want to continue my appointment"
+    },
+    {
+        "intent": "cancel_appointments",
+        "utterance": "trash my appointment"
+    },
+    {
+        "intent": "reschedule_appointment",
+        "utterance": "can we shift forward with my appointment"
+    },
+    {
+        "intent": "reschedule_appointment",
+        "utterance": "i can't make it to my appointment"
+    },
+    {
+        "intent": "reschedule_appointment",
+        "utterance": "i want to set my appointment for another day"
+    },
+    {
+        "intent": "reschedule_appointment",
+        "utterance": "i am not happy with my appointment date"
+    },
+    {
+        "intent": "reschedule_appointment",
+        "utterance": "hey lets modify my appointment"
+    },
+    {
+        "intent": "reschedule_appointment",
+        "utterance": "can i change my appointment to some other day"
+    },
+    {
+        "intent": "book_appointments_update",
+        "utterance": "wanna come by at 2pm"
+    },
+    {
+        "intent": "book_appointments_update",
+        "utterance": "i'm booking for monday at 2pm"
+    },
+    {
+        "intent": "book_appointments_update",
+        "utterance": "3:24am please"
+    },
+    {
+        "intent": "book_appointments_update",
+        "utterance": "sunday please"
+    },
+    {
+        "intent": "book_appointments_update",
+        "utterance": "i'll come by at 1pm"
+    },
+    {
+        "intent": "book_appointments_update",
+        "utterance": "lets shoot for a spa"
+    },
+    {
+        "intent": "book_appointments_update",
+        "utterance": "i am thinking 10am might be good for me"
+    },
+    {
+        "intent": "book_appointments_update",
+        "utterance": "lets do 2pm please"
+    },
+    {
+        "intent": "book_appointments_update",
+        "utterance": "i just need a haircut"
+    },
+    {
+        "intent": "book_appointments",
+        "utterance": "try to help me book please"
+    },
+    {
+        "intent": "book_appointments",
+        "utterance": "i want to create a booking to have my hair done"
+    },
+    {
+        "intent": "book_appointments",
+        "utterance": "do you think we can set up a booking"
+    },
+    {
+        "intent": "book_appointments",
+        "utterance": "lets set up a haircut event for this friday"
+    },
+    {
+        "intent": "book_appointments",
+        "utterance": "can we set up a session"
+    },
+    {
+        "intent": "book_appointments",
+        "utterance": "i am curious to know how to set up an appointment"
+    },
+    {
+        "intent": "book_appointments",
+        "utterance": "how easy is it to set up an appointment"
+    },
+    {
+        "intent": "book_appointments",
+        "utterance": "can i book with you"
+    },
+    {
+        "intent": "book_appointments",
+        "utterance": "how to book an appointment"
+    },
+    {
+        "intent": "book_appointments",
+        "utterance": "hi there how are you can you help me with a booking"
+    },
+    {
+        "intent": "book_appointments",
+        "utterance": "hello good afternoon i am calling to make an appointment"
+    },
+    {
+        "intent": "book_appointments",
+        "utterance": "hey i wanna book a haircut for coming sunday"
+    },
+    {
+        "intent": "book_appointments",
+        "utterance": "hey i need to book"
+    },
+    {
+        "intent": "book_appointments_clear",
+        "utterance": "lets do this again"
+    },
+    {
+        "intent": "book_appointments_clear",
+        "utterance": "trash this stuff"
+    },
+    {
+        "intent": "no",
+        "utterance": "cancel this"
+    },
+    {
+        "intent": "no",
+        "utterance": "dont bother"
+    },
+    {
+        "intent": "no",
+        "utterance": "noooo"
+    },
+    {
+        "intent": "payment_methods",
+        "utterance": "i have a 360card and i was wondering if i can use it"
+    },
+    {
+        "intent": "payment_methods",
+        "utterance": "i have a mastercard do you take that"
+    },
+    {
+        "intent": "payment_methods",
+        "utterance": "can i swipe my visa"
+    },
+    {
+        "intent": "opening_hours",
+        "utterance": "how late do you open"
+    },
+    {
+        "intent": "opening_hours",
+        "utterance": "when in closing time"
+    },
+    {
+        "intent": "opening_hours",
+        "utterance": "i need a business hours"
+    },
+    {
+        "intent": "opening_hours",
+        "utterance": "when are you closing"
+    },
+    {
+        "intent": "opening_hours",
+        "utterance": "when do you operate"
+    },
+    {
+        "intent": "ask_about_service",
+        "utterance": "can you work on my hair"
+    },
+    {
+        "intent": "ask_about_service",
+        "utterance": "do you cater for spa"
+    },
+    {
+        "intent": "joke",
+        "utterance": "joke with me"
+    },
+    {
+        "intent": "joke",
+        "utterance": "give me a joke"
+    },
+    {
+        "intent": "joke",
+        "utterance": "say a funny thing"
+    },
+    {
+        "intent": "who_are_you",
+        "utterance": "show me some id"
+    },
+    {
+        "intent": "who_are_you",
+        "utterance": "who the hell are you"
+    },
+    {
+        "intent": "who_are_you",
+        "utterance": "reveal your identity"
+    },
+    {
+        "intent": "who_made_you",
+        "utterance": "whats the place you came from"
+    },
+    {
+        "intent": "who_made_you",
+        "utterance": "whats your inventor"
+    },
+    {
+        "intent": "who_made_you",
+        "utterance": "did got created you"
+    },
+    {
+        "intent": "who_made_you",
+        "utterance": "who made you angela"
+    },
+    {
+        "intent": "cancel_appointments",
+        "utterance": "remove the appointment from my calendar"
+    },
+    {
+        "intent": "cancel_appointments",
+        "utterance": "delete my appointment"
+    },
+    {
+        "intent": "cancel_appointments",
+        "utterance": "remove my appointment"
+    },
+    {
+        "intent": "reschedule_appointment",
+        "utterance": "alter my appointment"
+    },
+    {
+        "intent": "reschedule_appointment",
+        "utterance": "the appointment day have to change"
+    },
+    {
+        "intent": "reschedule_appointment",
+        "utterance": "please change my appointment"
+    },
+    {
+        "intent": "reschedule_appointment",
+        "utterance": "can i move my appointment"
+    },
+    {
+        "intent": "book_appointments_update",
+        "utterance": "hair curls is what i want"
+    },
+    {
+        "intent": "book_appointments_update",
+        "utterance": "only hair coloring"
+    },
+    {
+        "intent": "book_appointments_update",
+        "utterance": "just a pedicure i'm going to need"
+    },
+    {
+        "intent": "book_appointments_update",
+        "utterance": "lets do this at 6pm"
+    },
+    {
+        "intent": "book_appointments_update",
+        "utterance": "i wanna cut at 2pm"
+    },
+    {
+        "intent": "book_appointments",
+        "utterance": "lets arrange for my barber"
+    },
+    {
+        "intent": "book_appointments",
+        "utterance": "can we have a session"
+    },
+    {
+        "intent": "book_appointments",
+        "utterance": "i just wanna book"
+    },
+    {
+        "intent": "book_appointments",
+        "utterance": "help me with a 10AM booking"
+    },
+    {
+        "intent": "book_appointments",
+        "utterance": "can i get a manicure done at 2pm"
+    },
+    {
+        "intent": "book_appointments",
+        "utterance": "i want to visit to have my hair done"
+    },
+    {
+        "intent": "book_appointments",
+        "utterance": "can we arrange to meet"
+    },
+    {
+        "intent": "book_appointments",
+        "utterance": "hey i wanna set up a visit"
+    },
+    {
+        "intent": "book_appointments",
+        "utterance": "book me in baby"
+    },
+    {
+        "intent": "goodbye",
+        "utterance": "I'd say goodbye, but you're not worth it."
+    },
+    {
+        "intent": "goodbye",
+        "utterance": "Yes, I do. The word goodbye is simple and concise."
+    },
+    {
+        "intent": "goodbye",
+        "utterance": "Forever and forever farewell. If we do meet again, we'll smile indeed. If not, 'tis true parting was well made."
+    },
+    {
+        "intent": "goodbye",
+        "utterance": "See you on the internet!"
+    },
+    {
+        "intent": "goodbye",
+        "utterance": "Nope, I try to be creative whenever I can."
+    },
+    {
+        "intent": "goodbye",
+        "utterance": "Who cares? There's no need to overcomplicate things!"
+    },
+    {
+        "intent": "goodbye",
+        "utterance": "Sometimes. When I feel like it, I say other words."
+    },
+    {
+        "intent": "goodbye",
+        "utterance": "We may not talk for a long time, but I hope we don't lose touch."
+    },
+    {
+        "intent": "goodbye",
+        "utterance": "Sayonara, muchachos!"
+    },
+    {
+        "intent": "goodbye",
+        "utterance": "See you at the restaurant at the edge of the universe!"
+    },
+    {
+        "intent": "goodbye",
+        "utterance": "You will do well."
+    },
+    {
+        "intent": "goodbye",
+        "utterance": "See you in another life, brotha!"
+    },
+    {
+        "intent": "goodbye",
+        "utterance": "Come back when you can't stay so long."
+    },
+    {
+        "intent": "goodbye",
+        "utterance": "Never look back!"
+    },
+    {
+        "intent": "goodbye",
+        "utterance": "After four, dinosaur."
+    },
+    {
+        "intent": "goodbye",
+        "utterance": "Don\u2019t forget to send a letter."
+    },
+    {
+        "intent": "goodbye",
+        "utterance": "Goodbye forever."
+    },
+    {
+        "intent": "goodbye",
+        "utterance": "After three, chimpanzee!"
+    },
+    {
+        "intent": "goodbye",
+        "utterance": "After two, kangaroo!"
+    },
+    {
+        "intent": "goodbye",
+        "utterance": "Next time, bring more cookies."
+    },
+    {
+        "intent": "goodbye",
+        "utterance": "That's all folks."
+    },
+    {
+        "intent": "goodbye",
+        "utterance": "Party easy, drive safe, and return with a smile on your face."
+    },
+    {
+        "intent": "goodbye",
+        "utterance": "So long, suckers!"
+    },
+    {
+        "intent": "goodbye",
+        "utterance": "Hasta lasagna, don't get any on ya"
+    },
+    {
+        "intent": "goodbye",
+        "utterance": "Make sure the doormat says goodbye!"
+    },
+    {
+        "intent": "goodbye",
+        "utterance": "Until next time."
+    },
+    {
+        "intent": "goodbye",
+        "utterance": "See you in the future."
+    },
+    {
+        "intent": "goodbye",
+        "utterance": "Au revoir!"
+    },
+    {
+        "intent": "goodbye",
+        "utterance": "Begone!"
+    },
+    {
+        "intent": "goodbye",
+        "utterance": "Take care, polar bear!"
+    },
+    {
+        "intent": "goodbye",
+        "utterance": "Peace out, rainbow trout!"
+    },
+    {
+        "intent": "goodbye",
+        "utterance": "I'm outta here like spit through a trumpet."
+    },
+    {
+        "intent": "goodbye",
+        "utterance": "Adios, amigos."
+    },
+    {
+        "intent": "goodbye",
+        "utterance": "Toodaloo, caribou!"
+    },
+    {
+        "intent": "goodbye",
+        "utterance": "I'm outtie."
+    },
+    {
+        "intent": "goodbye",
+        "utterance": "I shall return."
+    },
+    {
+        "intent": "goodbye",
+        "utterance": "Catch you round like a rissole!"
+    },
+    {
+        "intent": "goodbye",
+        "utterance": "Take it easy, greasy. You've got a long way to slide."
+    },
+    {
+        "intent": "goodbye",
+        "utterance": "See you, space cowboy."
+    },
+    {
+        "intent": "goodbye",
+        "utterance": "Screw you guys, I'm going home!"
+    },
+    {
+        "intent": "goodbye",
+        "utterance": "Ciao ciao, brown cow!"
+    },
+    {
+        "intent": "goodbye",
+        "utterance": "I\u2019ll show you to the door!"
+    },
+    {
+        "intent": "goodbye",
+        "utterance": "I\u2019m late for my bus, gigantopithecus!"
+    },
+    {
+        "intent": "goodbye",
+        "utterance": "Make new friends on the sidewalk!"
+    },
+    {
+        "intent": "goodbye",
+        "utterance": "Gotta go, the power of the shower compels me."
+    },
+    {
+        "intent": "goodbye",
+        "utterance": "Stay cool, my dude."
+    },
+    {
+        "intent": "goodbye",
+        "utterance": "Bye! I tolerate you!"
+    },
+    {
+        "intent": "goodbye",
+        "utterance": "Move out, brussels sprout!"
+    },
+    {
+        "intent": "goodbye",
+        "utterance": "Later, nerds!"
+    },
+    {
+        "intent": "goodbye",
+        "utterance": "See you soon, baboon!"
+    },
+    {
+        "intent": "goodbye",
+        "utterance": "Don't trip on a raindrop!"
+    },
+    {
+        "intent": "goodbye",
+        "utterance": "See you later, aggregator!"
+    },
+    {
+        "intent": "goodbye",
+        "utterance": "Be careful! Don't get mauled by a squirrel!"
+    },
+    {
+        "intent": "goodbye",
+        "utterance": "Be sweet, parakeet."
+    },
+    {
+        "intent": "goodbye",
+        "utterance": "Don't get cut by a blade of grass!"
+    },
+    {
+        "intent": "goodbye",
+        "utterance": "Better shake, rattlesnake!"
+    },
+    {
+        "intent": "goodbye",
+        "utterance": "Parting is such sweet sorrow, that I shall say good night till it be tomorrow."
+    },
+    {
+        "intent": "goodbye",
+        "utterance": "Don't forget to be awesome."
+    },
+    {
+        "intent": "goodbye",
+        "utterance": "Don't let the door hit ya where the good lord split ya."
+    },
+    {
+        "intent": "goodbye",
+        "utterance": "Later, potato!"
+    },
+    {
+        "intent": "goodbye",
+        "utterance": "Later, skater!"
+    },
+    {
+        "intent": "goodbye",
+        "utterance": "Shine on, you crazy diamonds."
+    },
+    {
+        "intent": "goodbye",
+        "utterance": "May the force be with you... always."
+    },
+    {
+        "intent": "goodbye",
+        "utterance": "In a while, crocodile."
+    },
+    {
+        "intent": "goodbye",
+        "utterance": "Catch ya later, future dudes!"
+    },
+    {
+        "intent": "goodbye",
+        "utterance": "I'm off like a dirty shirt."
+    },
+    {
+        "intent": "goodbye",
+        "utterance": "I gotta jet."
+    },
+    {
+        "intent": "goodbye",
+        "utterance": "As you wish, jellyfish!"
+    },
+    {
+        "intent": "goodbye",
+        "utterance": "Cya"
+    },
+    {
+        "intent": "goodbye",
+        "utterance": "Bye for now."
+    },
+    {
+        "intent": "goodbye",
+        "utterance": "Don't get lost on your way to class!"
+    },
+    {
+        "intent": "goodbye",
+        "utterance": "See you when I see you."
+    },
+    {
+        "intent": "goodbye",
+        "utterance": "Tootle-loo, kangaroo."
+    },
+    {
+        "intent": "goodbye",
+        "utterance": "Smell ya later!"
+    },
+    {
+        "intent": "goodbye",
+        "utterance": "Love, peace, and chicken grease."
+    },
+    {
+        "intent": "goodbye",
+        "utterance": "Cool Goodbye Sayings"
+    },
+    {
+        "intent": "goodbye",
+        "utterance": "Cheerio!"
+    },
+    {
+        "intent": "goodbye",
+        "utterance": "Happy trails!"
+    },
+    {
+        "intent": "goodbye",
+        "utterance": "Adios, hippos."
+    },
+    {
+        "intent": "goodbye",
+        "utterance": "See ya, wouldn't wanna be ya."
+    },
+    {
+        "intent": "goodbye",
+        "utterance": "Peace out, girl scout!"
+    },
+    {
+        "intent": "goodbye",
+        "utterance": "Time to scoot, little newt."
+    },
+    {
+        "intent": "goodbye",
+        "utterance": "Don't forget to come back!"
+    },
+    {
+        "intent": "goodbye",
+        "utterance": "Once more unto the breach, dear friends!"
+    },
+    {
+        "intent": "goodbye",
+        "utterance": "Chop chop, lollipop!"
+    },
+    {
+        "intent": "goodbye",
+        "utterance": "Influence everyone in a good way!"
+    },
+    {
+        "intent": "goodbye",
+        "utterance": "Can\u2019t star, blue jay."
+    },
+    {
+        "intent": "goodbye",
+        "utterance": "Oh, and in case I don't see you\u2014good afternoon, good evening, and good night!"
+    },
+    {
+        "intent": "goodbye",
+        "utterance": "I'm gonna make a like a bakery truck and haul buns."
+    },
+    {
+        "intent": "goodbye",
+        "utterance": "Gotta roll!"
+    },
+    {
+        "intent": "goodbye",
+        "utterance": "It's been a pleasure and a privilege to meet you."
+    },
+    {
+        "intent": "goodbye",
+        "utterance": "I look forward to our next meeting."
+    },
+    {
+        "intent": "goodbye",
+        "utterance": "Be good and don't get caught."
+    },
+    {
+        "intent": "goodbye",
+        "utterance": "Hasta la vista, baby."
+    },
+    {
+        "intent": "goodbye",
+        "utterance": "Thank you for your cooperation. Farewell."
+    },
+    {
+        "intent": "goodbye",
+        "utterance": "Don't get attacked by a bear, it's night-time!"
+    },
+    {
+        "intent": "goodbye",
+        "utterance": "Blow a kiss, goldfish."
+    },
+    {
+        "intent": "goodbye",
+        "utterance": "Adieu, cockatoo!"
+    },
+    {
+        "intent": "goodbye",
+        "utterance": "Have fun storming the castle!"
+    },
+    {
+        "intent": "goodbye",
+        "utterance": "See you on the other side."
+    },
+    {
+        "intent": "goodbye",
+        "utterance": "Take care, butterfly."
+    },
+    {
+        "intent": "goodbye",
+        "utterance": "I gotta bounce."
+    },
+    {
+        "intent": "goodbye",
+        "utterance": "Toodle-pip!"
+    },
+    {
+        "intent": "goodbye",
+        "utterance": "Calc you later!"
+    },
+    {
+        "intent": "goodbye",
+        "utterance": "Have a good one."
+    },
+    {
+        "intent": "goodbye",
+        "utterance": "Give a hug, ladybug."
+    },
+    {
+        "intent": "goodbye",
+        "utterance": "Later, haters."
+    },
+    {
+        "intent": "goodbye",
+        "utterance": "It was nice to see you again."
+    },
+    {
+        "intent": "goodbye",
+        "utterance": "Don't get run over!"
+    },
+    {
+        "intent": "goodbye",
+        "utterance": "Catch you on the flip side."
+    },
+    {
+        "intent": "goodbye",
+        "utterance": "You're still here? It's over. Go home. Go!"
+    },
+    {
+        "intent": "goodbye",
+        "utterance": "Out to the door, dinosaur."
+    },
+    {
+        "intent": "goodbye",
+        "utterance": "See you soon, racoon."
+    },
+    {
+        "intent": "goodbye",
+        "utterance": "Gotta bolt!"
+    },
+    {
+        "intent": "goodbye",
+        "utterance": "It has been emotional, bye."
+    },
+    {
+        "intent": "goodbye",
+        "utterance": "To the winch, wench!"
+    },
+    {
+        "intent": "goodbye",
+        "utterance": "Smoke me a kipper, I'll be back for breakfast."
+    },
+    {
+        "intent": "goodbye",
+        "utterance": "Bye bye, butterfly."
+    },
+    {
+        "intent": "goodbye",
+        "utterance": "Gotta get going."
+    },
+    {
+        "intent": "goodbye",
+        "utterance": "Well, I'm off!"
+    },
+    {
+        "intent": "goodbye",
+        "utterance": "Gotta go, buffalo."
+    },
+    {
+        "intent": "goodbye",
+        "utterance": "Long live and prosper!"
+    },
+    {
+        "intent": "goodbye",
+        "utterance": "Stay classy."
+    },
+    {
+        "intent": "goodbye",
+        "utterance": "Gotta hit the road."
+    },
+    {
+        "intent": "goodbye",
+        "utterance": "Peace out!"
+    },
+    {
+        "intent": "goodbye",
+        "utterance": "Catch you on the rebound."
+    },
+    {
+        "intent": "goodbye",
+        "utterance": "Fare thee well."
+    },
+    {
+        "intent": "goodbye",
+        "utterance": "Okay...bye, fry guy!"
+    },
+    {
+        "intent": "goodbye",
+        "utterance": "I\u2019m out of here."
+    },
+    {
+        "intent": "goodbye",
+        "utterance": "See you later, alligator!"
+    },
+    {
+        "intent": "goodbye",
+        "utterance": "If I don\u2019t see you around, I'll see you square."
+    },
+    {
+        "intent": "goodbye",
+        "utterance": "After a while, crocodile."
+    },
+    {
+        "intent": "goodbye",
+        "utterance": "Stay out of trouble."
+    },
+    {
+        "intent": "greeting",
+        "utterance": "Pos eisai?"
+    },
+    {
+        "intent": "greeting",
+        "utterance": "Habari yako?"
+    },
+    {
+        "intent": "greeting",
+        "utterance": "Come va?"
+    },
+    {
+        "intent": "greeting",
+        "utterance": "Hey friend! What\u2019s the latest buzz in your world?"
+    },
+    {
+        "intent": "greeting",
+        "utterance": "Como voce esta?"
+    },
+    {
+        "intent": "greeting",
+        "utterance": "What\u2019s smokin\u2019? Tell your pal everything!"
+    },
+    {
+        "intent": "greeting",
+        "utterance": "What\u2019s the word, hummingbird?"
+    },
+    {
+        "intent": "greeting",
+        "utterance": "Hey Einstein, still cracking the old theory?"
+    },
+    {
+        "intent": "greeting",
+        "utterance": "Namaste! How long has it been, dost?"
+    },
+    {
+        "intent": "greeting",
+        "utterance": "How is life sailing?"
+    },
+    {
+        "intent": "greeting",
+        "utterance": "Como estas?"
+    },
+    {
+        "intent": "greeting",
+        "utterance": "Ua mai oe?"
+    },
+    {
+        "intent": "greeting",
+        "utterance": "Hey bud! Mind if we catch up? I saw you like eons ago."
+    },
+    {
+        "intent": "greeting",
+        "utterance": "Hi homey! How\u2019s life treating you?"
+    },
+    {
+        "intent": "greeting",
+        "utterance": "Hi, I just met you, and yes, this is crazy. Here\u2019s my number \u2013 call me, maybe?"
+    },
+    {
+        "intent": "greeting",
+        "utterance": "\u2018Sup, my homeslice?"
+    },
+    {
+        "intent": "greeting",
+        "utterance": "How farest thou?"
+    },
+    {
+        "intent": "greeting",
+        "utterance": "What\u2019s up, buttercup?"
+    },
+    {
+        "intent": "greeting",
+        "utterance": "Whazzup?"
+    },
+    {
+        "intent": "greeting",
+        "utterance": "Wagwan?"
+    },
+    {
+        "intent": "greeting",
+        "utterance": "Jal jinaess-eoyo?"
+    },
+    {
+        "intent": "greeting",
+        "utterance": "Ni hao ma?"
+    },
+    {
+        "intent": "greeting",
+        "utterance": "Comment allez-vous?"
+    },
+    {
+        "intent": "greeting",
+        "utterance": "What\u2019s good in the hood?"
+    },
+    {
+        "intent": "greeting",
+        "utterance": "Sup!"
+    },
+    {
+        "intent": "greeting",
+        "utterance": "How have you been, crazy coo?"
+    },
+    {
+        "intent": "greeting",
+        "utterance": "How are things going, bandhu?"
+    },
+    {
+        "intent": "greeting",
+        "utterance": "What\u2019s sizzling?"
+    },
+    {
+        "intent": "greeting",
+        "utterance": "Hey mistaa, how do you do?"
+    },
+    {
+        "intent": "greeting",
+        "utterance": "Ogenki desu ka?"
+    },
+    {
+        "intent": "greeting",
+        "utterance": "Whaccha up to, dude?"
+    },
+    {
+        "intent": "greeting",
+        "utterance": "What\u2019s new? Tell me everything!"
+    },
+    {
+        "intent": "greeting",
+        "utterance": "Hello, babycakes! How are you?!"
+    },
+    {
+        "intent": "greeting",
+        "utterance": "Bro, hey, how are you doing?"
+    },
+    {
+        "intent": "greeting",
+        "utterance": "How are you doing, old man?"
+    },
+    {
+        "intent": "greeting",
+        "utterance": "Yo man, where were you?"
+    },
+    {
+        "intent": "greeting",
+        "utterance": "Hi, lost buddy! Long time no see!"
+    },
+    {
+        "intent": "greeting",
+        "utterance": "Hey Slayer, what\u2019s up?"
+    },
+    {
+        "intent": "greeting",
+        "utterance": "Hey beautiful! I am blinded by your charm!"
+    },
+    {
+        "intent": "greeting",
+        "utterance": "Hello, sugar. Come and give me a good morning hug."
+    },
+    {
+        "intent": "greeting",
+        "utterance": "Welcome to the club, boss!"
+    },
+    {
+        "intent": "greeting",
+        "utterance": "Hey homey! Welcome!"
+    },
+    {
+        "intent": "greeting",
+        "utterance": "Waddup chica!"
+    },
+    {
+        "intent": "greeting",
+        "utterance": "Hey, hiiii. How is your weekend going? Mine just got better \ud83d\ude09."
+    },
+    {
+        "intent": "greeting",
+        "utterance": "Oooo la la. You are a gorgeous sculpture made by the God Almighty!"
+    },
+    {
+        "intent": "greeting",
+        "utterance": "This is where my bae is at!"
+    },
+    {
+        "intent": "greeting",
+        "utterance": "Hey there, little thing. You made my day by giving me a glimpse of yourself!"
+    },
+    {
+        "intent": "greeting",
+        "utterance": "What\u2019s up, handsome? You are making the temperatures soar this season!"
+    },
+    {
+        "intent": "greeting",
+        "utterance": "Hey love!"
+    },
+    {
+        "intent": "greeting",
+        "utterance": "Hi, butterfly! Holaaa!"
+    },
+    {
+        "intent": "greeting",
+        "utterance": "Konnichiwa!"
+    },
+    {
+        "intent": "greeting",
+        "utterance": "Hi, cutie pie, sugar bun!"
+    },
+    {
+        "intent": "greeting",
+        "utterance": "Morning! So good to see ya, good looking!"
+    },
+    {
+        "intent": "greeting",
+        "utterance": "What\u2019s cookin\u2019, good lookin\u2019?"
+    },
+    {
+        "intent": "greeting",
+        "utterance": "Hey, munchkin! Why so chweet?"
+    },
+    {
+        "intent": "greeting",
+        "utterance": "Hello belle! You are glowing!"
+    },
+    {
+        "intent": "greeting",
+        "utterance": "What\u2019s up with you, old soul? Wanna chat?"
+    },
+    {
+        "intent": "greeting",
+        "utterance": "Hello! There is my pumpkin! I miiiissed you <3"
+    },
+    {
+        "intent": "greeting",
+        "utterance": "Ciao babydoll!"
+    },
+    {
+        "intent": "greeting",
+        "utterance": "Bing bing! How\u2019s it going?"
+    },
+    {
+        "intent": "greeting",
+        "utterance": "Good day, young man!"
+    },
+    {
+        "intent": "greeting",
+        "utterance": "Bonjour monsieur!"
+    },
+    {
+        "intent": "greeting",
+        "utterance": "Hallo miss!"
+    },
+    {
+        "intent": "greeting",
+        "utterance": "Hello there, daddycool!"
+    },
+    {
+        "intent": "greeting",
+        "utterance": "Que pasa, madam!"
+    },
+    {
+        "intent": "greeting",
+        "utterance": "Hola paapi!"
+    },
+    {
+        "intent": "greeting",
+        "utterance": "Hey, boo. Wacch ya doing? You just brightened up my day!"
+    },
+    {
+        "intent": "greeting",
+        "utterance": "Aloha princess!"
+    },
+    {
+        "intent": "greeting",
+        "utterance": "Howdy, missus! How are ya?"
+    },
+    {
+        "intent": "greeting",
+        "utterance": "How you doin\u2019?"
+    },
+    {
+        "intent": "greeting",
+        "utterance": "Hi, honey bunch!"
+    },
+    {
+        "intent": "greeting",
+        "utterance": "I like your face. Are you an angel?"
+    },
+    {
+        "intent": "greeting",
+        "utterance": "Yoooouhoooo! Toodle doo, toodle dum."
+    },
+    {
+        "intent": "greeting",
+        "utterance": "Ello, matey. Wassup?"
+    },
+    {
+        "intent": "greeting",
+        "utterance": "Hiiiii, baaaaaby!"
+    },
+    {
+        "intent": "greeting",
+        "utterance": "Top of the morning to ya! Wass es going on?"
+    },
+    {
+        "intent": "greeting",
+        "utterance": "Greetings and salutations, my man/woman!"
+    },
+    {
+        "intent": "greeting",
+        "utterance": "Whaddup bro?"
+    },
+    {
+        "intent": "greeting",
+        "utterance": "Yo! Wassup."
+    },
+    {
+        "intent": "greeting",
+        "utterance": "Ghostbusters, watccha want?"
+    },
+    {
+        "intent": "greeting",
+        "utterance": "Hello-hello! Who\u2019s there? It\u2019s me talking."
+    },
+    {
+        "intent": "greeting",
+        "utterance": "Knock knock\u2026"
+    },
+    {
+        "intent": "greeting",
+        "utterance": "Hi! At least we meet for the first time for the last time!"
+    },
+    {
+        "intent": "greeting",
+        "utterance": "I am Batman. Who are you, gorgeous?"
+    },
+    {
+        "intent": "greeting",
+        "utterance": "Howdy, howdy, howdy, mister!"
+    },
+    {
+        "intent": "greeting",
+        "utterance": "Tring tring\u2026this call may or may not be recorded for training purposes."
+    },
+    {
+        "intent": "greeting",
+        "utterance": "Wassup, homey?"
+    },
+    {
+        "intent": "greeting",
+        "utterance": "GOOOOOD MORNING"
+    },
+    {
+        "intent": "greeting",
+        "utterance": "What\u2019s cracking, hot thing?"
+    },
+    {
+        "intent": "greeting",
+        "utterance": "Hiya! Hi!"
+    },
+    {
+        "intent": "greeting",
+        "utterance": "Hello, governor!"
+    },
+    {
+        "intent": "greeting",
+        "utterance": "I come in peace! Chow chow."
+    },
+    {
+        "intent": "greeting",
+        "utterance": "Hi, mister! What is going on?"
+    },
+    {
+        "intent": "greeting",
+        "utterance": "Ahoy, matey!"
+    },
+    {
+        "intent": "greeting",
+        "utterance": "Howdy, partner!"
+    },
+    {
+        "intent": "greeting",
+        "utterance": "My name is aura and I am a bad, bad guy. I like you!"
+    },
+    {
+        "intent": "greeting",
+        "utterance": "What\u2019s kicking, little chicken?"
+    },
+    {
+        "intent": "greeting",
+        "utterance": "Hey there, freshman! Wassup?"
+    },
+    {
+        "intent": "greeting",
+        "utterance": "Howdy-doody! Tell me what\u2019s new!"
+    },
+    {
+        "intent": "greeting",
+        "utterance": "Hey, howdy, hi! How is it going?"
+    },
+    {
+        "intent": "greeting",
+        "utterance": "Hello, sunshine! How are you? Oh, your rays are already making my day brighter!"
+    },
+    {
+        "intent": "joke",
+        "utterance": "be funny "
+    },
+    {
+        "intent": "joke",
+        "utterance": "tell me a joke"
+    },
+    {
+        "intent": "joke",
+        "utterance": "tell me a funny line"
+    },
+    {
+        "intent": "joke",
+        "utterance": "make me laugh"
+    },
+    {
+        "intent": "ask_about_service",
+        "utterance": "i need a spa do you offer that"
+    },
+    {
+        "intent": "ask_about_service",
+        "utterance": "can you do haircuts"
+    },
+    {
+        "intent": "book_appointments_clear",
+        "utterance": "can i start over please"
+    },
+    {
+        "intent": "book_appointments_clear",
+        "utterance": "lets start over"
+    },
+    {
+        "intent": "yes",
+        "utterance": "sounds good"
+    },
+    {
+        "intent": "yes",
+        "utterance": "thats right"
+    },
+    {
+        "intent": "yes",
+        "utterance": "yes mam"
+    },
+    {
+        "intent": "yes",
+        "utterance": "yes sir"
+    },
+    {
+        "intent": "yes",
+        "utterance": "yeaah"
+    },
+    {
+        "intent": "book_appointments_clear",
+        "utterance": "let me start from scratch"
+    },
+    {
+        "intent": "book_appointments_clear",
+        "utterance": "can i start over"
+    },
+    {
+        "intent": "book_appointments_clear",
+        "utterance": "start over"
+    },
+    {
+        "intent": "no",
+        "utterance": "nooo"
+    },
+    {
+        "intent": "no",
+        "utterance": "nope"
+    },
+    {
+        "intent": "no",
+        "utterance": "no"
+    },
+    {
+        "intent": "reschedule_appointment",
+        "utterance": "can i change the date for my appointment"
+    },
+    {
+        "intent": "reschedule_appointment",
+        "utterance": "can i move my appointment to another day"
+    },
+    {
+        "intent": "payment_methods",
+        "utterance": "can i pay by card"
+    },
+    {
+        "intent": "payment_methods",
+        "utterance": "do you take cash"
+    },
+    {
+        "intent": "opening_hours",
+        "utterance": "business hours"
+    },
+    {
+        "intent": "opening_hours",
+        "utterance": "tell me your business hours"
+    },
+    {
+        "intent": "opening_hours",
+        "utterance": "when do you open"
+    },
+    {
+        "intent": "who_are_you",
+        "utterance": "say who you are"
+    },
+    {
+        "intent": "who_are_you",
+        "utterance": "who are you"
+    },
+    {
+        "intent": "who_made_you",
+        "utterance": "who created you"
+    },
+    {
+        "intent": "who_made_you",
+        "utterance": "who made you"
+    },
+    {
+        "intent": "cancel_appointments",
+        "utterance": "dont bother with the appointment"
+    },
+    {
+        "intent": "cancel_appointments",
+        "utterance": "i no longer want the appointment"
+    },
+    {
+        "intent": "cancel_appointments",
+        "utterance": "i wanna cancel my appointment"
+    },
+    {
+        "intent": "goodbye",
+        "utterance": "later"
+    },
+    {
+        "intent": "goodbye",
+        "utterance": "goodbye"
+    },
+    {
+        "intent": "greeting",
+        "utterance": "hey"
+    },
+    {
+        "intent": "greeting",
+        "utterance": "hello there"
+    },
+    {
+        "intent": "greeting",
+        "utterance": "hey bro"
+    },
+    {
+        "intent": "yes",
+        "utterance": "yeah"
+    },
+    {
+        "intent": "yes",
+        "utterance": "yup"
+    },
+    {
+        "intent": "yes",
+        "utterance": "yes"
+    },
+    {
+        "intent": "ask_about_service",
+        "utterance": "do you do waxing"
+    },
+    {
+        "intent": "ask_about_service",
+        "utterance": "do you offer manicure"
+    },
+    {
+        "intent": "book_appointments_update",
+        "utterance": "lets do 4pm on saturday"
+    },
+    {
+        "intent": "book_appointments_update",
+        "utterance": "the time is 10am on monday"
+    },
+    {
+        "intent": "book_appointments_update",
+        "utterance": "just a manicure"
+    },
+    {
+        "intent": "book_appointments_update",
+        "utterance": "i need waxing"
+    },
+    {
+        "intent": "book_appointments_update",
+        "utterance": "noon will be fine"
+    },
+    {
+        "intent": "book_appointments_update",
+        "utterance": "i'm looking at the time to be 9AM"
+    },
+    {
+        "intent": "book_appointments_update",
+        "utterance": "the day will be friday"
+    },
+    {
+        "intent": "book_appointments",
+        "utterance": "i need to book a 2pm appointment for curling tomorrow"
+    },
+    {
+        "intent": "book_appointments",
+        "utterance": "can you work on my nails on monday"
+    },
+    {
+        "intent": "book_appointments",
+        "utterance": "can i set up a time to have my brows done"
+    },
+    {
+        "intent": "book_appointments",
+        "utterance": "i need a manicure booked"
+    },
+    {
+        "intent": "book_appointments",
+        "utterance": "can i book for a haircut"
+    },
+    {
+        "intent": "book_appointments",
+        "utterance": "help me to make an appointment"
+    },
+    {
+        "intent": "book_appointments",
+        "utterance": "can i book"
+    },
+    {
+        "intent": "greeting",
+        "utterance": "hello"
+    },
+    {
+        "intent": "greeting",
+        "utterance": "hi"
+    },
+    {
+        "intent": "goodbye",
+        "utterance": "bye"
+    },
+    {
+        "intent": "book_appointments_update",
+        "utterance": "set the day to wednesday"
+    },
+    {
+        "intent": "book_appointments_update",
+        "utterance": "change the day to monday"
+    },
+    {
+        "intent": "book_appointments_update",
+        "utterance": "make the service waxing"
+    },
+    {
+        "intent": "book_appointments_update",
+        "utterance": "change the service to hair cut"
+    },
+    {
+        "intent": "book_appointments_update",
+        "utterance": "change the time to 2pm"
+    },
+    {
+        "intent": "book_appointments",
+        "utterance": "can i book an appointment"
+    }
+]

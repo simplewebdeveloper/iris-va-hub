@@ -1,0 +1,58 @@
+<script src="create.component.ts"></script>
+<div class="uk-container">
+    <div class="uk-card uk-card-body uk-margin-top">
+      <div class="uk-margin">
+      <p class="uk-text-muted"><span uk-icon="icon: cog; ratio: 2"></span></p>    
+      <legend class="uk-legend">Virtual Assistant Settings</legend>
+      <!-- <div class="uk-flex uk-flex-center">
+    </div> -->
+      </div>
+
+      <!-- Change user password -->
+
+      <p> Change your password </p>
+
+      <!-- <form> -->
+        <fieldset class="uk-fieldset">
+
+            <div class="uk-margin">
+                <div class="uk-text-small uk-margin-bottom">Enter a new password</div>
+                <input class="uk-input" formControlName="bot_name" type="password">
+            </div>
+
+            <div class="uk-margin">
+                <div class="uk-text-small uk-margin-bottom">Confirm new password</div>
+                <input class="uk-input" formControlName="bot_name" type="password">
+            </div>
+
+
+        </fieldset>
+
+        <div class="uk-margin">
+            <button class="uk-button uk-button-secondary uk-button-small">Update password</button>
+        </div>
+    <!-- </form> -->
+
+      <hr>
+      <div class="uk-section uk-section-muted">
+        <div class="uk-container">
+    
+            <h3 class="uk-text-center uk-text-danger">Danger zone</h3>
+    
+            <div class="uk-grid-match uk-child-width-1-1@m uk-padding" uk-grid>
+                <div class="uk-text-center">
+                    <h4>Wipe and Reset your Virtual Assistant</h4>
+                    <p>This will wipe and reset your Virtual Assistant and its Data way beyond data recovery. Is this what you want?.</p>
+                      <button type="submit" class="uk-button uk-button-danger uk-margin-small-bottom uk-margin-left" (click)="wipeAndResetModels()"><span uk-icon="trash"></span>&nbsp;Wipe and reset my Virtual Assistant anyway, I understand the consequences...</button>
+            
+                </div>
+            </div>
+    
+        </div>
+    </div>
+    </div>
+
+
+
+
+</div>

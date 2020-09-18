@@ -1,0 +1,13 @@
+.uk-card {
+    background-color: white;
+}
+
+.uk-card:hover {
+    background-color: whitesmoke;
+    cursor: pointer;
+}
+
+#bot-card {
+    cursor: pointer;
+}
+  

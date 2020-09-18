@@ -1,0 +1,55 @@
+.custom-container {
+    max-height: 30rem;
+    /* text-align: center; */
+    overflow-y: scroll;
+    border: 1px solid #1e87f0;
+}
+
+.ai_slot0 {
+  background-color: aqua;
+}
+
+.ai_slot1 {
+  background-color: lightcoral
+}
+
+.ai_slot2 {
+  background-color: lightgreen
+}
+
+.ai_slot3 {
+    background-color: violet;
+}
+
+.ai_slot4 {
+    background-color: chocolate;
+}
+
+.ai_slot5 {
+    background-color: lightslategrey;
+}
+
+
+.ai_slot6 {
+    background-color: plum;
+}
+
+
+.ai_slot7 {
+    background-color: lightpink;
+}
+
+
+.ai_slot8 {
+    background-color: yellow;
+}
+
+
+.ai_slot9 {
+    background-color: burlywood;
+}
+
+
+.ai_slot10 {
+    background-color: sienna;
+}

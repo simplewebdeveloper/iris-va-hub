@@ -1,0 +1,45 @@
+<script src="create.component.ts"></script>
+<div class="uk-container">
+    <div class="uk-card uk-card-body uk-margin-top">
+      <div class="uk-margin">
+      <p class="uk-text-muted"><span uk-icon="icon: plus-circle; ratio: 2"></span></p>    
+      <legend class="uk-legend"> Create a new Virtual Assistant</legend>
+      <!-- <div class="uk-flex uk-flex-center">
+        
+    </div> -->
+      </div>
+        <form [formGroup]="createBotForm" (ngSubmit)="createBotFormSubmit()">
+            <fieldset class="uk-fieldset">
+
+                <div class="uk-margin">
+                    <div class="uk-text-small uk-margin-bottom">Give your VA a name</div>
+                    <input class="uk-input" formControlName="bot_name" type="text" required>
+                </div>
+
+                <div class="uk-margin">
+                    <div class="uk-text-small uk-margin-bottom">Describe your VA</div>
+                    <textarea class="uk-textarea" formControlName="bot_desc" rows="5" required></textarea>
+                </div>
+
+                <div class="uk-margin">
+                    <div class="uk-text-small uk-margin-bottom">What intents can your VA handle? (enter at least two intents) e.g. check_prices, buy_item, stock_query</div>
+                    <input class="uk-input" formControlName="bot_intents" type="text" required>
+                </div>
+
+              <div class="uk-margin">
+                <div class="uk-text-small uk-margin-bottom">What slots should your VA capture? (Leave blank for none) e.g. product, price, quantity</div>
+                <input class="uk-input" formControlName="bot_slots" type="text">
+              </div>
+
+            </fieldset>
+
+            <div class="uk-margin">
+                <button class="uk-button uk-button-secondary uk-button-small">Create and Save VA</button>
+            </div>
+        </form>
+    </div>
+
+
+
+
+</div>

@@ -1,0 +1,39 @@
+<div id="offcanvas-nav" uk-offcanvas="overlay: true">
+    <div class="uk-offcanvas-bar">
+        <button class="uk-offcanvas-close" type="button" uk-close></button>
+
+        <ul class="uk-nav uk-nav-default">
+            <li id="current-path" class="uk-active"><a [routerLink]="currentPath" class="uk-text-large"><span class="uk-margin-small-right" uk-icon="icon: link"></span> {{ currentPath }}</a></li>
+            
+            <li class="uk-nav-divider"></li>
+
+            <li class="uk-nav-header"><span class="uk-margin-small-right" uk-icon="icon: nut"></span>Manage</li>
+            <li><a routerLink="/home"><span class="uk-margin-small-right" uk-icon="icon: play"></span> My Virtual Assistants (home)</a></li>
+            <li><a routerLink="/edit"><span class="uk-margin-small-right" uk-icon="icon: play"></span> Edit VA</a></li>
+
+            <li class="uk-nav-header"><span class="uk-margin-small-right" uk-icon="icon: cog"></span> Build</li>
+            <li><a routerLink="/create"><span class="uk-margin-small-right" uk-icon="icon: play"></span> Create VA</a></li>
+            <li><a routerLink="/intents"><span class="uk-margin-small-right" uk-icon="icon: play"></span> Add / Update Intents</a></li>
+            <li><a routerLink="/svps"><span class="uk-margin-small-right" uk-icon="icon: play"></span> Add / Update SVPs</a></li>
+            
+
+            <li class="uk-nav-header"><span class="uk-margin-small-right" uk-icon="icon: settings"></span>Train</li>
+            <li><a routerLink="/train"><span class="uk-margin-small-right" uk-icon="icon: play"></span> Train VA</a></li>
+            
+
+            <li class="uk-nav-header"><span class="uk-margin-small-right" uk-icon="icon: image"></span>Analytics</li>
+            <li><a routerLink="/performance"><span class="uk-margin-small-right" uk-icon="icon: play"></span> Performance</a></li>
+            <li><a routerLink="/query_logs"><span class="uk-margin-small-right" uk-icon="icon: play"></span> Query logs</a></li>
+
+            <li class="uk-nav-header"><span class="uk-margin-small-right" uk-icon="icon: server"></span> Deploy</li>
+            <li><a routerLink="/documentation"><span class="uk-margin-small-right" uk-icon="icon: play"></span> Documentation</a></li>
+
+            <li class="uk-nav-divider"></li>
+
+            <li class="uk-nav-header"><span class="uk-margin-small-right" uk-icon="icon: user"></span> My Account</li>
+            <li><a routerLink="/settings"><span class="uk-margin-small-right" uk-icon="icon: play"></span> Settings</a></li>
+            <li><a (click)="logout()"><span class="uk-margin-small-right" uk-icon="icon: play"></span> Logout</a></li>
+        </ul>
+
+    </div>
+</div>

@@ -1,0 +1,2234 @@
+[
+    {
+        "intent": "update",
+        "utterance": "let set the time to 2pm"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "i'm stressed, cheer me up"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "they say laughter in the best medicine"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "make me feel nice"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "cheer me up i'm sad"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "haha i'm in the mood for a joke"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "can you make me laugh"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "are you funny?"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "lamo"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "lol"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "i wanna lol"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "joke about something funny"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "know any joke"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "lemme get a funny line"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "what is this thing?"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "wam bro who you?"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "do i even know you bro"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "whos here with me"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "who i am talking to"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "a who dis"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "i dont think we have meet before"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "what do you do for a living"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "what are you into"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "so tell me about yourself"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "how about we talk about you"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "i wanna know your name"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "i'd like to know your name"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "are you john"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "its great to meet you and you are"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "so im name and you are"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "i havent seen you around here"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "who are you pretty"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "yo hommie who are you"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "who the hell is this piece of crap"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "do i even know you"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "i dont know you"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "who is fish is this"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "what entity is responsible for you"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "what human programmed you"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "whats the name of the devloper"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "and your maker is who"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "whos is responsible"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "who made you aura"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "who developed this"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "who assembled you"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "what god created you"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "reveal your creator "
+    },
+    {
+        "intent": "not_update",
+        "utterance": "are you govern by any one"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "who is responsible for this"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "which guy made you"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "hey nevermind on the appointment i can't make it"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "i no longer want to come in"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "garbage that appointment right now"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "delete the event i booked"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "cancel my appointment"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "how can i cancel my appointment"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "we set an appointment but now i can not make it"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "next week might be tied for me so i can't make the appointment we set"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "i dont think i can make my appointment and i would like to cancel it"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "hey i'm calling to ask if you can cancel the appointment we set"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "you know what angela maybe i dont need this appointment"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "go ahead and lets delete my appointment"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "move my appointment to the trash"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "i dont want the appointment on my calendar any longer"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "hey change of plans lets cancel this appointement"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "i made a terrible mistake can i realised that i dont need the appointment"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "i know i said i am coming friday but plans changed so can we just ajust the appointment"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "hello angela i booked an appointment three weeks ago and now i dont think i need it"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "if you can change my appointment in any way that would be great"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "i am wondering if you can make a change to my appointment"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "i think i will need to update my appointment to be tuesday instead"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "hello lets make a change to the day of my appointment"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "i wanna edit the appointment i booked can you help with that"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "hmm wednesday might not be such a good day"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "is it possible to shift my appointment to some other day "
+    },
+    {
+        "intent": "not_update",
+        "utterance": "would you adjust my appointment"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "i think my appointment needs to be moved"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "i need to shift my appointment forward"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "looks like the appointment will clash with something else can i move it to some other day"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "i would love to book a nice spa"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "i think i might need a haircut appointment"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "its been a while since i got my nails done now i wanna do it again"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "hey lets set up that haircut i always needed"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "can we set up a one on one"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "you angela help a brother to book something"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "i need a hair coloring"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "hi good day angela can you book me in for wednesday at noon for a hair highlight"
+    },
+    {
+        "intent": "update",
+        "utterance": "what i need for this is a foot spa"
+    },
+    {
+        "intent": "update",
+        "utterance": "i want swing by on friday"
+    },
+    {
+        "intent": "update",
+        "utterance": "can you set it for 10 on saturday"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "so i need pedicure at maybe 5pm"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "hey angela can you help me with an appointment booking please"
+    },
+    {
+        "intent": "update",
+        "utterance": "lets do thursday at 4pm"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "hi guys i am wondering if you can book me in"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "hi this is andy, i am calling to book an appointment"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "let me have an appointment for 3pm this noon"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "can we book a foot spa for sunday at about 4pm"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "refresh my booking"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "lets start again"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "move on i dont want this"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "no mam"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "don't do that"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "i dont need that"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "leave that and move on"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "don't worry"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "leave that"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "i can work with that"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "thats good"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "yeah i want to"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "yeah do it"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "please do it"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "yes i agree"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "go ahead"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "could you say if i can use my card to pay for this"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "i only wanna pay with cash"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "why cant i pay by cash"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "is cash accepted there"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "can i pay with my visa here"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "i dont normally walk with cash"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "is it possible to pay with my credit card"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "can we book with my credit card"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "are you going to be opened"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "how late are you gonna close on friday"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "will you be open on the weekends"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "aer you open on boxing day"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "what time are you opening in the morning"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "what time are you guys opening tomorrow"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "what time are you opening"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "what are your opening hours please"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "what time are you closing"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "what time do you close"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "what time do you guys close"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "excuse me, what time do you close"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "are you open on weekends"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "what time do you open tomorrow"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "would you have any openings on thursday"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "Hi how are you, i have an appointment for this wednesday morning and i am wondering if i can reschedule that"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "hi i am calling to reschedule my appointment for this sunday"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "Hi am just call to reschedule my appointment i have for wednesday"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "no way"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "no not right now"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "maybe next time"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "dont worry do this"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "no please"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "i dont have a card do you take cash"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "i have gbti card"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "do you take republic bank visa card"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "can i use my scotia bank card at your place"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "i got a mastercard and i was wondering if you take that"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "whats the hours of business"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "do you open on sundays"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "what day can i come in"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "can you perform waxing"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "can i get my brows done at you"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "can you do bridal makeup"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "do you work on nails"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "can you color my nails"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "can you do a bob cut"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "do you do frizz cut"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "lets hear a funny story"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "crack a joke"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "give me some laughter"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "tell me something funny"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "is there a human under your hood"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "are you for real"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "am i talking to a real human"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "are you human"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "what is your name"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "who is this"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "who am i talking to"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "are you a robot"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "what are you"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "where are you from"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "which company invented you"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "i need to know who made you"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "where did you come from angela"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "where you come from"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "toss out my appointment"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "hey just remove my appointment from my calendar"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "i no longer need my appointment"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "please help me to cancel my appointment"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "i might not get to complete my appointment"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "i dont want to continue my appointment"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "trash my appointment"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "can we shift forward with my appointment"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "i can't make it to my appointment"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "i want to set my appointment for another day"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "i am not happy with my appointment date"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "hey lets modify my appointment"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "can i change my appointment to some other day"
+    },
+    {
+        "intent": "update",
+        "utterance": "wanna come by at 2pm"
+    },
+    {
+        "intent": "update",
+        "utterance": "i'm booking for monday at 2pm"
+    },
+    {
+        "intent": "update",
+        "utterance": "3:24am please"
+    },
+    {
+        "intent": "update",
+        "utterance": "sunday please"
+    },
+    {
+        "intent": "update",
+        "utterance": "i'll come by at 1pm"
+    },
+    {
+        "intent": "update",
+        "utterance": "lets shoot for a spa"
+    },
+    {
+        "intent": "update",
+        "utterance": "i am thinking 10am might be good for me"
+    },
+    {
+        "intent": "update",
+        "utterance": "lets do 2pm please"
+    },
+    {
+        "intent": "update",
+        "utterance": "i just need a haircut"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "try to help me book please"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "i want to create a booking to have my hair done"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "do you think we can set up a booking"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "lets set up a haircut event for this friday"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "can we set up a session"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "i am curious to know how to set up an appointment"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "how easy is it to set up an appointment"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "can i book with you"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "how to book an appointment"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "hi there how are you can you help me with a booking"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "hello good afternoon i am calling to make an appointment"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "hey i wanna book a haircut for coming sunday"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "hey i need to book"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "lets do this again"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "trash this stuff"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "cancel this"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "dont bother"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "noooo"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "i have a 360card and i was wondering if i can use it"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "i have a mastercard do you take that"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "can i swipe my visa"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "how late do you open"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "when in closing time"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "i need a business hours"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "when are you closing"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "when do you operate"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "can you work on my hair"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "do you cater for spa"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "joke with me"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "give me a joke"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "say a funny thing"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "show me some id"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "who the hell are you"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "reveal your identity"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "whats the place you came from"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "whats your inventor"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "did got created you"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "who made you angela"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "remove the appointment from my calendar"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "delete my appointment"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "remove my appointment"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "alter my appointment"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "the appointment day have to change"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "please change my appointment"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "can i move my appointment"
+    },
+    {
+        "intent": "update",
+        "utterance": "hair curls is what i want"
+    },
+    {
+        "intent": "update",
+        "utterance": "only hair coloring"
+    },
+    {
+        "intent": "update",
+        "utterance": "just a pedicure i'm going to need"
+    },
+    {
+        "intent": "update",
+        "utterance": "lets do this at 6pm"
+    },
+    {
+        "intent": "update",
+        "utterance": "i wanna cut at 2pm"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "lets arrange for my barber"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "can we have a session"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "i just wanna book"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "help me with a 10AM booking"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "can i get a manicure done at 2pm"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "i want to visit to have my hair done"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "can we arrange to meet"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "hey i wanna set up a visit"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "book me in baby"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "I'd say goodbye, but you're not worth it."
+    },
+    {
+        "intent": "not_update",
+        "utterance": "Yes, I do. The word goodbye is simple and concise."
+    },
+    {
+        "intent": "not_update",
+        "utterance": "Forever and forever farewell. If we do meet again, we'll smile indeed. If not, 'tis true parting was well made."
+    },
+    {
+        "intent": "not_update",
+        "utterance": "See you on the internet!"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "Nope, I try to be creative whenever I can."
+    },
+    {
+        "intent": "not_update",
+        "utterance": "Who cares? There's no need to overcomplicate things!"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "Sometimes. When I feel like it, I say other words."
+    },
+    {
+        "intent": "not_update",
+        "utterance": "We may not talk for a long time, but I hope we don't lose touch."
+    },
+    {
+        "intent": "not_update",
+        "utterance": "Sayonara, muchachos!"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "See you at the restaurant at the edge of the universe!"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "You will do well."
+    },
+    {
+        "intent": "not_update",
+        "utterance": "See you in another life, brotha!"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "Come back when you can't stay so long."
+    },
+    {
+        "intent": "not_update",
+        "utterance": "Never look back!"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "After four, dinosaur."
+    },
+    {
+        "intent": "not_update",
+        "utterance": "Don\u2019t forget to send a letter."
+    },
+    {
+        "intent": "not_update",
+        "utterance": "Goodbye forever."
+    },
+    {
+        "intent": "not_update",
+        "utterance": "After three, chimpanzee!"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "After two, kangaroo!"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "Next time, bring more cookies."
+    },
+    {
+        "intent": "not_update",
+        "utterance": "That's all folks."
+    },
+    {
+        "intent": "not_update",
+        "utterance": "Party easy, drive safe, and return with a smile on your face."
+    },
+    {
+        "intent": "not_update",
+        "utterance": "So long, suckers!"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "Hasta lasagna, don't get any on ya"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "Make sure the doormat says goodbye!"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "Until next time."
+    },
+    {
+        "intent": "not_update",
+        "utterance": "See you in the future."
+    },
+    {
+        "intent": "not_update",
+        "utterance": "Au revoir!"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "Begone!"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "Take care, polar bear!"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "Peace out, rainbow trout!"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "I'm outta here like spit through a trumpet."
+    },
+    {
+        "intent": "not_update",
+        "utterance": "Adios, amigos."
+    },
+    {
+        "intent": "not_update",
+        "utterance": "Toodaloo, caribou!"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "I'm outtie."
+    },
+    {
+        "intent": "not_update",
+        "utterance": "I shall return."
+    },
+    {
+        "intent": "not_update",
+        "utterance": "Catch you round like a rissole!"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "Take it easy, greasy. You've got a long way to slide."
+    },
+    {
+        "intent": "not_update",
+        "utterance": "See you, space cowboy."
+    },
+    {
+        "intent": "not_update",
+        "utterance": "Screw you guys, I'm going home!"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "Ciao ciao, brown cow!"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "I\u2019ll show you to the door!"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "I\u2019m late for my bus, gigantopithecus!"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "Make new friends on the sidewalk!"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "Gotta go, the power of the shower compels me."
+    },
+    {
+        "intent": "not_update",
+        "utterance": "Stay cool, my dude."
+    },
+    {
+        "intent": "not_update",
+        "utterance": "Bye! I tolerate you!"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "Move out, brussels sprout!"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "Later, nerds!"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "See you soon, baboon!"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "Don't trip on a raindrop!"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "See you later, aggregator!"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "Be careful! Don't get mauled by a squirrel!"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "Be sweet, parakeet."
+    },
+    {
+        "intent": "not_update",
+        "utterance": "Don't get cut by a blade of grass!"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "Better shake, rattlesnake!"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "Parting is such sweet sorrow, that I shall say good night till it be tomorrow."
+    },
+    {
+        "intent": "not_update",
+        "utterance": "Don't forget to be awesome."
+    },
+    {
+        "intent": "not_update",
+        "utterance": "Don't let the door hit ya where the good lord split ya."
+    },
+    {
+        "intent": "not_update",
+        "utterance": "Later, potato!"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "Later, skater!"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "Shine on, you crazy diamonds."
+    },
+    {
+        "intent": "not_update",
+        "utterance": "May the force be with you... always."
+    },
+    {
+        "intent": "not_update",
+        "utterance": "In a while, crocodile."
+    },
+    {
+        "intent": "not_update",
+        "utterance": "Catch ya later, future dudes!"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "I'm off like a dirty shirt."
+    },
+    {
+        "intent": "not_update",
+        "utterance": "I gotta jet."
+    },
+    {
+        "intent": "not_update",
+        "utterance": "As you wish, jellyfish!"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "Cya"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "Bye for now."
+    },
+    {
+        "intent": "not_update",
+        "utterance": "Don't get lost on your way to class!"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "See you when I see you."
+    },
+    {
+        "intent": "not_update",
+        "utterance": "Tootle-loo, kangaroo."
+    },
+    {
+        "intent": "not_update",
+        "utterance": "Smell ya later!"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "Love, peace, and chicken grease."
+    },
+    {
+        "intent": "not_update",
+        "utterance": "Cool Goodbye Sayings"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "Cheerio!"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "Happy trails!"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "Adios, hippos."
+    },
+    {
+        "intent": "not_update",
+        "utterance": "See ya, wouldn't wanna be ya."
+    },
+    {
+        "intent": "not_update",
+        "utterance": "Peace out, girl scout!"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "Time to scoot, little newt."
+    },
+    {
+        "intent": "not_update",
+        "utterance": "Don't forget to come back!"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "Once more unto the breach, dear friends!"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "Chop chop, lollipop!"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "Influence everyone in a good way!"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "Can\u2019t star, blue jay."
+    },
+    {
+        "intent": "not_update",
+        "utterance": "Oh, and in case I don't see you\u2014good afternoon, good evening, and good night!"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "I'm gonna make a like a bakery truck and haul buns."
+    },
+    {
+        "intent": "not_update",
+        "utterance": "Gotta roll!"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "It's been a pleasure and a privilege to meet you."
+    },
+    {
+        "intent": "not_update",
+        "utterance": "I look forward to our next meeting."
+    },
+    {
+        "intent": "not_update",
+        "utterance": "Be good and don't get caught."
+    },
+    {
+        "intent": "not_update",
+        "utterance": "Hasta la vista, baby."
+    },
+    {
+        "intent": "not_update",
+        "utterance": "Thank you for your cooperation. Farewell."
+    },
+    {
+        "intent": "not_update",
+        "utterance": "Don't get attacked by a bear, it's night-time!"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "Blow a kiss, goldfish."
+    },
+    {
+        "intent": "not_update",
+        "utterance": "Adieu, cockatoo!"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "Have fun storming the castle!"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "See you on the other side."
+    },
+    {
+        "intent": "not_update",
+        "utterance": "Take care, butterfly."
+    },
+    {
+        "intent": "not_update",
+        "utterance": "I gotta bounce."
+    },
+    {
+        "intent": "not_update",
+        "utterance": "Toodle-pip!"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "Calc you later!"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "Have a good one."
+    },
+    {
+        "intent": "not_update",
+        "utterance": "Give a hug, ladybug."
+    },
+    {
+        "intent": "not_update",
+        "utterance": "Later, haters."
+    },
+    {
+        "intent": "not_update",
+        "utterance": "It was nice to see you again."
+    },
+    {
+        "intent": "not_update",
+        "utterance": "Don't get run over!"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "Catch you on the flip side."
+    },
+    {
+        "intent": "not_update",
+        "utterance": "You're still here? It's over. Go home. Go!"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "Out to the door, dinosaur."
+    },
+    {
+        "intent": "not_update",
+        "utterance": "See you soon, racoon."
+    },
+    {
+        "intent": "not_update",
+        "utterance": "Gotta bolt!"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "It has been emotional, bye."
+    },
+    {
+        "intent": "not_update",
+        "utterance": "To the winch, wench!"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "Smoke me a kipper, I'll be back for breakfast."
+    },
+    {
+        "intent": "not_update",
+        "utterance": "Bye bye, butterfly."
+    },
+    {
+        "intent": "not_update",
+        "utterance": "Gotta get going."
+    },
+    {
+        "intent": "not_update",
+        "utterance": "Well, I'm off!"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "Gotta go, buffalo."
+    },
+    {
+        "intent": "not_update",
+        "utterance": "Long live and prosper!"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "Stay classy."
+    },
+    {
+        "intent": "not_update",
+        "utterance": "Gotta hit the road."
+    },
+    {
+        "intent": "not_update",
+        "utterance": "Peace out!"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "Catch you on the rebound."
+    },
+    {
+        "intent": "not_update",
+        "utterance": "Fare thee well."
+    },
+    {
+        "intent": "not_update",
+        "utterance": "Okay...bye, fry guy!"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "I\u2019m out of here."
+    },
+    {
+        "intent": "not_update",
+        "utterance": "See you later, alligator!"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "If I don\u2019t see you around, I'll see you square."
+    },
+    {
+        "intent": "not_update",
+        "utterance": "After a while, crocodile."
+    },
+    {
+        "intent": "not_update",
+        "utterance": "Stay out of trouble."
+    },
+    {
+        "intent": "not_update",
+        "utterance": "Pos eisai?"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "Habari yako?"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "Come va?"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "Hey friend! What\u2019s the latest buzz in your world?"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "Como voce esta?"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "What\u2019s smokin\u2019? Tell your pal everything!"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "What\u2019s the word, hummingbird?"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "Hey Einstein, still cracking the old theory?"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "Namaste! How long has it been, dost?"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "How is life sailing?"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "Como estas?"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "Ua mai oe?"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "Hey bud! Mind if we catch up? I saw you like eons ago."
+    },
+    {
+        "intent": "not_update",
+        "utterance": "Hi homey! How\u2019s life treating you?"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "Hi, I just met you, and yes, this is crazy. Here\u2019s my number \u2013 call me, maybe?"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "\u2018Sup, my homeslice?"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "How farest thou?"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "What\u2019s up, buttercup?"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "Whazzup?"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "Wagwan?"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "Jal jinaess-eoyo?"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "Ni hao ma?"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "Comment allez-vous?"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "What\u2019s good in the hood?"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "Sup!"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "How have you been, crazy coo?"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "How are things going, bandhu?"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "What\u2019s sizzling?"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "Hey mistaa, how do you do?"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "Ogenki desu ka?"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "Whaccha up to, dude?"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "What\u2019s new? Tell me everything!"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "Hello, babycakes! How are you?!"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "Bro, hey, how are you doing?"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "How are you doing, old man?"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "Yo man, where were you?"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "Hi, lost buddy! Long time no see!"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "Hey Slayer, what\u2019s up?"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "Hey beautiful! I am blinded by your charm!"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "Hello, sugar. Come and give me a good morning hug."
+    },
+    {
+        "intent": "not_update",
+        "utterance": "Welcome to the club, boss!"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "Hey homey! Welcome!"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "Waddup chica!"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "Hey, hiiii. How is your weekend going? Mine just got better \ud83d\ude09."
+    },
+    {
+        "intent": "not_update",
+        "utterance": "Oooo la la. You are a gorgeous sculpture made by the God Almighty!"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "This is where my bae is at!"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "Hey there, little thing. You made my day by giving me a glimpse of yourself!"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "What\u2019s up, handsome? You are making the temperatures soar this season!"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "Hey love!"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "Hi, butterfly! Holaaa!"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "Konnichiwa!"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "Hi, cutie pie, sugar bun!"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "Morning! So good to see ya, good looking!"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "What\u2019s cookin\u2019, good lookin\u2019?"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "Hey, munchkin! Why so chweet?"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "Hello belle! You are glowing!"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "What\u2019s up with you, old soul? Wanna chat?"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "Hello! There is my pumpkin! I miiiissed you <3"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "Ciao babydoll!"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "Bing bing! How\u2019s it going?"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "Good day, young man!"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "Bonjour monsieur!"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "Hallo miss!"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "Hello there, daddycool!"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "Que pasa, madam!"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "Hola paapi!"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "Hey, boo. Wacch ya doing? You just brightened up my day!"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "Aloha princess!"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "Howdy, missus! How are ya?"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "How you doin\u2019?"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "Hi, honey bunch!"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "I like your face. Are you an angel?"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "Yoooouhoooo! Toodle doo, toodle dum."
+    },
+    {
+        "intent": "not_update",
+        "utterance": "Ello, matey. Wassup?"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "Hiiiii, baaaaaby!"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "Top of the morning to ya! Wass es going on?"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "Greetings and salutations, my man/woman!"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "Whaddup bro?"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "Yo! Wassup."
+    },
+    {
+        "intent": "not_update",
+        "utterance": "Ghostbusters, watccha want?"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "Hello-hello! Who\u2019s there? It\u2019s me talking."
+    },
+    {
+        "intent": "not_update",
+        "utterance": "Knock knock\u2026"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "Hi! At least we meet for the first time for the last time!"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "I am Batman. Who are you, gorgeous?"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "Howdy, howdy, howdy, mister!"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "Tring tring\u2026this call may or may not be recorded for training purposes."
+    },
+    {
+        "intent": "not_update",
+        "utterance": "Wassup, homey?"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "GOOOOOD MORNING"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "What\u2019s cracking, hot thing?"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "Hiya! Hi!"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "Hello, governor!"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "I come in peace! Chow chow."
+    },
+    {
+        "intent": "not_update",
+        "utterance": "Hi, mister! What is going on?"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "Ahoy, matey!"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "Howdy, partner!"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "My name is aura and I am a bad, bad guy. I like you!"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "What\u2019s kicking, little chicken?"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "Hey there, freshman! Wassup?"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "Howdy-doody! Tell me what\u2019s new!"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "Hey, howdy, hi! How is it going?"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "Hello, sunshine! How are you? Oh, your rays are already making my day brighter!"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "be funny "
+    },
+    {
+        "intent": "not_update",
+        "utterance": "tell me a joke"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "tell me a funny line"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "make me laugh"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "i need a spa do you offer that"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "can you do haircuts"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "can i start over please"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "lets start over"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "sounds good"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "thats right"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "yes mam"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "yes sir"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "yeaah"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "let me start from scratch"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "can i start over"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "start over"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "nooo"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "nope"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "no"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "can i change the date for my appointment"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "can i move my appointment to another day"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "can i pay by card"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "do you take cash"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "business hours"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "tell me your business hours"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "when do you open"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "say who you are"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "who are you"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "who created you"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "who made you"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "dont bother with the appointment"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "i no longer want the appointment"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "i wanna cancel my appointment"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "later"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "goodbye"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "hey"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "hello there"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "hey bro"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "yeah"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "yup"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "yes"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "do you do waxing"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "do you offer manicure"
+    },
+    {
+        "intent": "update",
+        "utterance": "lets do 4pm on saturday"
+    },
+    {
+        "intent": "update",
+        "utterance": "the time is 10am on monday"
+    },
+    {
+        "intent": "update",
+        "utterance": "just a manicure"
+    },
+    {
+        "intent": "update",
+        "utterance": "i need waxing"
+    },
+    {
+        "intent": "update",
+        "utterance": "noon will be fine"
+    },
+    {
+        "intent": "update",
+        "utterance": "i'm looking at the time to be 9AM"
+    },
+    {
+        "intent": "update",
+        "utterance": "the day will be friday"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "i need to book a 2pm appointment for curling tomorrow"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "can you work on my nails on monday"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "can i set up a time to have my brows done"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "i need a manicure booked"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "can i book for a haircut"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "help me to make an appointment"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "can i book"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "hello"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "hi"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "bye"
+    },
+    {
+        "intent": "update",
+        "utterance": "set the day to wednesday"
+    },
+    {
+        "intent": "update",
+        "utterance": "change the day to monday"
+    },
+    {
+        "intent": "update",
+        "utterance": "make the service waxing"
+    },
+    {
+        "intent": "update",
+        "utterance": "change the service to hair cut"
+    },
+    {
+        "intent": "update",
+        "utterance": "change the time to 2pm"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "can i book an appointment"
+    }
+]

@@ -1,0 +1,555 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="d0d55679-afb9-4084-93d3-f5dffc7f8355" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/auraenv1.0.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/code_checkpoint_two.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pipfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pipfile.lock" beforeDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$USER_HOME$/Miniconda3/envs/auraenv1.0/Lib/site-packages/textblob/formats.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="112">
+              <caret line="135" lean-forward="true" selection-start-line="135" selection-end-line="135" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>label</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/character/character.py" />
+        <option value="$PROJECT_DIR$/item/item.py" />
+        <option value="$PROJECT_DIR$/utterance/utterance.py" />
+        <option value="$PROJECT_DIR$/train_ner.py" />
+        <option value="$PROJECT_DIR$/train_data.json" />
+        <option value="$PROJECT_DIR$/spacy_test.py" />
+        <option value="$USER_HOME$/.virtualenvs/Python-NLP-28UmNM9F/Lib/site-packages/textblob/formats.py" />
+        <option value="$PROJECT_DIR$/train.json" />
+        <option value="$PROJECT_DIR$/train_ai_intents/style.css" />
+        <option value="$PROJECT_DIR$/train_ai_svp/train_ner.py" />
+        <option value="$PROJECT_DIR$/train_ai_intents/script.js" />
+        <option value="$PROJECT_DIR$/train_ai_svps/train_data.json" />
+        <option value="$PROJECT_DIR$/train_ai_svps/spacy_test.py" />
+        <option value="$PROJECT_DIR$/train_ai_intents/train_intents.html" />
+        <option value="$PROJECT_DIR$/train_ai_svps/train_ner.py" />
+        <option value="$PROJECT_DIR$/train_ai_intents/ai_intents.json" />
+        <option value="$PROJECT_DIR$/train_ai_svps/train_svps.html" />
+        <option value="$PROJECT_DIR$/train_ai_svps/styles.css" />
+        <option value="$USER_HOME$/.virtualenvs/aura-ai-model-HdyYCIU1/Lib/site-packages/textblob/formats.py" />
+        <option value="$PROJECT_DIR$/app.py" />
+        <option value="$PROJECT_DIR$/word/word.py" />
+        <option value="$PROJECT_DIR$/train_ai_svps/scripts.js" />
+        <option value="$PROJECT_DIR$/train_ai_svps/ai_svp.json" />
+        <option value="$USER_HOME$/Miniconda3/Lib/site-packages/textblob/formats.py" />
+        <option value="$USER_HOME$/Miniconda3/envs/auraenv1.0/Lib/site-packages/textblob/formats.py" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="1358" />
+    <option name="y" value="-8" />
+    <option name="width" value="1696" />
+    <option name="height" value="1036" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="aura-ai-model" type="b2602c69:ProjectViewProjectNode" />
+              <item name="aura-ai-model" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Miniconda3/envs" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\coder\Desktop\python_for_nlp\code_checkpoint_two\Python-NLP\train_ai_intents" />
+      <recent name="C:\Users\coder\Desktop\python_for_nlp\code_checkpoint_two\Python-NLP\train_ai_svp" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d0d55679-afb9-4084-93d3-f5dffc7f8355" name="Default Changelist" comment="" />
+      <created>1560178617740</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1560178617740</updated>
+      <workItem from="1560178619043" duration="20986000" />
+      <workItem from="1560252648959" duration="1817000" />
+      <workItem from="1560262885672" duration="3694000" />
+      <workItem from="1560351674098" duration="17270000" />
+      <workItem from="1560384259176" duration="419000" />
+      <workItem from="1560434681855" duration="3267000" />
+      <workItem from="1560451297814" duration="1817000" />
+      <workItem from="1560650173614" duration="6682000" />
+      <workItem from="1560693618791" duration="2528000" />
+      <workItem from="1560696219027" duration="3955000" />
+      <workItem from="1561075355830" duration="3261000" />
+      <workItem from="1561142206558" duration="597000" />
+      <workItem from="1561304665010" duration="8003000" />
+      <workItem from="1561322769096" duration="6003000" />
+      <workItem from="1561460575282" duration="290000" />
+      <workItem from="1563278287104" duration="5476000" />
+      <workItem from="1563288614895" duration="218000" />
+      <workItem from="1563288938930" duration="1388000" />
+      <workItem from="1563292349236" duration="128000" />
+      <workItem from="1563292594466" duration="1034000" />
+      <workItem from="1563293660733" duration="2436000" />
+      <workItem from="1563296129516" duration="1421000" />
+      <workItem from="1563298181815" duration="2791000" />
+      <workItem from="1563303500279" duration="255000" />
+      <workItem from="1563303792123" duration="468000" />
+      <workItem from="1563304293013" duration="229000" />
+      <workItem from="1563304559533" duration="1201000" />
+      <workItem from="1563305803766" duration="454000" />
+      <workItem from="1563306619123" duration="294000" />
+      <workItem from="1563315110591" duration="530000" />
+      <workItem from="1563317269462" duration="3808000" />
+    </task>
+    <task id="LOCAL-00001" summary="checkpoint-01">
+      <created>1560263142194</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1560263142194</updated>
+    </task>
+    <task id="LOCAL-00002" summary="NLP Phase 2">
+      <created>1560378765679</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1560378765679</updated>
+    </task>
+    <task id="LOCAL-00003" summary="NLP Phase 2 - Updated POS-Tagging Method">
+      <created>1561309716776</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1561309716776</updated>
+    </task>
+    <task id="LOCAL-00004" summary="NLP Phase 2 - Created a custom tagging method">
+      <created>1561947205575</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1561947205575</updated>
+    </task>
+    <task id="LOCAL-00005" summary="NLP Phase 2 - Can now add intents to train the model from an html interface">
+      <created>1562547692195</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1562547692195</updated>
+    </task>
+    <task id="LOCAL-00006" summary="NLP Phase 2 - Can now add intents to train the model from an html interface - tweak 1">
+      <created>1562549544066</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1562549544066</updated>
+    </task>
+    <task id="LOCAL-00007" summary="NLP Phase 2 - Can now add svp data to train the model from an html interface - tweak 2">
+      <created>1563015518176</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1563015518176</updated>
+    </task>
+    <task id="LOCAL-00008" summary="NLP Phase 2 - Can now add svp data to train the model from an html interface - tweak 3">
+      <created>1563015831383</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1563015831383</updated>
+    </task>
+    <task id="LOCAL-00009" summary="NLP Phase 2 - Can now add svp data to train the model from an html interface - Solid Base for Small Demo">
+      <created>1563067808014</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1563067808014</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Aura AI Model Phase 1 - Can now add svp data to train the model from an html interface - Solid Base for Small Demo">
+      <created>1563154708530</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1563154708530</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Aura AI Model Phase 1 - Can now add svp data to train the model from an html interface - Solid Base for Small Demo - Fix 2">
+      <created>1563200088773</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1563200088773</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="102720000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="1358" y="-8" width="1696" height="1036" extended-state="6" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24388753" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" weight="0.32850242" />
+      <window_info anchor="bottom" id="Database Changes" order="9" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50075644" side_tool="true" weight="0.33816424" />
+      <window_info anchor="bottom" x="1366" y="0" width="1680" height="1020" id="Terminal" order="11" sideWeight="0.49924356" visible="true" weight="0.36766335" />
+      <window_info anchor="bottom" id="Python Console" order="12" weight="0.32850242" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="SciView" order="3" />
+      <window_info anchor="right" id="Database" order="4" />
+      <window_info anchor="right" x="0" y="0" width="295" height="554" id="Documentation" order="5" side_tool="true" weight="0.329429" />
+    </layout>
+    <layout-to-restore>
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2473525" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" weight="0.32850242" />
+      <window_info anchor="bottom" id="Database Changes" order="9" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50075644" side_tool="true" weight="0.33816424" />
+      <window_info active="true" anchor="bottom" x="0" y="0" width="1366" height="738" id="Terminal" order="11" sideWeight="0.49924356" visible="true" weight="0.42673108" />
+      <window_info anchor="bottom" id="Python Console" order="12" weight="0.32850242" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="SciView" order="3" />
+      <window_info anchor="right" id="Database" order="4" />
+      <window_info anchor="right" x="0" y="0" width="295" height="554" id="Documentation" order="5" side_tool="true" weight="0.329429" />
+    </layout-to-restore>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.css" />
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.js" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="checkpoint-01" />
+    <MESSAGE value="NLP Phase 2" />
+    <MESSAGE value="NLP Phase 2 - Updated POS-Tagging Method" />
+    <MESSAGE value="NLP Phase 2 - Created a custom tagging method" />
+    <MESSAGE value="NLP Phase 2 - Can now add intents to train the model from an html interface" />
+    <MESSAGE value="NLP Phase 2 - Can now add intents to train the model from an html interface - tweak 1" />
+    <MESSAGE value="NLP Phase 2 - Can now add svp data to train the model from an html interface - tweak 2" />
+    <MESSAGE value="NLP Phase 2 - Can now add svp data to train the model from an html interface - tweak 3" />
+    <MESSAGE value="NLP Phase 2 - Can now add svp data to train the model from an html interface - Solid Base for Small Demo" />
+    <MESSAGE value="Aura AI Model Phase 1 - Can now add svp data to train the model from an html interface - Solid Base for Small Demo" />
+    <MESSAGE value="Aura AI Model Phase 1 - Can now add svp data to train the model from an html interface - Solid Base for Small Demo - Fix 2" />
+    <option name="LAST_COMMIT_MESSAGE" value="Aura AI Model Phase 1 - Can now add svp data to train the model from an html interface - Solid Base for Small Demo - Fix 2" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/word/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/utterance/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/character/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/item/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_config.yml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$USER_HOME$/.virtualenvs/Python-NLP-28UmNM9F/Lib/site-packages/textblob/formats.py" />
+    <entry file="file://$USER_HOME$/.virtualenvs/Python-NLP-28UmNM9F/Lib/site-packages/textblob/classifiers.py" />
+    <entry file="file://$PROJECT_DIR$/tagger.pos">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/train.json" />
+    <entry file="file://$PROJECT_DIR$/train_ai_svp/__init__.py" />
+    <entry file="file://$PROJECT_DIR$/train_ai_intents/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/train_ai_svp/spacy_test.py" />
+    <entry file="file://$PROJECT_DIR$/train_ai_svp/train_data.json" />
+    <entry file="file://$PROJECT_DIR$/train_ai_svp/train_ner.py" />
+    <entry file="file://$PROJECT_DIR$/train_ai_intents/script.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="9" selection-start-line="12" selection-start-column="9" selection-end-line="12" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/train_ai_intents/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="1" selection-start-line="20" selection-start-column="1" selection-end-line="20" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/train_ai_svps/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/train_ai_svps/jquery-3.4.1.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="26" lean-forward="true" selection-start-line="11" selection-start-column="26" selection-end-line="11" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/train_ai_intents/default_ai_intents.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="27" selection-start-line="12" selection-start-column="27" selection-end-line="12" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/train_ai_intents/jquery-3.4.1.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="31" selection-start-line="7" selection-start-column="31" selection-end-line="7" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/character/character.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="23" column="13" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/item/item.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="17" column="56" selection-start-line="17" selection-start-column="56" selection-end-line="17" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/train_ai_svps/train_data_default.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/train_ai_svps/spacy_test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/train_ai_intents/train_intents.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="28" lean-forward="true" selection-start-line="11" selection-start-column="28" selection-end-line="11" selection-end-column="28" />
+          <folding>
+            <element signature="n#style#0;n#input#0;n#div#0;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#ul#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#button#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#button#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#button#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#button#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/train_ai_svps/train_data.json" />
+    <entry file="file://$PROJECT_DIR$/train_ai_svps/train_ner.py" />
+    <entry file="file://$PROJECT_DIR$/train_ai_svps/styles.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="22" column="10" lean-forward="true" selection-start-line="22" selection-start-column="10" selection-end-line="22" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Pipfile.lock" />
+    <entry file="file://$PROJECT_DIR$/Pipfile" />
+    <entry file="file://$USER_HOME$/.virtualenvs/aura-ai-model-HdyYCIU1/Lib/site-packages/textblob/formats.py" />
+    <entry file="file://$USER_HOME$/.virtualenvs/aura-ai-model-HdyYCIU1/Lib/site-packages/textblob/classifiers.py" />
+    <entry file="file://$PROJECT_DIR$/train_ai_intents/ai_intents.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="81" selection-start-line="18" selection-start-column="81" selection-end-line="18" selection-end-column="81" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/word/word.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="85" column="60" lean-forward="true" selection-start-line="85" selection-start-column="60" selection-end-line="85" selection-end-column="60" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="277">
+          <caret line="47" column="11" lean-forward="true" selection-start-line="47" selection-start-column="11" selection-end-line="47" selection-end-column="11" />
+          <folding>
+            <element signature="e#0#102#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/train_ai_svps/train_svp.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="37">
+          <caret line="32" column="47" selection-start-line="32" selection-start-column="47" selection-end-line="32" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/train_ai_svps/scripts.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="107">
+          <caret line="19" selection-start-line="19" selection-end-line="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/train_ai_svps/train_svps.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="10" selection-start-line="10" selection-end-line="10" />
+          <folding>
+            <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#0;n#div#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#hr#0;n#div#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#form#0;n#div#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#1;n#form#0;n#div#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#section#0;n#form#0;n#div#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#ul#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#button#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#button#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#button#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#button#4;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/utterance/utterance.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="43" selection-start-line="43" selection-end-line="43" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/train_ai_svps/ai_svp.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="269">
+          <caret line="19" column="1" selection-start-line="19" selection-start-column="1" selection-end-line="19" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/ProgramData/Miniconda3/envs/auraai/Lib/site-packages/textblob/formats.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="118" selection-start-line="118" selection-end-line="118" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Miniconda3/Lib/site-packages/textblob/formats.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6">
+          <caret line="122" column="50" selection-start-line="122" selection-start-column="50" selection-end-line="122" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Miniconda3/envs/auraenv1.0/Lib/site-packages/textblob/formats.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="112">
+          <caret line="135" lean-forward="true" selection-start-line="135" selection-end-line="135" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

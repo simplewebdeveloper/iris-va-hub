@@ -1,0 +1,91 @@
+<script src="../train-model/train-model.component.ts"></script>
+<script src="../../models/intent.model.ts"></script>
+<div class="uk-container">
+    <div class="uk-card uk-card-body uk-margin-top">
+
+        <div class="uk-margin">
+            <div class="uk-text-small uk-margin-bottom">1. Select a VA.</div>
+            <select class="uk-select" (change)="getBot($event)">
+                <option value="" selected disabled>Select a VA</option>
+                <option *ngFor="let bot of bots" value="{{ bot.id }}">{{ bot.bot_name }}</option>
+            </select>
+        </div>
+
+        <div class="uk-margin">
+            <div class="uk-text-small uk-margin-bottom">2. Select an intent you want to add utterances to.</div>
+            <select class="uk-select" (change)="getSelectedIntent($event)">
+              <option value="" selected disabled>Select an intent</option>
+              <option *ngFor="let intent of intents" value="{{ intent }}">{{ intent }}</option>
+            </select>
+          </div>
+
+        <hr>
+
+      <div class="uk-margin">
+        <p class="uk-text-muted"><span uk-icon="icon: check; ratio: 2"></span></p> 
+        <legend class="uk-legend">Create Intents</legend>
+        <!-- <div class="uk-flex uk-flex-center">
+            
+        </div> -->
+      </div>
+
+      <div *ngIf="bot">
+
+      <form [formGroup]="createIntentForm" (ngSubmit)="createIntentFormSubmit()">
+        <div class="uk-margin">
+
+            <input class="uk-input" type="number" formControlName="bot_id" readonly hidden>
+            </div>
+
+         <div class="uk-margin">
+            <input #intentInput onclick="this.select()" class="uk-input" type="text" formControlName="utterance" placeholder="Enter an utterance">
+         </div>
+        <div class="uk-margin">
+            <input class="uk-input" type="text" formControlName="intent_data" hidden>
+         </div>
+        <!-- <div class="uk-margin">
+            <select class="uk-select" formControlName="intent">
+                <option value="" selected disabled>Select an intent</option>
+                <option *ngFor="let intent of intents" value="{{ intent }}">{{ intent }}</option>
+            </select>
+        </div> -->
+        <div class="uk-margin">
+        <div class="uk-text-small uk-margin-bottom">Load data from a .txt file for an intent</div>
+              <input id="intent-txt" type="file" accept=".txt" (change)="uploadFile($event)">
+                <button type="submit" class="uk-button uk-button-secondary uk-button-small uk-margin-small-bottom">Save intent(s)</button>
+              </div>
+      </form>
+
+        <div *ngIf="intentsAndUtterances?.length>0; else noIntentsAndUtterances">
+            <div class="custom-container uk-padding-small">
+                <table class="uk-table uk-table-justify uk-table-divider">
+                    <thead>
+                        <tr class="uk-sticky">
+                            <th>Utterance</th>
+                            <th>Intent</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let intentAndUtterance of intentsAndUtterances; let i = index">
+                            <td>{{ intentAndUtterance.utterance }}</td>
+                            <td>{{ intentAndUtterance.intent }}</td>
+                            <td>
+                                <button class="uk-button uk-button-small"><span uk-icon="trash" (click)="deleteUtterance(intentAndUtterance.id, i)"></span></button>
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+        <ng-template #noIntentsAndUtterances>
+          <p class="uk-text-danger">Could not find intent data. did you forgot to select an intent ? if no, go right ahead and add some.</p>
+        </ng-template>
+
+    </div>
+    </div>
+
+
+</div>

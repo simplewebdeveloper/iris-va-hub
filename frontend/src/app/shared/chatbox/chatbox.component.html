@@ -1,0 +1,56 @@
+<div id="modal-example" uk-modal>
+  <div class="uk-modal-dialog uk-modal-body">
+    <button class="uk-modal-close-outside" type="button" uk-close></button>
+    <div class="uk-margin">
+      <legend class="uk-legend"><span uk-icon="icon: comment; ratio: 2"></span> Talk with your VA </legend>
+    </div>
+
+    <form [formGroup]="chatboxForm" (ngSubmit)="chatboxQueryFormSubmit($event)">
+      <fieldset class="uk-fieldset">
+
+        <div class="uk-margin">
+          <input #queryInput class="uk-input" type="text" formControlName="query" onclick="this.select()" placeholder="Enter an utterance and press enter">
+        </div>
+
+      </fieldset>
+      <div *ngIf="thinking" class="uk-text-small uk-margin-bottom">I'm Thinking... If I can't think this one through you will need to try again.</div>
+<!--      <p class="uk-text-right">-->
+<!--        <button  type="submit" class="uk-button uk-button-primary uk-button-small">Test Utterance</button>-->
+<!--      </p>-->
+    </form>
+
+      <section class="uk-textarea uk-padding" style="max-height: 20em; overflow-y: scroll;">
+<!--        <ng-container *ngIf="queryResponse">-->
+<!--          <span>You are asking about <span class="uk-text-bolder">{{ queryResponse.intent }}</span></span><br>-->
+<!--          <span *ngIf="queryResponse.slots?.length>0">I have the</span><br>-->
+<!--          <ng-container *ngFor="let slot of queryResponse.slots; let last = last">-->
+<!--            <span *ngIf="last && queryResponse.slots?.length>1">and&nbsp;</span><span>{{slot.slot}} to be {{ slot.value }}</span><br>-->
+<!--          </ng-container>-->
+<!--        </ng-container>-->
+        <ng-container *ngIf="resAndQue">
+          <div *ngFor="let rq of resAndQue; let i = index" class="uk-text-right">
+            <ng-container *ngIf="i % 2 == 0; else right">
+              <div class="uk-text-right uk-card-primary uk-margin-small uk-padding-small uk-border-rounded" [innerHTML]="rq"></div>
+            </ng-container>
+            <ng-template #right>
+              <div class="uk-text-left uk-card-primary uk-margin-small uk-padding-small uk-border-rounded" [innerHTML]="rq"></div>
+              <hr>
+            </ng-template>
+
+          </div>
+
+        </ng-container>
+
+
+      </section>
+
+    <div *ngIf="fullResponse" class="uk-margin">
+       <p>Full Response: </p>
+        <textarea class="uk-textarea" rows="10" readonly>{{ fullResponse|json }}</textarea>
+    </div>
+    <p class="uk-text-right">
+      <button class="uk-button uk-button-danger uk-modal-close uk-button-small" type="button" (click)="closeConversation()">Close Conversation</button>
+    </p>
+
+  </div>
+</div>

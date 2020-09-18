@@ -1,0 +1,230 @@
+[
+    [
+        "do you have manicures to offer me",
+        {
+            "entities": [
+                [
+                    12,
+                    21,
+                    "service"
+                ]
+            ]
+        }
+    ],
+    [
+        "do you do frizz cut",
+        {
+            "entities": [
+                [
+                    10,
+                    19,
+                    "service"
+                ]
+            ]
+        }
+    ],
+    [
+        "can you do a bob cut",
+        {
+            "entities": [
+                [
+                    13,
+                    20,
+                    "service"
+                ]
+            ]
+        }
+    ],
+    [
+        "do you work on nails",
+        {
+            "entities": [
+                [
+                    15,
+                    20,
+                    "service"
+                ]
+            ]
+        }
+    ],
+    [
+        "can you do bridal makeup",
+        {
+            "entities": [
+                [
+                    11,
+                    24,
+                    "service"
+                ]
+            ]
+        }
+    ],
+    [
+        "can i get my brows done at you",
+        {
+            "entities": [
+                [
+                    13,
+                    18,
+                    "service"
+                ]
+            ]
+        }
+    ],
+    [
+        "can you perform waxing",
+        {
+            "entities": [
+                [
+                    16,
+                    22,
+                    "service"
+                ]
+            ]
+        }
+    ],
+    [
+        "can you do haircuts",
+        {
+            "entities": [
+                [
+                    11,
+                    19,
+                    "service"
+                ]
+            ]
+        }
+    ],
+    [
+        "i need a spa do you offer that",
+        {
+            "entities": [
+                [
+                    9,
+                    12,
+                    "service"
+                ]
+            ]
+        }
+    ],
+    [
+        "do you cater for spa",
+        {
+            "entities": [
+                [
+                    17,
+                    20,
+                    "service"
+                ]
+            ]
+        }
+    ],
+    [
+        "can you work on my hair",
+        {
+            "entities": [
+                [
+                    19,
+                    23,
+                    "service"
+                ]
+            ]
+        }
+    ],
+    [
+        "do you offer manicure",
+        {
+            "entities": [
+                [
+                    13,
+                    21,
+                    "service"
+                ]
+            ]
+        }
+    ],
+    [
+        "do you do waxing",
+        {
+            "entities": [
+                [
+                    10,
+                    16,
+                    "service"
+                ]
+            ]
+        }
+    ],
+    [
+        "How long does a makeup session take?",
+        {
+            "entities": [
+                [
+                    16,
+                    22,
+                    "service"
+                ]
+            ]
+        }
+    ],
+    [
+        "do you do manicures",
+        {
+            "entities": [
+                [
+                    10,
+                    19,
+                    "service"
+                ]
+            ]
+        }
+    ],
+    [
+        "can i get a wax job done at you",
+        {
+            "entities": [
+                [
+                    12,
+                    15,
+                    "service"
+                ]
+            ]
+        }
+    ],
+    [
+        "do you cut hair really well",
+        {
+            "entities": [
+                [
+                    7,
+                    15,
+                    "service"
+                ]
+            ]
+        }
+    ],
+    [
+        "is there a massage service i should know about",
+        {
+            "entities": [
+                [
+                    11,
+                    18,
+                    "service"
+                ]
+            ]
+        }
+    ],
+    [
+        "will you be able to wax",
+        {
+            "entities": [
+                [
+                    20,
+                    23,
+                    "service"
+                ]
+            ]
+        }
+    ]
+]
