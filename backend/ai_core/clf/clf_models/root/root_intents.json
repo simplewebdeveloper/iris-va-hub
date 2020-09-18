@@ -1,2234 +1,2070 @@
 [
     {
-        "intent": "book_appointments_update",
-        "utterance": "let set the time to 2pm"
+        "intent": "small_talk_start",
+        "utterance": "hi it's nice to see you again"
     },
     {
-        "intent": "joke",
-        "utterance": "i'm stressed, cheer me up"
+        "intent": "small_talk_start",
+        "utterance": "Hi there how's it going?"
     },
     {
-        "intent": "joke",
-        "utterance": "they say laughter in the best medicine"
+        "intent": "small_talk_start",
+        "utterance": "hi it's really nice out today"
     },
     {
-        "intent": "joke",
-        "utterance": "make me feel nice"
+        "intent": "small_talk_start",
+        "utterance": "Hello it's nice to see you!"
     },
     {
-        "intent": "joke",
-        "utterance": "cheer me up i'm sad"
+        "intent": "small_talk_start",
+        "utterance": "Good morning are you busy"
     },
     {
-        "intent": "joke",
-        "utterance": "haha i'm in the mood for a joke"
+        "intent": "small_talk_start",
+        "utterance": "Hey what's going on"
     },
     {
-        "intent": "joke",
-        "utterance": "can you make me laugh"
+        "intent": "small_talk_start",
+        "utterance": "Hi I haven't seen you in forever!"
     },
     {
-        "intent": "joke",
-        "utterance": "are you funny?"
+        "intent": "small_talk_start",
+        "utterance": "Hi how are you doing today"
     },
     {
-        "intent": "joke",
-        "utterance": "lamo"
+        "intent": "small_talk_start",
+        "utterance": "Hey how are you doing?"
     },
     {
-        "intent": "joke",
-        "utterance": "lol"
+        "intent": "small_talk_start",
+        "utterance": "What's up with you right now?"
     },
     {
-        "intent": "joke",
-        "utterance": "i wanna lol"
+        "intent": "small_talk_start",
+        "utterance": "I love cooking what about you?"
     },
     {
-        "intent": "joke",
-        "utterance": "joke about something funny"
+        "intent": "small_talk_start",
+        "utterance": "do you care for an orange juice?"
     },
     {
-        "intent": "joke",
-        "utterance": "know any joke"
+        "intent": "small_talk_start",
+        "utterance": "What's new since we last talked?"
     },
     {
-        "intent": "joke",
-        "utterance": "lemme get a funny line"
+        "intent": "small_talk_start",
+        "utterance": "How are you doing?"
     },
     {
-        "intent": "who_are_you",
-        "utterance": "what is this thing?"
+        "intent": "small_talk_start",
+        "utterance": "what plans do you have today?"
     },
     {
-        "intent": "who_are_you",
-        "utterance": "wam bro who you?"
+        "intent": "small_talk_start",
+        "utterance": "Is now a good time to talk?"
     },
     {
-        "intent": "who_are_you",
-        "utterance": "do i even know you bro"
+        "intent": "small_talk_start",
+        "utterance": "Glad to see you! Time for a chat?"
     },
     {
-        "intent": "who_are_you",
-        "utterance": "whos here with me"
+        "intent": "small_talk_start",
+        "utterance": "I'd love to catch up with you for a moment."
     },
     {
-        "intent": "who_are_you",
-        "utterance": "who i am talking to"
+        "intent": "small_talk_start",
+        "utterance": "Just wanted to check on how you're doing."
     },
     {
-        "intent": "who_are_you",
-        "utterance": "a who dis"
+        "intent": "small_talk_start",
+        "utterance": "Just wanted to ask how things are going with you."
     },
     {
-        "intent": "who_are_you",
-        "utterance": "i dont think we have meet before"
+        "intent": "small_talk_start",
+        "utterance": "how are things going?"
     },
     {
-        "intent": "who_are_you",
-        "utterance": "what do you do for a living"
+        "intent": "small_talk_start",
+        "utterance": "Hey how are things with you today?"
     },
     {
-        "intent": "who_are_you",
-        "utterance": "what are you into"
+        "intent": "small_talk_start",
+        "utterance": "I just wanted to see how you've been feeling these days."
     },
     {
-        "intent": "who_are_you",
-        "utterance": "so tell me about yourself"
+        "intent": "small_talk_start",
+        "utterance": "I plan on going shopping do you mind tagging along?"
     },
     {
-        "intent": "who_are_you",
-        "utterance": "how about we talk about you"
+        "intent": "small_talk_start",
+        "utterance": "Hey what's up?"
     },
     {
-        "intent": "who_are_you",
-        "utterance": "i wanna know your name"
+        "intent": "small_talk_start",
+        "utterance": "How are you guys doing?"
     },
     {
-        "intent": "who_are_you",
-        "utterance": "i'd like to know your name"
+        "intent": "small_talk_start",
+        "utterance": "How have you been?"
     },
     {
-        "intent": "who_are_you",
-        "utterance": "are you john"
+        "intent": "small_talk_start",
+        "utterance": "will you be available today?"
     },
     {
-        "intent": "who_are_you",
-        "utterance": "its great to meet you and you are"
+        "intent": "small_talk_start",
+        "utterance": "How is everything?"
     },
     {
-        "intent": "who_are_you",
-        "utterance": "so im name and you are"
+        "intent": "small_talk_start",
+        "utterance": "how is the weather?"
     },
     {
-        "intent": "who_are_you",
-        "utterance": "i havent seen you around here"
+        "intent": "small_talk_start",
+        "utterance": "I'd love to just check in and catch up with you right now."
     },
     {
-        "intent": "who_are_you",
-        "utterance": "who are you pretty"
+        "intent": "small_talk_start",
+        "utterance": "How have you been feeling these days?"
     },
     {
-        "intent": "who_are_you",
-        "utterance": "yo hommie who are you"
+        "intent": "small_talk_start",
+        "utterance": "How are you feeling these days?"
     },
     {
-        "intent": "who_are_you",
-        "utterance": "who the hell is this piece of crap"
+        "intent": "small_talk_start",
+        "utterance": "Best regards for a new day"
     },
     {
-        "intent": "who_are_you",
-        "utterance": "do i even know you"
+        "intent": "small_talk_start",
+        "utterance": "How are things going on your side lately?"
     },
     {
-        "intent": "who_are_you",
-        "utterance": "i dont know you"
+        "intent": "small_talk_start",
+        "utterance": "Do you want to talk to me?"
     },
     {
-        "intent": "who_are_you",
-        "utterance": "who is fish is this"
+        "intent": "small_talk_start",
+        "utterance": "Hey how are you?"
     },
     {
-        "intent": "who_made_you",
-        "utterance": "what entity is responsible for you"
+        "intent": "small_talk_start",
+        "utterance": "Hey what is going on with you today?"
     },
     {
-        "intent": "who_made_you",
-        "utterance": "what human programmed you"
+        "intent": "small_talk_start",
+        "utterance": "How has you day been so far?"
     },
     {
-        "intent": "who_made_you",
-        "utterance": "whats the name of the devloper"
+        "intent": "small_talk_start",
+        "utterance": "Hey there what's up with you?"
     },
     {
-        "intent": "who_made_you",
-        "utterance": "and your maker is who"
+        "intent": "small_talk_start",
+        "utterance": "Hello how are you this morning?"
     },
     {
-        "intent": "who_made_you",
-        "utterance": "whos is responsible"
+        "intent": "small_talk_start",
+        "utterance": "what did you have for breakfast?"
     },
     {
-        "intent": "who_made_you",
-        "utterance": "who made you aura"
+        "intent": "small_talk_start",
+        "utterance": "I'd like to chat for a bit if you have a second."
     },
     {
-        "intent": "who_made_you",
-        "utterance": "who developed this"
+        "intent": "small_talk_start",
+        "utterance": "hi how are you?"
     },
     {
-        "intent": "who_made_you",
-        "utterance": "who assembled you"
+        "intent": "small_talk_start",
+        "utterance": "hope you slept well?"
     },
     {
-        "intent": "who_made_you",
-        "utterance": "what god created you"
+        "intent": "small_talk_start",
+        "utterance": "Greetings my friend it is so nice to see you"
     },
     {
-        "intent": "who_made_you",
-        "utterance": "reveal your creator "
+        "intent": "small_talk_start",
+        "utterance": "Top of the morning"
     },
     {
-        "intent": "who_made_you",
-        "utterance": "are you govern by any one"
+        "intent": "small_talk_start",
+        "utterance": "Isn't it a beautiful day"
     },
     {
-        "intent": "who_made_you",
-        "utterance": "who is responsible for this"
+        "intent": "small_talk_start",
+        "utterance": "I hope you are having a great day"
     },
     {
-        "intent": "who_made_you",
-        "utterance": "which guy made you"
+        "intent": "small_talk_start",
+        "utterance": "How have things been going with you and your family?"
     },
     {
-        "intent": "cancel_appointments",
-        "utterance": "hey nevermind on the appointment i can't make it"
+        "intent": "small_talk_start",
+        "utterance": "How have you been these days?"
     },
     {
-        "intent": "cancel_appointments",
-        "utterance": "i no longer want to come in"
+        "intent": "small_talk_start",
+        "utterance": "Hello how are you?"
     },
     {
-        "intent": "cancel_appointments",
-        "utterance": "garbage that appointment right now"
+        "intent": "small_talk_start",
+        "utterance": "Could you chat with me for a little bit?"
     },
     {
-        "intent": "cancel_appointments",
-        "utterance": "delete the event i booked"
+        "intent": "small_talk_start",
+        "utterance": "Are you able to chat right now?"
     },
     {
-        "intent": "cancel_appointments",
-        "utterance": "cancel my appointment"
+        "intent": "small_talk_start",
+        "utterance": "Hi what's going on?"
     },
     {
-        "intent": "cancel_appointments",
-        "utterance": "how can i cancel my appointment"
+        "intent": "small_talk_start",
+        "utterance": "Hi there you're up early this morning."
     },
     {
-        "intent": "cancel_appointments",
-        "utterance": "we set an appointment but now i can not make it"
+        "intent": "small_talk_start",
+        "utterance": "How have things been going for you lately?"
     },
     {
-        "intent": "cancel_appointments",
-        "utterance": "next week might be tied for me so i can't make the appointment we set"
+        "intent": "small_talk_start",
+        "utterance": "You're looking well how have you been?"
     },
     {
-        "intent": "cancel_appointments",
-        "utterance": "i dont think i can make my appointment and i would like to cancel it"
+        "intent": "small_talk_start",
+        "utterance": "Hi what's up?"
     },
     {
-        "intent": "cancel_appointments",
-        "utterance": "hey i'm calling to ask if you can cancel the appointment we set"
+        "intent": "small_talk_start",
+        "utterance": "I'm glad I ran into you because I need to talk to you."
     },
     {
-        "intent": "cancel_appointments",
-        "utterance": "you know what angela maybe i dont need this appointment"
+        "intent": "small_talk_start",
+        "utterance": "How have you been lately?"
     },
     {
-        "intent": "cancel_appointments",
-        "utterance": "go ahead and lets delete my appointment"
+        "intent": "small_talk_start",
+        "utterance": "I would absolutely love to hear how you've been!"
     },
     {
-        "intent": "cancel_appointments",
-        "utterance": "move my appointment to the trash"
+        "intent": "small_talk_start",
+        "utterance": "What's going on with you this morning?"
     },
     {
-        "intent": "cancel_appointments",
-        "utterance": "i dont want the appointment on my calendar any longer"
+        "intent": "small_talk_start",
+        "utterance": "I'd love to take a minute to catch up right now."
     },
     {
-        "intent": "cancel_appointments",
-        "utterance": "hey change of plans lets cancel this appointement"
+        "intent": "small_talk_start",
+        "utterance": "Good morning! How are things going?"
     },
     {
-        "intent": "cancel_appointments",
-        "utterance": "i made a terrible mistake can i realised that i dont need the appointment"
+        "intent": "small_talk_start",
+        "utterance": "That's a great looking dog you're walking... can I pet her/ him?"
     },
     {
-        "intent": "reschedule_appointment",
-        "utterance": "i know i said i am coming friday but plans changed so can we just ajust the appointment"
+        "intent": "small_talk_start",
+        "utterance": "How you doing"
     },
     {
-        "intent": "reschedule_appointment",
-        "utterance": "hello angela i booked an appointment three weeks ago and now i dont think i need it"
+        "intent": "small_talk_start",
+        "utterance": "Morning! How are you?"
     },
     {
-        "intent": "reschedule_appointment",
-        "utterance": "if you can change my appointment in any way that would be great"
+        "intent": "small_talk_start",
+        "utterance": "How are you doing this morning?"
     },
     {
-        "intent": "reschedule_appointment",
-        "utterance": "i am wondering if you can make a change to my appointment"
+        "intent": "small_talk_start",
+        "utterance": "Hey what's going on with you today?"
     },
     {
-        "intent": "reschedule_appointment",
-        "utterance": "i think i will need to update my appointment to be tuesday instead"
+        "intent": "small_talk_start",
+        "utterance": "Gotta enjoy this cooler weather right?"
     },
     {
-        "intent": "reschedule_appointment",
-        "utterance": "hello lets make a change to the day of my appointment"
+        "intent": "small_talk_start",
+        "utterance": "How are you"
     },
     {
-        "intent": "reschedule_appointment",
-        "utterance": "i wanna edit the appointment i booked can you help with that"
+        "intent": "small_talk_start",
+        "utterance": "How are things?"
     },
     {
-        "intent": "reschedule_appointment",
-        "utterance": "hmm wednesday might not be such a good day"
+        "intent": "small_talk_start",
+        "utterance": "Hi How has life been treating ya?"
     },
     {
-        "intent": "reschedule_appointment",
-        "utterance": "is it possible to shift my appointment to some other day "
+        "intent": "small_talk_start",
+        "utterance": "Hey I haven't seen you in so long what's been going on?"
     },
     {
-        "intent": "reschedule_appointment",
-        "utterance": "would you adjust my appointment"
+        "intent": "small_talk_start",
+        "utterance": "Hello how are you today?"
     },
     {
-        "intent": "reschedule_appointment",
-        "utterance": "i think my appointment needs to be moved"
+        "intent": "small_talk_start",
+        "utterance": "How goes it?"
     },
     {
-        "intent": "reschedule_appointment",
-        "utterance": "i need to shift my appointment forward"
+        "intent": "small_talk_start",
+        "utterance": "Has your day been ok?"
     },
     {
-        "intent": "reschedule_appointment",
-        "utterance": "looks like the appointment will clash with something else can i move it to some other day"
+        "intent": "small_talk_start",
+        "utterance": "Hey How have you been?"
     },
     {
-        "intent": "book_appointments",
-        "utterance": "i would love to book a nice spa"
+        "intent": "small_talk_start",
+        "utterance": "What's up?"
     },
     {
-        "intent": "book_appointments",
-        "utterance": "i think i might need a haircut appointment"
+        "intent": "small_talk_start",
+        "utterance": "How have things been on your side?"
     },
     {
-        "intent": "book_appointments",
-        "utterance": "its been a while since i got my nails done now i wanna do it again"
+        "intent": "small_talk_start",
+        "utterance": "Whats up"
     },
     {
-        "intent": "book_appointments",
-        "utterance": "hey lets set up that haircut i always needed"
+        "intent": "small_talk_start",
+        "utterance": "good evening what are you up to?"
     },
     {
-        "intent": "book_appointments",
-        "utterance": "can we set up a one on one"
+        "intent": "small_talk_start",
+        "utterance": "Good morning"
     },
     {
-        "intent": "book_appointments",
-        "utterance": "you angela help a brother to book something"
+        "intent": "small_talk_start",
+        "utterance": "let's chat"
     },
     {
-        "intent": "book_appointments",
-        "utterance": "i need a hair coloring"
+        "intent": "small_talk_start",
+        "utterance": "What's going on with you?"
     },
     {
-        "intent": "book_appointments",
-        "utterance": "hi good day angela can you book me in for wednesday at noon for a hair highlight"
+        "intent": "small_talk_start",
+        "utterance": "What's been going on recently in your neck of the woods?"
     },
     {
-        "intent": "book_appointments_update",
-        "utterance": "what i need for this is a foot spa"
+        "intent": "small_talk_start",
+        "utterance": "What's new with you these days?"
     },
     {
-        "intent": "book_appointments_update",
-        "utterance": "i want swing by on friday"
+        "intent": "small_talk_start",
+        "utterance": "what are your plans today?"
     },
     {
-        "intent": "book_appointments_update",
-        "utterance": "can you set it for 10 on saturday"
+        "intent": "small_talk_start",
+        "utterance": "I just wanted to check on how you and your family have been."
     },
     {
-        "intent": "book_appointments",
-        "utterance": "so i need pedicure at maybe 5pm"
+        "intent": "small_talk_start",
+        "utterance": "Hey how\u2019s it going?"
     },
     {
-        "intent": "book_appointments",
-        "utterance": "hey angela can you help me with an appointment booking please"
+        "intent": "small_talk_start",
+        "utterance": "Good morning how\u2019s your day going?"
     },
     {
-        "intent": "book_appointments_update",
-        "utterance": "lets do thursday at 4pm"
+        "intent": "small_talk_start",
+        "utterance": "Hey how are you and the family?"
     },
     {
-        "intent": "book_appointments",
-        "utterance": "hi guys i am wondering if you can book me in"
+        "intent": "small_talk_start",
+        "utterance": "how's life?"
     },
     {
-        "intent": "book_appointments",
-        "utterance": "hi this is andy, i am calling to book an appointment"
+        "intent": "small_talk_start",
+        "utterance": "Hi how are you?"
     },
     {
-        "intent": "book_appointments",
-        "utterance": "let me have an appointment for 3pm this noon"
+        "intent": "small_talk_start",
+        "utterance": "So what\u2019s new with you?"
     },
     {
-        "intent": "book_appointments",
-        "utterance": "can we book a foot spa for sunday at about 4pm"
+        "intent": "small_talk_start",
+        "utterance": "are you free to talk?"
     },
     {
-        "intent": "book_appointments_clear",
-        "utterance": "refresh my booking"
+        "intent": "realestate_agent_handover_start",
+        "utterance": "can you help me to buy some land in city side"
     },
     {
-        "intent": "book_appointments_clear",
-        "utterance": "lets start again"
+        "intent": "realestate_agent_handover_start",
+        "utterance": "What season is the best time to buy a house?"
     },
     {
-        "intent": "book_appointments_clear",
-        "utterance": "move on i dont want this"
+        "intent": "realestate_agent_handover_start",
+        "utterance": "I'm trying to maximize the value of my house so could you tell me if now is the right time to sell it?"
     },
     {
-        "intent": "no",
-        "utterance": "no mam"
+        "intent": "realestate_agent_handover_start",
+        "utterance": "can you help me to buy a house in apartment"
     },
     {
-        "intent": "no",
-        "utterance": "don't do that"
+        "intent": "realestate_agent_handover_start",
+        "utterance": "Do you have any tips for me before I put my home on the market?"
     },
     {
-        "intent": "no",
-        "utterance": "i dont need that"
+        "intent": "realestate_agent_handover_start",
+        "utterance": "Can you give me any tips about buying a new house?"
     },
     {
-        "intent": "no",
-        "utterance": "leave that and move on"
+        "intent": "realestate_agent_handover_start",
+        "utterance": "Can you advise me on what I need to know before putting my house on the market?"
     },
     {
-        "intent": "no",
-        "utterance": "don't worry"
+        "intent": "realestate_agent_handover_start",
+        "utterance": "can you help me to buy a farm land"
     },
     {
-        "intent": "no",
-        "utterance": "leave that"
+        "intent": "realestate_agent_handover_start",
+        "utterance": "Do you think it's the right moment to put my house onto the market to sell?"
     },
     {
-        "intent": "yes",
-        "utterance": "i can work with that"
+        "intent": "realestate_agent_handover_start",
+        "utterance": "A realtor is needed for my property purchase."
     },
     {
-        "intent": "yes",
-        "utterance": "thats good"
+        "intent": "realestate_agent_handover_start",
+        "utterance": "can you help me to buy an argri land"
     },
     {
-        "intent": "yes",
-        "utterance": "yeah i want to"
+        "intent": "realestate_agent_handover_start",
+        "utterance": "Is open house a good idea?"
     },
     {
-        "intent": "yes",
-        "utterance": "yeah do it"
+        "intent": "realestate_agent_handover_start",
+        "utterance": "can you help me to buy a house"
     },
     {
-        "intent": "yes",
-        "utterance": "please do it"
+        "intent": "realestate_agent_handover_start",
+        "utterance": "let me know the price of land in coastal area"
     },
     {
-        "intent": "yes",
-        "utterance": "yes i agree"
+        "intent": "realestate_agent_handover_start",
+        "utterance": "Why do real estate agents dress up?"
     },
     {
-        "intent": "yes",
-        "utterance": "go ahead"
+        "intent": "realestate_agent_handover_start",
+        "utterance": "Can you tell me if you think it's a good time to sell my house?"
     },
     {
-        "intent": "payment_methods",
-        "utterance": "could you say if i can use my card to pay for this"
+        "intent": "realestate_agent_handover_start",
+        "utterance": "Do you need a resume for a real estate interview?"
     },
     {
-        "intent": "payment_methods",
-        "utterance": "i only wanna pay with cash"
+        "intent": "realestate_agent_handover_start",
+        "utterance": "A person in real estate is needed to finalize my land purchase."
     },
     {
-        "intent": "payment_methods",
-        "utterance": "why cant i pay by cash"
+        "intent": "realestate_agent_handover_start",
+        "utterance": "A realtor I need to find one."
     },
     {
-        "intent": "payment_methods",
-        "utterance": "is cash accepted there"
+        "intent": "realestate_agent_handover_start",
+        "utterance": "A person in real estate can I find one?"
     },
     {
-        "intent": "payment_methods",
-        "utterance": "can i pay with my visa here"
+        "intent": "realestate_agent_handover_start",
+        "utterance": "Is it the right time to put my house on the market?"
     },
     {
-        "intent": "payment_methods",
-        "utterance": "i dont normally walk with cash"
+        "intent": "realestate_agent_handover_start",
+        "utterance": "Can you advise me on whether it's a good time to buy a new house?"
     },
     {
-        "intent": "payment_methods",
-        "utterance": "is it possible to pay with my credit card"
+        "intent": "realestate_agent_handover_start",
+        "utterance": "A real estate person is needed."
     },
     {
-        "intent": "payment_methods",
-        "utterance": "can we book with my credit card"
+        "intent": "realestate_agent_handover_start",
+        "utterance": "Is it a buyer's market right now or a seller's market?"
     },
     {
-        "intent": "opening_hours",
-        "utterance": "are you going to be opened"
+        "intent": "realestate_agent_handover_start",
+        "utterance": "Is it a reasonable time right now to buy a new home?"
     },
     {
-        "intent": "opening_hours",
-        "utterance": "how late are you gonna close on friday"
+        "intent": "realestate_agent_handover_start",
+        "utterance": "how to sell my shop"
     },
     {
-        "intent": "opening_hours",
-        "utterance": "will you be open on the weekends"
+        "intent": "realestate_agent_handover_start",
+        "utterance": "how to give rent my house"
     },
     {
-        "intent": "opening_hours",
-        "utterance": "aer you open on boxing day"
+        "intent": "realestate_agent_handover_start",
+        "utterance": "how to lease my farm land"
     },
     {
-        "intent": "opening_hours",
-        "utterance": "what time are you opening in the morning"
+        "intent": "realestate_agent_handover_start",
+        "utterance": "hey how can i sell my house"
     },
     {
-        "intent": "opening_hours",
-        "utterance": "what time are you guys opening tomorrow"
+        "intent": "realestate_agent_handover_start",
+        "utterance": "how can i sell my farm land"
     },
     {
-        "intent": "opening_hours",
-        "utterance": "what time are you opening"
+        "intent": "realestate_agent_handover_start",
+        "utterance": "Can you wear jeans as a real estate agent?"
     },
     {
-        "intent": "opening_hours",
-        "utterance": "what are your opening hours please"
+        "intent": "realestate_agent_handover_start",
+        "utterance": "A real estate person is needed asap."
     },
     {
-        "intent": "opening_hours",
-        "utterance": "what time are you closing"
+        "intent": "realestate_agent_handover_start",
+        "utterance": "How do you answer why should we hire you?"
     },
     {
-        "intent": "opening_hours",
-        "utterance": "what time do you close"
+        "intent": "realestate_agent_handover_start",
+        "utterance": "What are the 10 most common interview questions and answers?"
     },
     {
-        "intent": "opening_hours",
-        "utterance": "what time do you guys close"
+        "intent": "realestate_agent_handover_start",
+        "utterance": "Why do you want to work as an estate agent?"
     },
     {
-        "intent": "opening_hours",
-        "utterance": "excuse me, what time do you close"
+        "intent": "realestate_agent_handover_start",
+        "utterance": "How do you interview a buyer's real estate agent?"
     },
     {
-        "intent": "opening_hours",
-        "utterance": "are you open on weekends"
+        "intent": "realestate_agent_handover_start",
+        "utterance": "A realtor is needed for my property transaction."
     },
     {
-        "intent": "opening_hours",
-        "utterance": "what time do you open tomorrow"
+        "intent": "realestate_agent_handover_start",
+        "utterance": "A real estate agent's listing online can be found where?"
     },
     {
-        "intent": "book_appointments",
-        "utterance": "would you have any openings on thursday"
+        "intent": "realestate_agent_handover_start",
+        "utterance": "A person in real estate is needed to help me find land."
     },
     {
-        "intent": "reschedule_appointment",
-        "utterance": "Hi how are you, i have an appointment for this wednesday morning and i am wondering if i can reschedule that"
+        "intent": "realestate_agent_handover_start",
+        "utterance": "I want to put my house on the market and need to talk with a real estate agent."
     },
     {
-        "intent": "reschedule_appointment",
-        "utterance": "hi i am calling to reschedule my appointment for this sunday"
+        "intent": "realestate_agent_handover_start",
+        "utterance": "I want to sell my house as soon as possible and need to speak with a real estate agent."
     },
     {
-        "intent": "reschedule_appointment",
-        "utterance": "Hi am just call to reschedule my appointment i have for wednesday"
+        "intent": "realestate_agent_handover_start",
+        "utterance": "A person in real estate can I find one online?"
     },
     {
-        "intent": "no",
-        "utterance": "no way"
+        "intent": "realestate_agent_handover_start",
+        "utterance": "I want to talk with a real estate agent about selling my house."
     },
     {
-        "intent": "no",
-        "utterance": "no not right now"
+        "intent": "realestate_agent_handover_start",
+        "utterance": "Who can show me houses in Denver?"
     },
     {
-        "intent": "no",
-        "utterance": "maybe next time"
+        "intent": "realestate_agent_handover_start",
+        "utterance": "Can you help me talk with a real estate agent about selling my home?"
     },
     {
-        "intent": "no",
-        "utterance": "dont worry do this"
+        "intent": "realestate_agent_handover_start",
+        "utterance": "Could you help me get in touch with a real estate agent since I'm trying to sell my house?"
     },
     {
-        "intent": "no",
-        "utterance": "no please"
+        "intent": "realestate_agent_handover_start",
+        "utterance": "What should you wear to an open house?"
     },
     {
-        "intent": "payment_methods",
-        "utterance": "i dont have a card do you take cash"
+        "intent": "realestate_agent_handover_start",
+        "utterance": "I want to buy some land and need help."
     },
     {
-        "intent": "payment_methods",
-        "utterance": "i have gbti card"
+        "intent": "realestate_agent_handover_start",
+        "utterance": "I am looking to put my home on the market."
     },
     {
-        "intent": "payment_methods",
-        "utterance": "do you take republic bank visa card"
+        "intent": "realestate_agent_handover_start",
+        "utterance": "Are there townhomes for purchase in my area?"
     },
     {
-        "intent": "payment_methods",
-        "utterance": "can i use my scotia bank card at your place"
+        "intent": "realestate_agent_handover_start",
+        "utterance": "There's a particular proeprty I am interested at looking at."
     },
     {
-        "intent": "payment_methods",
-        "utterance": "i got a mastercard and i was wondering if you take that"
+        "intent": "realestate_agent_handover_start",
+        "utterance": "what is the price scale of land in sub urban area"
     },
     {
-        "intent": "opening_hours",
-        "utterance": "whats the hours of business"
+        "intent": "realestate_agent_handover_start",
+        "utterance": "what is the price scale of land in urban area"
     },
     {
-        "intent": "opening_hours",
-        "utterance": "do you open on sundays"
+        "intent": "realestate_agent_handover_start",
+        "utterance": "Does your realtor know your finances?"
     },
     {
-        "intent": "opening_hours",
-        "utterance": "what day can i come in"
+        "intent": "realestate_agent_handover_start",
+        "utterance": "let me know the price of land in country side"
     },
     {
-        "intent": "ask_about_service",
-        "utterance": "can you perform waxing"
+        "intent": "realestate_agent_handover_start",
+        "utterance": "How do Realtors prepare for their first meeting?"
     },
     {
-        "intent": "ask_about_service",
-        "utterance": "can i get my brows done at you"
+        "intent": "realestate_agent_handover_start",
+        "utterance": "let me know the price of land in rural area"
     },
     {
-        "intent": "ask_about_service",
-        "utterance": "can you do bridal makeup"
+        "intent": "realestate_agent_handover_start",
+        "utterance": "Could you give me any recommendations for what to look for when buying a house?"
     },
     {
-        "intent": "ask_about_service",
-        "utterance": "do you work on nails"
+        "intent": "realestate_agent_handover_start",
+        "utterance": "Is it weird to go to neighbors open house?"
     },
     {
-        "intent": "ask_about_service",
-        "utterance": "can you color my nails"
+        "intent": "realestate_agent_handover_start",
+        "utterance": "What should I expect at an open house?"
     },
     {
-        "intent": "ask_about_service",
-        "utterance": "can you do a bob cut"
+        "intent": "realestate_agent_handover_start",
+        "utterance": "I want to hire a real estate person."
     },
     {
-        "intent": "ask_about_service",
-        "utterance": "do you do frizz cut"
+        "intent": "realestate_agent_handover_start",
+        "utterance": "Can you help me think about strategies for maximizing the value of my house?"
     },
     {
-        "intent": "joke",
-        "utterance": "lets hear a funny story"
+        "intent": "realestate_agent_handover_start",
+        "utterance": "I am looking for an agent."
     },
     {
-        "intent": "joke",
-        "utterance": "crack a joke"
+        "intent": "realestate_agent_handover_start",
+        "utterance": "Can you help give me advice about strategies for putting my home on the market?"
     },
     {
-        "intent": "joke",
-        "utterance": "give me some laughter"
+        "intent": "realestate_agent_handover_start",
+        "utterance": "I need someone to help me buy some property."
     },
     {
-        "intent": "joke",
-        "utterance": "tell me something funny"
+        "intent": "realestate_agent_handover_start",
+        "utterance": "need to buy some space for my restaurent in city center"
     },
     {
-        "intent": "who_are_you",
-        "utterance": "is there a human under your hood"
+        "intent": "realestate_agent_handover_start",
+        "utterance": "I am ready to seel my land."
     },
     {
-        "intent": "who_are_you",
-        "utterance": "are you for real"
+        "intent": "realestate_agent_handover_start",
+        "utterance": "I want to sell my house and need some advice for putting it on the market."
     },
     {
-        "intent": "who_are_you",
-        "utterance": "am i talking to a real human"
+        "intent": "realestate_agent_handover_start",
+        "utterance": "I'm trying to put my house on the market and want to talk with a real estate agent."
     },
     {
-        "intent": "who_are_you",
-        "utterance": "are you human"
+        "intent": "realestate_agent_handover_start",
+        "utterance": "hey i need to buy a farm house"
     },
     {
-        "intent": "who_are_you",
-        "utterance": "what is your name"
+        "intent": "realestate_agent_handover_start",
+        "utterance": "What's the best way to find a newer condo in my area?"
     },
     {
-        "intent": "who_are_you",
-        "utterance": "who is this"
+        "intent": "realestate_agent_handover_start",
+        "utterance": "What is the average sale price of homes like mine recently?"
     },
     {
-        "intent": "who_are_you",
-        "utterance": "who am i talking to"
+        "intent": "realestate_agent_handover_start",
+        "utterance": "hey help me to buy a space for a small shop"
     },
     {
-        "intent": "who_are_you",
-        "utterance": "are you a robot"
+        "intent": "realestate_agent_handover_start",
+        "utterance": "i need to rent a botique"
     },
     {
-        "intent": "who_are_you",
-        "utterance": "what are you"
+        "intent": "realestate_agent_handover_start",
+        "utterance": "How long do you think it will take to sell my house?"
     },
     {
-        "intent": "who_made_you",
-        "utterance": "where are you from"
+        "intent": "realestate_agent_handover_start",
+        "utterance": "hey i need to start a hotel near airport"
     },
     {
-        "intent": "who_made_you",
-        "utterance": "which company invented you"
+        "intent": "realestate_agent_handover_start",
+        "utterance": "How much will I have to pay you in commissions to sell my house?"
     },
     {
-        "intent": "who_made_you",
-        "utterance": "i need to know who made you"
+        "intent": "realestate_agent_handover_start",
+        "utterance": "A realtor where can I find one?"
     },
     {
-        "intent": "who_made_you",
-        "utterance": "where did you come from angela"
+        "intent": "realestate_agent_handover_start",
+        "utterance": "An agent for real estate listing is where?"
     },
     {
-        "intent": "who_made_you",
-        "utterance": "where you come from"
+        "intent": "realestate_agent_handover_start",
+        "utterance": "When should you talk to a real estate agent?"
     },
     {
-        "intent": "cancel_appointments",
-        "utterance": "toss out my appointment"
+        "intent": "realestate_agent_handover_start",
+        "utterance": "A realtor is what I need."
     },
     {
-        "intent": "cancel_appointments",
-        "utterance": "hey just remove my appointment from my calendar"
+        "intent": "realestate_agent_handover_start",
+        "utterance": "A realtor can be found where?"
     },
     {
-        "intent": "cancel_appointments",
-        "utterance": "i no longer need my appointment"
+        "intent": "realestate_agent_handover_start",
+        "utterance": "Are open houses a waste of time?"
     },
     {
-        "intent": "cancel_appointments",
-        "utterance": "please help me to cancel my appointment"
+        "intent": "realestate_agent_handover_start",
+        "utterance": "A real estate agent is needed so I'll hire one."
     },
     {
-        "intent": "cancel_appointments",
-        "utterance": "i might not get to complete my appointment"
+        "intent": "realestate_agent_handover_start",
+        "utterance": "Do you knock on the door at an open house?"
     },
     {
-        "intent": "cancel_appointments",
-        "utterance": "i dont want to continue my appointment"
+        "intent": "realestate_agent_handover_start",
+        "utterance": "How do I talk to a real estate agent?"
     },
     {
-        "intent": "cancel_appointments",
-        "utterance": "trash my appointment"
+        "intent": "realestate_agent_handover_start",
+        "utterance": "Why are you interested in real estate?"
     },
     {
-        "intent": "reschedule_appointment",
-        "utterance": "can we shift forward with my appointment"
+        "intent": "realestate_agent_handover_start",
+        "utterance": "What should you not say when viewing a house?"
     },
     {
-        "intent": "reschedule_appointment",
-        "utterance": "i can't make it to my appointment"
+        "intent": "realestate_agent_handover_start",
+        "utterance": "Could you let me know if now is a worthwhile time to invest in a new house?"
     },
     {
-        "intent": "reschedule_appointment",
-        "utterance": "i want to set my appointment for another day"
+        "intent": "realestate_agent_handover_start",
+        "utterance": "What should I wear to a real estate agent interview?"
     },
     {
-        "intent": "reschedule_appointment",
-        "utterance": "i am not happy with my appointment date"
+        "intent": "realestate_agent_handover_start",
+        "utterance": "Why do Realtors not want buyers and sellers to meet?"
     },
     {
-        "intent": "reschedule_appointment",
-        "utterance": "hey lets modify my appointment"
+        "intent": "realestate_agent_handover_start",
+        "utterance": "is it right time to buy farm lands"
     },
     {
-        "intent": "reschedule_appointment",
-        "utterance": "can i change my appointment to some other day"
+        "intent": "realestate_agent_handover_start",
+        "utterance": "Is it OK to contact listing agent directly?"
     },
     {
-        "intent": "book_appointments_update",
-        "utterance": "wanna come by at 2pm"
+        "intent": "realestate_agent_handover_start",
+        "utterance": "Is it better to contact listing agent?"
     },
     {
-        "intent": "book_appointments_update",
-        "utterance": "i'm booking for monday at 2pm"
+        "intent": "realestate_agent_handover_start",
+        "utterance": "is it right to buy some space in urban areas"
     },
     {
-        "intent": "book_appointments_update",
-        "utterance": "3:24am please"
+        "intent": "realestate_agent_handover_start",
+        "utterance": "If you have any recommendations for what to do when buying a new house I'd appreciate them."
     },
     {
-        "intent": "book_appointments_update",
-        "utterance": "sunday please"
+        "intent": "realestate_agent_handover_start",
+        "utterance": "I'm trying to buy a new house and want some tips about what to look for."
     },
     {
-        "intent": "book_appointments_update",
-        "utterance": "i'll come by at 1pm"
+        "intent": "realestate_agent_handover_start",
+        "utterance": "Do you have any advice for me if I'm looking to sell my house?"
     },
     {
-        "intent": "book_appointments_update",
-        "utterance": "lets shoot for a spa"
+        "intent": "realestate_agent_handover_start",
+        "utterance": "Can you tell me if right now is a good time to buy a new home?"
     },
     {
-        "intent": "book_appointments_update",
-        "utterance": "i am thinking 10am might be good for me"
+        "intent": "realestate_agent_handover_start",
+        "utterance": "I am in need of an realtor's services where is a listing?"
     },
     {
-        "intent": "book_appointments_update",
-        "utterance": "lets do 2pm please"
+        "intent": "realestate_agent_handover_start",
+        "utterance": "is it best way to invest money in buying lands"
     },
     {
-        "intent": "book_appointments_update",
-        "utterance": "i just need a haircut"
+        "intent": "realestate_agent_handover_start",
+        "utterance": "help me to rent a godown"
     },
     {
-        "intent": "book_appointments",
-        "utterance": "try to help me book please"
+        "intent": "realestate_agent_handover_start",
+        "utterance": "tell me on renting a new house"
     },
     {
-        "intent": "book_appointments",
-        "utterance": "i want to create a booking to have my hair done"
+        "intent": "realestate_agent_handover_start",
+        "utterance": "What questions should I ask a realtor when buying a house?"
     },
     {
-        "intent": "book_appointments",
-        "utterance": "do you think we can set up a booking"
+        "intent": "realestate_agent_handover_start",
+        "utterance": "How do you nail a real estate interview?"
     },
     {
-        "intent": "book_appointments",
-        "utterance": "lets set up a haircut event for this friday"
+        "intent": "realestate_agent_handover_start",
+        "utterance": "What should I ask at an open house?"
     },
     {
-        "intent": "book_appointments",
-        "utterance": "can we set up a session"
+        "intent": "realestate_agent_handover_start",
+        "utterance": "What questions should a Realtor ask a first time buyer?"
     },
     {
-        "intent": "book_appointments",
-        "utterance": "i am curious to know how to set up an appointment"
+        "intent": "realestate_agent_handover_start",
+        "utterance": "What questions should I ask at an estate agent interview?"
     },
     {
-        "intent": "book_appointments",
-        "utterance": "how easy is it to set up an appointment"
+        "intent": "realestate_agent_handover_start",
+        "utterance": "I am looking for a real estate agent."
     },
     {
-        "intent": "book_appointments",
-        "utterance": "can i book with you"
+        "intent": "realestate_agent_handover_start",
+        "utterance": "I need an agent to help me buy some property."
     },
     {
-        "intent": "book_appointments",
-        "utterance": "how to book an appointment"
+        "intent": "realestate_agent_handover_start",
+        "utterance": "I need help in getting a real estate agent."
     },
     {
-        "intent": "book_appointments",
-        "utterance": "hi there how are you can you help me with a booking"
+        "intent": "realestate_agent_handover_start",
+        "utterance": "I am ready to sell my land and need an agent."
     },
     {
-        "intent": "book_appointments",
-        "utterance": "hello good afternoon i am calling to make an appointment"
+        "intent": "salon_agent_handover_start",
+        "utterance": "let me know some new designs of hair style"
     },
     {
-        "intent": "book_appointments",
-        "utterance": "hey i wanna book a haircut for coming sunday"
+        "intent": "salon_agent_handover_start",
+        "utterance": "i want to straighten my hair"
     },
     {
-        "intent": "book_appointments",
-        "utterance": "hey i need to book"
+        "intent": "salon_agent_handover_start",
+        "utterance": "I need pricing to do my hair and nails."
     },
     {
-        "intent": "book_appointments_clear",
-        "utterance": "lets do this again"
+        "intent": "salon_agent_handover_start",
+        "utterance": "I am seeking pricing to do my hair and nails."
     },
     {
-        "intent": "book_appointments_clear",
-        "utterance": "trash this stuff"
+        "intent": "salon_agent_handover_start",
+        "utterance": "let me know some hair colors"
     },
     {
-        "intent": "no",
-        "utterance": "cancel this"
+        "intent": "salon_agent_handover_start",
+        "utterance": "let me show some different styles of nail art"
     },
     {
-        "intent": "no",
-        "utterance": "dont bother"
+        "intent": "salon_agent_handover_start",
+        "utterance": "let me know the designs of hair cuts"
     },
     {
-        "intent": "no",
-        "utterance": "noooo"
+        "intent": "salon_agent_handover_start",
+        "utterance": "I need to get ready for a photoshoot who can I schedule an appointment with?"
     },
     {
-        "intent": "payment_methods",
-        "utterance": "i have a 360card and i was wondering if i can use it"
+        "intent": "salon_agent_handover_start",
+        "utterance": "Where can I book a hair appointment online?"
     },
     {
-        "intent": "payment_methods",
-        "utterance": "i have a mastercard do you take that"
+        "intent": "salon_agent_handover_start",
+        "utterance": "Who can give me prices for a color and trim?"
     },
     {
-        "intent": "payment_methods",
-        "utterance": "can i swipe my visa"
+        "intent": "salon_agent_handover_start",
+        "utterance": "Who in my area can do a last minute touch up?"
     },
     {
-        "intent": "opening_hours",
-        "utterance": "how late do you open"
+        "intent": "salon_agent_handover_start",
+        "utterance": "Where can I get a cheap mani and pedi?"
     },
     {
-        "intent": "opening_hours",
-        "utterance": "when in closing time"
+        "intent": "salon_agent_handover_start",
+        "utterance": "Blowdry and treatment is how much?"
     },
     {
-        "intent": "opening_hours",
-        "utterance": "i need a business hours"
+        "intent": "salon_agent_handover_start",
+        "utterance": "Is there somebody who can do dreadsneed natural dreads"
     },
     {
-        "intent": "opening_hours",
-        "utterance": "when are you closing"
+        "intent": "salon_agent_handover_start",
+        "utterance": "I want to talk with a salon agent so I can book my hair appointment."
     },
     {
-        "intent": "opening_hours",
-        "utterance": "when do you operate"
+        "intent": "salon_agent_handover_start",
+        "utterance": "Want somebody who can braid my hair"
     },
     {
-        "intent": "ask_about_service",
-        "utterance": "can you work on my hair"
+        "intent": "salon_agent_handover_start",
+        "utterance": "Do you offer wash and set service in your salon and how much?"
     },
     {
-        "intent": "ask_about_service",
-        "utterance": "do you cater for spa"
+        "intent": "salon_agent_handover_start",
+        "utterance": "Do you have braids in your salon?"
     },
     {
-        "intent": "joke",
-        "utterance": "joke with me"
+        "intent": "salon_agent_handover_start",
+        "utterance": "I want someone to give me pricing to do my hair and nails."
     },
     {
-        "intent": "joke",
-        "utterance": "give me a joke"
+        "intent": "salon_agent_handover_start",
+        "utterance": "Today is there someone who can give me pricing to do my hair and nails?"
     },
     {
-        "intent": "joke",
-        "utterance": "say a funny thing"
+        "intent": "salon_agent_handover_start",
+        "utterance": "Could you please get me in touch with a salon agent so I can book my nail appointment?"
     },
     {
-        "intent": "who_are_you",
-        "utterance": "show me some id"
+        "intent": "salon_agent_handover_start",
+        "utterance": "let me know the price for pedicure"
     },
     {
-        "intent": "who_are_you",
-        "utterance": "who the hell are you"
+        "intent": "salon_agent_handover_start",
+        "utterance": "I really need to get my nails done so please put a salon agent in contact with me."
     },
     {
-        "intent": "who_are_you",
-        "utterance": "reveal your identity"
+        "intent": "salon_agent_handover_start",
+        "utterance": "I'd like to get my nails done this weekend so I want to talk with a salon agent."
     },
     {
-        "intent": "who_made_you",
-        "utterance": "whats the place you came from"
+        "intent": "salon_agent_handover_start",
+        "utterance": "let me know the price for manicure"
     },
     {
-        "intent": "who_made_you",
-        "utterance": "whats your inventor"
+        "intent": "salon_agent_handover_start",
+        "utterance": "Could you get a salon agent in touch with me so I can book my hair appointment?"
     },
     {
-        "intent": "who_made_you",
-        "utterance": "did got created you"
+        "intent": "salon_agent_handover_start",
+        "utterance": "can you tell me price for hair cut with hair wash"
     },
     {
-        "intent": "who_made_you",
-        "utterance": "who made you angela"
+        "intent": "salon_agent_handover_start",
+        "utterance": "what is the quote for hair color"
     },
     {
-        "intent": "cancel_appointments",
-        "utterance": "remove the appointment from my calendar"
+        "intent": "salon_agent_handover_start",
+        "utterance": "can you tell me the price for normal hair cut"
     },
     {
-        "intent": "cancel_appointments",
-        "utterance": "delete my appointment"
+        "intent": "salon_agent_handover_start",
+        "utterance": "Can you give me pricing to do my hair and nails today?"
     },
     {
-        "intent": "cancel_appointments",
-        "utterance": "remove my appointment"
+        "intent": "salon_agent_handover_start",
+        "utterance": "Do you do body waxing here?"
     },
     {
-        "intent": "reschedule_appointment",
-        "utterance": "alter my appointment"
+        "intent": "salon_agent_handover_start",
+        "utterance": "try some different hair color this time"
     },
     {
-        "intent": "reschedule_appointment",
-        "utterance": "the appointment day have to change"
+        "intent": "salon_agent_handover_start",
+        "utterance": "i need to look professional this time"
     },
     {
-        "intent": "reschedule_appointment",
-        "utterance": "please change my appointment"
+        "intent": "salon_agent_handover_start",
+        "utterance": "Can you cut hair and do nails?"
     },
     {
-        "intent": "reschedule_appointment",
-        "utterance": "can i move my appointment"
+        "intent": "salon_agent_handover_start",
+        "utterance": "Do you wax hairbrows also?"
     },
     {
-        "intent": "book_appointments_update",
-        "utterance": "hair curls is what i want"
+        "intent": "salon_agent_handover_start",
+        "utterance": "Will you be able to do a manicure after my haircut?"
     },
     {
-        "intent": "book_appointments_update",
-        "utterance": "only hair coloring"
+        "intent": "salon_agent_handover_start",
+        "utterance": "Can you get a salon agent on the phone right now so I can book my hair appointment?"
     },
     {
-        "intent": "book_appointments_update",
-        "utterance": "just a pedicure i'm going to need"
+        "intent": "salon_agent_handover_start",
+        "utterance": "Can you please make sure that a salon agent calls me so I can get my hair appointment booked?"
     },
     {
-        "intent": "book_appointments_update",
-        "utterance": "lets do this at 6pm"
+        "intent": "salon_agent_handover_start",
+        "utterance": "Could you do me a favor and put me in touch with a salon agent so I can book my nail appointment?"
     },
     {
-        "intent": "book_appointments_update",
-        "utterance": "i wanna cut at 2pm"
+        "intent": "salon_agent_handover_start",
+        "utterance": "Could you go ahead and get a salon agent on the line so I can book my haircut?"
     },
     {
-        "intent": "book_appointments",
-        "utterance": "lets arrange for my barber"
+        "intent": "salon_agent_handover_start",
+        "utterance": "need to cut very shortly this time"
     },
     {
-        "intent": "book_appointments",
-        "utterance": "can we have a session"
+        "intent": "salon_agent_handover_start",
+        "utterance": "need to roll my hair this time"
     },
     {
-        "intent": "book_appointments",
-        "utterance": "i just wanna book"
+        "intent": "salon_agent_handover_start",
+        "utterance": "Can you get a salon agent to speak with me so I can book my hair appointment?"
     },
     {
-        "intent": "book_appointments",
-        "utterance": "help me with a 10AM booking"
+        "intent": "salon_agent_handover_start",
+        "utterance": "this time you surely do some different style for my hair"
     },
     {
-        "intent": "book_appointments",
-        "utterance": "can i get a manicure done at 2pm"
+        "intent": "salon_agent_handover_start",
+        "utterance": "I just want a wax job done."
     },
     {
-        "intent": "book_appointments",
-        "utterance": "i want to visit to have my hair done"
+        "intent": "salon_agent_handover_start",
+        "utterance": "Can I make an appointment for a bikini wax?"
     },
     {
-        "intent": "book_appointments",
-        "utterance": "can we arrange to meet"
+        "intent": "salon_agent_handover_start",
+        "utterance": "Do you do haircuts and eyebrow waxing?"
     },
     {
-        "intent": "book_appointments",
-        "utterance": "hey i wanna set up a visit"
+        "intent": "salon_agent_handover_start",
+        "utterance": "I'd like to come in for a manicure."
     },
     {
-        "intent": "book_appointments",
-        "utterance": "book me in baby"
+        "intent": "salon_agent_handover_start",
+        "utterance": "I just need a haircut."
     },
     {
-        "intent": "goodbye",
-        "utterance": "I'd say goodbye, but you're not worth it."
+        "intent": "salon_agent_handover_start",
+        "utterance": "Can I make an appointment for tomorrow afternoon for a manicure?"
     },
     {
-        "intent": "goodbye",
-        "utterance": "Yes, I do. The word goodbye is simple and concise."
+        "intent": "salon_agent_handover_start",
+        "utterance": "I'm thinking about doing my hair and nails here."
     },
     {
-        "intent": "goodbye",
-        "utterance": "Forever and forever farewell. If we do meet again, we'll smile indeed. If not, 'tis true parting was well made."
+        "intent": "salon_agent_handover_start",
+        "utterance": "Can I get a pedicure on Saturday morning?"
     },
     {
-        "intent": "goodbye",
-        "utterance": "See you on the internet!"
+        "intent": "salon_agent_handover_start",
+        "utterance": "Is someone available on Saturday to color my hair?"
     },
     {
-        "intent": "goodbye",
-        "utterance": "Nope, I try to be creative whenever I can."
+        "intent": "salon_agent_handover_start",
+        "utterance": "I'd like to get a haircut tomorrow and need to talk with a salon agent."
     },
     {
-        "intent": "goodbye",
-        "utterance": "Who cares? There's no need to overcomplicate things!"
+        "intent": "salon_agent_handover_start",
+        "utterance": "I've been trying to get a haircut for weeks so please get a salon agent on the phone for me."
     },
     {
-        "intent": "goodbye",
-        "utterance": "Sometimes. When I feel like it, I say other words."
+        "intent": "salon_agent_handover_start",
+        "utterance": "I just need a quick trim - how long will I have to wait?"
     },
     {
-        "intent": "goodbye",
-        "utterance": "We may not talk for a long time, but I hope we don't lose touch."
+        "intent": "salon_agent_handover_start",
+        "utterance": "Get a salon agent on the phone so I can get my haircut booked."
     },
     {
-        "intent": "goodbye",
-        "utterance": "Sayonara, muchachos!"
+        "intent": "salon_agent_handover_start",
+        "utterance": "Connect me with a salon to get my hair cut."
     },
     {
-        "intent": "goodbye",
-        "utterance": "See you at the restaurant at the edge of the universe!"
+        "intent": "salon_agent_handover_start",
+        "utterance": "Do you offer threading?"
     },
     {
-        "intent": "goodbye",
-        "utterance": "You will do well."
+        "intent": "salon_agent_handover_start",
+        "utterance": "I want to talk with a salon agent who can help me book my haircut."
     },
     {
-        "intent": "goodbye",
-        "utterance": "See you in another life, brotha!"
+        "intent": "salon_agent_handover_start",
+        "utterance": "Does your salon offer organic hair coloring products?"
     },
     {
-        "intent": "goodbye",
-        "utterance": "Come back when you can't stay so long."
+        "intent": "salon_agent_handover_start",
+        "utterance": "Can you please get a salon agent on the phone for me so I can book my haircut?"
     },
     {
-        "intent": "goodbye",
-        "utterance": "Never look back!"
+        "intent": "salon_agent_handover_start",
+        "utterance": "I need to speak with a salon agent in order to get my haircut appointment booked."
     },
     {
-        "intent": "goodbye",
-        "utterance": "After four, dinosaur."
+        "intent": "salon_agent_handover_start",
+        "utterance": "Does your salon do bridal parties?"
     },
     {
-        "intent": "goodbye",
-        "utterance": "Don\u2019t forget to send a letter."
+        "intent": "salon_agent_handover_start",
+        "utterance": "Do you offer acrylics?"
     },
     {
-        "intent": "goodbye",
-        "utterance": "Goodbye forever."
+        "intent": "salon_agent_handover_start",
+        "utterance": "I want a haircut this weekend so can you put me in touch with a salon agent?"
     },
     {
-        "intent": "goodbye",
-        "utterance": "After three, chimpanzee!"
+        "intent": "salon_agent_handover_start",
+        "utterance": "I need to get waxed."
     },
     {
-        "intent": "goodbye",
-        "utterance": "After two, kangaroo!"
+        "intent": "salon_agent_handover_start",
+        "utterance": "I want you to put me in touch with a salon agent so I can book the appointment for my haircut."
     },
     {
-        "intent": "goodbye",
-        "utterance": "Next time, bring more cookies."
+        "intent": "salon_agent_handover_start",
+        "utterance": "I want a haircut now."
     },
     {
-        "intent": "goodbye",
-        "utterance": "That's all folks."
+        "intent": "salon_agent_handover_start",
+        "utterance": "I need my nails done."
     },
     {
-        "intent": "goodbye",
-        "utterance": "Party easy, drive safe, and return with a smile on your face."
+        "intent": "salon_agent_handover_start",
+        "utterance": "I need to get my manicure today."
     },
     {
-        "intent": "goodbye",
-        "utterance": "So long, suckers!"
+        "intent": "salon_agent_handover_start",
+        "utterance": "I need my hair styled."
     },
     {
-        "intent": "goodbye",
-        "utterance": "Hasta lasagna, don't get any on ya"
+        "intent": "salon_agent_handover_start",
+        "utterance": "I'd like to get my hair done this weekend and need to speak with a salon agent."
     },
     {
-        "intent": "goodbye",
-        "utterance": "Make sure the doormat says goodbye!"
+        "intent": "salon_agent_handover_start",
+        "utterance": "I need to book an appointment with a salon agent."
     },
     {
-        "intent": "goodbye",
-        "utterance": "Until next time."
+        "intent": "salon_agent_handover_start",
+        "utterance": "I need to get an appointment at a salon for a manicure."
     },
     {
-        "intent": "goodbye",
-        "utterance": "See you in the future."
+        "intent": "salon_agent_handover_start",
+        "utterance": "I need to get a haircut and a manicure at a salon."
     },
     {
-        "intent": "goodbye",
-        "utterance": "Au revoir!"
+        "intent": "salon_agent_handover_start",
+        "utterance": "I'm interested in speaking with a salon agent since I'm trying to get some waxing finished."
     },
     {
-        "intent": "goodbye",
-        "utterance": "Begone!"
+        "intent": "salon_agent_handover_start",
+        "utterance": "If you can help me get in touch with a salon agent that would be great."
     },
     {
-        "intent": "goodbye",
-        "utterance": "Take care, polar bear!"
+        "intent": "salon_agent_handover_start",
+        "utterance": "The manicurist can I speak to her?"
     },
     {
-        "intent": "goodbye",
-        "utterance": "Peace out, rainbow trout!"
+        "intent": "salon_agent_handover_start",
+        "utterance": "I need to talk to someone at the salon about making an appointment."
     },
     {
-        "intent": "goodbye",
-        "utterance": "I'm outta here like spit through a trumpet."
+        "intent": "salon_agent_handover_start",
+        "utterance": "Can you get a salon agent on the other line so I can book my hair appointment?"
     },
     {
-        "intent": "goodbye",
-        "utterance": "Adios, amigos."
+        "intent": "salon_agent_handover_start",
+        "utterance": "Is a stylist available?"
     },
     {
-        "intent": "goodbye",
-        "utterance": "Toodaloo, caribou!"
+        "intent": "salon_agent_handover_start",
+        "utterance": "Do you have a manicurist I can talk to?"
     },
     {
-        "intent": "goodbye",
-        "utterance": "I'm outtie."
+        "intent": "salon_agent_handover_start",
+        "utterance": "Can you put me in contact with a salon agent so I can book a manicure?"
     },
     {
-        "intent": "goodbye",
-        "utterance": "I shall return."
+        "intent": "salon_agent_handover_start",
+        "utterance": "Who can I make an appointment for hair with?"
     },
     {
-        "intent": "goodbye",
-        "utterance": "Catch you round like a rissole!"
+        "intent": "salon_agent_handover_start",
+        "utterance": "Do you wax hairbrows?"
     },
     {
-        "intent": "goodbye",
-        "utterance": "Take it easy, greasy. You've got a long way to slide."
+        "intent": "salon_agent_handover_start",
+        "utterance": "Can you get me in touch with a salon agent so I can get my waxing done?"
     },
     {
-        "intent": "goodbye",
-        "utterance": "See you, space cowboy."
+        "intent": "salon_agent_handover_start",
+        "utterance": "I'm trying to get a manicure this weekend so please put me in touch with a salon agent."
     },
     {
-        "intent": "goodbye",
-        "utterance": "Screw you guys, I'm going home!"
+        "intent": "booking_agent_handover_start",
+        "utterance": "I need to discuss my travel options."
     },
     {
-        "intent": "goodbye",
-        "utterance": "Ciao ciao, brown cow!"
+        "intent": "booking_agent_handover_start",
+        "utterance": "I need a trave agent."
     },
     {
-        "intent": "goodbye",
-        "utterance": "I\u2019ll show you to the door!"
+        "intent": "booking_agent_handover_start",
+        "utterance": "Please connect me to a booking agent."
     },
     {
-        "intent": "goodbye",
-        "utterance": "I\u2019m late for my bus, gigantopithecus!"
+        "intent": "booking_agent_handover_start",
+        "utterance": "I'm looking to go on a trip."
     },
     {
-        "intent": "goodbye",
-        "utterance": "Make new friends on the sidewalk!"
+        "intent": "booking_agent_handover_start",
+        "utterance": "I need help planning a trip."
     },
     {
-        "intent": "goodbye",
-        "utterance": "Gotta go, the power of the shower compels me."
+        "intent": "booking_agent_handover_start",
+        "utterance": "Please allow me to speak to a booking agent for a flight."
     },
     {
-        "intent": "goodbye",
-        "utterance": "Stay cool, my dude."
+        "intent": "booking_agent_handover_start",
+        "utterance": "I want to talk about a trip I'm planning."
     },
     {
-        "intent": "goodbye",
-        "utterance": "Bye! I tolerate you!"
+        "intent": "booking_agent_handover_start",
+        "utterance": "I am seeking assistance for a coming trip"
     },
     {
-        "intent": "goodbye",
-        "utterance": "Move out, brussels sprout!"
+        "intent": "booking_agent_handover_start",
+        "utterance": "I need to make travel reservations for flights and hotel"
     },
     {
-        "intent": "goodbye",
-        "utterance": "Later, nerds!"
+        "intent": "booking_agent_handover_start",
+        "utterance": "I want to book a flight for next week."
     },
     {
-        "intent": "goodbye",
-        "utterance": "See you soon, baboon!"
+        "intent": "booking_agent_handover_start",
+        "utterance": "hey four members need to go to australia next month can you help us"
     },
     {
-        "intent": "goodbye",
-        "utterance": "Don't trip on a raindrop!"
+        "intent": "booking_agent_handover_start",
+        "utterance": "I need to book a flight."
     },
     {
-        "intent": "goodbye",
-        "utterance": "See you later, aggregator!"
+        "intent": "booking_agent_handover_start",
+        "utterance": "I need to speak to someone about booking a flight."
     },
     {
-        "intent": "goodbye",
-        "utterance": "Be careful! Don't get mauled by a squirrel!"
+        "intent": "booking_agent_handover_start",
+        "utterance": "Can you make sure a travel agent calls me so I can get my flight planning over with?"
     },
     {
-        "intent": "goodbye",
-        "utterance": "Be sweet, parakeet."
+        "intent": "booking_agent_handover_start",
+        "utterance": "I need your assistance getting in contact with a travel agent since I want to book my airline ticket."
     },
     {
-        "intent": "goodbye",
-        "utterance": "Don't get cut by a blade of grass!"
+        "intent": "booking_agent_handover_start",
+        "utterance": "Can you get a travel agent on the phone so I can book my flights?"
     },
     {
-        "intent": "goodbye",
-        "utterance": "Better shake, rattlesnake!"
+        "intent": "booking_agent_handover_start",
+        "utterance": "I want to fly for vacation to the beach"
     },
     {
-        "intent": "goodbye",
-        "utterance": "Parting is such sweet sorrow, that I shall say good night till it be tomorrow."
+        "intent": "booking_agent_handover_start",
+        "utterance": "I want to book my plane tickets so can you put me in touch with a travel agency?"
     },
     {
-        "intent": "goodbye",
-        "utterance": "Don't forget to be awesome."
+        "intent": "booking_agent_handover_start",
+        "utterance": "I desire to rent a car as part of a business trip"
     },
     {
-        "intent": "goodbye",
-        "utterance": "Don't let the door hit ya where the good lord split ya."
+        "intent": "booking_agent_handover_start",
+        "utterance": "I'm going to need your help getting in contact with a travel agency so I can book my flights."
     },
     {
-        "intent": "goodbye",
-        "utterance": "Later, potato!"
+        "intent": "booking_agent_handover_start",
+        "utterance": "whom can i contact to book the flight ticket"
     },
     {
-        "intent": "goodbye",
-        "utterance": "Later, skater!"
+        "intent": "booking_agent_handover_start",
+        "utterance": "hello give me the details about flying to canada"
     },
     {
-        "intent": "goodbye",
-        "utterance": "Shine on, you crazy diamonds."
+        "intent": "booking_agent_handover_start",
+        "utterance": "I wish to travel in the coming months"
     },
     {
-        "intent": "goodbye",
-        "utterance": "May the force be with you... always."
+        "intent": "booking_agent_handover_start",
+        "utterance": "I need a travel agent to contact me."
     },
     {
-        "intent": "goodbye",
-        "utterance": "In a while, crocodile."
+        "intent": "booking_agent_handover_start",
+        "utterance": "I am seeking pricing for a nice trip."
     },
     {
-        "intent": "goodbye",
-        "utterance": "Catch ya later, future dudes!"
+        "intent": "booking_agent_handover_start",
+        "utterance": "I am in need of a travel agent's services where is a listing?"
     },
     {
-        "intent": "goodbye",
-        "utterance": "I'm off like a dirty shirt."
+        "intent": "booking_agent_handover_start",
+        "utterance": "can you help me to book flight ticket for tonight"
     },
     {
-        "intent": "goodbye",
-        "utterance": "I gotta jet."
+        "intent": "booking_agent_handover_start",
+        "utterance": "I am looking for a good travel agent."
     },
     {
-        "intent": "goodbye",
-        "utterance": "As you wish, jellyfish!"
+        "intent": "booking_agent_handover_start",
+        "utterance": "I am ready to plan a trip through a travel agent."
     },
     {
-        "intent": "goodbye",
-        "utterance": "Cya"
+        "intent": "booking_agent_handover_start",
+        "utterance": "Can you get a flight booking agent on the other line so I can buy my flights?"
     },
     {
-        "intent": "goodbye",
-        "utterance": "Bye for now."
+        "intent": "booking_agent_handover_start",
+        "utterance": "Can you help me get a travel agent on the other line since I'm trying to book my flights?"
     },
     {
-        "intent": "goodbye",
-        "utterance": "Don't get lost on your way to class!"
+        "intent": "booking_agent_handover_start",
+        "utterance": "please help me to book a flight ticket"
     },
     {
-        "intent": "goodbye",
-        "utterance": "See you when I see you."
+        "intent": "booking_agent_handover_start",
+        "utterance": "Who knows where is the best place to vacation in Brazil?"
     },
     {
-        "intent": "goodbye",
-        "utterance": "Tootle-loo, kangaroo."
+        "intent": "booking_agent_handover_start",
+        "utterance": "I want to talk with a flight booking agent so I can buy my plane tickets."
     },
     {
-        "intent": "goodbye",
-        "utterance": "Smell ya later!"
+        "intent": "booking_agent_handover_start",
+        "utterance": "My sister needs to get a last minute flight to Las Vegas."
     },
     {
-        "intent": "goodbye",
-        "utterance": "Love, peace, and chicken grease."
+        "intent": "booking_agent_handover_start",
+        "utterance": "Who knows where I can find hotels close to the Eiffel Tower?"
     },
     {
-        "intent": "goodbye",
-        "utterance": "Cool Goodbye Sayings"
+        "intent": "booking_agent_handover_start",
+        "utterance": "I'm going to have to speak with a travel agency because I'm trying to book my honeymoon."
     },
     {
-        "intent": "goodbye",
-        "utterance": "Cheerio!"
+        "intent": "booking_agent_handover_start",
+        "utterance": "Can you do anything to help me contact a travel agency so I can purchase my plane tickets?"
     },
     {
-        "intent": "goodbye",
-        "utterance": "Happy trails!"
+        "intent": "booking_agent_handover_start",
+        "utterance": "I need to take a business trip to Berlin."
     },
     {
-        "intent": "goodbye",
-        "utterance": "Adios, hippos."
+        "intent": "booking_agent_handover_start",
+        "utterance": "Who knows how I can find a cheap flight to Montreal?"
     },
     {
-        "intent": "goodbye",
-        "utterance": "See ya, wouldn't wanna be ya."
+        "intent": "booking_agent_handover_start",
+        "utterance": "Travel agents are useful if you're doing a very costly or complex trip planning a honeymoon or something fancy or traveling with a large group"
     },
     {
-        "intent": "goodbye",
-        "utterance": "Peace out, girl scout!"
+        "intent": "booking_agent_handover_start",
+        "utterance": "A travel agent is needed to help me plan a long trip."
     },
     {
-        "intent": "goodbye",
-        "utterance": "Time to scoot, little newt."
+        "intent": "booking_agent_handover_start",
+        "utterance": "Travel agents are closing branches as more people head online to book their holidays"
     },
     {
-        "intent": "goodbye",
-        "utterance": "Don't forget to come back!"
+        "intent": "booking_agent_handover_start",
+        "utterance": "If you want flexibility the AIRLINE will charge more no matter who you book through"
     },
     {
-        "intent": "goodbye",
-        "utterance": "Once more unto the breach, dear friends!"
+        "intent": "booking_agent_handover_start",
+        "utterance": "my mother wants to go to world tour can you help me"
     },
     {
-        "intent": "goodbye",
-        "utterance": "Chop chop, lollipop!"
+        "intent": "booking_agent_handover_start",
+        "utterance": "A Travel agent will book you in any class you want - the price for any given class is set by the airline"
     },
     {
-        "intent": "goodbye",
-        "utterance": "Influence everyone in a good way!"
+        "intent": "booking_agent_handover_start",
+        "utterance": "I'm trying to book a one-way ticket to Hawaii and need to speak with a travel agent to do so."
     },
     {
-        "intent": "goodbye",
-        "utterance": "Can\u2019t star, blue jay."
+        "intent": "booking_agent_handover_start",
+        "utterance": "The cheaper the price the 'lower' the class and more restrictions re changes cancellations etc."
     },
     {
-        "intent": "goodbye",
-        "utterance": "Oh, and in case I don't see you\u2014good afternoon, good evening, and good night!"
+        "intent": "booking_agent_handover_start",
+        "utterance": "A person who has travel agent experience is needed."
     },
     {
-        "intent": "goodbye",
-        "utterance": "I'm gonna make a like a bakery truck and haul buns."
+        "intent": "booking_agent_handover_start",
+        "utterance": "A travel agent needs to help me."
     },
     {
-        "intent": "goodbye",
-        "utterance": "Gotta roll!"
+        "intent": "booking_agent_handover_start",
+        "utterance": "A person with travel experience is wanted."
     },
     {
-        "intent": "goodbye",
-        "utterance": "It's been a pleasure and a privilege to meet you."
+        "intent": "booking_agent_handover_start",
+        "utterance": "A travel agent is needed."
     },
     {
-        "intent": "goodbye",
-        "utterance": "I look forward to our next meeting."
+        "intent": "booking_agent_handover_start",
+        "utterance": "how to book flight tickets with summer offers"
     },
     {
-        "intent": "goodbye",
-        "utterance": "Be good and don't get caught."
+        "intent": "booking_agent_handover_start",
+        "utterance": "whom can i meet to do with tourist visa process"
     },
     {
-        "intent": "goodbye",
-        "utterance": "Hasta la vista, baby."
+        "intent": "booking_agent_handover_start",
+        "utterance": "I need to make a reservation for a family member"
     },
     {
-        "intent": "goodbye",
-        "utterance": "Thank you for your cooperation. Farewell."
+        "intent": "booking_agent_handover_start",
+        "utterance": "I want to get into contact with a flight booking agent to assist with my flight logistics."
     },
     {
-        "intent": "goodbye",
-        "utterance": "Don't get attacked by a bear, it's night-time!"
+        "intent": "booking_agent_handover_start",
+        "utterance": "hey i need to book flight today"
     },
     {
-        "intent": "goodbye",
-        "utterance": "Blow a kiss, goldfish."
+        "intent": "booking_agent_handover_start",
+        "utterance": "how do you support me with booking flight ticket"
     },
     {
-        "intent": "goodbye",
-        "utterance": "Adieu, cockatoo!"
+        "intent": "booking_agent_handover_start",
+        "utterance": "Hello I want to know where is a cheap beach to fly to in Chile."
     },
     {
-        "intent": "goodbye",
-        "utterance": "Have fun storming the castle!"
+        "intent": "booking_agent_handover_start",
+        "utterance": "Looking for the cheapest flight to the Detroit Metro area from Florida."
     },
     {
-        "intent": "goodbye",
-        "utterance": "See you on the other side."
+        "intent": "booking_agent_handover_start",
+        "utterance": "I'm traveling to France and need to get in touch with a flight booking agent."
     },
     {
-        "intent": "goodbye",
-        "utterance": "Take care, butterfly."
+        "intent": "booking_agent_handover_start",
+        "utterance": "I'm trying to speak with a flight booking agent since I have tickets to book."
     },
     {
-        "intent": "goodbye",
-        "utterance": "I gotta bounce."
+        "intent": "booking_agent_handover_start",
+        "utterance": "Who can tell me how I can have a 24 hour layover in Turkey?"
     },
     {
-        "intent": "goodbye",
-        "utterance": "Toodle-pip!"
+        "intent": "booking_agent_handover_start",
+        "utterance": "Where do I go to book a cheap flight to Turkey"
     },
     {
-        "intent": "goodbye",
-        "utterance": "Calc you later!"
+        "intent": "booking_agent_handover_start",
+        "utterance": "Can you get me into contact with a flight booking agent so I can book my tickets?"
     },
     {
-        "intent": "goodbye",
-        "utterance": "Have a good one."
+        "intent": "booking_agent_handover_start",
+        "utterance": "Is there a direct flight from New York to Madrid Spain?"
     },
     {
-        "intent": "goodbye",
-        "utterance": "Give a hug, ladybug."
+        "intent": "booking_agent_handover_start",
+        "utterance": "hi i want to buy a flight"
     },
     {
-        "intent": "goodbye",
-        "utterance": "Later, haters."
+        "intent": "booking_agent_handover_start",
+        "utterance": "I would like to get to Texas today"
     },
     {
-        "intent": "goodbye",
-        "utterance": "It was nice to see you again."
+        "intent": "booking_agent_handover_start",
+        "utterance": "I need the quickest flight to London"
     },
     {
-        "intent": "goodbye",
-        "utterance": "Don't get run over!"
+        "intent": "booking_agent_handover_start",
+        "utterance": "What airlines are flying to mexico"
     },
     {
-        "intent": "goodbye",
-        "utterance": "Catch you on the flip side."
+        "intent": "booking_agent_handover_start",
+        "utterance": "I want to fly to 3 places within a 2 week trip."
     },
     {
-        "intent": "goodbye",
-        "utterance": "You're still here? It's over. Go home. Go!"
+        "intent": "booking_agent_handover_start",
+        "utterance": "Does the airport in Vail offer jet-way service?"
     },
     {
-        "intent": "goodbye",
-        "utterance": "Out to the door, dinosaur."
+        "intent": "booking_agent_handover_start",
+        "utterance": "I'm looking to get to Antartica. Where do I fly to first?"
     },
     {
-        "intent": "goodbye",
-        "utterance": "See you soon, racoon."
+        "intent": "booking_agent_handover_start",
+        "utterance": "I need to find a travel agent asap."
     },
     {
-        "intent": "goodbye",
-        "utterance": "Gotta bolt!"
+        "intent": "booking_agent_handover_start",
+        "utterance": "Do I still need a passport to travel to Mexico or Canada from the United States?"
     },
     {
-        "intent": "goodbye",
-        "utterance": "It has been emotional, bye."
+        "intent": "booking_agent_handover_start",
+        "utterance": "Do you offer all inclusive packages?"
     },
     {
-        "intent": "goodbye",
-        "utterance": "To the winch, wench!"
+        "intent": "booking_agent_handover_start",
+        "utterance": "i need a round trip flight ticket where can i book"
     },
     {
-        "intent": "goodbye",
-        "utterance": "Smoke me a kipper, I'll be back for breakfast."
+        "intent": "booking_agent_handover_start",
+        "utterance": "I need help in hiring a ravel agent."
     },
     {
-        "intent": "goodbye",
-        "utterance": "Bye bye, butterfly."
+        "intent": "booking_agent_handover_start",
+        "utterance": "I just need help planning a trip."
     },
     {
-        "intent": "goodbye",
-        "utterance": "Gotta get going."
+        "intent": "booking_agent_handover_start",
+        "utterance": "I wish to hire a travel agent where can I find one?"
     },
     {
-        "intent": "goodbye",
-        "utterance": "Well, I'm off!"
+        "intent": "booking_agent_handover_start",
+        "utterance": "have you assure the conformation of flight ticket on that day"
     },
     {
-        "intent": "goodbye",
-        "utterance": "Gotta go, buffalo."
+        "intent": "booking_agent_handover_start",
+        "utterance": "I am ready to go on a trip and I need an agent."
     },
     {
-        "intent": "goodbye",
-        "utterance": "Long live and prosper!"
+        "intent": "booking_agent_handover_start",
+        "utterance": "what is the best quote to fly for singapore"
     },
     {
-        "intent": "goodbye",
-        "utterance": "Stay classy."
+        "intent": "booking_agent_handover_start",
+        "utterance": "my friend needs to book a flight ticket to india"
     },
     {
-        "intent": "goodbye",
-        "utterance": "Gotta hit the road."
+        "intent": "booking_agent_handover_start",
+        "utterance": "how to get tourist visa who can i meet"
     },
     {
-        "intent": "goodbye",
-        "utterance": "Peace out!"
+        "intent": "booking_agent_handover_start",
+        "utterance": "What questions should you ask when buying airline tickets?"
     },
     {
-        "intent": "goodbye",
-        "utterance": "Catch you on the rebound."
+        "intent": "booking_agent_handover_start",
+        "utterance": "I'm interested in going to Canada next week so I need to talk with a travel agency."
     },
     {
-        "intent": "goodbye",
-        "utterance": "Fare thee well."
+        "intent": "booking_agent_handover_start",
+        "utterance": "I want to go to Canada next week so can you put me into contact with a travel agency?"
     },
     {
-        "intent": "goodbye",
-        "utterance": "Okay...bye, fry guy!"
+        "intent": "booking_agent_handover_start",
+        "utterance": "I want to get on a plane to Spain so can you put me in touch with a flight booking agent?"
     },
     {
-        "intent": "goodbye",
-        "utterance": "I\u2019m out of here."
+        "intent": "booking_agent_handover_start",
+        "utterance": "I'd like to speak with a travel agency regarding my flight to Canada."
     },
     {
-        "intent": "goodbye",
-        "utterance": "See you later, alligator!"
+        "intent": "booking_agent_handover_start",
+        "utterance": "Can you please put me in touch with a flight booking agent so I can book my trip to Canada?"
     },
     {
-        "intent": "goodbye",
-        "utterance": "If I don\u2019t see you around, I'll see you square."
+        "intent": "booking_agent_handover_start",
+        "utterance": "Is it better to book through a travel agent?"
     },
     {
-        "intent": "goodbye",
-        "utterance": "After a while, crocodile."
+        "intent": "booking_agent_handover_start",
+        "utterance": "How do you attract luxury travel clients?"
     },
     {
-        "intent": "goodbye",
-        "utterance": "Stay out of trouble."
+        "intent": "booking_agent_handover_start",
+        "utterance": "Could you help me get in touch with a travel agent so I can book my ticket to Swaziland?"
     },
     {
-        "intent": "greeting",
-        "utterance": "Pos eisai?"
+        "intent": "booking_agent_handover_start",
+        "utterance": "What questions do travel agents ask customers?"
     },
     {
-        "intent": "greeting",
-        "utterance": "Habari yako?"
+        "intent": "booking_agent_handover_start",
+        "utterance": "How do I promote myself as a travel agent?"
     },
     {
-        "intent": "greeting",
-        "utterance": "Come va?"
+        "intent": "booking_agent_handover_start",
+        "utterance": "I need help in hiring someone to plan a trip for me."
     },
     {
-        "intent": "greeting",
-        "utterance": "Hey friend! What\u2019s the latest buzz in your world?"
+        "intent": "booking_agent_handover_start",
+        "utterance": "I am seeking pricing for a nice trip through a travel agency."
     },
     {
-        "intent": "greeting",
-        "utterance": "Como voce esta?"
+        "intent": "booking_agent_handover_start",
+        "utterance": "Please put me in contact with the travel agency so I can book my trip."
     },
     {
-        "intent": "greeting",
-        "utterance": "What\u2019s smokin\u2019? Tell your pal everything!"
+        "intent": "booking_agent_handover_start",
+        "utterance": "I am looking for a good travel agency in this area."
     },
     {
-        "intent": "greeting",
-        "utterance": "What\u2019s the word, hummingbird?"
+        "intent": "booking_agent_handover_start",
+        "utterance": "I am in need of a travel agency so where is a listing?"
     },
     {
-        "intent": "greeting",
-        "utterance": "Hey Einstein, still cracking the old theory?"
+        "intent": "booking_agent_handover_start",
+        "utterance": "I am ready to get someone to plan my trip."
     },
     {
-        "intent": "greeting",
-        "utterance": "Namaste! How long has it been, dost?"
+        "intent": "booking_agent_handover_start",
+        "utterance": "i want to book a flight ticket"
     },
     {
-        "intent": "greeting",
-        "utterance": "How is life sailing?"
+        "intent": "booking_agent_handover_start",
+        "utterance": "I'm booking my honeymoon flights tomorrow so please get me in contact with a flight booking agent."
     },
     {
-        "intent": "greeting",
-        "utterance": "Como estas?"
+        "intent": "booking_agent_handover_start",
+        "utterance": "Please get the travel agency on the phone so I can book my flights."
     },
     {
-        "intent": "greeting",
-        "utterance": "Ua mai oe?"
+        "intent": "booking_agent_handover_start",
+        "utterance": "any good travel agency here"
     },
     {
-        "intent": "greeting",
-        "utterance": "Hey bud! Mind if we catch up? I saw you like eons ago."
+        "intent": "booking_agent_handover_start",
+        "utterance": "I'm trying to plan my honeymoon travels and need to speak with a travel agent."
     },
     {
-        "intent": "greeting",
-        "utterance": "Hi homey! How\u2019s life treating you?"
+        "intent": "booking_agent_handover_start",
+        "utterance": "i need to book a family flight ticket next week"
     },
     {
-        "intent": "greeting",
-        "utterance": "Hi, I just met you, and yes, this is crazy. Here\u2019s my number \u2013 call me, maybe?"
+        "intent": "booking_agent_handover_start",
+        "utterance": "i need to go abroad who can i meet"
     },
     {
-        "intent": "greeting",
-        "utterance": "\u2018Sup, my homeslice?"
+        "intent": "booking_agent_handover_start",
+        "utterance": "i want to talk to some good travel agent"
     },
     {
-        "intent": "greeting",
-        "utterance": "How farest thou?"
+        "intent": "booking_agent_handover_start",
+        "utterance": "How much are flights to Japan?"
     },
     {
-        "intent": "greeting",
-        "utterance": "What\u2019s up, buttercup?"
+        "intent": "booking_agent_handover_start",
+        "utterance": "I want to spend a weekend somewhere cheap."
     },
     {
-        "intent": "greeting",
-        "utterance": "Whazzup?"
+        "intent": "booking_agent_handover_start",
+        "utterance": "Who can I talk to for booking a vacation package in Mexico?"
     },
     {
-        "intent": "greeting",
-        "utterance": "Wagwan?"
+        "intent": "booking_agent_handover_start",
+        "utterance": "My family wants to go to Israel for a week."
     },
     {
-        "intent": "greeting",
-        "utterance": "Jal jinaess-eoyo?"
+        "intent": "booking_agent_handover_start",
+        "utterance": "I want to book a package to the bahamas."
     },
     {
-        "intent": "greeting",
-        "utterance": "Ni hao ma?"
+        "intent": "law_agent_handover_start",
+        "utterance": "i need some help from lawyer"
     },
     {
-        "intent": "greeting",
-        "utterance": "Comment allez-vous?"
+        "intent": "law_agent_handover_start",
+        "utterance": "i need to come out from jail get some lawyer"
     },
     {
-        "intent": "greeting",
-        "utterance": "What\u2019s good in the hood?"
+        "intent": "law_agent_handover_start",
+        "utterance": "I saw your ad on Facebook and wondered if you could help me with my work comp claim."
     },
     {
-        "intent": "greeting",
-        "utterance": "Sup!"
+        "intent": "law_agent_handover_start",
+        "utterance": "i need to handle some legal issues help me with right person"
     },
     {
-        "intent": "greeting",
-        "utterance": "How have you been, crazy coo?"
+        "intent": "law_agent_handover_start",
+        "utterance": "i want to speak with a lawyer"
     },
     {
-        "intent": "greeting",
-        "utterance": "How are things going, bandhu?"
+        "intent": "law_agent_handover_start",
+        "utterance": "My husband died and I really need to have an attorney."
     },
     {
-        "intent": "greeting",
-        "utterance": "What\u2019s sizzling?"
+        "intent": "law_agent_handover_start",
+        "utterance": "i need some lawyer support"
     },
     {
-        "intent": "greeting",
-        "utterance": "Hey mistaa, how do you do?"
+        "intent": "law_agent_handover_start",
+        "utterance": "I have some legal matters that I want legal counsel on."
     },
     {
-        "intent": "greeting",
-        "utterance": "Ogenki desu ka?"
+        "intent": "law_agent_handover_start",
+        "utterance": "You were recommended very highly to help me with my court problem."
     },
     {
-        "intent": "greeting",
-        "utterance": "Whaccha up to, dude?"
+        "intent": "law_agent_handover_start",
+        "utterance": "I am desperate and just need some legal advice and wondered if you could please assist me."
     },
     {
-        "intent": "greeting",
-        "utterance": "What\u2019s new? Tell me everything!"
+        "intent": "law_agent_handover_start",
+        "utterance": "I want some legal opinions from a lawyer about these matters."
     },
     {
-        "intent": "greeting",
-        "utterance": "Hello, babycakes! How are you?!"
+        "intent": "law_agent_handover_start",
+        "utterance": "I'm trying to get some legal advice from an attorney."
     },
     {
-        "intent": "greeting",
-        "utterance": "Bro, hey, how are you doing?"
+        "intent": "law_agent_handover_start",
+        "utterance": "You helped a friend of mine with good results so would like you to represent me in my civil suit against the city if you would."
     },
     {
-        "intent": "greeting",
-        "utterance": "How are you doing, old man?"
+        "intent": "law_agent_handover_start",
+        "utterance": "I need advice on a legal problem."
     },
     {
-        "intent": "greeting",
-        "utterance": "Yo man, where were you?"
+        "intent": "law_agent_handover_start",
+        "utterance": "I am trying to track down an attorney to get legal advice."
     },
     {
-        "intent": "greeting",
-        "utterance": "Hi, lost buddy! Long time no see!"
+        "intent": "law_agent_handover_start",
+        "utterance": "I'd like to talk with my lawyer about some legal matters."
     },
     {
-        "intent": "greeting",
-        "utterance": "Hey Slayer, what\u2019s up?"
+        "intent": "law_agent_handover_start",
+        "utterance": "I need to talk to a lawyer for legal assistance."
     },
     {
-        "intent": "greeting",
-        "utterance": "Hey beautiful! I am blinded by your charm!"
+        "intent": "law_agent_handover_start",
+        "utterance": "Oh my where's an attorney when you need one?"
     },
     {
-        "intent": "greeting",
-        "utterance": "Hello, sugar. Come and give me a good morning hug."
+        "intent": "law_agent_handover_start",
+        "utterance": "Out of what list can I find an attorney?"
     },
     {
-        "intent": "greeting",
-        "utterance": "Welcome to the club, boss!"
+        "intent": "law_agent_handover_start",
+        "utterance": "Oh no I have to find a lawyer fast."
     },
     {
-        "intent": "greeting",
-        "utterance": "Hey homey! Welcome!"
+        "intent": "law_agent_handover_start",
+        "utterance": "Ouch I have to get a lawyer."
     },
     {
-        "intent": "greeting",
-        "utterance": "Waddup chica!"
+        "intent": "law_agent_handover_start",
+        "utterance": "Oh I guess I need to find an attorney."
     },
     {
-        "intent": "greeting",
-        "utterance": "Hey, hiiii. How is your weekend going? Mine just got better \ud83d\ude09."
+        "intent": "law_agent_handover_start",
+        "utterance": "I want to hire a lawyer to represent me."
     },
     {
-        "intent": "greeting",
-        "utterance": "Oooo la la. You are a gorgeous sculpture made by the God Almighty!"
+        "intent": "law_agent_handover_start",
+        "utterance": "I need to find a lawyer who can represent me in court."
     },
     {
-        "intent": "greeting",
-        "utterance": "This is where my bae is at!"
+        "intent": "law_agent_handover_start",
+        "utterance": "Connect me with a lawyer for legal advice."
     },
     {
-        "intent": "greeting",
-        "utterance": "Hey there, little thing. You made my day by giving me a glimpse of yourself!"
+        "intent": "law_agent_handover_start",
+        "utterance": "Can you have a lawyer call me please?"
     },
     {
-        "intent": "greeting",
-        "utterance": "What\u2019s up, handsome? You are making the temperatures soar this season!"
+        "intent": "law_agent_handover_start",
+        "utterance": "I need help with some mess my brother got in."
     },
     {
-        "intent": "greeting",
-        "utterance": "Hey love!"
+        "intent": "law_agent_handover_start",
+        "utterance": "I have a unique situation and need legal advice."
     },
     {
-        "intent": "greeting",
-        "utterance": "Hi, butterfly! Holaaa!"
+        "intent": "law_agent_handover_start",
+        "utterance": "Can you help with some legal trouble I'm in?"
     },
     {
-        "intent": "greeting",
-        "utterance": "Konnichiwa!"
+        "intent": "law_agent_handover_start",
+        "utterance": "I need help with a certain case."
     },
     {
-        "intent": "greeting",
-        "utterance": "Hi, cutie pie, sugar bun!"
+        "intent": "law_agent_handover_start",
+        "utterance": "I need to find someone willing to represent me remotely."
     },
     {
-        "intent": "greeting",
-        "utterance": "Morning! So good to see ya, good looking!"
+        "intent": "law_agent_handover_start",
+        "utterance": "Is there anything you can do to help me contact legal counsel?"
     },
     {
-        "intent": "greeting",
-        "utterance": "What\u2019s cookin\u2019, good lookin\u2019?"
+        "intent": "law_agent_handover_start",
+        "utterance": "What questions should I ask a lawyer about seeking help?"
     },
     {
-        "intent": "greeting",
-        "utterance": "Hey, munchkin! Why so chweet?"
+        "intent": "law_agent_handover_start",
+        "utterance": "Could you do me a favor and put me in touch with legal counsel?"
     },
     {
-        "intent": "greeting",
-        "utterance": "Hello belle! You are glowing!"
+        "intent": "law_agent_handover_start",
+        "utterance": "Is there any way you can help me get in touch with legal counsel?"
     },
     {
-        "intent": "greeting",
-        "utterance": "What\u2019s up with you, old soul? Wanna chat?"
+        "intent": "law_agent_handover_start",
+        "utterance": "I'm trying to seek out legal counsel for the crime that I'm being charged with."
     },
     {
-        "intent": "greeting",
-        "utterance": "Hello! There is my pumpkin! I miiiissed you <3"
+        "intent": "law_agent_handover_start",
+        "utterance": "I need help in getting an attorney."
     },
     {
-        "intent": "greeting",
-        "utterance": "Ciao babydoll!"
+        "intent": "law_agent_handover_start",
+        "utterance": "I am in need of an attorney's services."
     },
     {
-        "intent": "greeting",
-        "utterance": "Bing bing! How\u2019s it going?"
+        "intent": "law_agent_handover_start",
+        "utterance": "What questions should I ask an immigration lawyer?"
     },
     {
-        "intent": "greeting",
-        "utterance": "Good day, young man!"
+        "intent": "law_agent_handover_start",
+        "utterance": "I need to find an attorney."
     },
     {
-        "intent": "greeting",
-        "utterance": "Bonjour monsieur!"
+        "intent": "law_agent_handover_start",
+        "utterance": "Are you able to help me establish a trust?"
     },
     {
-        "intent": "greeting",
-        "utterance": "Hallo miss!"
+        "intent": "law_agent_handover_start",
+        "utterance": "I am seeking an attorney."
     },
     {
-        "intent": "greeting",
-        "utterance": "Hello there, daddycool!"
+        "intent": "law_agent_handover_start",
+        "utterance": "Should you always ask for a lawyer?"
     },
     {
-        "intent": "greeting",
-        "utterance": "Que pasa, madam!"
+        "intent": "law_agent_handover_start",
+        "utterance": "I wish to hire a lawyer."
     },
     {
-        "intent": "greeting",
-        "utterance": "Hola paapi!"
+        "intent": "law_agent_handover_start",
+        "utterance": "Wife took off with the paperman so need to draw up divorce papers immediately and you being a divorce attorney can help?"
     },
     {
-        "intent": "greeting",
-        "utterance": "Hey, boo. Wacch ya doing? You just brightened up my day!"
+        "intent": "law_agent_handover_start",
+        "utterance": "What questions should you ask an attorney?"
     },
     {
-        "intent": "greeting",
-        "utterance": "Aloha princess!"
+        "intent": "law_agent_handover_start",
+        "utterance": "What questions should I ask in a legal interview?"
     },
     {
-        "intent": "greeting",
-        "utterance": "Howdy, missus! How are ya?"
+        "intent": "law_agent_handover_start",
+        "utterance": "Have to set up a will and your ad says you do this so could you help me with this?"
     },
     {
-        "intent": "greeting",
-        "utterance": "How you doin\u2019?"
+        "intent": "law_agent_handover_start",
+        "utterance": "I need to place a lien on a property for non-payment but have never done so but my cousin said you helped him with a lien so could you assist me?"
     },
     {
-        "intent": "greeting",
-        "utterance": "Hi, honey bunch!"
+        "intent": "law_agent_handover_start",
+        "utterance": "My neighbor is suing me because my dog ate his tulips so I need a lawyer like now."
     },
     {
-        "intent": "greeting",
-        "utterance": "I like your face. Are you an angel?"
+        "intent": "law_agent_handover_start",
+        "utterance": "My buddy said you help with his adoption and I would like you to help me with mine."
     },
     {
-        "intent": "greeting",
-        "utterance": "Yoooouhoooo! Toodle doo, toodle dum."
+        "intent": "law_agent_handover_start",
+        "utterance": "Can you help draft a contract for my rental property?"
     },
     {
-        "intent": "greeting",
-        "utterance": "Ello, matey. Wassup?"
+        "intent": "law_agent_handover_start",
+        "utterance": "Could you please find me a lawyer that I can talk with about these matters?"
     },
     {
-        "intent": "greeting",
-        "utterance": "Hiiiii, baaaaaby!"
+        "intent": "law_agent_handover_start",
+        "utterance": "I'd like to speak with an attorney for legal advice on a matter I've been charged with."
     },
     {
-        "intent": "greeting",
-        "utterance": "Top of the morning to ya! Wass es going on?"
+        "intent": "law_agent_handover_start",
+        "utterance": "My father passed away and I need help handling probate matters."
     },
     {
-        "intent": "greeting",
-        "utterance": "Greetings and salutations, my man/woman!"
+        "intent": "law_agent_handover_start",
+        "utterance": "It'd be great if you could help me get in touch with an attorney."
     },
     {
-        "intent": "greeting",
-        "utterance": "Whaddup bro?"
+        "intent": "law_agent_handover_start",
+        "utterance": "I need a lawyer who can give me legal guidance."
     },
     {
-        "intent": "greeting",
-        "utterance": "Yo! Wassup."
+        "intent": "law_agent_handover_start",
+        "utterance": "I'm looking for some legal advice from an attorney."
     },
     {
-        "intent": "greeting",
-        "utterance": "Ghostbusters, watccha want?"
+        "intent": "law_agent_handover_start",
+        "utterance": "An attorney's listing online can be found where?"
     },
     {
-        "intent": "greeting",
-        "utterance": "Hello-hello! Who\u2019s there? It\u2019s me talking."
+        "intent": "law_agent_handover_start",
+        "utterance": "A lawyer where can I find one quickly?"
     },
     {
-        "intent": "greeting",
-        "utterance": "Knock knock\u2026"
+        "intent": "law_agent_handover_start",
+        "utterance": "A lawyer can be found where in this town?"
     },
     {
-        "intent": "greeting",
-        "utterance": "Hi! At least we meet for the first time for the last time!"
+        "intent": "law_agent_handover_start",
+        "utterance": "I've been injured in an accident and need to speak with someone about my rights."
     },
     {
-        "intent": "greeting",
-        "utterance": "I am Batman. Who are you, gorgeous?"
+        "intent": "law_agent_handover_start",
+        "utterance": "A lawyer is what I need to hire."
     },
     {
-        "intent": "greeting",
-        "utterance": "Howdy, howdy, howdy, mister!"
+        "intent": "law_agent_handover_start",
+        "utterance": "An attorney is needed so I'll hire one."
     },
     {
-        "intent": "greeting",
-        "utterance": "Tring tring\u2026this call may or may not be recorded for training purposes."
+        "intent": "law_agent_handover_start",
+        "utterance": "I really need to speak with an attorney about a crime I\u2019ve been charged with."
     },
     {
-        "intent": "greeting",
-        "utterance": "Wassup, homey?"
+        "intent": "law_agent_handover_start",
+        "utterance": "hello sir i got arrested for a crime i need to be bail out"
     },
     {
-        "intent": "greeting",
-        "utterance": "GOOOOOD MORNING"
+        "intent": "law_agent_handover_start",
+        "utterance": "I believe my employer has violated my rights can I discuss this with someone?"
     },
     {
-        "intent": "greeting",
-        "utterance": "What\u2019s cracking, hot thing?"
+        "intent": "law_agent_handover_start",
+        "utterance": "Could you please loop a lawyer into the conversation for me?"
     },
     {
-        "intent": "greeting",
-        "utterance": "Hiya! Hi!"
+        "intent": "law_agent_handover_start",
+        "utterance": "hey i am in trouble i need some help"
     },
     {
-        "intent": "greeting",
-        "utterance": "Hello, governor!"
+        "intent": "law_agent_handover_start",
+        "utterance": "hey help me legally"
     },
     {
-        "intent": "greeting",
-        "utterance": "I come in peace! Chow chow."
+        "intent": "law_agent_handover_start",
+        "utterance": "hey i need some lawyer"
     },
     {
-        "intent": "greeting",
-        "utterance": "Hi, mister! What is going on?"
+        "intent": "law_agent_handover_start",
+        "utterance": "I\u2019ve been charged unfairly of a crime and need some attorney representation."
     },
     {
-        "intent": "greeting",
-        "utterance": "Ahoy, matey!"
+        "intent": "law_agent_handover_start",
+        "utterance": "Could you get me in touch with a lawyer please?"
     },
     {
-        "intent": "greeting",
-        "utterance": "Howdy, partner!"
+        "intent": "law_agent_handover_start",
+        "utterance": "Can you help me get in contact with a lawyer?"
     },
     {
-        "intent": "greeting",
-        "utterance": "My name is aura and I am a bad, bad guy. I like you!"
+        "intent": "law_agent_handover_start",
+        "utterance": "hey i need some legal help"
     },
     {
-        "intent": "greeting",
-        "utterance": "What\u2019s kicking, little chicken?"
+        "intent": "law_agent_handover_start",
+        "utterance": "A lawyer is what I need."
     },
     {
-        "intent": "greeting",
-        "utterance": "Hey there, freshman! Wassup?"
+        "intent": "law_agent_handover_start",
+        "utterance": "An attorney is needed."
     },
     {
-        "intent": "greeting",
-        "utterance": "Howdy-doody! Tell me what\u2019s new!"
+        "intent": "law_agent_handover_start",
+        "utterance": "A lawyer where can I find one?"
     },
     {
-        "intent": "greeting",
-        "utterance": "Hey, howdy, hi! How is it going?"
+        "intent": "law_agent_handover_start",
+        "utterance": "Please provide me with legal representation"
     },
     {
-        "intent": "greeting",
-        "utterance": "Hello, sunshine! How are you? Oh, your rays are already making my day brighter!"
+        "intent": "law_agent_handover_start",
+        "utterance": "A lawyer can be found where?"
     },
     {
-        "intent": "joke",
-        "utterance": "be funny "
+        "intent": "law_agent_handover_start",
+        "utterance": "May I please be afforded an attorney."
     },
     {
-        "intent": "joke",
-        "utterance": "tell me a joke"
+        "intent": "law_agent_handover_start",
+        "utterance": "An attorney's listing is where?"
     },
     {
-        "intent": "joke",
-        "utterance": "tell me a funny line"
+        "intent": "law_agent_handover_start",
+        "utterance": "I do not wish to speak further without a lawyer present."
     },
     {
-        "intent": "joke",
-        "utterance": "make me laugh"
+        "intent": "law_agent_handover_start",
+        "utterance": "Let me speak to your best Elder care attorney."
     },
     {
-        "intent": "ask_about_service",
-        "utterance": "i need a spa do you offer that"
+        "intent": "law_agent_handover_start",
+        "utterance": "Will you please acquire an attorney for me."
     },
     {
-        "intent": "ask_about_service",
-        "utterance": "can you do haircuts"
+        "intent": "law_agent_handover_start",
+        "utterance": "I need to speak to lawyer who is available now."
     },
     {
-        "intent": "book_appointments_clear",
-        "utterance": "can i start over please"
+        "intent": "law_agent_handover_start",
+        "utterance": "Let me speak to your best criminal lawyer."
     },
     {
-        "intent": "book_appointments_clear",
-        "utterance": "lets start over"
+        "intent": "law_agent_handover_start",
+        "utterance": "I've been advised of my right to counsel so I'd like to speak to a lawyer."
     },
     {
-        "intent": "yes",
-        "utterance": "sounds good"
+        "intent": "law_agent_handover_start",
+        "utterance": "I need an attorney who can help me get custody of my kids."
     },
     {
-        "intent": "yes",
-        "utterance": "thats right"
+        "intent": "law_agent_handover_start",
+        "utterance": "I got a DUI and I need an attorney."
     },
     {
-        "intent": "yes",
-        "utterance": "yes mam"
+        "intent": "law_agent_handover_start",
+        "utterance": "I am interested in speaking with legal counsel in regards to the crime I've been charged with."
     },
     {
-        "intent": "yes",
-        "utterance": "yes sir"
+        "intent": "law_agent_handover_start",
+        "utterance": "I'd like to speak with legal counsel regarding the crime that I've been charged with."
     },
     {
-        "intent": "yes",
-        "utterance": "yeaah"
+        "intent": "law_agent_handover_start",
+        "utterance": "I need a lawyer to speak with since I've been charged with a crime."
     },
     {
-        "intent": "book_appointments_clear",
-        "utterance": "let me start from scratch"
+        "intent": "law_agent_handover_start",
+        "utterance": "Could you help me get into contact with a lawyer?"
     },
     {
-        "intent": "book_appointments_clear",
-        "utterance": "can i start over"
+        "intent": "law_agent_handover_start",
+        "utterance": "I'd like to speak with a lawyer about the crime I've been charged with."
     },
     {
-        "intent": "book_appointments_clear",
-        "utterance": "start over"
+        "intent": "law_agent_handover_start",
+        "utterance": "How do you communicate like a lawyer?"
     },
     {
-        "intent": "no",
-        "utterance": "nooo"
+        "intent": "law_agent_handover_start",
+        "utterance": "I need help in hiring an attorney."
     },
     {
-        "intent": "no",
-        "utterance": "nope"
+        "intent": "law_agent_handover_start",
+        "utterance": "Why do lawyers ignore you?"
     },
     {
-        "intent": "no",
-        "utterance": "no"
+        "intent": "law_agent_handover_start",
+        "utterance": "How do you follow up with a lawyer?"
     },
     {
-        "intent": "reschedule_appointment",
-        "utterance": "can i change the date for my appointment"
+        "intent": "law_agent_handover_start",
+        "utterance": "What should you not say to a lawyer?"
     },
     {
-        "intent": "reschedule_appointment",
-        "utterance": "can i move my appointment to another day"
+        "intent": "law_agent_handover_start",
+        "utterance": "Are lawyers good in bed?"
     },
     {
-        "intent": "payment_methods",
-        "utterance": "can i pay by card"
+        "intent": "law_agent_handover_start",
+        "utterance": "I am seeking to hire an attorney."
     },
     {
-        "intent": "payment_methods",
-        "utterance": "do you take cash"
+        "intent": "law_agent_handover_start",
+        "utterance": "I need to find an attorney asap."
     },
     {
-        "intent": "opening_hours",
-        "utterance": "business hours"
+        "intent": "law_agent_handover_start",
+        "utterance": "I am in need of an attorney's services where is a listing?"
     },
     {
-        "intent": "opening_hours",
-        "utterance": "tell me your business hours"
-    },
-    {
-        "intent": "opening_hours",
-        "utterance": "when do you open"
-    },
-    {
-        "intent": "who_are_you",
-        "utterance": "say who you are"
-    },
-    {
-        "intent": "who_are_you",
-        "utterance": "who are you"
-    },
-    {
-        "intent": "who_made_you",
-        "utterance": "who created you"
-    },
-    {
-        "intent": "who_made_you",
-        "utterance": "who made you"
-    },
-    {
-        "intent": "cancel_appointments",
-        "utterance": "dont bother with the appointment"
-    },
-    {
-        "intent": "cancel_appointments",
-        "utterance": "i no longer want the appointment"
-    },
-    {
-        "intent": "cancel_appointments",
-        "utterance": "i wanna cancel my appointment"
-    },
-    {
-        "intent": "goodbye",
-        "utterance": "later"
-    },
-    {
-        "intent": "goodbye",
-        "utterance": "goodbye"
-    },
-    {
-        "intent": "greeting",
-        "utterance": "hey"
-    },
-    {
-        "intent": "greeting",
-        "utterance": "hello there"
-    },
-    {
-        "intent": "greeting",
-        "utterance": "hey bro"
-    },
-    {
-        "intent": "yes",
-        "utterance": "yeah"
-    },
-    {
-        "intent": "yes",
-        "utterance": "yup"
-    },
-    {
-        "intent": "yes",
-        "utterance": "yes"
-    },
-    {
-        "intent": "ask_about_service",
-        "utterance": "do you do waxing"
-    },
-    {
-        "intent": "ask_about_service",
-        "utterance": "do you offer manicure"
-    },
-    {
-        "intent": "book_appointments_update",
-        "utterance": "lets do 4pm on saturday"
-    },
-    {
-        "intent": "book_appointments_update",
-        "utterance": "the time is 10am on monday"
-    },
-    {
-        "intent": "book_appointments_update",
-        "utterance": "just a manicure"
-    },
-    {
-        "intent": "book_appointments_update",
-        "utterance": "i need waxing"
-    },
-    {
-        "intent": "book_appointments_update",
-        "utterance": "noon will be fine"
-    },
-    {
-        "intent": "book_appointments_update",
-        "utterance": "i'm looking at the time to be 9AM"
-    },
-    {
-        "intent": "book_appointments_update",
-        "utterance": "the day will be friday"
-    },
-    {
-        "intent": "book_appointments",
-        "utterance": "i need to book a 2pm appointment for curling tomorrow"
-    },
-    {
-        "intent": "book_appointments",
-        "utterance": "can you work on my nails on monday"
-    },
-    {
-        "intent": "book_appointments",
-        "utterance": "can i set up a time to have my brows done"
-    },
-    {
-        "intent": "book_appointments",
-        "utterance": "i need a manicure booked"
-    },
-    {
-        "intent": "book_appointments",
-        "utterance": "can i book for a haircut"
-    },
-    {
-        "intent": "book_appointments",
-        "utterance": "help me to make an appointment"
-    },
-    {
-        "intent": "book_appointments",
-        "utterance": "can i book"
-    },
-    {
-        "intent": "greeting",
-        "utterance": "hello"
-    },
-    {
-        "intent": "greeting",
-        "utterance": "hi"
-    },
-    {
-        "intent": "goodbye",
-        "utterance": "bye"
-    },
-    {
-        "intent": "book_appointments_update",
-        "utterance": "set the day to wednesday"
-    },
-    {
-        "intent": "book_appointments_update",
-        "utterance": "change the day to monday"
-    },
-    {
-        "intent": "book_appointments_update",
-        "utterance": "make the service waxing"
-    },
-    {
-        "intent": "book_appointments_update",
-        "utterance": "change the service to hair cut"
-    },
-    {
-        "intent": "book_appointments_update",
-        "utterance": "change the time to 2pm"
-    },
-    {
-        "intent": "book_appointments",
-        "utterance": "can i book an appointment"
+        "intent": "law_agent_handover_start",
+        "utterance": "I wish to hire a lawyer where can I find one?"
     }
 ]

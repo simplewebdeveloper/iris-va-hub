@@ -1,28 +1,53 @@
 <div class="uk-section">
     <div class="uk-container">
-<!-- Bots section -->
-  <h2 class="uk-text-lead uk-text-light">Here are your Virtual Assistants:</h2>
-  <hr>
 
-<div class="uk-child-width-1-3@m uk-grid-small uk-grid-match" uk-grid>
-  <div id="bot-card" [routerLink]="['/create']" class="uk-card-light uk-card-body uk-text-center uk-margin uk-border-rounded uk-box-shadow-medium uk-box-shadow-hover-large">
-    <h3 class="uk-card-title uk-margin-auto uk-margin-auto-vertical uk-width-1-2@s"><span uk-icon="icon: plus-circle; ratio: 2"></span></h3>
-    <legend class="uk-legend uk-margin-top">Create</legend>
-  </div>
-  <div *ngFor="let bot of bots; let i = index" id="bot-card">
-    <div class="uk-card-light uk-card-body uk-border-rounded uk-box-shadow-medium uk-box-shadow-hover-large">
-      <!-- <p class="uk-text-muted"><span uk-icon="icon: nut; ratio: 2"></span></p> -->
-      <p class="uk-card-title">{{ bot.bot_name }}</p>
-      <p>{{ bot.bot_desc }}</p>
-      <div class="uk-button-group">
-        <button class="uk-button uk-button-danger uk-button-small uk-margin-right" (click)="deleteBot(i, bot.id)"><span uk-icon="trash"></span> Delete</button>
-        <a [routerLink]="['/edit', bot.id]" class="uk-button uk-button-secondary uk-button-small"><span uk-icon="pencil"></span> Edit</a>
+      <!-- Bots section -->
+      <div class="uk-margin-large-bottom">
+        <ul class="uk-child-width-expand" uk-tab>
+            <li class="uk-active"><a href="#">Handoff Virtual Assistants</a></li>
+        </ul>
+      </div>
+
+  <div class="uk-child-width-1-3@m uk-grid-small uk-grid-match" uk-grid>
+    <div id="bot-card" [routerLink]="['/create']" class="uk-card-light uk-card-body uk-text-center uk-margin uk-border-rounded uk-box-shadow-medium uk-box-shadow-hover-large">
+      <h3 class="uk-card-title uk-margin-auto uk-margin-auto-vertical uk-width-1-2@s"><span uk-icon="icon: plus-circle; ratio: 2"></span></h3>
+      <legend class="uk-legend uk-margin-top">Create</legend>
+    </div>
+    <div *ngFor="let bot of bots; let i = index" id="bot-card">
+      
+      <div class="uk-card-light uk-card-body uk-border-rounded uk-box-shadow-medium uk-box-shadow-hover-large">
+        <!-- <p class="uk-text-muted"><span uk-icon="icon: nut; ratio: 2"></span></p> -->
+        <a class="uk-align-right" type="button"><span uk-icon="more-vertical"></span></a>
+<div uk-dropdown>
+    <ul class="uk-nav uk-dropdown-nav">
+        <li><a href="#"><span uk-icon="forward"></span> View</a></li>
+        <li><a href="#" uk-toggle="target: #modal-example" ><span uk-icon="microphone"></span> Quick Test</a></li>
+        <li><a [routerLink]="['/edit', bot.id]"><span uk-icon="pencil"></span> Edit</a></li>
+        <li class="uk-nav-divider"></li>
+        <li><a (click)="deleteBot(i, bot.id)"><span uk-icon="trash"></span> Delete</a></li>
+    </ul>
+</div>
+        <p class="uk-card-title">{{ bot.bot_name }}</p>
+        <p>{{ bot.bot_desc }}</p>
+        <div class="uk-button-group">
+        
+        </div>
       </div>
     </div>
+  
+  
   </div>
 
+<!-- Specialized section -->
 
+<div class="uk-margin-large-top">
+  <ul class="uk-child-width-expand" uk-tab>
+      <li class="uk-active"><a href="#">Specialized Virtual Assistants</a></li>
+      <li><a href="#">Explore Marketplace</a></li>
+  </ul>
 </div>
+
+
 
 
 </div>

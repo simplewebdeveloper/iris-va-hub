@@ -1,2234 +1,1682 @@
 [
     {
-        "intent": "update",
-        "utterance": "let set the time to 2pm"
-    },
-    {
-        "intent": "not_update",
-        "utterance": "i'm stressed, cheer me up"
-    },
-    {
-        "intent": "not_update",
-        "utterance": "they say laughter in the best medicine"
-    },
-    {
-        "intent": "not_update",
-        "utterance": "make me feel nice"
-    },
-    {
-        "intent": "not_update",
-        "utterance": "cheer me up i'm sad"
-    },
-    {
-        "intent": "not_update",
-        "utterance": "haha i'm in the mood for a joke"
-    },
-    {
-        "intent": "not_update",
-        "utterance": "can you make me laugh"
-    },
-    {
-        "intent": "not_update",
-        "utterance": "are you funny?"
-    },
-    {
-        "intent": "not_update",
-        "utterance": "lamo"
-    },
-    {
-        "intent": "not_update",
-        "utterance": "lol"
-    },
-    {
-        "intent": "not_update",
-        "utterance": "i wanna lol"
-    },
-    {
-        "intent": "not_update",
-        "utterance": "joke about something funny"
-    },
-    {
-        "intent": "not_update",
-        "utterance": "know any joke"
-    },
-    {
-        "intent": "not_update",
-        "utterance": "lemme get a funny line"
-    },
-    {
-        "intent": "not_update",
-        "utterance": "what is this thing?"
-    },
-    {
-        "intent": "not_update",
-        "utterance": "wam bro who you?"
-    },
-    {
-        "intent": "not_update",
-        "utterance": "do i even know you bro"
-    },
-    {
-        "intent": "not_update",
-        "utterance": "whos here with me"
-    },
-    {
-        "intent": "not_update",
-        "utterance": "who i am talking to"
-    },
-    {
-        "intent": "not_update",
-        "utterance": "a who dis"
-    },
-    {
-        "intent": "not_update",
-        "utterance": "i dont think we have meet before"
-    },
-    {
-        "intent": "not_update",
-        "utterance": "what do you do for a living"
-    },
-    {
-        "intent": "not_update",
-        "utterance": "what are you into"
-    },
-    {
-        "intent": "not_update",
-        "utterance": "so tell me about yourself"
-    },
-    {
-        "intent": "not_update",
-        "utterance": "how about we talk about you"
-    },
-    {
-        "intent": "not_update",
-        "utterance": "i wanna know your name"
-    },
-    {
-        "intent": "not_update",
-        "utterance": "i'd like to know your name"
-    },
-    {
-        "intent": "not_update",
-        "utterance": "are you john"
-    },
-    {
-        "intent": "not_update",
-        "utterance": "its great to meet you and you are"
-    },
-    {
-        "intent": "not_update",
-        "utterance": "so im name and you are"
-    },
-    {
-        "intent": "not_update",
-        "utterance": "i havent seen you around here"
-    },
-    {
-        "intent": "not_update",
-        "utterance": "who are you pretty"
-    },
-    {
-        "intent": "not_update",
-        "utterance": "yo hommie who are you"
-    },
-    {
-        "intent": "not_update",
-        "utterance": "who the hell is this piece of crap"
-    },
-    {
-        "intent": "not_update",
-        "utterance": "do i even know you"
-    },
-    {
-        "intent": "not_update",
-        "utterance": "i dont know you"
-    },
-    {
-        "intent": "not_update",
-        "utterance": "who is fish is this"
-    },
-    {
-        "intent": "not_update",
-        "utterance": "what entity is responsible for you"
-    },
-    {
-        "intent": "not_update",
-        "utterance": "what human programmed you"
-    },
-    {
-        "intent": "not_update",
-        "utterance": "whats the name of the devloper"
-    },
-    {
-        "intent": "not_update",
-        "utterance": "and your maker is who"
-    },
-    {
-        "intent": "not_update",
-        "utterance": "whos is responsible"
-    },
-    {
-        "intent": "not_update",
-        "utterance": "who made you aura"
-    },
-    {
-        "intent": "not_update",
-        "utterance": "who developed this"
-    },
-    {
-        "intent": "not_update",
-        "utterance": "who assembled you"
-    },
-    {
-        "intent": "not_update",
-        "utterance": "what god created you"
-    },
-    {
-        "intent": "not_update",
-        "utterance": "reveal your creator "
-    },
-    {
-        "intent": "not_update",
-        "utterance": "are you govern by any one"
-    },
-    {
-        "intent": "not_update",
-        "utterance": "who is responsible for this"
-    },
-    {
-        "intent": "not_update",
-        "utterance": "which guy made you"
-    },
-    {
-        "intent": "not_update",
-        "utterance": "hey nevermind on the appointment i can't make it"
-    },
-    {
-        "intent": "not_update",
-        "utterance": "i no longer want to come in"
-    },
-    {
-        "intent": "not_update",
-        "utterance": "garbage that appointment right now"
-    },
-    {
-        "intent": "not_update",
-        "utterance": "delete the event i booked"
-    },
-    {
-        "intent": "not_update",
-        "utterance": "cancel my appointment"
-    },
-    {
-        "intent": "not_update",
-        "utterance": "how can i cancel my appointment"
-    },
-    {
-        "intent": "not_update",
-        "utterance": "we set an appointment but now i can not make it"
-    },
-    {
-        "intent": "not_update",
-        "utterance": "next week might be tied for me so i can't make the appointment we set"
-    },
-    {
-        "intent": "not_update",
-        "utterance": "i dont think i can make my appointment and i would like to cancel it"
-    },
-    {
-        "intent": "not_update",
-        "utterance": "hey i'm calling to ask if you can cancel the appointment we set"
-    },
-    {
-        "intent": "not_update",
-        "utterance": "you know what angela maybe i dont need this appointment"
-    },
-    {
-        "intent": "not_update",
-        "utterance": "go ahead and lets delete my appointment"
-    },
-    {
-        "intent": "not_update",
-        "utterance": "move my appointment to the trash"
-    },
-    {
-        "intent": "not_update",
-        "utterance": "i dont want the appointment on my calendar any longer"
-    },
-    {
         "intent": "not_update",
-        "utterance": "hey change of plans lets cancel this appointement"
+        "utterance": "can you help me to buy some land in city side"
     },
     {
         "intent": "not_update",
-        "utterance": "i made a terrible mistake can i realised that i dont need the appointment"
+        "utterance": "What season is the best time to buy a house?"
     },
     {
         "intent": "not_update",
-        "utterance": "i know i said i am coming friday but plans changed so can we just ajust the appointment"
+        "utterance": "I'm trying to maximize the value of my house so could you tell me if now is the right time to sell it?"
     },
     {
         "intent": "not_update",
-        "utterance": "hello angela i booked an appointment three weeks ago and now i dont think i need it"
+        "utterance": "can you help me to buy a house in apartment"
     },
     {
         "intent": "not_update",
-        "utterance": "if you can change my appointment in any way that would be great"
+        "utterance": "Do you have any tips for me before I put my home on the market?"
     },
     {
         "intent": "not_update",
-        "utterance": "i am wondering if you can make a change to my appointment"
+        "utterance": "Can you give me any tips about buying a new house?"
     },
     {
         "intent": "not_update",
-        "utterance": "i think i will need to update my appointment to be tuesday instead"
+        "utterance": "Can you advise me on what I need to know before putting my house on the market?"
     },
     {
         "intent": "not_update",
-        "utterance": "hello lets make a change to the day of my appointment"
+        "utterance": "can you help me to buy a farm land"
     },
     {
         "intent": "not_update",
-        "utterance": "i wanna edit the appointment i booked can you help with that"
+        "utterance": "Do you think it's the right moment to put my house onto the market to sell?"
     },
     {
         "intent": "not_update",
-        "utterance": "hmm wednesday might not be such a good day"
+        "utterance": "A realtor is needed for my property purchase."
     },
     {
         "intent": "not_update",
-        "utterance": "is it possible to shift my appointment to some other day "
+        "utterance": "can you help me to buy an argri land"
     },
     {
         "intent": "not_update",
-        "utterance": "would you adjust my appointment"
+        "utterance": "Is open house a good idea?"
     },
     {
         "intent": "not_update",
-        "utterance": "i think my appointment needs to be moved"
+        "utterance": "can you help me to buy a house"
     },
     {
         "intent": "not_update",
-        "utterance": "i need to shift my appointment forward"
+        "utterance": "let me know the price of land in coastal area"
     },
     {
         "intent": "not_update",
-        "utterance": "looks like the appointment will clash with something else can i move it to some other day"
+        "utterance": "Why do real estate agents dress up?"
     },
     {
         "intent": "not_update",
-        "utterance": "i would love to book a nice spa"
+        "utterance": "Can you tell me if you think it's a good time to sell my house?"
     },
     {
         "intent": "not_update",
-        "utterance": "i think i might need a haircut appointment"
+        "utterance": "Do you need a resume for a real estate interview?"
     },
     {
         "intent": "not_update",
-        "utterance": "its been a while since i got my nails done now i wanna do it again"
+        "utterance": "A person in real estate is needed to finalize my land purchase."
     },
     {
         "intent": "not_update",
-        "utterance": "hey lets set up that haircut i always needed"
+        "utterance": "A realtor I need to find one."
     },
     {
         "intent": "not_update",
-        "utterance": "can we set up a one on one"
+        "utterance": "A person in real estate can I find one?"
     },
     {
         "intent": "not_update",
-        "utterance": "you angela help a brother to book something"
+        "utterance": "Is it the right time to put my house on the market?"
     },
     {
         "intent": "not_update",
-        "utterance": "i need a hair coloring"
+        "utterance": "Can you advise me on whether it's a good time to buy a new house?"
     },
     {
         "intent": "not_update",
-        "utterance": "hi good day angela can you book me in for wednesday at noon for a hair highlight"
+        "utterance": "A real estate person is needed."
     },
     {
-        "intent": "update",
-        "utterance": "what i need for this is a foot spa"
-    },
-    {
-        "intent": "update",
-        "utterance": "i want swing by on friday"
-    },
-    {
-        "intent": "update",
-        "utterance": "can you set it for 10 on saturday"
-    },
-    {
-        "intent": "not_update",
-        "utterance": "so i need pedicure at maybe 5pm"
-    },
-    {
-        "intent": "not_update",
-        "utterance": "hey angela can you help me with an appointment booking please"
-    },
-    {
-        "intent": "update",
-        "utterance": "lets do thursday at 4pm"
-    },
-    {
-        "intent": "not_update",
-        "utterance": "hi guys i am wondering if you can book me in"
-    },
-    {
-        "intent": "not_update",
-        "utterance": "hi this is andy, i am calling to book an appointment"
-    },
-    {
-        "intent": "not_update",
-        "utterance": "let me have an appointment for 3pm this noon"
-    },
-    {
-        "intent": "not_update",
-        "utterance": "can we book a foot spa for sunday at about 4pm"
-    },
-    {
-        "intent": "not_update",
-        "utterance": "refresh my booking"
-    },
-    {
-        "intent": "not_update",
-        "utterance": "lets start again"
-    },
-    {
-        "intent": "not_update",
-        "utterance": "move on i dont want this"
-    },
-    {
-        "intent": "not_update",
-        "utterance": "no mam"
-    },
-    {
-        "intent": "not_update",
-        "utterance": "don't do that"
-    },
-    {
-        "intent": "not_update",
-        "utterance": "i dont need that"
-    },
-    {
-        "intent": "not_update",
-        "utterance": "leave that and move on"
-    },
-    {
-        "intent": "not_update",
-        "utterance": "don't worry"
-    },
-    {
-        "intent": "not_update",
-        "utterance": "leave that"
-    },
-    {
-        "intent": "not_update",
-        "utterance": "i can work with that"
-    },
-    {
-        "intent": "not_update",
-        "utterance": "thats good"
-    },
-    {
-        "intent": "not_update",
-        "utterance": "yeah i want to"
-    },
-    {
-        "intent": "not_update",
-        "utterance": "yeah do it"
-    },
-    {
-        "intent": "not_update",
-        "utterance": "please do it"
-    },
-    {
-        "intent": "not_update",
-        "utterance": "yes i agree"
-    },
-    {
-        "intent": "not_update",
-        "utterance": "go ahead"
-    },
-    {
-        "intent": "not_update",
-        "utterance": "could you say if i can use my card to pay for this"
-    },
-    {
-        "intent": "not_update",
-        "utterance": "i only wanna pay with cash"
-    },
-    {
-        "intent": "not_update",
-        "utterance": "why cant i pay by cash"
-    },
-    {
-        "intent": "not_update",
-        "utterance": "is cash accepted there"
-    },
-    {
-        "intent": "not_update",
-        "utterance": "can i pay with my visa here"
-    },
-    {
-        "intent": "not_update",
-        "utterance": "i dont normally walk with cash"
-    },
-    {
-        "intent": "not_update",
-        "utterance": "is it possible to pay with my credit card"
-    },
-    {
-        "intent": "not_update",
-        "utterance": "can we book with my credit card"
-    },
-    {
-        "intent": "not_update",
-        "utterance": "are you going to be opened"
-    },
-    {
-        "intent": "not_update",
-        "utterance": "how late are you gonna close on friday"
-    },
-    {
-        "intent": "not_update",
-        "utterance": "will you be open on the weekends"
-    },
-    {
-        "intent": "not_update",
-        "utterance": "aer you open on boxing day"
-    },
-    {
-        "intent": "not_update",
-        "utterance": "what time are you opening in the morning"
-    },
-    {
-        "intent": "not_update",
-        "utterance": "what time are you guys opening tomorrow"
-    },
-    {
-        "intent": "not_update",
-        "utterance": "what time are you opening"
-    },
-    {
-        "intent": "not_update",
-        "utterance": "what are your opening hours please"
-    },
-    {
-        "intent": "not_update",
-        "utterance": "what time are you closing"
-    },
-    {
-        "intent": "not_update",
-        "utterance": "what time do you close"
-    },
-    {
-        "intent": "not_update",
-        "utterance": "what time do you guys close"
-    },
-    {
-        "intent": "not_update",
-        "utterance": "excuse me, what time do you close"
-    },
-    {
-        "intent": "not_update",
-        "utterance": "are you open on weekends"
-    },
-    {
-        "intent": "not_update",
-        "utterance": "what time do you open tomorrow"
-    },
-    {
         "intent": "not_update",
-        "utterance": "would you have any openings on thursday"
+        "utterance": "Is it a buyer's market right now or a seller's market?"
     },
     {
         "intent": "not_update",
-        "utterance": "Hi how are you, i have an appointment for this wednesday morning and i am wondering if i can reschedule that"
+        "utterance": "Is it a reasonable time right now to buy a new home?"
     },
     {
         "intent": "not_update",
-        "utterance": "hi i am calling to reschedule my appointment for this sunday"
+        "utterance": "how to sell my shop"
     },
     {
         "intent": "not_update",
-        "utterance": "Hi am just call to reschedule my appointment i have for wednesday"
+        "utterance": "how to give rent my house"
     },
     {
         "intent": "not_update",
-        "utterance": "no way"
+        "utterance": "how to lease my farm land"
     },
     {
         "intent": "not_update",
-        "utterance": "no not right now"
+        "utterance": "hey how can i sell my house"
     },
     {
         "intent": "not_update",
-        "utterance": "maybe next time"
+        "utterance": "how can i sell my farm land"
     },
     {
         "intent": "not_update",
-        "utterance": "dont worry do this"
+        "utterance": "Can you wear jeans as a real estate agent?"
     },
     {
         "intent": "not_update",
-        "utterance": "no please"
+        "utterance": "A real estate person is needed asap."
     },
     {
         "intent": "not_update",
-        "utterance": "i dont have a card do you take cash"
+        "utterance": "How do you answer why should we hire you?"
     },
     {
         "intent": "not_update",
-        "utterance": "i have gbti card"
+        "utterance": "What are the 10 most common interview questions and answers?"
     },
     {
         "intent": "not_update",
-        "utterance": "do you take republic bank visa card"
+        "utterance": "Why do you want to work as an estate agent?"
     },
     {
         "intent": "not_update",
-        "utterance": "can i use my scotia bank card at your place"
+        "utterance": "How do you interview a buyer's real estate agent?"
     },
     {
         "intent": "not_update",
-        "utterance": "i got a mastercard and i was wondering if you take that"
+        "utterance": "A realtor is needed for my property transaction."
     },
     {
         "intent": "not_update",
-        "utterance": "whats the hours of business"
+        "utterance": "A real estate agent's listing online can be found where?"
     },
     {
         "intent": "not_update",
-        "utterance": "do you open on sundays"
+        "utterance": "A person in real estate is needed to help me find land."
     },
     {
         "intent": "not_update",
-        "utterance": "what day can i come in"
+        "utterance": "I want to put my house on the market and need to talk with a real estate agent."
     },
     {
         "intent": "not_update",
-        "utterance": "can you perform waxing"
+        "utterance": "I want to sell my house as soon as possible and need to speak with a real estate agent."
     },
     {
         "intent": "not_update",
-        "utterance": "can i get my brows done at you"
+        "utterance": "A person in real estate can I find one online?"
     },
     {
         "intent": "not_update",
-        "utterance": "can you do bridal makeup"
+        "utterance": "I want to talk with a real estate agent about selling my house."
     },
     {
         "intent": "not_update",
-        "utterance": "do you work on nails"
+        "utterance": "Who can show me houses in Denver?"
     },
     {
         "intent": "not_update",
-        "utterance": "can you color my nails"
+        "utterance": "Can you help me talk with a real estate agent about selling my home?"
     },
     {
         "intent": "not_update",
-        "utterance": "can you do a bob cut"
+        "utterance": "Could you help me get in touch with a real estate agent since I'm trying to sell my house?"
     },
     {
         "intent": "not_update",
-        "utterance": "do you do frizz cut"
+        "utterance": "What should you wear to an open house?"
     },
     {
         "intent": "not_update",
-        "utterance": "lets hear a funny story"
+        "utterance": "I want to buy some land and need help."
     },
     {
         "intent": "not_update",
-        "utterance": "crack a joke"
+        "utterance": "I am looking to put my home on the market."
     },
     {
         "intent": "not_update",
-        "utterance": "give me some laughter"
+        "utterance": "Are there townhomes for purchase in my area?"
     },
     {
         "intent": "not_update",
-        "utterance": "tell me something funny"
+        "utterance": "There's a particular proeprty I am interested at looking at."
     },
     {
         "intent": "not_update",
-        "utterance": "is there a human under your hood"
+        "utterance": "what is the price scale of land in sub urban area"
     },
     {
         "intent": "not_update",
-        "utterance": "are you for real"
+        "utterance": "what is the price scale of land in urban area"
     },
     {
         "intent": "not_update",
-        "utterance": "am i talking to a real human"
+        "utterance": "Does your realtor know your finances?"
     },
     {
         "intent": "not_update",
-        "utterance": "are you human"
+        "utterance": "let me know the price of land in country side"
     },
     {
         "intent": "not_update",
-        "utterance": "what is your name"
+        "utterance": "How do Realtors prepare for their first meeting?"
     },
     {
         "intent": "not_update",
-        "utterance": "who is this"
+        "utterance": "let me know the price of land in rural area"
     },
     {
         "intent": "not_update",
-        "utterance": "who am i talking to"
+        "utterance": "Could you give me any recommendations for what to look for when buying a house?"
     },
     {
         "intent": "not_update",
-        "utterance": "are you a robot"
+        "utterance": "Is it weird to go to neighbors open house?"
     },
     {
         "intent": "not_update",
-        "utterance": "what are you"
+        "utterance": "What should I expect at an open house?"
     },
     {
         "intent": "not_update",
-        "utterance": "where are you from"
+        "utterance": "I want to hire a real estate person."
     },
     {
         "intent": "not_update",
-        "utterance": "which company invented you"
+        "utterance": "Can you help me think about strategies for maximizing the value of my house?"
     },
     {
         "intent": "not_update",
-        "utterance": "i need to know who made you"
+        "utterance": "I am looking for an agent."
     },
     {
         "intent": "not_update",
-        "utterance": "where did you come from angela"
+        "utterance": "Can you help give me advice about strategies for putting my home on the market?"
     },
     {
         "intent": "not_update",
-        "utterance": "where you come from"
+        "utterance": "I need someone to help me buy some property."
     },
     {
         "intent": "not_update",
-        "utterance": "toss out my appointment"
+        "utterance": "need to buy some space for my restaurent in city center"
     },
     {
         "intent": "not_update",
-        "utterance": "hey just remove my appointment from my calendar"
+        "utterance": "I am ready to seel my land."
     },
     {
         "intent": "not_update",
-        "utterance": "i no longer need my appointment"
+        "utterance": "I want to sell my house and need some advice for putting it on the market."
     },
     {
         "intent": "not_update",
-        "utterance": "please help me to cancel my appointment"
+        "utterance": "I'm trying to put my house on the market and want to talk with a real estate agent."
     },
     {
         "intent": "not_update",
-        "utterance": "i might not get to complete my appointment"
+        "utterance": "hey i need to buy a farm house"
     },
     {
         "intent": "not_update",
-        "utterance": "i dont want to continue my appointment"
+        "utterance": "What's the best way to find a newer condo in my area?"
     },
     {
         "intent": "not_update",
-        "utterance": "trash my appointment"
+        "utterance": "What is the average sale price of homes like mine recently?"
     },
     {
         "intent": "not_update",
-        "utterance": "can we shift forward with my appointment"
+        "utterance": "hey help me to buy a space for a small shop"
     },
     {
         "intent": "not_update",
-        "utterance": "i can't make it to my appointment"
+        "utterance": "i need to rent a botique"
     },
     {
         "intent": "not_update",
-        "utterance": "i want to set my appointment for another day"
+        "utterance": "How long do you think it will take to sell my house?"
     },
     {
         "intent": "not_update",
-        "utterance": "i am not happy with my appointment date"
+        "utterance": "hey i need to start a hotel near airport"
     },
     {
         "intent": "not_update",
-        "utterance": "hey lets modify my appointment"
+        "utterance": "How much will I have to pay you in commissions to sell my house?"
     },
     {
         "intent": "not_update",
-        "utterance": "can i change my appointment to some other day"
-    },
-    {
-        "intent": "update",
-        "utterance": "wanna come by at 2pm"
-    },
-    {
-        "intent": "update",
-        "utterance": "i'm booking for monday at 2pm"
+        "utterance": "A realtor where can I find one?"
     },
     {
-        "intent": "update",
-        "utterance": "3:24am please"
-    },
-    {
-        "intent": "update",
-        "utterance": "sunday please"
-    },
-    {
-        "intent": "update",
-        "utterance": "i'll come by at 1pm"
-    },
-    {
-        "intent": "update",
-        "utterance": "lets shoot for a spa"
-    },
-    {
-        "intent": "update",
-        "utterance": "i am thinking 10am might be good for me"
-    },
-    {
-        "intent": "update",
-        "utterance": "lets do 2pm please"
-    },
-    {
-        "intent": "update",
-        "utterance": "i just need a haircut"
-    },
-    {
         "intent": "not_update",
-        "utterance": "try to help me book please"
+        "utterance": "An agent for real estate listing is where?"
     },
     {
         "intent": "not_update",
-        "utterance": "i want to create a booking to have my hair done"
+        "utterance": "When should you talk to a real estate agent?"
     },
     {
         "intent": "not_update",
-        "utterance": "do you think we can set up a booking"
+        "utterance": "A realtor is what I need."
     },
     {
         "intent": "not_update",
-        "utterance": "lets set up a haircut event for this friday"
+        "utterance": "A realtor can be found where?"
     },
     {
         "intent": "not_update",
-        "utterance": "can we set up a session"
+        "utterance": "Are open houses a waste of time?"
     },
     {
         "intent": "not_update",
-        "utterance": "i am curious to know how to set up an appointment"
+        "utterance": "A real estate agent is needed so I'll hire one."
     },
     {
         "intent": "not_update",
-        "utterance": "how easy is it to set up an appointment"
+        "utterance": "Do you knock on the door at an open house?"
     },
     {
         "intent": "not_update",
-        "utterance": "can i book with you"
+        "utterance": "How do I talk to a real estate agent?"
     },
     {
         "intent": "not_update",
-        "utterance": "how to book an appointment"
+        "utterance": "Why are you interested in real estate?"
     },
     {
         "intent": "not_update",
-        "utterance": "hi there how are you can you help me with a booking"
+        "utterance": "What should you not say when viewing a house?"
     },
     {
         "intent": "not_update",
-        "utterance": "hello good afternoon i am calling to make an appointment"
+        "utterance": "Could you let me know if now is a worthwhile time to invest in a new house?"
     },
     {
         "intent": "not_update",
-        "utterance": "hey i wanna book a haircut for coming sunday"
+        "utterance": "What should I wear to a real estate agent interview?"
     },
     {
         "intent": "not_update",
-        "utterance": "hey i need to book"
+        "utterance": "Why do Realtors not want buyers and sellers to meet?"
     },
     {
         "intent": "not_update",
-        "utterance": "lets do this again"
+        "utterance": "is it right time to buy farm lands"
     },
     {
         "intent": "not_update",
-        "utterance": "trash this stuff"
+        "utterance": "Is it OK to contact listing agent directly?"
     },
     {
         "intent": "not_update",
-        "utterance": "cancel this"
+        "utterance": "Is it better to contact listing agent?"
     },
     {
         "intent": "not_update",
-        "utterance": "dont bother"
+        "utterance": "is it right to buy some space in urban areas"
     },
     {
         "intent": "not_update",
-        "utterance": "noooo"
+        "utterance": "If you have any recommendations for what to do when buying a new house I'd appreciate them."
     },
     {
         "intent": "not_update",
-        "utterance": "i have a 360card and i was wondering if i can use it"
+        "utterance": "I'm trying to buy a new house and want some tips about what to look for."
     },
     {
         "intent": "not_update",
-        "utterance": "i have a mastercard do you take that"
+        "utterance": "Do you have any advice for me if I'm looking to sell my house?"
     },
     {
         "intent": "not_update",
-        "utterance": "can i swipe my visa"
+        "utterance": "Can you tell me if right now is a good time to buy a new home?"
     },
     {
         "intent": "not_update",
-        "utterance": "how late do you open"
+        "utterance": "I am in need of an realtor's services where is a listing?"
     },
     {
         "intent": "not_update",
-        "utterance": "when in closing time"
+        "utterance": "is it best way to invest money in buying lands"
     },
     {
         "intent": "not_update",
-        "utterance": "i need a business hours"
+        "utterance": "help me to rent a godown"
     },
     {
         "intent": "not_update",
-        "utterance": "when are you closing"
+        "utterance": "tell me on renting a new house"
     },
     {
         "intent": "not_update",
-        "utterance": "when do you operate"
+        "utterance": "What questions should I ask a realtor when buying a house?"
     },
     {
         "intent": "not_update",
-        "utterance": "can you work on my hair"
+        "utterance": "How do you nail a real estate interview?"
     },
     {
         "intent": "not_update",
-        "utterance": "do you cater for spa"
+        "utterance": "What should I ask at an open house?"
     },
     {
         "intent": "not_update",
-        "utterance": "joke with me"
+        "utterance": "What questions should a Realtor ask a first time buyer?"
     },
     {
         "intent": "not_update",
-        "utterance": "give me a joke"
+        "utterance": "What questions should I ask at an estate agent interview?"
     },
     {
         "intent": "not_update",
-        "utterance": "say a funny thing"
+        "utterance": "I am looking for a real estate agent."
     },
     {
         "intent": "not_update",
-        "utterance": "show me some id"
+        "utterance": "I need an agent to help me buy some property."
     },
     {
         "intent": "not_update",
-        "utterance": "who the hell are you"
+        "utterance": "I need help in getting a real estate agent."
     },
     {
         "intent": "not_update",
-        "utterance": "reveal your identity"
+        "utterance": "I am ready to sell my land and need an agent."
     },
     {
         "intent": "not_update",
-        "utterance": "whats the place you came from"
+        "utterance": "let me know some new designs of hair style"
     },
     {
         "intent": "not_update",
-        "utterance": "whats your inventor"
+        "utterance": "i want to straighten my hair"
     },
     {
         "intent": "not_update",
-        "utterance": "did got created you"
+        "utterance": "I need pricing to do my hair and nails."
     },
     {
         "intent": "not_update",
-        "utterance": "who made you angela"
+        "utterance": "I am seeking pricing to do my hair and nails."
     },
     {
         "intent": "not_update",
-        "utterance": "remove the appointment from my calendar"
+        "utterance": "let me know some hair colors"
     },
     {
         "intent": "not_update",
-        "utterance": "delete my appointment"
+        "utterance": "let me show some different styles of nail art"
     },
     {
         "intent": "not_update",
-        "utterance": "remove my appointment"
+        "utterance": "let me know the designs of hair cuts"
     },
     {
         "intent": "not_update",
-        "utterance": "alter my appointment"
+        "utterance": "I need to get ready for a photoshoot who can I schedule an appointment with?"
     },
     {
         "intent": "not_update",
-        "utterance": "the appointment day have to change"
+        "utterance": "Where can I book a hair appointment online?"
     },
     {
         "intent": "not_update",
-        "utterance": "please change my appointment"
+        "utterance": "Who can give me prices for a color and trim?"
     },
     {
         "intent": "not_update",
-        "utterance": "can i move my appointment"
-    },
-    {
-        "intent": "update",
-        "utterance": "hair curls is what i want"
-    },
-    {
-        "intent": "update",
-        "utterance": "only hair coloring"
-    },
-    {
-        "intent": "update",
-        "utterance": "just a pedicure i'm going to need"
-    },
-    {
-        "intent": "update",
-        "utterance": "lets do this at 6pm"
-    },
-    {
-        "intent": "update",
-        "utterance": "i wanna cut at 2pm"
+        "utterance": "Who in my area can do a last minute touch up?"
     },
     {
         "intent": "not_update",
-        "utterance": "lets arrange for my barber"
+        "utterance": "Where can I get a cheap mani and pedi?"
     },
     {
         "intent": "not_update",
-        "utterance": "can we have a session"
+        "utterance": "Blowdry and treatment is how much?"
     },
     {
         "intent": "not_update",
-        "utterance": "i just wanna book"
+        "utterance": "Is there somebody who can do dreadsneed natural dreads"
     },
     {
         "intent": "not_update",
-        "utterance": "help me with a 10AM booking"
+        "utterance": "I want to talk with a salon agent so I can book my hair appointment."
     },
     {
         "intent": "not_update",
-        "utterance": "can i get a manicure done at 2pm"
+        "utterance": "Want somebody who can braid my hair"
     },
     {
         "intent": "not_update",
-        "utterance": "i want to visit to have my hair done"
+        "utterance": "Do you offer wash and set service in your salon and how much?"
     },
     {
         "intent": "not_update",
-        "utterance": "can we arrange to meet"
+        "utterance": "Do you have braids in your salon?"
     },
     {
         "intent": "not_update",
-        "utterance": "hey i wanna set up a visit"
+        "utterance": "I want someone to give me pricing to do my hair and nails."
     },
     {
         "intent": "not_update",
-        "utterance": "book me in baby"
+        "utterance": "Today is there someone who can give me pricing to do my hair and nails?"
     },
     {
         "intent": "not_update",
-        "utterance": "I'd say goodbye, but you're not worth it."
+        "utterance": "Could you please get me in touch with a salon agent so I can book my nail appointment?"
     },
     {
         "intent": "not_update",
-        "utterance": "Yes, I do. The word goodbye is simple and concise."
+        "utterance": "let me know the price for pedicure"
     },
     {
         "intent": "not_update",
-        "utterance": "Forever and forever farewell. If we do meet again, we'll smile indeed. If not, 'tis true parting was well made."
+        "utterance": "I really need to get my nails done so please put a salon agent in contact with me."
     },
     {
         "intent": "not_update",
-        "utterance": "See you on the internet!"
+        "utterance": "I'd like to get my nails done this weekend so I want to talk with a salon agent."
     },
     {
         "intent": "not_update",
-        "utterance": "Nope, I try to be creative whenever I can."
+        "utterance": "let me know the price for manicure"
     },
     {
         "intent": "not_update",
-        "utterance": "Who cares? There's no need to overcomplicate things!"
+        "utterance": "Could you get a salon agent in touch with me so I can book my hair appointment?"
     },
     {
         "intent": "not_update",
-        "utterance": "Sometimes. When I feel like it, I say other words."
+        "utterance": "can you tell me price for hair cut with hair wash"
     },
     {
         "intent": "not_update",
-        "utterance": "We may not talk for a long time, but I hope we don't lose touch."
+        "utterance": "what is the quote for hair color"
     },
     {
         "intent": "not_update",
-        "utterance": "Sayonara, muchachos!"
+        "utterance": "can you tell me the price for normal hair cut"
     },
     {
         "intent": "not_update",
-        "utterance": "See you at the restaurant at the edge of the universe!"
+        "utterance": "Can you give me pricing to do my hair and nails today?"
     },
     {
         "intent": "not_update",
-        "utterance": "You will do well."
+        "utterance": "Do you do body waxing here?"
     },
     {
         "intent": "not_update",
-        "utterance": "See you in another life, brotha!"
+        "utterance": "try some different hair color this time"
     },
     {
         "intent": "not_update",
-        "utterance": "Come back when you can't stay so long."
+        "utterance": "i need to look professional this time"
     },
     {
         "intent": "not_update",
-        "utterance": "Never look back!"
+        "utterance": "Can you cut hair and do nails?"
     },
     {
         "intent": "not_update",
-        "utterance": "After four, dinosaur."
+        "utterance": "Do you wax hairbrows also?"
     },
     {
         "intent": "not_update",
-        "utterance": "Don\u2019t forget to send a letter."
+        "utterance": "Will you be able to do a manicure after my haircut?"
     },
     {
         "intent": "not_update",
-        "utterance": "Goodbye forever."
+        "utterance": "Can you get a salon agent on the phone right now so I can book my hair appointment?"
     },
     {
         "intent": "not_update",
-        "utterance": "After three, chimpanzee!"
+        "utterance": "Can you please make sure that a salon agent calls me so I can get my hair appointment booked?"
     },
     {
         "intent": "not_update",
-        "utterance": "After two, kangaroo!"
+        "utterance": "Could you do me a favor and put me in touch with a salon agent so I can book my nail appointment?"
     },
     {
         "intent": "not_update",
-        "utterance": "Next time, bring more cookies."
+        "utterance": "Could you go ahead and get a salon agent on the line so I can book my haircut?"
     },
     {
         "intent": "not_update",
-        "utterance": "That's all folks."
+        "utterance": "need to cut very shortly this time"
     },
     {
         "intent": "not_update",
-        "utterance": "Party easy, drive safe, and return with a smile on your face."
+        "utterance": "need to roll my hair this time"
     },
     {
         "intent": "not_update",
-        "utterance": "So long, suckers!"
+        "utterance": "Can you get a salon agent to speak with me so I can book my hair appointment?"
     },
     {
         "intent": "not_update",
-        "utterance": "Hasta lasagna, don't get any on ya"
+        "utterance": "this time you surely do some different style for my hair"
     },
     {
         "intent": "not_update",
-        "utterance": "Make sure the doormat says goodbye!"
+        "utterance": "I just want a wax job done."
     },
     {
         "intent": "not_update",
-        "utterance": "Until next time."
+        "utterance": "Can I make an appointment for a bikini wax?"
     },
     {
         "intent": "not_update",
-        "utterance": "See you in the future."
+        "utterance": "Do you do haircuts and eyebrow waxing?"
     },
     {
         "intent": "not_update",
-        "utterance": "Au revoir!"
+        "utterance": "I'd like to come in for a manicure."
     },
     {
         "intent": "not_update",
-        "utterance": "Begone!"
+        "utterance": "I just need a haircut."
     },
     {
         "intent": "not_update",
-        "utterance": "Take care, polar bear!"
+        "utterance": "Can I make an appointment for tomorrow afternoon for a manicure?"
     },
     {
         "intent": "not_update",
-        "utterance": "Peace out, rainbow trout!"
+        "utterance": "I'm thinking about doing my hair and nails here."
     },
     {
         "intent": "not_update",
-        "utterance": "I'm outta here like spit through a trumpet."
+        "utterance": "Can I get a pedicure on Saturday morning?"
     },
     {
         "intent": "not_update",
-        "utterance": "Adios, amigos."
+        "utterance": "Is someone available on Saturday to color my hair?"
     },
     {
         "intent": "not_update",
-        "utterance": "Toodaloo, caribou!"
+        "utterance": "I'd like to get a haircut tomorrow and need to talk with a salon agent."
     },
     {
         "intent": "not_update",
-        "utterance": "I'm outtie."
+        "utterance": "I've been trying to get a haircut for weeks so please get a salon agent on the phone for me."
     },
     {
         "intent": "not_update",
-        "utterance": "I shall return."
+        "utterance": "I just need a quick trim - how long will I have to wait?"
     },
     {
         "intent": "not_update",
-        "utterance": "Catch you round like a rissole!"
+        "utterance": "Get a salon agent on the phone so I can get my haircut booked."
     },
     {
         "intent": "not_update",
-        "utterance": "Take it easy, greasy. You've got a long way to slide."
+        "utterance": "Connect me with a salon to get my hair cut."
     },
     {
         "intent": "not_update",
-        "utterance": "See you, space cowboy."
+        "utterance": "Do you offer threading?"
     },
     {
         "intent": "not_update",
-        "utterance": "Screw you guys, I'm going home!"
+        "utterance": "I want to talk with a salon agent who can help me book my haircut."
     },
     {
         "intent": "not_update",
-        "utterance": "Ciao ciao, brown cow!"
+        "utterance": "Does your salon offer organic hair coloring products?"
     },
     {
         "intent": "not_update",
-        "utterance": "I\u2019ll show you to the door!"
+        "utterance": "Can you please get a salon agent on the phone for me so I can book my haircut?"
     },
     {
         "intent": "not_update",
-        "utterance": "I\u2019m late for my bus, gigantopithecus!"
+        "utterance": "I need to speak with a salon agent in order to get my haircut appointment booked."
     },
     {
         "intent": "not_update",
-        "utterance": "Make new friends on the sidewalk!"
+        "utterance": "Does your salon do bridal parties?"
     },
     {
         "intent": "not_update",
-        "utterance": "Gotta go, the power of the shower compels me."
+        "utterance": "Do you offer acrylics?"
     },
     {
         "intent": "not_update",
-        "utterance": "Stay cool, my dude."
+        "utterance": "I want a haircut this weekend so can you put me in touch with a salon agent?"
     },
     {
         "intent": "not_update",
-        "utterance": "Bye! I tolerate you!"
+        "utterance": "I need to get waxed."
     },
     {
         "intent": "not_update",
-        "utterance": "Move out, brussels sprout!"
+        "utterance": "I want you to put me in touch with a salon agent so I can book the appointment for my haircut."
     },
     {
         "intent": "not_update",
-        "utterance": "Later, nerds!"
+        "utterance": "I want a haircut now."
     },
     {
         "intent": "not_update",
-        "utterance": "See you soon, baboon!"
+        "utterance": "I need my nails done."
     },
     {
         "intent": "not_update",
-        "utterance": "Don't trip on a raindrop!"
+        "utterance": "I need to get my manicure today."
     },
     {
         "intent": "not_update",
-        "utterance": "See you later, aggregator!"
+        "utterance": "I need my hair styled."
     },
     {
         "intent": "not_update",
-        "utterance": "Be careful! Don't get mauled by a squirrel!"
+        "utterance": "I'd like to get my hair done this weekend and need to speak with a salon agent."
     },
     {
         "intent": "not_update",
-        "utterance": "Be sweet, parakeet."
+        "utterance": "I need to book an appointment with a salon agent."
     },
     {
         "intent": "not_update",
-        "utterance": "Don't get cut by a blade of grass!"
+        "utterance": "I need to get an appointment at a salon for a manicure."
     },
     {
         "intent": "not_update",
-        "utterance": "Better shake, rattlesnake!"
+        "utterance": "I need to get a haircut and a manicure at a salon."
     },
     {
         "intent": "not_update",
-        "utterance": "Parting is such sweet sorrow, that I shall say good night till it be tomorrow."
+        "utterance": "I'm interested in speaking with a salon agent since I'm trying to get some waxing finished."
     },
     {
         "intent": "not_update",
-        "utterance": "Don't forget to be awesome."
+        "utterance": "If you can help me get in touch with a salon agent that would be great."
     },
     {
         "intent": "not_update",
-        "utterance": "Don't let the door hit ya where the good lord split ya."
+        "utterance": "The manicurist can I speak to her?"
     },
     {
         "intent": "not_update",
-        "utterance": "Later, potato!"
+        "utterance": "I need to talk to someone at the salon about making an appointment."
     },
     {
         "intent": "not_update",
-        "utterance": "Later, skater!"
+        "utterance": "Can you get a salon agent on the other line so I can book my hair appointment?"
     },
     {
         "intent": "not_update",
-        "utterance": "Shine on, you crazy diamonds."
+        "utterance": "Is a stylist available?"
     },
     {
         "intent": "not_update",
-        "utterance": "May the force be with you... always."
+        "utterance": "Do you have a manicurist I can talk to?"
     },
     {
         "intent": "not_update",
-        "utterance": "In a while, crocodile."
+        "utterance": "Can you put me in contact with a salon agent so I can book a manicure?"
     },
     {
         "intent": "not_update",
-        "utterance": "Catch ya later, future dudes!"
+        "utterance": "Who can I make an appointment for hair with?"
     },
     {
         "intent": "not_update",
-        "utterance": "I'm off like a dirty shirt."
+        "utterance": "Do you wax hairbrows?"
     },
     {
         "intent": "not_update",
-        "utterance": "I gotta jet."
+        "utterance": "Can you get me in touch with a salon agent so I can get my waxing done?"
     },
     {
         "intent": "not_update",
-        "utterance": "As you wish, jellyfish!"
+        "utterance": "I'm trying to get a manicure this weekend so please put me in touch with a salon agent."
     },
     {
         "intent": "not_update",
-        "utterance": "Cya"
+        "utterance": "I need to discuss my travel options."
     },
     {
         "intent": "not_update",
-        "utterance": "Bye for now."
+        "utterance": "I need a trave agent."
     },
     {
         "intent": "not_update",
-        "utterance": "Don't get lost on your way to class!"
+        "utterance": "Please connect me to a booking agent."
     },
     {
         "intent": "not_update",
-        "utterance": "See you when I see you."
+        "utterance": "I'm looking to go on a trip."
     },
     {
         "intent": "not_update",
-        "utterance": "Tootle-loo, kangaroo."
+        "utterance": "I need help planning a trip."
     },
     {
         "intent": "not_update",
-        "utterance": "Smell ya later!"
+        "utterance": "Please allow me to speak to a booking agent for a flight."
     },
     {
         "intent": "not_update",
-        "utterance": "Love, peace, and chicken grease."
+        "utterance": "I want to talk about a trip I'm planning."
     },
     {
         "intent": "not_update",
-        "utterance": "Cool Goodbye Sayings"
+        "utterance": "I am seeking assistance for a coming trip"
     },
     {
         "intent": "not_update",
-        "utterance": "Cheerio!"
+        "utterance": "I need to make travel reservations for flights and hotel"
     },
     {
         "intent": "not_update",
-        "utterance": "Happy trails!"
+        "utterance": "I want to book a flight for next week."
     },
     {
         "intent": "not_update",
-        "utterance": "Adios, hippos."
+        "utterance": "hey four members need to go to australia next month can you help us"
     },
     {
         "intent": "not_update",
-        "utterance": "See ya, wouldn't wanna be ya."
+        "utterance": "I need to book a flight."
     },
     {
         "intent": "not_update",
-        "utterance": "Peace out, girl scout!"
+        "utterance": "I need to speak to someone about booking a flight."
     },
     {
         "intent": "not_update",
-        "utterance": "Time to scoot, little newt."
+        "utterance": "Can you make sure a travel agent calls me so I can get my flight planning over with?"
     },
     {
         "intent": "not_update",
-        "utterance": "Don't forget to come back!"
+        "utterance": "I need your assistance getting in contact with a travel agent since I want to book my airline ticket."
     },
     {
         "intent": "not_update",
-        "utterance": "Once more unto the breach, dear friends!"
+        "utterance": "Can you get a travel agent on the phone so I can book my flights?"
     },
     {
         "intent": "not_update",
-        "utterance": "Chop chop, lollipop!"
+        "utterance": "I want to fly for vacation to the beach"
     },
     {
         "intent": "not_update",
-        "utterance": "Influence everyone in a good way!"
+        "utterance": "I want to book my plane tickets so can you put me in touch with a travel agency?"
     },
     {
         "intent": "not_update",
-        "utterance": "Can\u2019t star, blue jay."
+        "utterance": "I desire to rent a car as part of a business trip"
     },
     {
         "intent": "not_update",
-        "utterance": "Oh, and in case I don't see you\u2014good afternoon, good evening, and good night!"
+        "utterance": "I'm going to need your help getting in contact with a travel agency so I can book my flights."
     },
     {
         "intent": "not_update",
-        "utterance": "I'm gonna make a like a bakery truck and haul buns."
+        "utterance": "whom can i contact to book the flight ticket"
     },
     {
         "intent": "not_update",
-        "utterance": "Gotta roll!"
+        "utterance": "hello give me the details about flying to canada"
     },
     {
         "intent": "not_update",
-        "utterance": "It's been a pleasure and a privilege to meet you."
+        "utterance": "I wish to travel in the coming months"
     },
     {
         "intent": "not_update",
-        "utterance": "I look forward to our next meeting."
+        "utterance": "I need a travel agent to contact me."
     },
     {
         "intent": "not_update",
-        "utterance": "Be good and don't get caught."
+        "utterance": "I am seeking pricing for a nice trip."
     },
     {
         "intent": "not_update",
-        "utterance": "Hasta la vista, baby."
+        "utterance": "I am in need of a travel agent's services where is a listing?"
     },
     {
         "intent": "not_update",
-        "utterance": "Thank you for your cooperation. Farewell."
+        "utterance": "can you help me to book flight ticket for tonight"
     },
     {
         "intent": "not_update",
-        "utterance": "Don't get attacked by a bear, it's night-time!"
+        "utterance": "I am looking for a good travel agent."
     },
     {
         "intent": "not_update",
-        "utterance": "Blow a kiss, goldfish."
+        "utterance": "I am ready to plan a trip through a travel agent."
     },
     {
         "intent": "not_update",
-        "utterance": "Adieu, cockatoo!"
+        "utterance": "Can you get a flight booking agent on the other line so I can buy my flights?"
     },
     {
         "intent": "not_update",
-        "utterance": "Have fun storming the castle!"
+        "utterance": "Can you help me get a travel agent on the other line since I'm trying to book my flights?"
     },
     {
         "intent": "not_update",
-        "utterance": "See you on the other side."
+        "utterance": "please help me to book a flight ticket"
     },
     {
         "intent": "not_update",
-        "utterance": "Take care, butterfly."
+        "utterance": "Who knows where is the best place to vacation in Brazil?"
     },
     {
         "intent": "not_update",
-        "utterance": "I gotta bounce."
+        "utterance": "I want to talk with a flight booking agent so I can buy my plane tickets."
     },
     {
         "intent": "not_update",
-        "utterance": "Toodle-pip!"
+        "utterance": "My sister needs to get a last minute flight to Las Vegas."
     },
     {
         "intent": "not_update",
-        "utterance": "Calc you later!"
+        "utterance": "Who knows where I can find hotels close to the Eiffel Tower?"
     },
     {
         "intent": "not_update",
-        "utterance": "Have a good one."
+        "utterance": "I'm going to have to speak with a travel agency because I'm trying to book my honeymoon."
     },
     {
         "intent": "not_update",
-        "utterance": "Give a hug, ladybug."
+        "utterance": "Can you do anything to help me contact a travel agency so I can purchase my plane tickets?"
     },
     {
         "intent": "not_update",
-        "utterance": "Later, haters."
+        "utterance": "I need to take a business trip to Berlin."
     },
     {
         "intent": "not_update",
-        "utterance": "It was nice to see you again."
+        "utterance": "Who knows how I can find a cheap flight to Montreal?"
     },
     {
         "intent": "not_update",
-        "utterance": "Don't get run over!"
+        "utterance": "Travel agents are useful if you're doing a very costly or complex trip planning a honeymoon or something fancy or traveling with a large group"
     },
     {
         "intent": "not_update",
-        "utterance": "Catch you on the flip side."
+        "utterance": "A travel agent is needed to help me plan a long trip."
     },
     {
         "intent": "not_update",
-        "utterance": "You're still here? It's over. Go home. Go!"
+        "utterance": "Travel agents are closing branches as more people head online to book their holidays"
     },
     {
         "intent": "not_update",
-        "utterance": "Out to the door, dinosaur."
+        "utterance": "If you want flexibility the AIRLINE will charge more no matter who you book through"
     },
     {
         "intent": "not_update",
-        "utterance": "See you soon, racoon."
+        "utterance": "my mother wants to go to world tour can you help me"
     },
     {
         "intent": "not_update",
-        "utterance": "Gotta bolt!"
+        "utterance": "A Travel agent will book you in any class you want - the price for any given class is set by the airline"
     },
     {
         "intent": "not_update",
-        "utterance": "It has been emotional, bye."
+        "utterance": "I'm trying to book a one-way ticket to Hawaii and need to speak with a travel agent to do so."
     },
     {
         "intent": "not_update",
-        "utterance": "To the winch, wench!"
+        "utterance": "The cheaper the price the 'lower' the class and more restrictions re changes cancellations etc."
     },
     {
         "intent": "not_update",
-        "utterance": "Smoke me a kipper, I'll be back for breakfast."
+        "utterance": "A person who has travel agent experience is needed."
     },
     {
         "intent": "not_update",
-        "utterance": "Bye bye, butterfly."
+        "utterance": "A travel agent needs to help me."
     },
     {
         "intent": "not_update",
-        "utterance": "Gotta get going."
+        "utterance": "A person with travel experience is wanted."
     },
     {
         "intent": "not_update",
-        "utterance": "Well, I'm off!"
+        "utterance": "A travel agent is needed."
     },
     {
         "intent": "not_update",
-        "utterance": "Gotta go, buffalo."
+        "utterance": "how to book flight tickets with summer offers"
     },
     {
         "intent": "not_update",
-        "utterance": "Long live and prosper!"
+        "utterance": "whom can i meet to do with tourist visa process"
     },
     {
         "intent": "not_update",
-        "utterance": "Stay classy."
+        "utterance": "I need to make a reservation for a family member"
     },
     {
         "intent": "not_update",
-        "utterance": "Gotta hit the road."
+        "utterance": "I want to get into contact with a flight booking agent to assist with my flight logistics."
     },
     {
         "intent": "not_update",
-        "utterance": "Peace out!"
+        "utterance": "hey i need to book flight today"
     },
     {
         "intent": "not_update",
-        "utterance": "Catch you on the rebound."
+        "utterance": "how do you support me with booking flight ticket"
     },
     {
         "intent": "not_update",
-        "utterance": "Fare thee well."
+        "utterance": "Hello I want to know where is a cheap beach to fly to in Chile."
     },
     {
         "intent": "not_update",
-        "utterance": "Okay...bye, fry guy!"
+        "utterance": "Looking for the cheapest flight to the Detroit Metro area from Florida."
     },
     {
         "intent": "not_update",
-        "utterance": "I\u2019m out of here."
+        "utterance": "I'm traveling to France and need to get in touch with a flight booking agent."
     },
     {
         "intent": "not_update",
-        "utterance": "See you later, alligator!"
+        "utterance": "I'm trying to speak with a flight booking agent since I have tickets to book."
     },
     {
         "intent": "not_update",
-        "utterance": "If I don\u2019t see you around, I'll see you square."
+        "utterance": "Who can tell me how I can have a 24 hour layover in Turkey?"
     },
     {
         "intent": "not_update",
-        "utterance": "After a while, crocodile."
+        "utterance": "Where do I go to book a cheap flight to Turkey"
     },
     {
         "intent": "not_update",
-        "utterance": "Stay out of trouble."
+        "utterance": "Can you get me into contact with a flight booking agent so I can book my tickets?"
     },
     {
         "intent": "not_update",
-        "utterance": "Pos eisai?"
+        "utterance": "Is there a direct flight from New York to Madrid Spain?"
     },
     {
         "intent": "not_update",
-        "utterance": "Habari yako?"
+        "utterance": "hi i want to buy a flight"
     },
     {
         "intent": "not_update",
-        "utterance": "Come va?"
+        "utterance": "I would like to get to Texas today"
     },
     {
         "intent": "not_update",
-        "utterance": "Hey friend! What\u2019s the latest buzz in your world?"
+        "utterance": "I need the quickest flight to London"
     },
     {
         "intent": "not_update",
-        "utterance": "Como voce esta?"
+        "utterance": "What airlines are flying to mexico"
     },
     {
         "intent": "not_update",
-        "utterance": "What\u2019s smokin\u2019? Tell your pal everything!"
+        "utterance": "I want to fly to 3 places within a 2 week trip."
     },
     {
         "intent": "not_update",
-        "utterance": "What\u2019s the word, hummingbird?"
+        "utterance": "Does the airport in Vail offer jet-way service?"
     },
     {
         "intent": "not_update",
-        "utterance": "Hey Einstein, still cracking the old theory?"
+        "utterance": "I'm looking to get to Antartica. Where do I fly to first?"
     },
     {
         "intent": "not_update",
-        "utterance": "Namaste! How long has it been, dost?"
+        "utterance": "I need to find a travel agent asap."
     },
     {
         "intent": "not_update",
-        "utterance": "How is life sailing?"
+        "utterance": "Do I still need a passport to travel to Mexico or Canada from the United States?"
     },
     {
         "intent": "not_update",
-        "utterance": "Como estas?"
+        "utterance": "Do you offer all inclusive packages?"
     },
     {
         "intent": "not_update",
-        "utterance": "Ua mai oe?"
+        "utterance": "i need a round trip flight ticket where can i book"
     },
     {
         "intent": "not_update",
-        "utterance": "Hey bud! Mind if we catch up? I saw you like eons ago."
+        "utterance": "I need help in hiring a ravel agent."
     },
     {
         "intent": "not_update",
-        "utterance": "Hi homey! How\u2019s life treating you?"
+        "utterance": "I just need help planning a trip."
     },
     {
         "intent": "not_update",
-        "utterance": "Hi, I just met you, and yes, this is crazy. Here\u2019s my number \u2013 call me, maybe?"
+        "utterance": "I wish to hire a travel agent where can I find one?"
     },
     {
         "intent": "not_update",
-        "utterance": "\u2018Sup, my homeslice?"
+        "utterance": "have you assure the conformation of flight ticket on that day"
     },
     {
         "intent": "not_update",
-        "utterance": "How farest thou?"
+        "utterance": "I am ready to go on a trip and I need an agent."
     },
     {
         "intent": "not_update",
-        "utterance": "What\u2019s up, buttercup?"
+        "utterance": "what is the best quote to fly for singapore"
     },
     {
         "intent": "not_update",
-        "utterance": "Whazzup?"
+        "utterance": "my friend needs to book a flight ticket to india"
     },
     {
         "intent": "not_update",
-        "utterance": "Wagwan?"
+        "utterance": "how to get tourist visa who can i meet"
     },
     {
         "intent": "not_update",
-        "utterance": "Jal jinaess-eoyo?"
+        "utterance": "What questions should you ask when buying airline tickets?"
     },
     {
         "intent": "not_update",
-        "utterance": "Ni hao ma?"
+        "utterance": "I'm interested in going to Canada next week so I need to talk with a travel agency."
     },
     {
         "intent": "not_update",
-        "utterance": "Comment allez-vous?"
+        "utterance": "I want to go to Canada next week so can you put me into contact with a travel agency?"
     },
     {
         "intent": "not_update",
-        "utterance": "What\u2019s good in the hood?"
+        "utterance": "I want to get on a plane to Spain so can you put me in touch with a flight booking agent?"
     },
     {
         "intent": "not_update",
-        "utterance": "Sup!"
+        "utterance": "I'd like to speak with a travel agency regarding my flight to Canada."
     },
     {
         "intent": "not_update",
-        "utterance": "How have you been, crazy coo?"
+        "utterance": "Can you please put me in touch with a flight booking agent so I can book my trip to Canada?"
     },
     {
         "intent": "not_update",
-        "utterance": "How are things going, bandhu?"
+        "utterance": "Is it better to book through a travel agent?"
     },
     {
         "intent": "not_update",
-        "utterance": "What\u2019s sizzling?"
+        "utterance": "How do you attract luxury travel clients?"
     },
     {
         "intent": "not_update",
-        "utterance": "Hey mistaa, how do you do?"
+        "utterance": "Could you help me get in touch with a travel agent so I can book my ticket to Swaziland?"
     },
     {
         "intent": "not_update",
-        "utterance": "Ogenki desu ka?"
+        "utterance": "What questions do travel agents ask customers?"
     },
     {
         "intent": "not_update",
-        "utterance": "Whaccha up to, dude?"
+        "utterance": "How do I promote myself as a travel agent?"
     },
     {
         "intent": "not_update",
-        "utterance": "What\u2019s new? Tell me everything!"
+        "utterance": "I need help in hiring someone to plan a trip for me."
     },
     {
         "intent": "not_update",
-        "utterance": "Hello, babycakes! How are you?!"
+        "utterance": "I am seeking pricing for a nice trip through a travel agency."
     },
     {
         "intent": "not_update",
-        "utterance": "Bro, hey, how are you doing?"
+        "utterance": "Please put me in contact with the travel agency so I can book my trip."
     },
     {
         "intent": "not_update",
-        "utterance": "How are you doing, old man?"
+        "utterance": "I am looking for a good travel agency in this area."
     },
     {
         "intent": "not_update",
-        "utterance": "Yo man, where were you?"
+        "utterance": "I am in need of a travel agency so where is a listing?"
     },
     {
         "intent": "not_update",
-        "utterance": "Hi, lost buddy! Long time no see!"
+        "utterance": "I am ready to get someone to plan my trip."
     },
     {
         "intent": "not_update",
-        "utterance": "Hey Slayer, what\u2019s up?"
+        "utterance": "i want to book a flight ticket"
     },
     {
         "intent": "not_update",
-        "utterance": "Hey beautiful! I am blinded by your charm!"
+        "utterance": "I'm booking my honeymoon flights tomorrow so please get me in contact with a flight booking agent."
     },
     {
         "intent": "not_update",
-        "utterance": "Hello, sugar. Come and give me a good morning hug."
+        "utterance": "Please get the travel agency on the phone so I can book my flights."
     },
     {
         "intent": "not_update",
-        "utterance": "Welcome to the club, boss!"
+        "utterance": "any good travel agency here"
     },
     {
         "intent": "not_update",
-        "utterance": "Hey homey! Welcome!"
+        "utterance": "I'm trying to plan my honeymoon travels and need to speak with a travel agent."
     },
     {
         "intent": "not_update",
-        "utterance": "Waddup chica!"
+        "utterance": "i need to book a family flight ticket next week"
     },
     {
         "intent": "not_update",
-        "utterance": "Hey, hiiii. How is your weekend going? Mine just got better \ud83d\ude09."
+        "utterance": "i need to go abroad who can i meet"
     },
     {
         "intent": "not_update",
-        "utterance": "Oooo la la. You are a gorgeous sculpture made by the God Almighty!"
+        "utterance": "i want to talk to some good travel agent"
     },
     {
         "intent": "not_update",
-        "utterance": "This is where my bae is at!"
+        "utterance": "How much are flights to Japan?"
     },
     {
         "intent": "not_update",
-        "utterance": "Hey there, little thing. You made my day by giving me a glimpse of yourself!"
+        "utterance": "I want to spend a weekend somewhere cheap."
     },
     {
         "intent": "not_update",
-        "utterance": "What\u2019s up, handsome? You are making the temperatures soar this season!"
+        "utterance": "Who can I talk to for booking a vacation package in Mexico?"
     },
     {
         "intent": "not_update",
-        "utterance": "Hey love!"
+        "utterance": "My family wants to go to Israel for a week."
     },
     {
         "intent": "not_update",
-        "utterance": "Hi, butterfly! Holaaa!"
+        "utterance": "I want to book a package to the bahamas."
     },
     {
         "intent": "not_update",
-        "utterance": "Konnichiwa!"
+        "utterance": "i need some help from lawyer"
     },
     {
         "intent": "not_update",
-        "utterance": "Hi, cutie pie, sugar bun!"
+        "utterance": "i need to come out from jail get some lawyer"
     },
     {
         "intent": "not_update",
-        "utterance": "Morning! So good to see ya, good looking!"
+        "utterance": "I saw your ad on Facebook and wondered if you could help me with my work comp claim."
     },
     {
         "intent": "not_update",
-        "utterance": "What\u2019s cookin\u2019, good lookin\u2019?"
+        "utterance": "i need to handle some legal issues help me with right person"
     },
     {
         "intent": "not_update",
-        "utterance": "Hey, munchkin! Why so chweet?"
+        "utterance": "i want to speak with a lawyer"
     },
     {
         "intent": "not_update",
-        "utterance": "Hello belle! You are glowing!"
+        "utterance": "My husband died and I really need to have an attorney."
     },
     {
         "intent": "not_update",
-        "utterance": "What\u2019s up with you, old soul? Wanna chat?"
+        "utterance": "i need some lawyer support"
     },
     {
         "intent": "not_update",
-        "utterance": "Hello! There is my pumpkin! I miiiissed you <3"
+        "utterance": "I have some legal matters that I want legal counsel on."
     },
     {
         "intent": "not_update",
-        "utterance": "Ciao babydoll!"
+        "utterance": "You were recommended very highly to help me with my court problem."
     },
     {
         "intent": "not_update",
-        "utterance": "Bing bing! How\u2019s it going?"
+        "utterance": "I am desperate and just need some legal advice and wondered if you could please assist me."
     },
     {
         "intent": "not_update",
-        "utterance": "Good day, young man!"
+        "utterance": "I want some legal opinions from a lawyer about these matters."
     },
     {
         "intent": "not_update",
-        "utterance": "Bonjour monsieur!"
+        "utterance": "I'm trying to get some legal advice from an attorney."
     },
     {
         "intent": "not_update",
-        "utterance": "Hallo miss!"
+        "utterance": "You helped a friend of mine with good results so would like you to represent me in my civil suit against the city if you would."
     },
     {
         "intent": "not_update",
-        "utterance": "Hello there, daddycool!"
+        "utterance": "I need advice on a legal problem."
     },
     {
         "intent": "not_update",
-        "utterance": "Que pasa, madam!"
+        "utterance": "I am trying to track down an attorney to get legal advice."
     },
     {
         "intent": "not_update",
-        "utterance": "Hola paapi!"
+        "utterance": "I'd like to talk with my lawyer about some legal matters."
     },
     {
         "intent": "not_update",
-        "utterance": "Hey, boo. Wacch ya doing? You just brightened up my day!"
+        "utterance": "I need to talk to a lawyer for legal assistance."
     },
     {
         "intent": "not_update",
-        "utterance": "Aloha princess!"
+        "utterance": "Oh my where's an attorney when you need one?"
     },
     {
         "intent": "not_update",
-        "utterance": "Howdy, missus! How are ya?"
+        "utterance": "Out of what list can I find an attorney?"
     },
     {
         "intent": "not_update",
-        "utterance": "How you doin\u2019?"
+        "utterance": "Oh no I have to find a lawyer fast."
     },
     {
         "intent": "not_update",
-        "utterance": "Hi, honey bunch!"
+        "utterance": "Ouch I have to get a lawyer."
     },
     {
         "intent": "not_update",
-        "utterance": "I like your face. Are you an angel?"
+        "utterance": "Oh I guess I need to find an attorney."
     },
     {
         "intent": "not_update",
-        "utterance": "Yoooouhoooo! Toodle doo, toodle dum."
+        "utterance": "I want to hire a lawyer to represent me."
     },
     {
         "intent": "not_update",
-        "utterance": "Ello, matey. Wassup?"
+        "utterance": "I need to find a lawyer who can represent me in court."
     },
     {
         "intent": "not_update",
-        "utterance": "Hiiiii, baaaaaby!"
+        "utterance": "Connect me with a lawyer for legal advice."
     },
     {
         "intent": "not_update",
-        "utterance": "Top of the morning to ya! Wass es going on?"
+        "utterance": "Can you have a lawyer call me please?"
     },
     {
         "intent": "not_update",
-        "utterance": "Greetings and salutations, my man/woman!"
+        "utterance": "I need help with some mess my brother got in."
     },
     {
         "intent": "not_update",
-        "utterance": "Whaddup bro?"
+        "utterance": "I have a unique situation and need legal advice."
     },
     {
         "intent": "not_update",
-        "utterance": "Yo! Wassup."
+        "utterance": "Can you help with some legal trouble I'm in?"
     },
     {
         "intent": "not_update",
-        "utterance": "Ghostbusters, watccha want?"
+        "utterance": "I need help with a certain case."
     },
     {
         "intent": "not_update",
-        "utterance": "Hello-hello! Who\u2019s there? It\u2019s me talking."
+        "utterance": "I need to find someone willing to represent me remotely."
     },
     {
         "intent": "not_update",
-        "utterance": "Knock knock\u2026"
+        "utterance": "Is there anything you can do to help me contact legal counsel?"
     },
     {
         "intent": "not_update",
-        "utterance": "Hi! At least we meet for the first time for the last time!"
+        "utterance": "What questions should I ask a lawyer about seeking help?"
     },
     {
         "intent": "not_update",
-        "utterance": "I am Batman. Who are you, gorgeous?"
+        "utterance": "Could you do me a favor and put me in touch with legal counsel?"
     },
     {
         "intent": "not_update",
-        "utterance": "Howdy, howdy, howdy, mister!"
+        "utterance": "Is there any way you can help me get in touch with legal counsel?"
     },
     {
         "intent": "not_update",
-        "utterance": "Tring tring\u2026this call may or may not be recorded for training purposes."
+        "utterance": "I'm trying to seek out legal counsel for the crime that I'm being charged with."
     },
     {
         "intent": "not_update",
-        "utterance": "Wassup, homey?"
+        "utterance": "I need help in getting an attorney."
     },
     {
         "intent": "not_update",
-        "utterance": "GOOOOOD MORNING"
+        "utterance": "I am in need of an attorney's services."
     },
     {
         "intent": "not_update",
-        "utterance": "What\u2019s cracking, hot thing?"
+        "utterance": "What questions should I ask an immigration lawyer?"
     },
     {
         "intent": "not_update",
-        "utterance": "Hiya! Hi!"
+        "utterance": "I need to find an attorney."
     },
     {
         "intent": "not_update",
-        "utterance": "Hello, governor!"
+        "utterance": "Are you able to help me establish a trust?"
     },
     {
         "intent": "not_update",
-        "utterance": "I come in peace! Chow chow."
+        "utterance": "I am seeking an attorney."
     },
     {
         "intent": "not_update",
-        "utterance": "Hi, mister! What is going on?"
+        "utterance": "Should you always ask for a lawyer?"
     },
     {
         "intent": "not_update",
-        "utterance": "Ahoy, matey!"
+        "utterance": "I wish to hire a lawyer."
     },
     {
         "intent": "not_update",
-        "utterance": "Howdy, partner!"
+        "utterance": "Wife took off with the paperman so need to draw up divorce papers immediately and you being a divorce attorney can help?"
     },
     {
         "intent": "not_update",
-        "utterance": "My name is aura and I am a bad, bad guy. I like you!"
+        "utterance": "What questions should you ask an attorney?"
     },
     {
         "intent": "not_update",
-        "utterance": "What\u2019s kicking, little chicken?"
+        "utterance": "What questions should I ask in a legal interview?"
     },
     {
         "intent": "not_update",
-        "utterance": "Hey there, freshman! Wassup?"
+        "utterance": "Have to set up a will and your ad says you do this so could you help me with this?"
     },
     {
         "intent": "not_update",
-        "utterance": "Howdy-doody! Tell me what\u2019s new!"
+        "utterance": "I need to place a lien on a property for non-payment but have never done so but my cousin said you helped him with a lien so could you assist me?"
     },
     {
         "intent": "not_update",
-        "utterance": "Hey, howdy, hi! How is it going?"
+        "utterance": "My neighbor is suing me because my dog ate his tulips so I need a lawyer like now."
     },
     {
         "intent": "not_update",
-        "utterance": "Hello, sunshine! How are you? Oh, your rays are already making my day brighter!"
+        "utterance": "My buddy said you help with his adoption and I would like you to help me with mine."
     },
     {
         "intent": "not_update",
-        "utterance": "be funny "
+        "utterance": "Can you help draft a contract for my rental property?"
     },
     {
         "intent": "not_update",
-        "utterance": "tell me a joke"
+        "utterance": "Could you please find me a lawyer that I can talk with about these matters?"
     },
     {
         "intent": "not_update",
-        "utterance": "tell me a funny line"
+        "utterance": "I'd like to speak with an attorney for legal advice on a matter I've been charged with."
     },
     {
         "intent": "not_update",
-        "utterance": "make me laugh"
+        "utterance": "My father passed away and I need help handling probate matters."
     },
     {
         "intent": "not_update",
-        "utterance": "i need a spa do you offer that"
+        "utterance": "It'd be great if you could help me get in touch with an attorney."
     },
     {
         "intent": "not_update",
-        "utterance": "can you do haircuts"
+        "utterance": "I need a lawyer who can give me legal guidance."
     },
     {
         "intent": "not_update",
-        "utterance": "can i start over please"
+        "utterance": "I'm looking for some legal advice from an attorney."
     },
     {
         "intent": "not_update",
-        "utterance": "lets start over"
+        "utterance": "An attorney's listing online can be found where?"
     },
     {
         "intent": "not_update",
-        "utterance": "sounds good"
+        "utterance": "A lawyer where can I find one quickly?"
     },
     {
         "intent": "not_update",
-        "utterance": "thats right"
+        "utterance": "A lawyer can be found where in this town?"
     },
     {
         "intent": "not_update",
-        "utterance": "yes mam"
+        "utterance": "I've been injured in an accident and need to speak with someone about my rights."
     },
     {
         "intent": "not_update",
-        "utterance": "yes sir"
+        "utterance": "A lawyer is what I need to hire."
     },
     {
         "intent": "not_update",
-        "utterance": "yeaah"
+        "utterance": "An attorney is needed so I'll hire one."
     },
     {
         "intent": "not_update",
-        "utterance": "let me start from scratch"
+        "utterance": "I really need to speak with an attorney about a crime I\u2019ve been charged with."
     },
     {
         "intent": "not_update",
-        "utterance": "can i start over"
+        "utterance": "hello sir i got arrested for a crime i need to be bail out"
     },
     {
         "intent": "not_update",
-        "utterance": "start over"
+        "utterance": "I believe my employer has violated my rights can I discuss this with someone?"
     },
     {
         "intent": "not_update",
-        "utterance": "nooo"
+        "utterance": "Could you please loop a lawyer into the conversation for me?"
     },
     {
         "intent": "not_update",
-        "utterance": "nope"
+        "utterance": "hey i am in trouble i need some help"
     },
     {
         "intent": "not_update",
-        "utterance": "no"
+        "utterance": "hey help me legally"
     },
     {
         "intent": "not_update",
-        "utterance": "can i change the date for my appointment"
+        "utterance": "hey i need some lawyer"
     },
     {
         "intent": "not_update",
-        "utterance": "can i move my appointment to another day"
+        "utterance": "I\u2019ve been charged unfairly of a crime and need some attorney representation."
     },
     {
         "intent": "not_update",
-        "utterance": "can i pay by card"
+        "utterance": "Could you get me in touch with a lawyer please?"
     },
     {
         "intent": "not_update",
-        "utterance": "do you take cash"
+        "utterance": "Can you help me get in contact with a lawyer?"
     },
     {
         "intent": "not_update",
-        "utterance": "business hours"
+        "utterance": "hey i need some legal help"
     },
     {
         "intent": "not_update",
-        "utterance": "tell me your business hours"
+        "utterance": "A lawyer is what I need."
     },
     {
         "intent": "not_update",
-        "utterance": "when do you open"
+        "utterance": "An attorney is needed."
     },
     {
         "intent": "not_update",
-        "utterance": "say who you are"
+        "utterance": "A lawyer where can I find one?"
     },
     {
         "intent": "not_update",
-        "utterance": "who are you"
+        "utterance": "Please provide me with legal representation"
     },
     {
         "intent": "not_update",
-        "utterance": "who created you"
+        "utterance": "A lawyer can be found where?"
     },
     {
         "intent": "not_update",
-        "utterance": "who made you"
+        "utterance": "May I please be afforded an attorney."
     },
     {
         "intent": "not_update",
-        "utterance": "dont bother with the appointment"
+        "utterance": "An attorney's listing is where?"
     },
     {
         "intent": "not_update",
-        "utterance": "i no longer want the appointment"
+        "utterance": "I do not wish to speak further without a lawyer present."
     },
     {
         "intent": "not_update",
-        "utterance": "i wanna cancel my appointment"
+        "utterance": "Let me speak to your best Elder care attorney."
     },
     {
         "intent": "not_update",
-        "utterance": "later"
+        "utterance": "Will you please acquire an attorney for me."
     },
     {
         "intent": "not_update",
-        "utterance": "goodbye"
+        "utterance": "I need to speak to lawyer who is available now."
     },
     {
         "intent": "not_update",
-        "utterance": "hey"
+        "utterance": "Let me speak to your best criminal lawyer."
     },
     {
         "intent": "not_update",
-        "utterance": "hello there"
+        "utterance": "I've been advised of my right to counsel so I'd like to speak to a lawyer."
     },
     {
         "intent": "not_update",
-        "utterance": "hey bro"
+        "utterance": "I need an attorney who can help me get custody of my kids."
     },
     {
         "intent": "not_update",
-        "utterance": "yeah"
+        "utterance": "I got a DUI and I need an attorney."
     },
     {
         "intent": "not_update",
-        "utterance": "yup"
+        "utterance": "I am interested in speaking with legal counsel in regards to the crime I've been charged with."
     },
     {
         "intent": "not_update",
-        "utterance": "yes"
+        "utterance": "I'd like to speak with legal counsel regarding the crime that I've been charged with."
     },
     {
         "intent": "not_update",
-        "utterance": "do you do waxing"
+        "utterance": "I need a lawyer to speak with since I've been charged with a crime."
     },
     {
         "intent": "not_update",
-        "utterance": "do you offer manicure"
+        "utterance": "Could you help me get into contact with a lawyer?"
     },
     {
-        "intent": "update",
-        "utterance": "lets do 4pm on saturday"
-    },
-    {
-        "intent": "update",
-        "utterance": "the time is 10am on monday"
-    },
-    {
-        "intent": "update",
-        "utterance": "just a manicure"
-    },
-    {
-        "intent": "update",
-        "utterance": "i need waxing"
-    },
-    {
-        "intent": "update",
-        "utterance": "noon will be fine"
-    },
-    {
-        "intent": "update",
-        "utterance": "i'm looking at the time to be 9AM"
-    },
-    {
-        "intent": "update",
-        "utterance": "the day will be friday"
-    },
-    {
         "intent": "not_update",
-        "utterance": "i need to book a 2pm appointment for curling tomorrow"
+        "utterance": "I'd like to speak with a lawyer about the crime I've been charged with."
     },
     {
         "intent": "not_update",
-        "utterance": "can you work on my nails on monday"
+        "utterance": "How do you communicate like a lawyer?"
     },
     {
         "intent": "not_update",
-        "utterance": "can i set up a time to have my brows done"
+        "utterance": "I need help in hiring an attorney."
     },
     {
         "intent": "not_update",
-        "utterance": "i need a manicure booked"
+        "utterance": "Why do lawyers ignore you?"
     },
     {
         "intent": "not_update",
-        "utterance": "can i book for a haircut"
+        "utterance": "How do you follow up with a lawyer?"
     },
     {
         "intent": "not_update",
-        "utterance": "help me to make an appointment"
+        "utterance": "What should you not say to a lawyer?"
     },
     {
         "intent": "not_update",
-        "utterance": "can i book"
+        "utterance": "Are lawyers good in bed?"
     },
     {
         "intent": "not_update",
-        "utterance": "hello"
+        "utterance": "I am seeking to hire an attorney."
     },
     {
         "intent": "not_update",
-        "utterance": "hi"
+        "utterance": "I need to find an attorney asap."
     },
     {
         "intent": "not_update",
-        "utterance": "bye"
-    },
-    {
-        "intent": "update",
-        "utterance": "set the day to wednesday"
-    },
-    {
-        "intent": "update",
-        "utterance": "change the day to monday"
-    },
-    {
-        "intent": "update",
-        "utterance": "make the service waxing"
-    },
-    {
-        "intent": "update",
-        "utterance": "change the service to hair cut"
-    },
-    {
-        "intent": "update",
-        "utterance": "change the time to 2pm"
+        "utterance": "I am in need of an attorney's services where is a listing?"
     },
     {
         "intent": "not_update",
-        "utterance": "can i book an appointment"
+        "utterance": "I wish to hire a lawyer where can I find one?"
     }
 ]

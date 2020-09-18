@@ -2,7 +2,7 @@
   <div class="uk-modal-dialog uk-modal-body">
     <button class="uk-modal-close-outside" type="button" uk-close></button>
     <div class="uk-margin">
-      <legend class="uk-legend"><span uk-icon="icon: comment; ratio: 2"></span> Talk with your VA </legend>
+      <legend><span uk-icon="icon: microphone; ratio: 1"></span> Talk with your VA </legend>
     </div>
 
     <form [formGroup]="chatboxForm" (ngSubmit)="chatboxQueryFormSubmit($event)">
@@ -49,6 +49,7 @@
         <textarea class="uk-textarea" rows="10" readonly>{{ fullResponse|json }}</textarea>
     </div>
     <p class="uk-text-right">
+      <span uk-icon="icon: microphone; ratio: 1" class="uk-margin-right"></span>
       <button class="uk-button uk-button-danger uk-modal-close uk-button-small" type="button" (click)="closeConversation()">Close Conversation</button>
     </p>
 
