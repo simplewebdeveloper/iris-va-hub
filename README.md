@@ -4,10 +4,6 @@
 
 The Aura platform allows a developer to build and test custom chatbots, using Advanced AI Technology and Machine Learning, The bot you build and train is able determine the intention of a user and automatically extract keywords for further processing. It is up to the developer to use the response data returned from the bot and perform other custom logic like database lookups and making further API calls.
 
-## Demo Video
-
-https://www.youtube.com/watch?v=1Es05UapeM0&t=560s
-
 ## Setup Instructions
 
 ### General Instructions
