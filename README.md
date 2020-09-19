@@ -8,7 +8,7 @@ The Aura platform allows a developer to build and test custom chatbots, using Ad
 
 ### General Instructions
 #### 1. Clone this repo and cd into this repo:
-cd open-bot
+cd iris-va-hub
 
 #### 2. Install virtualenv for Mac or Windows, and install node package manager
 https://pypi.org/project/virtualenv/
