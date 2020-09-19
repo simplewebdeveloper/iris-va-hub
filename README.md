@@ -50,14 +50,6 @@ npm install
 ##### (c). Once the npm install completes, run the following command:
 ng serve -o
 
-#### Show your support:
-email: developer.chavezharris@gmail.com
-######
-buy my books:
-######
-Building an IOT Search Engine: https://www.amazon.com/dp/B086WQKWZK
-######
-Connecting Angular to Django: https://www.amazon.com/dp/B086JC4LHW
 
 
 
