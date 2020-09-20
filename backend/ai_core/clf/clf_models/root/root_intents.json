@@ -1,5 +1,9 @@
 [
     {
+        "intent": "booking_agent_handover_start",
+        "utterance": "get me booked on a flight"
+    },
+    {
         "intent": "small_talk_start",
         "utterance": "hi it's nice to see you again"
     },
