@@ -68,7 +68,7 @@ export class ChatboxComponent implements OnInit {
   // Example default template
   default_template(response, utterance, format='') {
       console.log(response);
-          format = 'you are asking about: ' + '<span class="uk-text-bold">' + response.intent + '</span>' + '<br />';
+          format = 'you are asking about: ' + '<span class="uk-text-bold">' + response.intent['intent'] + '</span>' + '<br />';
           if (response.slots.length >= 1) {
           format += ' I have the: <br/>';
           response.slots.forEach((element, index, array) => {

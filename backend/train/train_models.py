@@ -16,6 +16,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.feature_extraction.text import TfidfTransformer
 from sklearn.svm import LinearSVC
+from sklearn.calibration import CalibratedClassifierCV
 import pickle
 
 from ai_core import config
@@ -139,7 +140,9 @@ class TrainClassifierModel:
             tfidf_transformer = TfidfTransformer()
             X_train_tfidf = tfidf_transformer.fit_transform(X_train_counts)
 
-            model = LinearSVC().fit(X_train_tfidf, y_train)
+            model_svc = LinearSVC()
+            model = CalibratedClassifierCV(model_svc)
+            model = model.fit(X_train_tfidf, y_train)
 
             # Save the vectorizer
             # vec_file = 'vectorizer.pickle'

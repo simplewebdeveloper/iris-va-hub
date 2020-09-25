@@ -1,12 +1,17 @@
 import string
 import csv
+import numpy as np
 from nltk import word_tokenize
 import pickle
 from textblob.classifiers import NaiveBayesClassifier
 from ai_core import config
+from sklearn.svm import LinearSVC
+from sklearn.calibration import CalibratedClassifierCV
 
 slot_mapper_csv_file = 'slot_mapper.csv'
 
+# Adjust numpy printing style
+# np.set_printoptions(suppress=True)
 
 class CollectUtterance:
     def __init__(self, utterance):
@@ -44,6 +49,25 @@ class NbClassification:
         return intent
 
 
+# class SvmClassification:
+#     def __init__(self, utterance, vectorizer, clf_model):
+#         self.utterance = str(utterance)
+#         self.vectorizer = vectorizer
+#         self.clf_model = clf_model
+
+#     def classify_intent(self):
+#         # load the vectorizer
+#         loaded_vectorizer = pickle.load(open(self.vectorizer, 'rb'))
+
+#         # load the model
+#         loaded_model = pickle.load(open(self.clf_model, 'rb'))
+
+#         # make a prediction
+#         temp_intent = loaded_model.predict(loaded_vectorizer.transform([self.utterance]))
+#         intent = str(temp_intent[0])
+
+#         return intent
+
 class SvmClassification:
     def __init__(self, utterance, vectorizer, clf_model):
         self.utterance = str(utterance)
@@ -58,10 +82,20 @@ class SvmClassification:
         loaded_model = pickle.load(open(self.clf_model, 'rb'))
 
         # make a prediction
+        probability = 0
         temp_intent = loaded_model.predict(loaded_vectorizer.transform([self.utterance]))
+        probability = loaded_model.predict_proba(loaded_vectorizer.transform([self.utterance]))
+        probability = probability[:, 1]
+        probability = np.array_str(probability, precision=5)
+        probability = str(probability)[1:-1]
+        probability = float(probability)
         intent = str(temp_intent[0])
-
-        return intent
+        intent_response = {
+            'intent': intent,
+            'probability': probability
+        }
+        print(intent_response)
+        return intent_response
 
 
 # Replace synonyms

@@ -89,20 +89,22 @@ class TestQuery:
         update_sense_clf_vectorizer = os.path.join(update_sense_clf_model_dir, 'update_sense.pickle')
 
         # Classify the utterance
-        current_intent = SvmClassification(utterance, root_clf_model_vectorizer, root_clf_model).classify_intent()
+        intent_response = SvmClassification(utterance, root_clf_model_vectorizer, root_clf_model).classify_intent()
+        current_intent = intent_response['intent']
 
         try:
             is_it_update = SvmClassification(utterance, update_sense_clf_vectorizer, update_sense_clf_model).classify_intent()
+            is_it_update = is_it_update['intent']
         except:
             is_it_update = 'none'
 
 
         if is_it_update == "update":
-            if '_update' in the_last_intent:
-                temp_intent = the_last_intent.replace('_update','')
+            if '_update' in the_last_intent['intent']:
+                temp_intent = the_last_intent['intent'].replace('_update','')
                 matching_update_path_to_last_intent = temp_intent+'_update'
             else:
-                matching_update_path_to_last_intent = the_last_intent+'_update'
+                matching_update_path_to_last_intent = the_last_intent['intent']+'_update'
             path_to_look_for = os.path.join(update_clf_model_dir, matching_update_path_to_last_intent)
             if os.path.exists(path_to_look_for):
                 # try:
@@ -139,9 +141,14 @@ class TestQuery:
             "time_format": time_formated,
         }
 
-        final_intent = get_current_intent()
+        # Check for out_of_scope (in beta)
+        # if intent_response['probability'] < 0.1:
+        #     intent_response['intent'] = 'out_of_scope'
 
-        svp_path_to_look_for = os.path.join(svp_model_dir, final_intent)
+        intent_response = intent_response
+        print(intent_response)
+
+        svp_path_to_look_for = os.path.join(svp_model_dir, intent_response['intent'])
         if os.path.exists(svp_path_to_look_for):
             intent_svp_path = svp_path_to_look_for
             svps = Svps(utterance, intent_svp_path).extract_svps()
@@ -150,7 +157,7 @@ class TestQuery:
                     "time_stamp": time_stamp,
                     "time": time_dict,
                     "utterance": utterance,
-                    "intent": final_intent,
+                    "intent": intent_response,
                     "slots": svps,
                 }
             else:
@@ -158,7 +165,7 @@ class TestQuery:
                 "time_stamp": time_stamp,
                 "time": time_dict,
                 "utterance": utterance,
-                "intent": final_intent,
+                "intent": intent_response,
                 "slots": []
                 }
         else:
@@ -166,7 +173,7 @@ class TestQuery:
             "time_stamp": time_stamp,
             "time": time_dict,
             "utterance": utterance,
-            "intent": final_intent,
+            "intent": intent_response,
             "slots": []
         } 
 
