@@ -1,0 +1,38 @@
+[
+    [
+        "I need a lawyer who can give me legal guidance.",
+        {
+            "entities": [
+                [
+                    32,
+                    47,
+                    "target"
+                ]
+            ]
+        }
+    ],
+    [
+        "Could you please loop a lawyer into the conversation for me?",
+        {
+            "entities": [
+                [
+                    24,
+                    30,
+                    "target"
+                ]
+            ]
+        }
+    ],
+    [
+        "hello sir i got arrested for a crime i need to be bail out",
+        {
+            "entities": [
+                [
+                    50,
+                    58,
+                    "target"
+                ]
+            ]
+        }
+    ]
+]

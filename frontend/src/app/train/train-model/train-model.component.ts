@@ -113,7 +113,7 @@ export class TrainModelComponent implements OnInit {
     );
   }
 
-  feedIntents(selectedIntent: string) {
+  feedIntents(selectedIntent: string, va_tag) {
     this.trainCompleted = false;
     this.trainProgress = false;
     if(selectedIntent != 'none') {
@@ -121,7 +121,7 @@ export class TrainModelComponent implements OnInit {
     } else {
       this.selectedUpdateIntent = 'none';
     }
-    this.trainService.feedIntents(this.botId, this.selectedUpdateIntent).subscribe(
+    this.trainService.feedIntents(this.botId, va_tag, this.selectedUpdateIntent).subscribe(
     (res) => {
       // console.log(res);
       if(res.length > 1) {
@@ -159,11 +159,11 @@ export class TrainModelComponent implements OnInit {
       );
   }
 
- feedSvps(selectedIntent: string) {
+ feedSvps(selectedIntent: string, va_tag) {
     this.trainCompleted = false;
     this.trainProgress = false;
     // console.log(intentData);
-    this.trainService.feedSvps(this.botId, selectedIntent).subscribe(
+    this.trainService.feedSvps(this.botId, va_tag, selectedIntent).subscribe(
      (res) => {
       //  console.log(res);
       if(res.length > 1) {
@@ -181,9 +181,9 @@ export class TrainModelComponent implements OnInit {
    );
   }
 
-  trainClassifierModel(selectedIntent) {
+  trainClassifierModel(selectedIntent, va_tag) {
     this.show_training_status_model();
-    this.trainService.trainClassifierModel(selectedIntent).subscribe(
+    this.trainService.trainClassifierModel(selectedIntent, va_tag).subscribe(
       (res) => {
         // console.log(res);
         if(res.length > 1) {
@@ -228,12 +228,12 @@ export class TrainModelComponent implements OnInit {
 
   }
 
-    trainSvpModel(selectedIntent: string) {
+    trainSvpModel(selectedIntent: string, va_tag) {
     this.canTrainSvpModel = false;
     this.trainCompleted = false;
     this.trainProgress = true;
     this.show_training_status_model();
-    this.trainService.trainSvpModel(selectedIntent).subscribe(
+    this.trainService.trainSvpModel(selectedIntent, va_tag).subscribe(
       (res) => {
         // console.log(res);
         if(res.length > 1) {

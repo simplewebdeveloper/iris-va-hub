@@ -13,10 +13,23 @@ export class HomeService {
   private baseUrl: string;
   bot: any;
   bots: Bot[];
+  va_tag: any;
+
+
 
   constructor(private http: HttpClient) { 
     this.baseUrl = environment.restApi.uri
    }
+
+   addVaTag(va_tag) {
+     this.va_tag = va_tag;
+     console.log(va_tag)
+   }
+
+   getVaTag() {
+    return this.va_tag;
+}
+
 
   getAllBots() {
     return this.http.get<any>(

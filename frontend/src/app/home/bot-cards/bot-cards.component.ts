@@ -54,6 +54,10 @@ export class BotCardsComponent implements OnInit {
     }
   }
 
+  sendVaTag(va_tag) {
+    this.homeService.addVaTag(va_tag);
+  }
+
   notificationMessage(notificationMessage, status) {
     uikit.notification(notificationMessage, {pos: 'bottom-right', 'status': status});
   }

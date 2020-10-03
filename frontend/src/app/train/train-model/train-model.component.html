@@ -38,8 +38,8 @@
         <!-- Train root classifier -->
         <p>Prep and Train Primary Classifier.</p>
         <!-- <input id="file" type="file" (change)="importJson($event, '.intentData')" class="uk-margin-small-bottom uk-margin-left"> -->
-        <button type="submit" class="uk-button uk-button-secondary uk-button-small uk-margin-small-bottom" (click)="feedIntents('none')">PREP DATA</button>
-        <button type="submit" class="uk-button uk-button-danger uk-button-small uk-margin-small-bottom uk-margin-left" (click)="trainClassifierModel('none')"><span uk-icon="play-circle"></span> TRAIN</button>
+        <button type="submit" class="uk-button uk-button-secondary uk-button-small uk-margin-small-bottom" (click)="feedIntents('none', selectedBot.bot_tag)">PREP DATA</button>
+        <button type="submit" class="uk-button uk-button-danger uk-button-small uk-margin-small-bottom uk-margin-left" (click)="trainClassifierModel('none', selectedBot.bot_tag)"><span uk-icon="play-circle"></span> TRAIN</button>
         <!-- <button type="submit" class="uk-button uk-button-danger uk-button-small uk-margin-small-bottom uk-margin-left" (click)="trainClassifierModel('none')"><span uk-icon="history"></span> Un-train</button> -->
 
         <hr>
@@ -64,8 +64,8 @@
         <p>Prep and Train UpdateSense Classifier (Useful for Maintaining Conversational Context).</p>
         <div class="uk-margin">
           <!-- <input id="file" type="file" (change)="importJson($event, '.intentData')" class="uk-margin-small-bottom uk-margin-left"> -->
-          <button type="submit" class="uk-button uk-button-secondary uk-button-small uk-margin-small-bottom" (click)="feedUpdateSense()">PREP DATA</button>
-          <button type="submit" class="uk-button uk-button-danger uk-button-small uk-margin-small-bottom uk-margin-left" (click)="trainUpdateSenseClassifierModel()"><span uk-icon="play-circle"></span> TRAIN</button>
+          <button type="submit" class="uk-button uk-button-secondary uk-button-small uk-margin-small-bottom" (click)="feedUpdateSense(selectedBot.bot_tag)">PREP DATA</button>
+          <button type="submit" class="uk-button uk-button-danger uk-button-small uk-margin-small-bottom uk-margin-left" (click)="trainUpdateSenseClassifierModel(selectedBot.bot_tag)"><span uk-icon="play-circle"></span> TRAIN</button>
           <!-- <button type="submit" class="uk-button uk-button-danger uk-button-small uk-margin-small-bottom uk-margin-left" (click)="trainUpdateSenseClassifierModel()"><span uk-icon="history"></span> Un-train</button> -->
          </div>
       </div>
@@ -79,8 +79,8 @@
 
         <div *ngFor="let update_intent_with_svp_data of intentsWithSvpData; last as isLast">
           <p>Prep and Train on: {{ update_intent_with_svp_data }}</p>  
-          <button type="submit" class="uk-button uk-button-secondary uk-button-small uk-margin-small-bottom" (click)='feedSvps(update_intent_with_svp_data)'>PREP {{ update_intent_with_svp_data }} DATA</button>
-          <button type="submit" class="uk-button uk-button-danger uk-button-small uk-margin-small-bottom uk-margin-left" (click)="trainSvpModel(update_intent_with_svp_data)"><span uk-icon="play-circle"></span> TRAIN</button>
+          <button type="submit" class="uk-button uk-button-secondary uk-button-small uk-margin-small-bottom" (click)='feedSvps(update_intent_with_svp_data, selectedBot.bot_tag)'>PREP {{ update_intent_with_svp_data }} DATA</button>
+          <button type="submit" class="uk-button uk-button-danger uk-button-small uk-margin-small-bottom uk-margin-left" (click)="trainSvpModel(update_intent_with_svp_data, selectedBot.bot_tag)"><span uk-icon="play-circle"></span> TRAIN</button>
           <!-- <button type="submit" class="uk-button uk-button-danger uk-button-small uk-margin-small-bottom uk-margin-left" (click)="trainClassifierModel(update_intent)"><span uk-icon="history"></span> Un-train</button> -->
           <div *ngIf="!isLast" class="uk-margin"><hr></div>  
         </div>

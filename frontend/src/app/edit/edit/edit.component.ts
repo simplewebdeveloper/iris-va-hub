@@ -45,6 +45,7 @@ export class EditComponent implements OnInit, OnDestroy {
     this.editBotForm = this.formBuilder.group({
       id: this.botModel.id,
       bot_name: this.botModel.botName,
+      bot_tag: this.botModel.botTag,
       bot_desc: this.botModel.botDesc,
       bot_intents: this.botModel.botIntents, 
       bot_slots: this.botModel.botSlots,
@@ -83,6 +84,7 @@ export class EditComponent implements OnInit, OnDestroy {
         this.editBotForm.patchValue({
           id: this.bot.id,
           bot_name: this.bot.bot_name,
+          bot_tag: this.bot.bot_tag,
           bot_desc: this.bot.bot_desc,
           bot_intents: this.bot.bot_intents,
           bot_slots: this.bot.bot_slots,
@@ -117,6 +119,7 @@ export class EditComponent implements OnInit, OnDestroy {
       this.editBotForm.patchValue({
         id: this.bot.id,
         bot_name: this.bot.bot_name,
+        bot_tag: this.bot.bot_tag,
         bot_desc: this.bot.bot_desc,
         bot_intents: this.bot.bot_intents,
         bot_slots: this.bot.bot_slots,

@@ -12,9 +12,9 @@ export class ChatboxService {
   constructor(private http: HttpClient) {
     this.baseUrl = environment.restApi.uri
    }
-  chatboxQuery(query) {
+  chatboxQuery(query, va_tag) {
     return this.http.post<any>(
-      this.baseUrl + '/test/test_query', query
+      this.baseUrl + '/test/test_query', {query, va_tag}
     );
   }
 }

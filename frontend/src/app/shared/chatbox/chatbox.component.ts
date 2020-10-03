@@ -4,6 +4,8 @@ import * as uikit from 'uikit';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {ChatboxModel} from '../../models/chatbox.model';
 import { HttpErrorResponse } from '@angular/common/http';
+// Temp update
+import { HomeService } from "../../home/home.service";
 
 @Component({
   selector: 'app-chatbox',
@@ -21,9 +23,11 @@ export class ChatboxComponent implements OnInit {
   private formattedResponse = '';
   public successUserMessage: string;
   public errorUserMessage: string;
+  va_tag: string
 
   constructor(
     private chatboxService: ChatboxService,
+    private homeService: HomeService,
     private formBuilder: FormBuilder,
   ) {
   }
@@ -37,11 +41,12 @@ export class ChatboxComponent implements OnInit {
     });
   }
   chatboxQueryFormSubmit(event: any) {
+    this.va_tag = this.homeService.getVaTag();
     const query = this.chatboxForm.getRawValue();
     const utterance = query.query;
     if (utterance.length > 1) {
       this.thinking = true;
-      this.chatboxService.chatboxQuery(query).subscribe(
+      this.chatboxService.chatboxQuery(query, this.va_tag).subscribe(
       (test_response) => {
         if (test_response) {
           this.fullResponse = test_response
@@ -69,6 +74,9 @@ export class ChatboxComponent implements OnInit {
   default_template(response, utterance, format='') {
       console.log(response);
           format = 'you are asking about: ' + '<span class="uk-text-bold">' + response.intent['intent'] + '</span>' + '<br />';
+          if(response.intent['intent']== 'archivist_handover') {
+            format = 'Welcome to the Archivist VA. You can ask me about news'
+          }
           if (response.slots.length >= 1) {
           format += ' I have the: <br/>';
           response.slots.forEach((element, index, array) => {
@@ -81,6 +89,8 @@ export class ChatboxComponent implements OnInit {
         }
           return format
   }
+
+
 
   selectInputText() {
     <HTMLInputElement>this.queryInput.nativeElement.select();

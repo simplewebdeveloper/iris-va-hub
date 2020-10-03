@@ -5,6 +5,7 @@ from django.db import models
 
 class Bot(models.Model):
     bot_name = models.CharField(max_length=100)
+    bot_tag = models.CharField(max_length=100, default='')
     bot_desc = models.CharField(max_length=1000)
     bot_intents = models.CharField(max_length=256)
     bot_slots = models.CharField(max_length=500, default='none')
