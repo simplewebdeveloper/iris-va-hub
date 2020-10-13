@@ -21,7 +21,7 @@ export class EditService {
 
   getSingleBot(botId: number) {
     return this.http.post<any>(
-      this.baseUrl + '/bot/get_bot', botId
+      this.baseUrl + '/bot/get_bot', {botId}
     );
   }
 

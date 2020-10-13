@@ -21,7 +21,7 @@ export class TrainService {
   }
   getSingleBot(botId: number) {
     return this.http.post<any>(
-      this.baseUrl + '/bot/get_bot', botId
+      this.baseUrl + '/bot/get_bot', {botId}
     );
   }
   createIntent(data: any) {
@@ -87,9 +87,9 @@ export class TrainService {
     );
   }
 
-  feedUpdateSense(botId: any) {
+  feedUpdateSense(botId, va_tag) {
     return this.http.post<any>(
-      this.baseUrl + '/intent/feed_update_sense', botId, this.options
+      this.baseUrl + '/intent/feed_update_sense', {botId, va_tag}, this.options
     );
   }
 
@@ -98,22 +98,22 @@ export class TrainService {
       this.baseUrl + '/svp/feed_svps', {botId, va_tag, selectedIntent}, this.options
     );
   }
-  trainClassifierModel(selectedUpdateIntent, va_tag) {
+  trainClassifierModel(botId, va_tag, selectedUpdateIntent) {
     return this.http.post<any>(
-      this.baseUrl + '/model/train_classifier_model', {selectedUpdateIntent, va_tag}, this.options
+      this.baseUrl + '/model/train_classifier_model', {botId, va_tag, selectedUpdateIntent}, this.options
     );
   }
 
-  trainUpdateSenseClassifierModel() {
+  trainUpdateSenseClassifierModel(botId, va_tag) {
     return this.http.post<any>(
-      this.baseUrl + '/model/train_update_sense_classifier_model', this.options
+      this.baseUrl + '/model/train_update_sense_classifier_model', {botId, va_tag}, this.options
     );
 
   }
 
-  trainSvpModel(selectedIntent, va_tag) {
+  trainSvpModel(selectedIntent, botId, va_tag) {
     return this.http.post<any>(
-      this.baseUrl + '/model/train_svp_model', {selectedIntent, va_tag}, this.options
+      this.baseUrl + '/model/train_svp_model', {selectedIntent, botId, va_tag}, this.options
     );
   }
 

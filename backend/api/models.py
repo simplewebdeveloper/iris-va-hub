@@ -15,7 +15,7 @@ class Bot(models.Model):
 
 
 class Intent(models.Model):
-    bot = models.ForeignKey(Bot, related_name='bot', on_delete=models.CASCADE, default=0)
+    bot = models.ForeignKey(Bot, related_name='bot', on_delete=models.CASCADE)
     intent = models.CharField(max_length=100)
     utterance = models.CharField(max_length=2056, unique=True)
     intent_data = models.CharField(max_length=2056, default='')
@@ -25,7 +25,7 @@ class Intent(models.Model):
 
 
 class Svp(models.Model):
-    bot = models.ForeignKey(Bot, related_name='bot_svp', on_delete=models.CASCADE, default=0)
+    bot = models.ForeignKey(Bot, related_name='bot_svp', on_delete=models.CASCADE)
     slots = models.CharField(max_length=1024, default='')
     utterance = models.CharField(max_length=2056, default='', unique=True)
     svp_data = models.CharField(max_length=2056, default='')

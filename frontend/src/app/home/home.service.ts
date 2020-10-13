@@ -39,7 +39,7 @@ export class HomeService {
 
   deleteSingleBot(botId: any) {
     return this.http.post<any>(
-      this.baseUrl + '/bot/delete_bot', botId
+      this.baseUrl + '/bot/delete_bot', {botId}
     );
   }
 }

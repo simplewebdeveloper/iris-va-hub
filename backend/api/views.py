@@ -4,6 +4,8 @@ import json
 from collections import OrderedDict
 from ast import literal_eval
 
+from pathlib import Path
+
 # rest_framework resources
 from rest_framework.response import Response
 from rest_framework.views import APIView
@@ -29,15 +31,20 @@ from test.handoff_va_test_query import HandoffVaTestQuery
 # Specialized VA Test Query
 from test.specialized_va_test_query import SpecializedVaTestQuery
 
-# Train Handover VA Models Paths
-from train.train_handoff_va_models import TrainHandoffVaClassifierModel
-from train.train_handoff_va_models import TrainHandoffVaSvpModel
-from train.train_handoff_va_models import TrainHandoffVaUpdateSenseClassifierModel
+# Train Handover VA Models Paths -> to remove
+# from train.train_handoff_va_models import TrainHandoffVaClassifierModel
+# from train.train_handoff_va_models import TrainHandoffVaSvpModel
+# from train.train_handoff_va_models import TrainHandoffVaUpdateSenseClassifierModel
 
-# Train Specialized VA Models Paths
+# Train Specialized VA Models Paths -> to remove
 from train.train_specialized_va_models import TrainSpecializedVaClassifierModel
 from train.train_specialized_va_models import TrainSpecializedVaSvpModel
 from train.train_specialized_va_models import TrainSpecializedVaUpdateSenseClassifierModel
+
+from train.train_models import TrainClassifierModel
+from train.train_models import TrainUpdateSenseClassifierModel
+
+from train.train_models import TrainSvpModel
 
 from train.wipe_reset import WipeReset
 
@@ -61,6 +68,10 @@ def get_va_to_go_to():
         va_to_go_to = d[0]['va_to_go_to']
         return va_to_go_to
 
+va_folder_structure = config.va_folder_structure
+ai_core = config.ai_core
+handoff_vas_core = config.handoff_vas_core
+specialized_vas_core = config.specialized_vas_core
 
 # Handoff VA Model Specific paths
 base_dir = config.base_dir
@@ -86,23 +97,61 @@ wipe_svp_model_path = config.wipe_svp_model_path
 
 
 # API Views
-
 class CreateBotView(APIView):
     authentication_classes = [JSONWebTokenAuthentication]
     permission_classes = [IsAuthenticated]
     def post(self, request, *args, **kwargs):
-        try:
-            bot_serializer = BotSerializer(data=request.data)
-            if bot_serializer.is_valid():
-                bot_serializer.save()
-                latest_bot = Bot.objects.last()
-                bot_serializer = BotSerializer(latest_bot, many=False)
-                user_message = 'Success creating bot'
-                print(user_message)
+        # try:
+        bot_serializer = BotSerializer(data=request.data)
+        
+        if bot_serializer.is_valid():
+            print(bot_serializer.validated_data)
+            bot_serializer.save()
+            latest_bot = Bot.objects.last()
+            bot_serializer = BotSerializer(latest_bot, many=False)
+            bot_id = bot_serializer.data['id']
+            bot_tag = bot_serializer.data['bot_tag']
+            user_message = 'Success creating bot'
+            print(user_message)
+            # Create folder structure
+                # open json file
+            with open(va_folder_structure) as f:
+                d = json.load(f)
+                d_dict = d[0]
+                # print(d_dict)
+                d_dict[bot_id] = d_dict.pop('id')
+                # print(d_dict)
+                structure = d_dict
+
+                # print(structure)
+
+                parent_dir = ""
+
+                if bot_tag == 'handoff':
+                    parent_dir = handoff_vas_core
+                elif bot_tag == 'specialized':
+                    parent_dir = specialized_vas_core
+                
+                def recursive_path(data, path=''):
+                    path_list = []
+                    for key in data:
+                        temp_path = f"{path}/{key}"
+                        if isinstance(data[key], list):
+                            path_list.append(temp_path) 
+                        else:
+                            path_list.extend(recursive_path(data[key],temp_path))
+                    
+                    return path_list
+                            
+                list_of_path = recursive_path(structure) 
+
+                for sub_path in list_of_path:
+                    Path(parent_dir+sub_path).mkdir(parents=True, exist_ok=True)
+
                 return Response(bot_serializer.data, status=status.HTTP_201_CREATED)
-        except:
-            user_message = 'Error creating bot'
-            return Response(user_message, status=status.HTTP_400_BAD_REQUEST)
+                # except:
+                #     user_message = 'Error creating bot'
+                #     return Response(user_message, status=status.HTTP_400_BAD_REQUEST)
 
 
 class GetBotsView(APIView):
@@ -124,16 +173,17 @@ class GetSingleBotView(APIView):
     authentication_classes = [JSONWebTokenAuthentication]
     permission_classes = [IsAuthenticated]
     def post(self, request, *args, **kwargs):
-        try:
-            bot_id = request.data
-            bot = Bot.objects.get(id=bot_id)
-            bot_serializer = BotSerializer(bot, many=False)
-            user_message = 'Success getting bot'
-            print(user_message)
-            return Response(bot_serializer.data, status=status.HTTP_200_OK)
-        except:
-            user_message = 'Error getting bot'
-            return Response(user_message, status=status.HTTP_400_BAD_REQUEST)
+        # try:
+        print(request.data)
+        id = request.data['botId']
+        bot = Bot.objects.get(id=id)
+        bot_serializer = BotSerializer(bot, many=False)
+        user_message = 'Success getting bot'
+        print(user_message)
+        return Response(bot_serializer.data, status=status.HTTP_200_OK)
+        # except:
+            # user_message = 'Error getting bot'
+            # return Response(user_message, status=status.HTTP_400_BAD_REQUEST)
 
 
 class UpdateSingleBotView(APIView):
@@ -141,8 +191,9 @@ class UpdateSingleBotView(APIView):
     permission_classes = [IsAuthenticated]
     def post(self, request, *args, **kwargs):
         try:
-            bot_id = request.data['id']
-            instance = Bot.objects.get(id=bot_id)
+            print(request.data)
+            id = request.data['bot_id']
+            instance = Bot.objects.get(id=id)
             bot_serializer = BotSerializer(instance, data=request.data)
             if bot_serializer.is_valid():
                 bot_serializer.save()
@@ -159,8 +210,8 @@ class DeleteSingleBotView(APIView):
     permission_classes = [IsAuthenticated]
     def post(self, request, *args, **kwargs):
         try:
-            bot_id = request.data
-            bot = Bot.objects.get(id=bot_id)
+            bot_id = request.data['botId']
+            bot = Bot.objects.get(bot_id=bot_id)
             intents = Intent.objects.filter(bot=bot)
             svps = Intent.objects.filter(bot=bot)
             bot_serializer = BotSerializer(bot, many=False)
@@ -293,16 +344,21 @@ class FeedIntentsView(APIView):
     permission_classes = [IsAuthenticated]
     def post(self, request, *args, **kwargs):
         # try:
-        bot_id = request.data['botId']
+        print(request.data)
+        bot_id = str(request.data['botId'])
         bot_tag = request.data['va_tag']
         selected_update_intent = request.data['selectedUpdateIntent']
-        
+        # check if the there is a folder in handoff_vas_core that matches the id
+        path = os.path.join(handoff_vas_core, bot_id)
          # if the va_tag == handoff
         if bot_tag == 'handoff':
-
+            # check if the there is a folder in handoff_vas_core that matches the id
+            handoff_path = os.path.join(handoff_vas_core, bot_id)
+            
             if selected_update_intent != 'none':
                 # get update intent data for bot
                 bot = Bot.objects.get(id=bot_id)
+                bot_serializer = BotSerializer(bot, many=False)
                 intents = Intent.objects.filter(bot=bot, intent=selected_update_intent).order_by('-id')
                 # print(intents)
                 intent_serializer = IntentSerializer(intents, many=True)
@@ -322,9 +378,8 @@ class FeedIntentsView(APIView):
 
                 update_intent_data = json.dumps(new_intent_data_list, indent=4)
 
-
                 dir_to_create = selected_update_intent
-                parent_dir = handoff_va_update_clf_model_dir
+                parent_dir = os.path.join(handoff_path, 'clf/clf_models/update_intents')
                 path = os.path.join(parent_dir, dir_to_create)
                 temp_update_intents_json_file = selected_update_intent+'.json'
                 clf_model_update_intents_json_file = os.path.join(path, temp_update_intents_json_file)
@@ -359,6 +414,7 @@ class FeedIntentsView(APIView):
 
                 root_intent_data = json.dumps(new_intent_data_list, indent=4)
 
+                handoff_va_clf_model_root_intents_json_file = os.path.join(handoff_path, 'clf/clf_models/root/root_intents.json')
                 with open(handoff_va_clf_model_root_intents_json_file, 'w') as f:
                     f.write(root_intent_data)
             
@@ -370,7 +426,8 @@ class FeedIntentsView(APIView):
             #     return Response(user_message, status=status.HTTP_400_BAD_REQUEST)
 
         # if the va_tag == specialized
-        else:
+        elif bot_tag == 'specialized':
+            specialized_path = os.path.join(specialized_vas_core, bot_id)
             if selected_update_intent != 'none':
                 # get update intent data for bot
                 bot = Bot.objects.get(id=bot_id)
@@ -395,7 +452,7 @@ class FeedIntentsView(APIView):
 
 
                 dir_to_create = selected_update_intent
-                parent_dir = specialized_va_update_clf_model_dir
+                parent_dir = os.path.join(specialized_path, 'clf/clf_models/update_intents')
                 path = os.path.join(parent_dir, dir_to_create)
                 temp_update_intents_json_file = selected_update_intent+'.json'
                 clf_model_update_intents_json_file = os.path.join(path, temp_update_intents_json_file)
@@ -430,6 +487,7 @@ class FeedIntentsView(APIView):
 
                 root_intent_data = json.dumps(new_intent_data_list, indent=4)
 
+                specialized_va_clf_model_root_intents_json_file = os.path.join(specialized_path, 'clf/clf_models/root/root_intents.json')
                 with open(specialized_va_clf_model_root_intents_json_file, 'w') as f:
                     f.write(root_intent_data)
             
@@ -446,9 +504,15 @@ class FeedUpdateSenseView(APIView):
     authentication_classes = [JSONWebTokenAuthentication]
     permission_classes = [IsAuthenticated]
     def post(self, request, *args, **kwargs):
-        try:
-            bot_id = request.data
-            # get root intent data for bot
+        print(request.data)
+        # try:
+            
+        bot_id = str(request.data['botId'])
+        bot_tag = request.data['va_tag']
+        # get root intent data for bot
+
+        if bot_tag == 'handoff':
+            handoff_path = os.path.join(handoff_vas_core, bot_id)
             bot = Bot.objects.get(id=bot_id)
             intents = Intent.objects.filter(bot=bot).order_by('-id')
             intent_serializer = IntentSerializer(intents, many=True)
@@ -473,7 +537,7 @@ class FeedUpdateSenseView(APIView):
             update_sense_data = json.dumps(new_intent_data_list, indent=4)
 
             dir_to_create = 'update_sense'
-            parent_dir = update_clf_model_dir
+            parent_dir = os.path.join(handoff_path, 'clf/clf_models/update_intents')
             path = os.path.join(parent_dir, dir_to_create)
             temp_update_sense_json_file = 'update_sense.json'
             update_sense_json_file = os.path.join(path, temp_update_sense_json_file)
@@ -491,10 +555,56 @@ class FeedUpdateSenseView(APIView):
             user_message = 'Success feeding intents'
             print(user_message)
             return Response(user_message, status=status.HTTP_202_ACCEPTED)
-        except:
-            user_message = 'Error feeding intents'
-            return Response(user_message, status=status.HTTP_400_BAD_REQUEST)
+            # except:
+                # user_message = 'Error feeding intents'
+                # return Response(user_message, status=status.HTTP_400_BAD_REQUEST)
+        elif bot_tag == 'specialized':
+            specialized_path = os.path.join(specialized_vas_core, bot_id)
+            bot = Bot.objects.get(id=bot_id)
+            intents = Intent.objects.filter(bot=bot).order_by('-id')
+            intent_serializer = IntentSerializer(intents, many=True)
+            serialized_intent_data = intent_serializer.data
+            intent_data = json.dumps(serialized_intent_data)
 
+            intent_data_list = json.loads(intent_data)
+
+            new_intent_data_list = []
+
+            for line in intent_data_list:
+                # print(line)
+                string = line['intent_data']
+                intent_data_dict = json.loads(string)
+                if 'update' in intent_data_dict['intent']:
+                    intent_data_dict['intent'] = 'update'
+                else:
+                    intent_data_dict['intent'] = 'not_update'
+
+                new_intent_data_list.append(intent_data_dict)
+
+            update_sense_data = json.dumps(new_intent_data_list, indent=4)
+
+            dir_to_create = 'update_sense'
+            parent_dir = os.path.join(specialized_path, 'clf/clf_models/update_intents')
+            path = os.path.join(parent_dir, dir_to_create)
+            temp_update_sense_json_file = 'update_sense.json'
+            update_sense_json_file = os.path.join(path, temp_update_sense_json_file)
+            if not os.path.exists(path):
+                os.mkdir(path)
+                with open(update_sense_json_file, 'w') as f:
+                    f.write(update_sense_data)
+                
+            else:
+                shutil.rmtree(path)
+                os.mkdir(path)
+                with open(update_sense_json_file, 'w') as f:
+                    f.write(update_sense_data)
+            
+            user_message = 'Success feeding intents'
+            print(user_message)
+            return Response(user_message, status=status.HTTP_202_ACCEPTED)
+            # except:
+                # user_message = 'Error feeding intents'
+                # return Response(user_message, status=status.HTTP_400_BAD_REQUEST)
 # SVPs
 
 class CreateSvpView(APIView):
@@ -597,14 +707,13 @@ class FeedSvpsView(APIView):
     def post(self, request, *args, **kwargs):
         try:
             print(request.data, 'request data here')
-            bot_id = request.data['botId']
+            bot_id = str(request.data['botId'])
             bot_tag = request.data['va_tag']
             selected_intent = request.data['selectedIntent']
 
             # if the va_tag == handoff
-
             if bot_tag == 'handoff':
-
+                handoff_path = os.path.join(handoff_vas_core, bot_id)
                 if selected_intent:
                     # get svp data for bot
                     bot = Bot.objects.get(id=bot_id)
@@ -623,7 +732,7 @@ class FeedSvpsView(APIView):
                     svp_data = json.dumps(new_svp_data_list, indent=4)
 
                     temp_svp_json_file_to_create = selected_intent+'.json'
-                    parent_dir = os.path.join(handoff_va_svp_model_dir_core, 'json')
+                    parent_dir = os.path.join(handoff_path, 'svp/json')
                     svp_json_file_to_create = os.path.join(parent_dir, temp_svp_json_file_to_create)
                     with open(svp_json_file_to_create, 'w') as f:
                         f.write(svp_data)
@@ -631,7 +740,8 @@ class FeedSvpsView(APIView):
                     user_message = 'Success feeding svps'
                     print(user_message)
                     return Response(user_message, status=status.HTTP_202_ACCEPTED)
-            else:
+            elif bot_tag == 'specialized':
+                specialized_path = os.path.join(specialized_vas_core, bot_id)
 
                 if selected_intent:
                     # get svp data for bot
@@ -651,7 +761,7 @@ class FeedSvpsView(APIView):
                     svp_data = json.dumps(new_svp_data_list, indent=4)
 
                     temp_svp_json_file_to_create = selected_intent+'.json'
-                    parent_dir = os.path.join(specialized_va_svp_model_dir_core, 'json')
+                    parent_dir = os.path.join(specialized_path, 'svp/json')
                     svp_json_file_to_create = os.path.join(parent_dir, temp_svp_json_file_to_create)
                     with open(svp_json_file_to_create, 'w') as f:
                         f.write(svp_data)
@@ -700,15 +810,16 @@ class TrainClassifierModelView(APIView):
     def post(self, request, *args, **kwargs):
         # try:
         va_tag = request.data['va_tag']
+        bot_id = str(request.data['botId'])
         selected_update_intent = request.data['selectedUpdateIntent']
         if va_tag == 'handoff':
-            TrainHandoffVaClassifierModel(selected_update_intent).train_classifier_model()
-            user_message = 'Success training classifier model'
-            return Response(user_message, status=status.HTTP_200_OK)
+            clf_model_path = os.path.join(handoff_vas_core, bot_id)
         elif va_tag == 'specialized':
-            TrainSpecializedVaClassifierModel(selected_update_intent).train_classifier_model()
-            user_message = 'Success training classifier model'
-            return Response(user_message, status=status.HTTP_200_OK)
+            clf_model_path = os.path.join(specialized_vas_core, bot_id)    
+            
+        TrainClassifierModel(selected_update_intent, clf_model_path).train_classifier_model()
+        user_message = 'Success training classifier model'
+        return Response(user_message, status=status.HTTP_200_OK)
         # except:
             # user_message = 'Error training classifier model'
             # return Response(user_message, status=status.HTTP_400_BAD_REQUEST)
@@ -717,13 +828,21 @@ class TrainUpdateSenseClassifierModelView(APIView):
     authentication_classes = [JSONWebTokenAuthentication]
     permission_classes = [IsAuthenticated]
     def post(self, request, *args, **kwargs):
-        try:
-            TrainUpdateSenseClassifierModel().train_update_sense_classifier_model()
-            user_message = 'Success training classifier model'
-            return Response(user_message, status=status.HTTP_200_OK)
-        except:
-            user_message = 'Error training classifier model'
-            return Response(user_message, status=status.HTTP_400_BAD_REQUEST)
+        # try:
+        va_tag = request.data['va_tag']
+        bot_id = str(request.data['botId'])
+
+        if va_tag == 'handoff':
+            clf_model_path = os.path.join(handoff_vas_core, bot_id)
+        elif va_tag == 'specialized':
+            clf_model_path = os.path.join(specialized_vas_core, bot_id)
+
+        TrainUpdateSenseClassifierModel(clf_model_path).train_update_sense_classifier_model()
+        user_message = 'Success training update sense classifier model'
+        return Response(user_message, status=status.HTTP_200_OK)
+        # except:
+            # user_message = 'Error training classifier model'
+            # return Response(user_message, status=status.HTTP_400_BAD_REQUEST)
 
 class TrainSvpModelView(APIView):
     authentication_classes = [JSONWebTokenAuthentication]
@@ -732,15 +851,18 @@ class TrainSvpModelView(APIView):
         
         # try:
         va_tag = request.data['va_tag']
+        bot_id = str(request.data['botId'])
         selected_intent = request.data['selectedIntent']
         if va_tag == 'handoff':
-            TrainHandoffVaSvpModel(selected_intent).train_svp_model()
-            user_message = 'Success training svp model'
-            return Response(user_message, status=status.HTTP_200_OK)
-        else:
-            TrainSpecializedVaSvpModel(selected_intent).train_svp_model()
-            user_message = "Success training svp model"
-            return Response(user_message, status=status.HTTP_200_OK)
+            svp_model_path = os.path.join(handoff_vas_core, bot_id)
+            
+            
+        elif va_tag == 'specialized':
+            svp_model_path = os.path.join(specialized_vas_core, bot_id)
+
+        TrainSvpModel(selected_intent, svp_model_path).train_svp_model()
+        user_message = 'Success training svp model'
+        return Response(user_message, status=status.HTTP_200_OK)
         # except:
         # user_message = 'Error training bot'
         # return Response(user_message, status=status.HTTP_400_BAD_REQUEST)

@@ -18,7 +18,6 @@ export class EditComponent implements OnInit, OnDestroy {
   botModel = new Bot();
   private bots: any;
   botIdFromUrl: number;
-  botIdFromDropDown: number;
   bot: any;
   public successUserMessage: string;
   public errorUserMessage: string;
@@ -34,8 +33,8 @@ export class EditComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.initializeEditBotForm();
-    this.getBotFromUrl();
     this.getBots();
+    this.getBotFromUrl();
   }
 
   ngOnDestroy(): void {
@@ -43,7 +42,7 @@ export class EditComponent implements OnInit, OnDestroy {
 
   initializeEditBotForm(): void {
     this.editBotForm = this.formBuilder.group({
-      id: this.botModel.id,
+      bot_id: this.botModel.id,
       bot_name: this.botModel.botName,
       bot_tag: this.botModel.botTag,
       bot_desc: this.botModel.botDesc,
@@ -58,7 +57,7 @@ export class EditComponent implements OnInit, OnDestroy {
       (res) => {
         // console.log(res);
         this.bots = res;
-        if (res.length > 1) {
+        if (res.length > 0) {
         this.successUserMessage = 'Success getting bots';
         this.toggleUserMessage(this.successUserMessage, 'success');
         }
@@ -74,21 +73,19 @@ export class EditComponent implements OnInit, OnDestroy {
 
   getBotFromUrl() {
       this.bot = null;
-      this.botIdFromUrl = +this.route.snapshot.paramMap.get('id');
-      
-      if(this.botIdFromUrl) (
-      this.editService.getSingleBot(this.botIdFromUrl).subscribe(
+      const botIdFromUrl = +this.route.snapshot.paramMap.get('id');
+      if(botIdFromUrl) (
+      this.editService.getSingleBot(botIdFromUrl).subscribe(
       (res) => {
         // console.log(res);
         this.bot = res;
         this.editBotForm.patchValue({
-          id: this.bot.id,
+          bot_id: this.bot.id,
           bot_name: this.bot.bot_name,
           bot_tag: this.bot.bot_tag,
           bot_desc: this.bot.bot_desc,
           bot_intents: this.bot.bot_intents,
           bot_slots: this.bot.bot_slots,
-          bot_personal: this.bot.bot_personal,
         });
         if(this.bot.bot_slots == 'none') {
           this.editBotForm.patchValue({
@@ -111,13 +108,13 @@ export class EditComponent implements OnInit, OnDestroy {
 
   getBotFromDropDown(event: any) {
     this.bot = null;
-    this.botIdFromDropDown = +event.target.value;
-
-    this.editService.getSingleBot(this.botIdFromDropDown).subscribe(
+    const botIdFromDropDown = event.target.value;
+    this.editService.getSingleBot(botIdFromDropDown).subscribe(
     (res) => {
+      console.log(res);
       this.bot = res;
       this.editBotForm.patchValue({
-        id: this.bot.id,
+        bot_id: this.bot.id,
         bot_name: this.bot.bot_name,
         bot_tag: this.bot.bot_tag,
         bot_desc: this.bot.bot_desc,

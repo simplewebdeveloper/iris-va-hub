@@ -44,6 +44,7 @@ export class CreateComponent implements OnInit, OnDestroy {
   initializeCreateBotForm(): void {
     this.createBotForm = this.formBuilder.group({
       bot_name: this.botModel.botName,
+      bot_tag: this.botModel.botTag,
       bot_desc: this.botModel.botDesc,
       bot_intents: this.botModel.botIntents,
       bot_slots: this.botModel.botSlots,

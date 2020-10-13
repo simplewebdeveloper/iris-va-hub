@@ -18,7 +18,11 @@
 
                 <div class="uk-margin">
                   <div class="uk-text-small uk-margin-bottom">Give your VA a tag ("specialized" or "handoff")</div>
-                  <input class="uk-input" formControlName="bot_tag" type="text" required>
+                  <select formControlName="bot_tag" class="uk-select" required>
+                    <option value="" selected disabled>Choose a tag</option>
+                    <option value="handoff">Handoff</option>
+                    <option value="specialized">Specialized</option>
+                </select>
                 </div>
 
                 <div class="uk-margin">

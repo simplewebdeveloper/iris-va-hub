@@ -48,8 +48,8 @@
         <p>Prep and Train Secondary Classifier.</p>
         <!-- <input id="file" type="file" (change)="importJson($event, '.intentData')" class="uk-margin-small-bottom uk-margin-left"> -->
         <div *ngFor="let update_intent of update_intents; last as isLast">  
-        <button type="submit" class="uk-button uk-button-secondary uk-button-small uk-margin-small-bottom" (click)='feedIntents(update_intent)'>PREP {{ update_intent }} DATA</button>
-        <button type="submit" class="uk-button uk-button-danger uk-button-small uk-margin-small-bottom uk-margin-left" (click)="trainClassifierModel(update_intent)"><span uk-icon="play-circle"></span> TRAIN</button>
+        <button type="submit" class="uk-button uk-button-secondary uk-button-small uk-margin-small-bottom" (click)='feedIntents(update_intent, selectedBot.bot_tag)'>PREP {{ update_intent }} DATA</button>
+        <button type="submit" class="uk-button uk-button-danger uk-button-small uk-margin-small-bottom uk-margin-left" (click)="trainClassifierModel(update_intent, selectedBot.bot_tag)"><span uk-icon="play-circle"></span> TRAIN</button>
         <!-- <button type="submit" class="uk-button uk-button-danger uk-button-small uk-margin-small-bottom uk-margin-left" (click)="trainClassifierModel(update_intent)"><span uk-icon="history"></span> Un-train</button> -->
         <div *ngIf="!isLast"><hr class="uk-margin"></div>
           

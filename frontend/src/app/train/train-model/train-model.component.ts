@@ -139,10 +139,10 @@ export class TrainModelComponent implements OnInit {
       );
   }
 
-  feedUpdateSense() {
+  feedUpdateSense(va_tag) {
     this.trainCompleted = false;
     this.trainProgress = false;
-    this.trainService.feedUpdateSense(this.botId).subscribe(
+    this.trainService.feedUpdateSense(this.botId, va_tag).subscribe(
     (res) => {
       // console.log(res);
       if(res.length > 1) {
@@ -183,7 +183,7 @@ export class TrainModelComponent implements OnInit {
 
   trainClassifierModel(selectedIntent, va_tag) {
     this.show_training_status_model();
-    this.trainService.trainClassifierModel(selectedIntent, va_tag).subscribe(
+    this.trainService.trainClassifierModel(this.botId, va_tag, selectedIntent).subscribe(
       (res) => {
         // console.log(res);
         if(res.length > 1) {
@@ -203,11 +203,11 @@ export class TrainModelComponent implements OnInit {
     );
   }
 
-  trainUpdateSenseClassifierModel() {
+  trainUpdateSenseClassifierModel(va_tag) {
     this.canTrainUpdateSenseClassifierModel = false;
     this.show_training_status_model();
 
-    this.trainService.trainUpdateSenseClassifierModel().subscribe(
+    this.trainService.trainUpdateSenseClassifierModel(this.botId, va_tag).subscribe(
       (res) => {
         // console.log(res);
         if(res.length > 1) {
@@ -233,7 +233,7 @@ export class TrainModelComponent implements OnInit {
     this.trainCompleted = false;
     this.trainProgress = true;
     this.show_training_status_model();
-    this.trainService.trainSvpModel(selectedIntent, va_tag).subscribe(
+    this.trainService.trainSvpModel(selectedIntent, this.botId, va_tag).subscribe(
       (res) => {
         // console.log(res);
         if(res.length > 1) {
