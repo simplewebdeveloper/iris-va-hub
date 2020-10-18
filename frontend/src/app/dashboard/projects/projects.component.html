@@ -1,0 +1,70 @@
+<div class="uk-section uk-section-muted">
+  <div class="uk-container">
+
+      <h1>Projects</h1>
+  </div>
+
+</div>
+<div class="uk-section">
+  <div class="uk-container">
+<ul uk-tab class="uk-margin-top">
+  <li><a href="#">All Projects</a></li>
+  <li><a href="#">Explore Market Place</a></li>
+</ul>
+
+<ul class="uk-switcher uk-margin">
+  <li>
+    <div class="uk-child-width-1-3@m uk-grid-small uk-grid-match" uk-grid>
+      
+      
+        <div [routerLink]="['/project/create']" id="va-card" class="uk-card-light uk-card-body uk-border-rounded uk-box-shadow-medium uk-box-shadow-hover-large">
+          <div class="uk-margin">
+            <p class="uk-text-muted"><span uk-icon="icon: plus-circle; ratio: 2"></span></p>    
+            <legend class="uk-legend"> Create Project</legend>
+            <!-- <div class="uk-flex uk-flex-center">
+              
+          </div> -->
+            </div>
+        </div>
+      
+
+      <div *ngFor="let project of projects; let i = index" id="project-card">
+
+        <!-- <div [routerLink]="['/project', project.id]"> -->
+      
+        <div class="uk-card-light uk-card-body uk-border-rounded uk-box-shadow-medium uk-box-shadow-hover-large">
+          <!-- <p class="uk-text-muted"><span uk-icon="icon: nut; ratio: 2"></span></p> -->
+          <a class="uk-align-right" type="button"><span uk-icon="more-vertical"></span></a>
+  <div uk-dropdown>
+      <ul class="uk-nav uk-dropdown-nav">
+          <li><a [routerLink]="['/project', project.id]"><span uk-icon="pencil"></span> Edit</a></li>
+          <li class="uk-nav-divider"></li>
+          <li><a (click)="delete_project(i, project.id)"><span uk-icon="trash"></span> Delete</a></li>
+      </ul>
+  </div>
+          <p><span class="uk-badge">{{ project.project_tag }}</span></p>
+          <p class="uk-card-title">{{ project.project_name }}</p>
+          <p>{{ project.project_desc }}</p>
+          <div class="uk-button-group">
+          </div>
+        </div>
+      
+        <!-- </div> -->
+    </div>
+    </div>
+  </li>
+  <li>
+     Marketplace is not active on this version
+  </li>
+</ul>
+
+</div>
+</div>
+
+
+
+
+
+
+
+

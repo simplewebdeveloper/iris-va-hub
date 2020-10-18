@@ -1,10 +1,11 @@
-import {AfterViewInit, Component, OnDestroy, OnInit} from '@angular/core';
+import { AfterViewInit, Component, OnDestroy, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
-import {map, switchMap} from 'rxjs/operators';
+import { map, switchMap } from 'rxjs/operators';
 import { EditService } from '../edit.service';
+import { DashboardService } from '../../dashboard/dashboard.service';
 
-import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {Bot} from '../../models/bot.model';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Va } from '../../models/va.model';
 import * as uikit from 'uikit';
 import { HttpErrorResponse } from '@angular/common/http';
 
@@ -14,160 +15,181 @@ import { HttpErrorResponse } from '@angular/common/http';
   styleUrls: ['./edit.component.css']
 })
 export class EditComponent implements OnInit, OnDestroy {
-  editBotForm: FormGroup;
-  botModel = new Bot();
-  private bots: any;
-  botIdFromUrl: number;
-  bot: any;
-  public successUserMessage: string;
-  public errorUserMessage: string;
+  edit_va_form: FormGroup;
+  va_model = new Va();
+  vas: any;
+  projects: any;
+  va_id_from_url: number;
+  va: any;
+  public success_user_message: string;
+  public error_user_message: string;
+
+  
 
   constructor(
     private route: ActivatedRoute,
     private router: Router,
-    private editService: EditService,
-    private formBuilder: FormBuilder,
+    private edit_service: EditService,
+    private dashboard_service: DashboardService,
+    private form_builder: FormBuilder,
   ) {
-    this.botModel = new Bot();
+    this.va_model = new Va();
   }
 
   ngOnInit() {
-    this.initializeEditBotForm();
-    this.getBots();
-    this.getBotFromUrl();
+    this.initialize_edit_va_form();
+    // this.get_vas();
+    this.get_projects();
+    this.get_va_from_url();
   }
 
   ngOnDestroy(): void {
   }
 
-  initializeEditBotForm(): void {
-    this.editBotForm = this.formBuilder.group({
-      bot_id: this.botModel.id,
-      bot_name: this.botModel.botName,
-      bot_tag: this.botModel.botTag,
-      bot_desc: this.botModel.botDesc,
-      bot_intents: this.botModel.botIntents, 
-      bot_slots: this.botModel.botSlots,
+  initialize_edit_va_form(): void {
+    this.edit_va_form = this.form_builder.group({
+      va_id: this.va_model.id,
+      project: this.va_model.project,
+      va_name: this.va_model.va_name,
+      va_tag: this.va_model.va_tag,
+      va_desc: this.va_model.va_desc,
+      va_intents: this.va_model.va_intents, 
+      va_slots: this.va_model.va_slots,
     });
 
   }
 
-  getBots() {
-    this.editService.getAllBots().subscribe(
-      (res) => {
-        // console.log(res);
-        this.bots = res;
-        if (res.length > 0) {
-        this.successUserMessage = 'Success getting bots';
-        this.toggleUserMessage(this.successUserMessage, 'success');
-        }
+  // get_vas() {
+  //   this.edit_service.get_all_vas().subscribe(
+  //     (res) => {
+  //       // console.log(res);
+  //       this.vas = res;
+  //       if (res.length > 0) {
+  //       this.success_user_message = 'Success getting vas';
+  //       this.toggle_user_message(this.success_user_message, 'success');
+  //       }
         
+  //     },
+  //     (err: HttpErrorResponse) => {
+  //       console.log(err);
+  //       this.error_user_message = err.error;
+  //       this.toggle_user_message(this.error_user_message, 'danger');
+  //     }
+  //   );
+  // }
+
+  get_projects() {
+    this.dashboard_service.get_all_projects().subscribe(
+      (res) => {
+        console.log(res)
+        this.projects = res;
       },
-      (err: HttpErrorResponse) => {
+      (err) => {
         console.log(err);
-        this.errorUserMessage = err.error;
-        this.toggleUserMessage(this.errorUserMessage, 'danger');
       }
     );
   }
 
-  getBotFromUrl() {
-      this.bot = null;
-      const botIdFromUrl = +this.route.snapshot.paramMap.get('id');
-      if(botIdFromUrl) (
-      this.editService.getSingleBot(botIdFromUrl).subscribe(
+  get_va_from_url() {
+      this.va = null;
+      const va_id_from_url = +this.route.snapshot.paramMap.get('id');
+      if(this.get_va_from_url) (
+      this.edit_service.get_single_va(va_id_from_url).subscribe(
       (res) => {
-        // console.log(res);
-        this.bot = res;
-        this.editBotForm.patchValue({
-          bot_id: this.bot.id,
-          bot_name: this.bot.bot_name,
-          bot_tag: this.bot.bot_tag,
-          bot_desc: this.bot.bot_desc,
-          bot_intents: this.bot.bot_intents,
-          bot_slots: this.bot.bot_slots,
+        console.log(res);
+        this.va = res;
+        this.edit_va_form.patchValue({
+          va_id: this.va.id,
+          project: this.va.project,
+          va_name: this.va.va_name,
+          va_tag: this.va.va_tag,
+          va_desc: this.va.va_desc,
+          va_intents: this.va.va_intents,
+          va_slots: this.va.va_slots,
         });
-        if(this.bot.bot_slots == 'none') {
-          this.editBotForm.patchValue({
-            bot_slots: 'none',
+        if(this.va.va_slots == 'none') {
+          this.edit_va_form.patchValue({
+            va_slots: 'none',
           });
         }
-        const botName = this.bot.bot_name;
+        const va_name = this.va.va_name;
         if (res.length > 1) {
-        this.successUserMessage = 'Success getting bot: ' + botName;
-        this.toggleUserMessage(this.successUserMessage, 'success');
+        this.success_user_message = 'Success getting va: ' + va_name;
+        this.toggle_user_message(this.success_user_message, 'success');
         }
     },
     (err: HttpErrorResponse) => {
         console.log(err);
-        this.errorUserMessage = err.error;
-        this.toggleUserMessage(this.errorUserMessage, 'danger');
+        this.error_user_message = err.error;
+        this.toggle_user_message(this.error_user_message, 'danger');
     }
       ));
   }
 
-  getBotFromDropDown(event: any) {
-    this.bot = null;
-    const botIdFromDropDown = event.target.value;
-    this.editService.getSingleBot(botIdFromDropDown).subscribe(
-    (res) => {
-      console.log(res);
-      this.bot = res;
-      this.editBotForm.patchValue({
-        bot_id: this.bot.id,
-        bot_name: this.bot.bot_name,
-        bot_tag: this.bot.bot_tag,
-        bot_desc: this.bot.bot_desc,
-        bot_intents: this.bot.bot_intents,
-        bot_slots: this.bot.bot_slots,
-        bot_personal: this.bot.bot_personal,
-      });
-      if(this.bot.bot_slots == 'none') {
-        this.editBotForm.patchValue({
-          bot_slots: '',
-        });
-      }
-      const botName = this.bot.bot_name;
-      if (res.length > 1) {
-      this.successUserMessage = 'Success getting bot: ' + botName;
-      this.toggleUserMessage(this.successUserMessage, 'success');
-      }
-  },
-  (err: HttpErrorResponse) => {
-      console.log(err);
-      this.errorUserMessage = err.error;
-      this.toggleUserMessage(this.errorUserMessage, 'danger');
-  }
-    );
-}
-  editBotFormSubmit() {
-      const data = this.editBotForm.getRawValue();
+//   get_va_from_drop_down(event: any) {
+//     this.va = null;
+//     const va_id_from_drop_down = event.target.value;
+//     this.edit_service.get_single_va(va_id_from_drop_down).subscribe(
+//     (res) => {
+//       // console.log(res);
+//       this.va = res;
+//       this.edit_va_form.patchValue({
+//         va_id: this.va.id,
+//         project: this.va.project,
+//         va_name: this.va.va_name,
+//         va_tag: this.va.va_tag,
+//         va_desc: this.va.va_desc,
+//         va_intents: this.va.va_intents,
+//         va_slots: this.va.va_slots,
+//       });
+//       if(this.va.va_slots == 'none') {
+//         this.edit_va_form.patchValue({
+//           va_slots: '',
+//         });
+//       }
+//       const va_name = this.va.va_name;
+//       if (res.length > 1) {
+//       this.success_user_message = 'Success getting va: ' + va_name;
+//       this.toggle_user_message(this.success_user_message, 'success');
+//       }
+//   },
+//   (err: HttpErrorResponse) => {
+//       console.log(err);
+//       this.error_user_message = err.error;
+//       this.toggle_user_message(this.error_user_message, 'danger');
+//   }
+//     );
+// }
 
-      if(this.editBotForm.valid) {
-      if(!data.bot_slots) {
-        data.bot_slots = 'none'
+edit_va_form_submit() {
+      const data = this.edit_va_form.getRawValue();
+      console.log(data)
+
+      if(this.edit_va_form.valid) {
+      if(!data.va_slots) {
+        data.va_slots = 'none'
       }
 
-      if(this.editBotForm.valid) {
-      this.editService.saveBot(data).subscribe(
+      if(this.edit_va_form.valid) {
+      this.edit_service.save_va(data).subscribe(
         (res) => {
           // console.log(res);
-          const botName = this.bot.bot_name;
+          const va_name = this.va.va_name;
           if(res) {
-          this.successUserMessage = 'Success updating bot: ' + botName;
-          this.toggleUserMessage(this.successUserMessage, 'success');
+          this.success_user_message = 'Success updating va: ' + va_name;
+          this.toggle_user_message(this.success_user_message, 'success');
           }
         },
         (err: HttpErrorResponse) => {
           console.log(err);
-          this.errorUserMessage = err.error;
-          this.toggleUserMessage(this.errorUserMessage, 'danger');
+          this.error_user_message = err.error;
+          this.toggle_user_message(this.error_user_message, 'danger');
         }
       );
     }
   }
   }
-    toggleUserMessage(notificationMessage, status) {
+    toggle_user_message(notificationMessage, status) {
       uikit.notification(notificationMessage, {pos: 'bottom-right', status: status});
     }
 }

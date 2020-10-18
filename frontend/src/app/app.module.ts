@@ -7,8 +7,9 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptor } from "./auth/auth-interceptor";
 
 // Custom modules
+import { ProjectModule } from "../app/project/project.module";
 import { SharedModule } from '../app/shared/shared.module';
-import { HomeModule } from '../app/home/home.module';
+import { DashboardModule } from '../app/dashboard/dashboard.module';
 import { CreateModule } from './create/create.module';
 import { TrainModule } from '../app/train/train.module';
 import { EditModule } from './edit/edit.module';
@@ -18,7 +19,7 @@ import { SettingsModule } from './settings/settings.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { Routes, RouterModule, CanActivate } from '@angular/router';
 import { EditComponent } from './edit/edit/edit.component';
-import {ReactiveFormsModule} from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { AuthGuardService} from "./auth/auth-guard.service";
 import { AuthService } from './auth/auth.service';
 
@@ -34,10 +35,15 @@ const appRoutes: Routes = [
     loadChildren: './auth/auth.module#AuthModule',
   },
   {
-    path: 'home',
-    loadChildren: './home/home.module#HomeModule',
+    path: 'dashboard',
+    loadChildren: './dashboard/dashboard.module#DashboardModule',
     
   },
+  {
+    path: 'project',
+   loadChildren: './project/project.module#ProjectModule',
+  
+ },
   {
     path: 'create',
     loadChildren: './create/create.module#CreateModule',
@@ -67,8 +73,9 @@ const appRoutes: Routes = [
   ],
   imports: [
     BrowserModule,
+    ProjectModule,
     SharedModule,
-    HomeModule,
+    DashboardModule,
     CreateModule,
     TrainModule,
     EditModule,

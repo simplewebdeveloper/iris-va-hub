@@ -1,11 +1,11 @@
-import {AfterViewInit, Component, ElementRef, Inject, inject, OnInit, Renderer, ViewChild} from '@angular/core';
+import { AfterViewInit, Component, ElementRef, Inject, inject, OnInit, Renderer, ViewChild } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
 import { SlotEntity } from '../../models/slot-entity';
 import * as uikit from 'uikit';
 import { SlotValuePairing } from '../../models/slot-entity';
-import {TrainService} from '../train.service';
-import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {Svp} from '../../models/svp.model';
+import { TrainService } from '../train.service';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Svp } from '../../models/svp.model';
 import { HttpErrorResponse } from '@angular/common/http';
 @Component({
   selector: 'app-train-svps',
@@ -13,111 +13,112 @@ import { HttpErrorResponse } from '@angular/common/http';
   styleUrls: ['./train-svps.component.css']
 })
 export class TrainSvpsComponent implements OnInit {
-  @ViewChild('utteranceToLabel', {static: false}) utteranceToLabel: ElementRef;
+  @ViewChild('utterance_to_label', {static: false}) utterance_to_label: ElementRef;
   @ViewChild('contentBox', {static: false}) contentBox: ElementRef;
-  @ViewChild('labelQueue', {static: false}) labelQueue: ElementRef;
-  createSvpForm: FormGroup;
-  svpModel = new Svp();
-  private uttToLabel = '';
-  private slotValue: string;
+  @ViewChild('label_queue', {static: false}) label_queue: ElementRef;
+  create_svp_form: FormGroup;
+  svp_model = new Svp();
+  private utt_to_label = '';
+  private slot_value: string;
   private text: string;
-  private startIndex: number;
-  private endIndex: number;
-  private lenOfStr: number;
-  private slotEntity: any;
-  private slotEntities: any[];
-  private slotData: string;
+  private start_index: number;
+  private end_index: number;
+  private len_of_str: number;
+  private slot_entity: any;
+  private slot_entities: any[];
+  private slot_data: string;
   permanent: string;
   temp: string;
   public entity: any;
-  public showLabelModal = false;
+  public show_label_modal = false;
   public label = '';
-  public slotValuePairings: any[];
-  public slotValuePair: any;
-  private bots: any;
-  private bot: any;
-  private botId: any;
+  public slot_value_pairings: any[];
+  public slot_value_pair: any;
+  private vas: any;
+  private va: any;
+  private va_id: any;
   private intents: any;
-  private selectedIntent: any;
+  private selected_intent: any;
   private string;
   private slots: any;
   private has_slots: boolean;
-  private botSvps: any;
+  private va_svps: any;
   public elem: any;
   public str: any;
-  public aiSlots: any;
-  public slotItems: any;
-  public remSqbrac: any;
-  public slotArrayTemp: any;
-  public slotArray: any;
-  public startIndexP: any;
-  public endIndexP: any;
-  public slotLabel: any;
-  public slotValueP: any;
-  private intentsAndUtterances: any;
+  public ai_slots: any;
+  public slot_items: any;
+  public rem_sqbrac: any;
+  public slot_array_temp: any;
+  public slot_array: any;
+  public start_index_p: any;
+  public end_index_p: any;
+  public slot_label: any;
+  public slot_value_p: any;
+  intents_and_utterances: any;
 
-  public successUserMessage: string;
-  public errorUserMessage: string;
+  public success_user_message: string;
+  public error_user_message: string;
 
   constructor(@Inject(DOCUMENT) private document: Document,
-              private trainService: TrainService,
-              private formBuilder: FormBuilder,
+              private train_service: TrainService,
+              private form_builder: FormBuilder,
               private renderer: Renderer,
-              private elemRef: ElementRef) {
+              private elem_ref: ElementRef) {
   }
 
   ngOnInit() {
-    this.slotValuePairings = [];
-    this.getBots();
-    this.initializeCreateSvpForm();
+    this.slot_value_pairings = [];
+    this.get_vas();
+    this.initialize_create_svp_form();
   }
 
-  initializeCreateSvpForm(): void {
-    this.createSvpForm = this.formBuilder.group({
-      bot_id: [this.svpModel.botId, Validators.required],
-      slots: [this.svpModel.slots, Validators.required],
-      utterance: [this.svpModel.utterance, Validators.required],
-      svp_data: [this.svpModel.svpData, Validators.required],
-      intent: [this.svpModel.intent, Validators.required]
+  initialize_create_svp_form(): void {
+    this.create_svp_form = this.form_builder.group({
+      va_id: [this.svp_model.va_id, Validators.required],
+      slots: [this.svp_model.slots, Validators.required],
+      utterance: [this.svp_model.utterance, Validators.required],
+      svp_data: [this.svp_model.svp_data, Validators.required],
+      intent: [this.svp_model.intent, Validators.required]
     });
   }
 
-  getNewUtteranceToLabel() {
-    this.slotData = '';
-    this.uttToLabel = '';
-    this.uttToLabel = this.utteranceToLabel.nativeElement.value;
-    if(this.labelQueue.nativeElement.innerHTML.length > 2) {
-      this.labelQueue.nativeElement.innerHTML = this.uttToLabel;
+  get_new_utterance_to_label() {
+    this.slot_data = '';
+    this.utt_to_label = '';
+    this.utt_to_label = this.utterance_to_label.nativeElement.value;
+    if(this.label_queue.nativeElement.innerHTML.length > 2) {
+      this.label_queue.nativeElement.innerHTML = this.utt_to_label;
     }
-    this.slotEntities = [];
+    this.slot_entities = [];
     this.permanent = '';
-    this.successUserMessage = 'Success sending to label queue';
-    this.toggleUserMessage(this.successUserMessage, 'success');
+    this.success_user_message = 'Success sending to label queue';
+    this.toggle_user_message(this.success_user_message, 'success');
   }
 
-  getUtteranceFromIntentData(i) {
-    this.uttToLabel = '';
-    this.uttToLabel = this.intentsAndUtterances[i].utterance;
-    this.slotEntities = [];
+  get_utterance_from_intent_data(i) {
+    this.utt_to_label = '';
+    this.utt_to_label = this.intents_and_utterances[i].utterance;
+    this.label_queue.nativeElement.innerHTML = this.utt_to_label;
+    this.slot_entities = [];
     this.permanent = '';
-    this.successUserMessage = 'Success sending to label queue';
-    this.toggleUserMessage(this.successUserMessage, 'success');
+    this.success_user_message = 'Success sending to label queue';
+    this.toggle_user_message(this.success_user_message, 'success');
   }
 
   // labelSlot() {
-  //   this.slotEntity = new SlotEntity();
+  //   this.slot_entity = new slot_entity();
   //   this.text = '';
   //   if (window.getSelection) {
   //     this.text = window.getSelection().toString();
-  //     if (this.text.length > 1 && this.uttToLabel.length > 1) {
-  //       this.toggleLabelModal();
+  //     if (this.text.length > 1 && this.utt_to_label.length > 1) {
+  //       this.toggle_label_modal();
   //     }
   //   }
   // }
 
 
-  labelSlot() {
-    this.slotEntity = new SlotEntity();
+  label_slot() {
+    this.slot_entity = new SlotEntity();
     this.text = '';
     if (window.getSelection().type === 'Range') {
       this.text = window.getSelection().toString();
@@ -129,39 +130,40 @@ export class TrainSvpsComponent implements OnInit {
       // span.appendChild(selectedText);
       // selection.insertNode(span);
 
-      if (this.text.length > 1 && this.uttToLabel.length > 1) {
-        this.toggleLabelModal();
+      if (this.text.length > 1 && this.utt_to_label.length > 1) {
+        this.toggle_label_modal();
       }
     }
 
   }
 
-  toggleLabelModal() {
-    this.showLabelModal = !this.showLabelModal;
+  toggle_label_modal() {
+    this.show_label_modal = !this.show_label_modal;
 
-    if (this.showLabelModal) {
+    if (this.show_label_modal) {
       uikit.modal('#modal').show();
     } else {
       uikit.modal('#modal').hide();
     }
   }
 
-  getLabel(event: any) {
+  get_label(event: any) {
     this.label = event.target.value;
+    // console.log(this.label)
     if (this.label.length > 1) {
-      this.toggleLabelModal();
-      this.slotValue = this.text;
-      this.startIndex = this.uttToLabel.indexOf(this.slotValue);
-      this.slotEntity.startIndex = this.startIndex;
-      this.lenOfStr = this.slotValue.length;
-      this.endIndex = this.startIndex + this.lenOfStr;
-      this.slotEntity.endIndex = this.endIndex;
-      this.slotEntity.slot = this.label;
+      this.toggle_label_modal();
+      this.slot_value = this.text;
+      this.start_index = this.utt_to_label.indexOf(this.slot_value);
+      this.slot_entity.start_index = this.start_index;
+      this.len_of_str = this.slot_value.length;
+      this.end_index = this.start_index + this.len_of_str;
+      this.slot_entity.end_index = this.end_index;
+      this.slot_entity.slot = this.label;
 
-      this.slotEntities.push(this.slotEntity);
-      for (this.entity of this.slotEntities) {
+      this.slot_entities.push(this.slot_entity);
+      for (this.entity of this.slot_entities) {
         this.temp = '';
-        this.temp = '[' + this.entity.startIndex + ',' + this.entity.endIndex + ',' + '"' + this.entity.slot + '"' + ']';
+        this.temp = '[' + this.entity.start_index + ',' + this.entity.end_index + ',' + '"' + this.entity.slot + '"' + ']';
       }
       if (this.permanent.length > 0) {
         this.permanent = this.permanent + ',' + this.temp;
@@ -170,210 +172,214 @@ export class TrainSvpsComponent implements OnInit {
       }
       // tslint:disable-next-line:max-line-length
       // console.log(this.permanent)
-      this.slotData = '[' + '"' + this.uttToLabel + '"' + ',' + '{' + '"' + 'entities' + '"' + ':' + '[' + this.permanent + ']' + '}' + ']';
-      this.slotValuePair = new SlotValuePairing();
-      this.slotValuePair.slot = this.label;
-      this.slotValuePair.value = this.slotValue;
-      this.slotValuePairings.push(this.slotValuePair);
+      this.slot_data = '[' + '"' + this.utt_to_label + '"' + ',' + '{' + '"' + 'entities' + '"' + ':' + '[' + this.permanent + ']' + '}' + ']';
+      this.slot_value_pair = new SlotValuePairing();
+      this.slot_value_pair.slot = this.label;
+      this.slot_value_pair.value = this.slot_value;
+      this.slot_value_pairings.push(this.slot_value_pair);
 
-      this.createSvpForm.patchValue({
-        svp_data: this.slotData,
-        utterance: this.uttToLabel,
+      this.create_svp_form.patchValue({
+        svp_data: this.slot_data,
+        utterance: this.utt_to_label,
         slots: this.permanent,
-        intent: this.selectedIntent
+        intent: this.selected_intent
       });
+
+      // console.log(this.selected_intent)
     }
   }
 
-  clearAll() {
-    this.slotValuePairings = [];
-    this.slotValuePair.slot = '';
-    this.slotValuePair.value = '';   
-    this.uttToLabel = '';
+  clear_all() {
+    this.slot_value_pairings = [];
+    this.slot_value_pair.slot = '';
+    this.slot_value_pair.value = '';   
+    this.utt_to_label = '';
     this.permanent = '';
-    this.slotData = '';
-    this.createSvpForm.patchValue({
+    this.slot_data = '';
+    this.create_svp_form.patchValue({
       svp_data: '',
     });
-    this.successUserMessage = 'Success clearing svp';
-    this.toggleUserMessage(this.successUserMessage, 'success');
+    this.success_user_message = 'Success clearing svp';
+    this.toggle_user_message(this.success_user_message, 'success');
     
   }
 
-  getBots() {
-    this.trainService.getAllBots().subscribe(
+  get_vas() {
+    this.train_service.get_vas().subscribe(
       (res) => {
         // console.log(res);
-        this.bots = res;
+        this.vas = res;
         if(res.length > 0) {
-        this.successUserMessage = 'Success getting bots';
-        this.toggleUserMessage(this.successUserMessage, 'success');
+        this.success_user_message = 'Success getting vas';
+        this.toggle_user_message(this.success_user_message, 'success');
         }
         
       },
       (err: HttpErrorResponse) => {
         console.log(err);
-        this.errorUserMessage = err.error;
-        this.toggleUserMessage(this.errorUserMessage, 'danger');
+        this.error_user_message = err.error;
+        this.toggle_user_message(this.error_user_message, 'danger');
       }
     );
   }
 
-  getBot(event: any) {
-    const botId = +event.target.value;
-    this.intentsAndUtterances = [];
-    this.botSvps = [];
-    this.botId = botId
-    this.trainService.getSingleBot(botId).subscribe(
+  get_va(event: any) {
+    const va_id = +event.target.value;
+    this.intents_and_utterances = [];
+    this.va_svps = [];
+    this.va_id = va_id
+    this.train_service.get_single_va(va_id).subscribe(
       (res) => {
-         // console.log(res);
-        this.bot = res;
-        if(this.bot.bot_slots == 'none') {
+        //  console.log(res);
+        this.va = res;
+        if(this.va.va_slots == 'none') {
           this.has_slots = false;
           // console.log(this.has_slots);
         } else {
           this.has_slots = true;
         }
-        this.string = this.bot.bot_slots.replace(/\s/g, '');
+        this.string = this.va.va_slots.replace(/\s/g, '');
         this.slots = this.string.split(',');
-        this.string = this.bot.bot_intents.replace(/\s/g, '');
+        this.string = this.va.va_intents.replace(/\s/g, '');
         this.intents = this.string.split(',');
-        this.createSvpForm.patchValue({
-          bot_id: this.bot.id
+        this.create_svp_form.patchValue({
+          va_id: this.va.id
         });
-        const botName = this.bot.bot_name;
+        const va_name = this.va.va_name;
         if(res) {
-          this.successUserMessage = 'Success getting bot: ' + botName;
-        this.toggleUserMessage(this.successUserMessage, 'success');
+          this.success_user_message = 'Success getting va: ' + va_name;
+        this.toggle_user_message(this.success_user_message, 'success');
         }
         
       },
       (err: HttpErrorResponse) => {
         console.log(err);
-        this.errorUserMessage = err.error;
-        this.toggleUserMessage(this.errorUserMessage, 'danger');
+        this.error_user_message = err.error;
+        this.toggle_user_message(this.error_user_message, 'danger');
       }
       );
 }
 
-  getSelectedIntent(event: any) {
-    this.selectedIntent = event.target.value;
+  get_selected_intent(event: any) {
+    this.selected_intent = event.target.value;
     if (this.has_slots == true) {
-      this.intentsAndUtterances = [];
-      this.getIntents(this.botId, this.selectedIntent);
-      this.botSvps = [];
-      this.getSvps(this.botId, this.selectedIntent);
+      this.intents_and_utterances = [];
+      this.get_intents(this.va_id, this.selected_intent);
+      this.va_svps = [];
+      this.get_svps(this.va_id, this.selected_intent);
     }
   }
 
-  getSvps(botId: number, selectedIntent: any) {
-    this.trainService.getAllSvps(botId, selectedIntent).subscribe(
+  get_svps(va_id: number, selected_intent: any) {
+    this.train_service.get_all_svps(va_id, selected_intent).subscribe(
       (res) => {
         //  console.log(res);
-        this.botSvps = [];
-        this.botSvps = res;
-        setTimeout(() => this.parseSvpData(), 5);
+        this.va_svps = [];
+        this.va_svps = res;
+        setTimeout(() => this.parse_svp_data(), 5);
         if(res.length > 0) {
-        this.successUserMessage = 'Success getting svps';
-        this.toggleUserMessage(this.successUserMessage, 'success');
+        this.success_user_message = 'Success getting svps';
+        this.toggle_user_message(this.success_user_message, 'success');
         }
       },
       (err: HttpErrorResponse) => {
         console.log(err);
-        this.errorUserMessage = err.error;
-        this.toggleUserMessage(this.errorUserMessage, 'danger');
+        this.error_user_message = err.error;
+        this.toggle_user_message(this.error_user_message, 'danger');
       }
     );
   }
 
-  getIntents(botId: number, selectedIntent: any) {
-    this.trainService.getAllIntents(botId, selectedIntent).subscribe(
+  get_intents(va_id: number, selected_intent: any) {
+    this.train_service.get_all_intents(va_id, selected_intent).subscribe(
       (res) => {
         //  console.log(res);
-        this.intentsAndUtterances = [];
-        this.intentsAndUtterances = res;
+        this.intents_and_utterances = [];
+        this.intents_and_utterances = res;
         if(res.length > 0) {
-        this.successUserMessage = 'Success getting intents';
-        this.toggleUserMessage(this.successUserMessage, 'success');
+        this.success_user_message = 'Success getting intents';
+        this.toggle_user_message(this.success_user_message, 'success');
         }
       },
       (err: HttpErrorResponse) => {
         console.log(err);
-        this.errorUserMessage = err.error;
-        this.toggleUserMessage(this.errorUserMessage, 'danger');
+        this.error_user_message = err.error;
+        this.toggle_user_message(this.error_user_message, 'danger');
       }
     );
   }
 
-  createSvpFormSubmit() {
-    const data = this.createSvpForm.getRawValue();
-    // console.log(data);
-    if (data.bot_id && data.svp_data) {
-      this.trainService.createSvp(data).subscribe(
+  create_svp_form_submit() {
+    const data = this.create_svp_form.getRawValue();
+    // console.log(data)
+    if (data.va_id && data.svp_data) {
+      this.train_service.create_svp(data).subscribe(
         (res) => {
           //  console.log(res);
-          // this.botSvps.unshift(res);
+          // this.va_svps.unshift(res);
           if(res) {
-          this.getSvps(data.bot_id, this.selectedIntent);
-          this.clearAll();
-          this.successUserMessage = 'Success creating svp';
-          this.toggleUserMessage(this.successUserMessage, 'success');
+          this.get_svps(data.va_id, this.selected_intent);
+          this.clear_all();
+          this.success_user_message = 'Success creating svp';
+          this.toggle_user_message(this.success_user_message, 'success');
           }
         },
         (err: HttpErrorResponse) => {
           console.log(err);
-          this.errorUserMessage = err.error;
-          this.toggleUserMessage(this.errorUserMessage, 'danger');
+          this.error_user_message = err.error;
+          this.toggle_user_message(this.error_user_message, 'danger');
         }
       );
     } else {
-      this.errorUserMessage = 'No svp to save';
-      this.toggleUserMessage(this.errorUserMessage, 'danger');
+      this.error_user_message = 'No svp to save';
+      this.toggle_user_message(this.error_user_message, 'danger');
     }
   }
 
-  deleteSvp(svpId, i) {
-    this.trainService.deleteSingleSvp(svpId).subscribe(
+  delete_svp(svpId, i) {
+    this.train_service.delete_single_svp(svpId).subscribe(
       (res) => {
         // console.log(res);
         if(res) {
-        this.botSvps.splice(i, 1);
-        this.successUserMessage = 'Success deleting svp';
-        this.toggleUserMessage(this.successUserMessage, 'success');
+        this.va_svps.splice(i, 1);
+        this.success_user_message = 'Success deleting svp';
+        this.toggle_user_message(this.success_user_message, 'success');
         }
         
       },
       (err: HttpErrorResponse) => {
         console.log(err);
-        this.errorUserMessage = err.error;
-        this.toggleUserMessage(this.errorUserMessage, 'danger');
+        this.error_user_message = err.error;
+        this.toggle_user_message(this.error_user_message, 'danger');
       }
     );
   }
 
-  parseSvpData() {
-    const utterances = this.elemRef.nativeElement.querySelectorAll('.utterance');
+  parse_svp_data() {
+    const utterances = this.elem_ref.nativeElement.querySelectorAll('.utterance');
     utterances.forEach(utterance => {
       this.str = utterance.querySelectorAll('.utt')[0].innerText;
-      this.aiSlots = utterance.querySelectorAll('.ai_slots')[0].value;
-      this.aiSlots = this.aiSlots.replace(/([^,],[^,]*?,[^,]*?),/g, '$1&');
-      this.slotArray = this.aiSlots.split('&');
-      for (const i of this.slotArray) {
-        this.slotItems = i;
-        this.remSqbrac = this.slotItems.replace(/['"\[\]']+/g, '');
-        this.slotArrayTemp = this.remSqbrac.split(',');
-        this.startIndexP = this.slotArrayTemp[0];
-        this.endIndexP = this.slotArrayTemp[1];
-        this.slotLabel = this.slotArrayTemp[2];
-        this.slotValueP = this.str.substring(this.startIndexP, this.endIndexP);
+      this.ai_slots = utterance.querySelectorAll('.ai_slots')[0].value;
+      // console.log(this.ai_slots);
+      
+      this.ai_slots = this.ai_slots.replace(/([^,],[^,]*?,[^,]*?),/g, '$1&');
+      this.slot_array = this.ai_slots.split('&');
+      for (const i of this.slot_array) {
+        this.slot_items = i;
+        this.rem_sqbrac = this.slot_items.replace(/['"\[\]']+/g, '');
+        this.slot_array_temp = this.rem_sqbrac.split(',');
+        this.start_index_p = this.slot_array_temp[0];
+        this.end_index_p = this.slot_array_temp[1];
+        this.slot_label = this.slot_array_temp[2];
+        this.slot_value_p = this.str.substring(this.start_index_p, this.end_index_p);
         // tslint:disable-next-line:max-line-length
-        utterance.querySelectorAll('.slots_span')[0].innerHTML += ' <span class="uk-badge uk-padding-small">' + this.slotLabel + ':&nbsp; ' + '<span class="uk-text-bolder">' + this.slotValueP + '</span>'  + '</span>';
+        utterance.querySelectorAll('.slots_span')[0].innerHTML += ' <span class="uk-badge uk-padding-small">' + this.slot_label + ':&nbsp; ' + '<span class="uk-text-bolder">' + this.slot_value_p + '</span>'  + '</span>';
       }
     });
 
   }
-  toggleUserMessage(notificationMessage, status) {
-    uikit.notification(notificationMessage, {pos: 'bottom-right', status: status});
+  toggle_user_message(notification_message, status) {
+    uikit.notification(notification_message, { pos: 'bottom-right', status: status });
   }
 
 }

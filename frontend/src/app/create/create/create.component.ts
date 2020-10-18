@@ -2,11 +2,12 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 // Import create service
 import { CreateService } from '../create.service';
+import { DashboardService } from '../../dashboard/dashboard.service';
 import * as uikit from 'uikit';
 
-import {FormBuilder, FormGroup} from '@angular/forms';
-import {Bot} from '../../models/bot.model';
-import {Subject} from 'rxjs';
+import { FormBuilder, FormGroup } from '@angular/forms';
+import { Va } from '../../models/va.model';
+import { Subject } from 'rxjs';
 import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
@@ -15,62 +16,71 @@ import { HttpErrorResponse } from '@angular/common/http';
   styleUrls: ['./create.component.css']
 })
 export class CreateComponent implements OnInit, OnDestroy {
-  // URL to Django Server
-  DJANGO_SERVER = 'http://127.0.0.1:8000';
-  createBotForm: FormGroup;
-  botModel: Bot;
-  public SuccessUserMessage: string;
-  public errorUserMessage: string;
+  create_va_form: FormGroup;
+  va_model: Va;
+  projects: any;
+  public success_user_message: string;
+  public error_user_message: string;
 
-  private unsubscribeAll: Subject<any>;
 
   constructor(
-    private createService: CreateService,
-    private formBuilder: FormBuilder,
+    private create_service: CreateService,
+    private dashboard_service: DashboardService,
+    private form_builder: FormBuilder,
   ) {
-    this.unsubscribeAll = new Subject();
-    this.botModel = new Bot();
+    this.va_model = new Va();
   }
 
   ngOnInit() {
-    this.initializeCreateBotForm();
+    this.initialize_create_va_form();
+    this.get_projects();
   }
 
   ngOnDestroy(): void {
-    this.unsubscribeAll.next();
-    this.unsubscribeAll.complete();
+    
   }
 
-  initializeCreateBotForm(): void {
-    this.createBotForm = this.formBuilder.group({
-      bot_name: this.botModel.botName,
-      bot_tag: this.botModel.botTag,
-      bot_desc: this.botModel.botDesc,
-      bot_intents: this.botModel.botIntents,
-      bot_slots: this.botModel.botSlots,
+  initialize_create_va_form(): void {
+    this.create_va_form = this.form_builder.group({
+      project: this.va_model.project,
+      va_name: this.va_model.va_name,
+      va_tag: this.va_model.va_tag,
+      va_desc: this.va_model.va_desc,
+      va_intents: this.va_model.va_intents,
+      va_slots: this.va_model.va_slots,
     });
   }
 
-  createBotFormSubmit() {
-    const data = this.createBotForm.getRawValue();
+  get_projects() {
+    this.dashboard_service.get_all_projects().subscribe(
+      (res) => {
+        this.projects = res;
+      },
+      (err) => {
+        console.log(err);
+      }
+    );
+  }
 
-    if(this.createBotForm.valid) {
-    if(!data.bot_slots) {
-      data.bot_slots = 'none'
+  create_va_form_submit() {
+    const data = this.create_va_form.getRawValue();
+    if(this.create_va_form.valid) {
+    if(!data.va_slots) {
+      data.va_slots = 'none'
     }
 
-    this.createService.createBot(data).subscribe(
+    this.create_service.create_va(data).subscribe(
       (res) => {
         // console.log(res);
         if(res) {
-        this.SuccessUserMessage = 'Success creating bot: ' + res.bot_name ;
-        this.toggleUserMessage(this.SuccessUserMessage, 'success');
+        this.success_user_message = 'Success creating va: ' + res.va_name ;
+        this.toggle_user_message(this.success_user_message, 'success');
         }
       },
       (err: HttpErrorResponse) => {
         console.log(err);
-        this.errorUserMessage = err.error;
-        this.toggleUserMessage(this.errorUserMessage, 'danger');
+        this.error_user_message = err.error;
+        this.toggle_user_message(this.error_user_message, 'danger');
       }
     );
 
@@ -78,7 +88,7 @@ export class CreateComponent implements OnInit, OnDestroy {
 
   }
 
-  toggleUserMessage(notificationMessage, status) {
+  toggle_user_message(notificationMessage, status) {
     uikit.notification(notificationMessage, {pos: 'bottom-right', status: status});
   }
 

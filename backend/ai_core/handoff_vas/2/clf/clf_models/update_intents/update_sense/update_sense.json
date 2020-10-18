@@ -1,0 +1,74 @@
+[
+    {
+        "intent": "update",
+        "utterance": "how can give legal advice"
+    },
+    {
+        "intent": "update",
+        "utterance": "who can represent me in court"
+    },
+    {
+        "intent": "update",
+        "utterance": "how can i get the attorney on the phone"
+    },
+    {
+        "intent": "update",
+        "utterance": "how about an attorney"
+    },
+    {
+        "intent": "update",
+        "utterance": "how about a court matter"
+    },
+    {
+        "intent": "update",
+        "utterance": "what about legal"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "what about a beard do"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "i need a spa"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "get me a pedicure my today"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "point me to manurist "
+    },
+    {
+        "intent": "not_update",
+        "utterance": "i need a haircut please"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "how can i get in contact with a salon here"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "can i have a convo with a lawyer"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "who can tell me about legal matters"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "i need leagal advise"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "i need to speak with an attotney"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "get me a lawyer please"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "can i talk with a lawyer"
+    }
+]

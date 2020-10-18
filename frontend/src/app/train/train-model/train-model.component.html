@@ -11,9 +11,9 @@
         <!-- <button type="submit" class="uk-button uk-button-secondary uk-button-small uk-margin-small-bottom uk-margin-left" (click)="trainUpdateSense()">Train Update Sense</button> -->
       </div>
         <div class="uk-text-small uk-margin-bottom">1. Select a VA you wish to train.</div>
-            <select class="uk-select" (change)="getBot($event)">
+            <select class="uk-select" (change)="get_va($event)">
                 <option value="0" selected disabled>Select a VA</option>
-                <option *ngFor="let bot of bots" value="{{ bot.id }}">{{ bot.bot_name }}</option>
+                <option *ngFor="let va of vas" value="{{ va.id }}">{{ va.va_name }}</option>
             </select>
         </div>
 
@@ -27,19 +27,19 @@
       </div> -->
       </div>
 
-      <div *ngIf="selectedBot">
+      <div *ngIf="selected_va">
 
         <div class="uk-card uk-box-shadow-medium uk-padding">
           <div class="uk-card-badge uk-label">Train VA Classification</div>
 
-          <p class="uk-text-muted">Intent Data for <span class="uk-text-bolder uk-text-success">{{selectedBot.bot_name}}</span></p>
+          <p class="uk-text-muted">Intent Data for <span class="uk-text-bolder uk-text-success">{{selected_va.va_name}}</span></p>
 
-        <!-- Display a list of intents created for this bot -->
+        <!-- Display a list of intents created for this va -->
         <!-- Train root classifier -->
         <p>Prep and Train Primary Classifier.</p>
         <!-- <input id="file" type="file" (change)="importJson($event, '.intentData')" class="uk-margin-small-bottom uk-margin-left"> -->
-        <button type="submit" class="uk-button uk-button-secondary uk-button-small uk-margin-small-bottom" (click)="feedIntents('none', selectedBot.bot_tag)">PREP DATA</button>
-        <button type="submit" class="uk-button uk-button-danger uk-button-small uk-margin-small-bottom uk-margin-left" (click)="trainClassifierModel('none', selectedBot.bot_tag)"><span uk-icon="play-circle"></span> TRAIN</button>
+        <button type="submit" class="uk-button uk-button-secondary uk-button-small uk-margin-small-bottom" (click)="feed_intents('none', selected_va.va_tag)">PREP DATA</button>
+        <button type="submit" class="uk-button uk-button-danger uk-button-small uk-margin-small-bottom uk-margin-left" (click)="train_classifier_model('none', selected_va.va_tag)"><span uk-icon="play-circle"></span> TRAIN</button>
         <!-- <button type="submit" class="uk-button uk-button-danger uk-button-small uk-margin-small-bottom uk-margin-left" (click)="trainClassifierModel('none')"><span uk-icon="history"></span> Un-train</button> -->
 
         <hr>
@@ -48,9 +48,9 @@
         <p>Prep and Train Secondary Classifier.</p>
         <!-- <input id="file" type="file" (change)="importJson($event, '.intentData')" class="uk-margin-small-bottom uk-margin-left"> -->
         <div *ngFor="let update_intent of update_intents; last as isLast">  
-        <button type="submit" class="uk-button uk-button-secondary uk-button-small uk-margin-small-bottom" (click)='feedIntents(update_intent, selectedBot.bot_tag)'>PREP {{ update_intent }} DATA</button>
-        <button type="submit" class="uk-button uk-button-danger uk-button-small uk-margin-small-bottom uk-margin-left" (click)="trainClassifierModel(update_intent, selectedBot.bot_tag)"><span uk-icon="play-circle"></span> TRAIN</button>
-        <!-- <button type="submit" class="uk-button uk-button-danger uk-button-small uk-margin-small-bottom uk-margin-left" (click)="trainClassifierModel(update_intent)"><span uk-icon="history"></span> Un-train</button> -->
+        <button type="submit" class="uk-button uk-button-secondary uk-button-small uk-margin-small-bottom" (click)='feed_intents(update_intent, selected_va.va_tag)'>PREP {{ update_intent }} DATA</button>
+        <button type="submit" class="uk-button uk-button-danger uk-button-small uk-margin-small-bottom uk-margin-left" (click)="train_classifier_model(update_intent, selected_va.va_tag)"><span uk-icon="play-circle"></span> TRAIN</button>
+        <!-- <button type="submit" class="uk-button uk-button-danger uk-button-small uk-margin-small-bottom uk-margin-left" (click)="train_classifier_model(update_intent)"><span uk-icon="history"></span> Un-train</button> -->
         <div *ngIf="!isLast"><hr class="uk-margin"></div>
           
       </div>
@@ -59,14 +59,14 @@
 
       <!-- Update sense data -->
 
-      <div *ngIf="updateSenseData?.length >= 0; else noUpdateSenseData">
+      <div>
         <hr>
         <p>Prep and Train UpdateSense Classifier (Useful for Maintaining Conversational Context).</p>
         <div class="uk-margin">
           <!-- <input id="file" type="file" (change)="importJson($event, '.intentData')" class="uk-margin-small-bottom uk-margin-left"> -->
-          <button type="submit" class="uk-button uk-button-secondary uk-button-small uk-margin-small-bottom" (click)="feedUpdateSense(selectedBot.bot_tag)">PREP DATA</button>
-          <button type="submit" class="uk-button uk-button-danger uk-button-small uk-margin-small-bottom uk-margin-left" (click)="trainUpdateSenseClassifierModel(selectedBot.bot_tag)"><span uk-icon="play-circle"></span> TRAIN</button>
-          <!-- <button type="submit" class="uk-button uk-button-danger uk-button-small uk-margin-small-bottom uk-margin-left" (click)="trainUpdateSenseClassifierModel()"><span uk-icon="history"></span> Un-train</button> -->
+          <button type="submit" class="uk-button uk-button-secondary uk-button-small uk-margin-small-bottom" (click)="feed_update_sense(selected_va.va_tag)">PREP DATA</button>
+          <button type="submit" class="uk-button uk-button-danger uk-button-small uk-margin-small-bottom uk-margin-left" (click)="train_update_sense_classifier_model(selected_va.va_tag)"><span uk-icon="play-circle"></span> TRAIN</button>
+          <!-- <button type="submit" class="uk-button uk-button-danger uk-button-small uk-margin-small-bottom uk-margin-left" (click)="train_update_sense_classifier_model()"><span uk-icon="history"></span> Un-train</button> -->
          </div>
       </div>
 
@@ -75,12 +75,12 @@
        <div class="uk-card uk-box-shadow-medium uk-padding uk-margin">
         <div class="uk-card-badge uk-label">Train VA Slot Value Pairing</div>
 
-      <p class="uk-text-muted">Intents with SVP Data for <span class="uk-text-bolder uk-text-success">{{selectedBot.bot_name}}</span></p>
+      <p class="uk-text-muted">Intents with SVP Data for <span class="uk-text-bolder uk-text-success">{{selected_va.va_name}}</span></p>
 
-        <div *ngFor="let update_intent_with_svp_data of intentsWithSvpData; last as isLast">
+        <div *ngFor="let update_intent_with_svp_data of intents_with_svp_data; last as isLast">
           <p>Prep and Train on: {{ update_intent_with_svp_data }}</p>  
-          <button type="submit" class="uk-button uk-button-secondary uk-button-small uk-margin-small-bottom" (click)='feedSvps(update_intent_with_svp_data, selectedBot.bot_tag)'>PREP {{ update_intent_with_svp_data }} DATA</button>
-          <button type="submit" class="uk-button uk-button-danger uk-button-small uk-margin-small-bottom uk-margin-left" (click)="trainSvpModel(update_intent_with_svp_data, selectedBot.bot_tag)"><span uk-icon="play-circle"></span> TRAIN</button>
+          <button type="submit" class="uk-button uk-button-secondary uk-button-small uk-margin-small-bottom" (click)='feed_svps(update_intent_with_svp_data, selected_va.va_tag)'>PREP {{ update_intent_with_svp_data }} DATA</button>
+          <button type="submit" class="uk-button uk-button-danger uk-button-small uk-margin-small-bottom uk-margin-left" (click)="train_svp_model(update_intent_with_svp_data, selected_va.va_tag)"><span uk-icon="play-circle"></span> TRAIN</button>
           <!-- <button type="submit" class="uk-button uk-button-danger uk-button-small uk-margin-small-bottom uk-margin-left" (click)="trainClassifierModel(update_intent)"><span uk-icon="history"></span> Un-train</button> -->
           <div *ngIf="!isLast" class="uk-margin"><hr></div>  
         </div>
@@ -100,8 +100,8 @@
     <p class="uk-text-muted uk-text-bolder">Training Status</p>
     <div  class="uk-text-center">
       <div class="uk-margin">
-        <ng-container *ngIf="trainProgress"><span uk-spinner></span>  <span class="uk-text-danger uk-text-bolder uk-margin-left">Training bot... this may take a while.</span></ng-container>
-        <ng-container *ngIf="trainCompleted"><span uk-icon="info"></span><span class="uk-text-success uk-text-bolder uk-margin-left">Training completed.</span></ng-container>
+        <ng-container *ngIf="train_progress"><span uk-spinner></span>  <span class="uk-text-danger uk-text-bolder uk-margin-left">Training va... this may take a while.</span></ng-container>
+        <ng-container *ngIf="train_completed"><span uk-icon="info"></span><span class="uk-text-success uk-text-bolder uk-margin-left">Training completed.</span></ng-container>
         </div>
     </div>
   </div>

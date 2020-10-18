@@ -5,15 +5,15 @@
 
         <div class="uk-margin">
             <div class="uk-text-small uk-margin-bottom">1. Select a VA.</div>
-            <select class="uk-select" (change)="getBot($event)">
+            <select class="uk-select" (change)="get_va($event)">
                 <option value="" selected disabled>Select a VA</option>
-                <option *ngFor="let bot of bots" value="{{ bot.id }}">{{ bot.bot_name }}</option>
+                <option *ngFor="let va of vas" value="{{ va.id }}">{{ va.va_name }}</option>
             </select>
         </div>
 
         <div class="uk-margin">
             <div class="uk-text-small uk-margin-bottom">2. Select an intent you want to add utterances to.</div>
-            <select class="uk-select" (change)="getSelectedIntent($event)">
+            <select class="uk-select" (change)="get_selected_intent($event)">
               <option value="" selected disabled>Select an intent</option>
               <option *ngFor="let intent of intents" value="{{ intent }}">{{ intent }}</option>
             </select>
@@ -29,12 +29,12 @@
         </div> -->
       </div>
 
-      <div *ngIf="bot">
+      <div *ngIf="va">
 
-      <form [formGroup]="createIntentForm" (ngSubmit)="createIntentFormSubmit()">
+      <form [formGroup]="create_intent_form" (ngSubmit)="create_intent_form_submit()">
         <div class="uk-margin">
 
-            <input class="uk-input" type="number" formControlName="bot_id" readonly hidden>
+            <input class="uk-input" type="number" formControlName="va_id" readonly hidden>
             </div>
 
          <div class="uk-margin">
@@ -51,12 +51,12 @@
         </div> -->
         <div class="uk-margin">
         <div class="uk-text-small uk-margin-bottom">Load data from a .txt file for an intent</div>
-              <input id="intent-txt" type="file" accept=".txt" (change)="uploadFile($event)">
+              <input id="intent-txt" type="file" accept=".txt" (change)="upload_file($event)">
                 <button type="submit" class="uk-button uk-button-secondary uk-button-small uk-margin-small-bottom">Save intent(s)</button>
               </div>
       </form>
 
-        <div *ngIf="intentsAndUtterances?.length>0; else noIntentsAndUtterances">
+        <div *ngIf="intents_and_utterances?.length>0; else no_intents_and_utterances">
             <div class="custom-container uk-padding-small">
                 <table class="uk-table uk-table-justify uk-table-divider">
                     <thead>
@@ -67,11 +67,11 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr *ngFor="let intentAndUtterance of intentsAndUtterances; let i = index">
-                            <td>{{ intentAndUtterance.utterance }}</td>
-                            <td>{{ intentAndUtterance.intent }}</td>
+                        <tr *ngFor="let intent_and_utterance of intents_and_utterances; let i = index">
+                            <td>{{ intent_and_utterance.utterance }}</td>
+                            <td>{{ intent_and_utterance.intent }}</td>
                             <td>
-                                <button class="uk-button uk-button-small"><span uk-icon="trash" (click)="deleteUtterance(intentAndUtterance.id, i)"></span></button>
+                                <button class="uk-button uk-button-small"><span uk-icon="trash" (click)="delete_intent(intent_and_utterance.id, i)"></span></button>
                             </td>
                         </tr>
 

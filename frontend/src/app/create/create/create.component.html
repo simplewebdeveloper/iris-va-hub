@@ -8,17 +8,24 @@
         
     </div> -->
       </div>
-        <form [formGroup]="createBotForm" (ngSubmit)="createBotFormSubmit()">
+        <form [formGroup]="create_va_form" (ngSubmit)="create_va_form_submit()">
             <fieldset class="uk-fieldset">
+
+              <div class="uk-margin">
+                <div class="uk-text-small uk-margin-bottom">Select a project project</div>
+                <select formControlName="project" class="uk-select" required>
+                    <option *ngFor="let project of projects" value="{{ project.id }}">{{ project.project_name }}</option>
+                </select>
+              </div>
 
                 <div class="uk-margin">
                     <div class="uk-text-small uk-margin-bottom">Give your VA a name</div>
-                    <input class="uk-input" formControlName="bot_name" type="text" required>
+                    <input class="uk-input" formControlName="va_name" type="text" required>
                 </div>
 
                 <div class="uk-margin">
                   <div class="uk-text-small uk-margin-bottom">Give your VA a tag ("specialized" or "handoff")</div>
-                  <select formControlName="bot_tag" class="uk-select" required>
+                  <select formControlName="va_tag" class="uk-select" required>
                     <option value="" selected disabled>Choose a tag</option>
                     <option value="handoff">Handoff</option>
                     <option value="specialized">Specialized</option>
@@ -27,17 +34,17 @@
 
                 <div class="uk-margin">
                     <div class="uk-text-small uk-margin-bottom">Describe your VA</div>
-                    <textarea class="uk-textarea" formControlName="bot_desc" rows="5" required></textarea>
+                    <textarea class="uk-textarea" formControlName="va_desc" rows="5" required></textarea>
                 </div>
 
                 <div class="uk-margin">
                     <div class="uk-text-small uk-margin-bottom">What intents can your VA handle? (enter at least two intents) e.g. check_prices, buy_item, stock_query</div>
-                    <input class="uk-input" formControlName="bot_intents" type="text" required>
+                    <input class="uk-input" formControlName="va_intents" type="text" required>
                 </div>
 
               <div class="uk-margin">
                 <div class="uk-text-small uk-margin-bottom">What slots should your VA capture? (Leave blank for none) e.g. product, price, quantity</div>
-                <input class="uk-input" formControlName="bot_slots" type="text">
+                <input class="uk-input" formControlName="va_slots" type="text">
               </div>
 
             </fieldset>

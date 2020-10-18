@@ -1,3 +1,3 @@
-export class FeedIntentsModel {
-  intentData: string;
+export class FeedIntents {
+  intent_data: string;
 }

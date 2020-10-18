@@ -1,61 +1,68 @@
 <div class="uk-container">
     <div class="uk-card uk-card-body uk-margin-top">
-<!--        <form [formGroup]="editBotForm" (ngSubmit)="editBotFormSubmit()">-->
 
-    <div class="uk-margin">
-        <select class="uk-select" (change)="getBotFromDropDown($event)">
+    <!-- <div class="uk-margin">
+        <select class="uk-select" (change)="get_va_from_drop_down($event)">
             <option value="" selected disabled>Choose a VA to edit</option>
-            <option *ngFor="let bot of bots" value="{{ bot.id }}">{{ bot.bot_name }}</option>
+            <option *ngFor="let va of vas" value="{{ va.id }}">{{ va.va_name }}</option>
         </select>
-    </div>
+    </div> -->
 
-    <hr>
+    <!-- <hr> -->
     <div class="uk-margin">
         <p class="uk-text-muted"><span uk-icon="icon: pencil; ratio: 2"></span></p>    
         <legend class="uk-legend">Edit your Virtual Assistant</legend> 
-        <!-- <div class="uk-flex uk-flex-center">
+        <div class="uk-flex uk-flex-center">
             
-        </div> -->
+        </div>
         </div>  
 
-        <div *ngIf="bot">
-    <form [formGroup]="editBotForm" (ngSubmit)="editBotFormSubmit()">
+        <div *ngIf="va">
+    <form [formGroup]="edit_va_form" (ngSubmit)="edit_va_form_submit()">
       <fieldset class="uk-fieldset">
             
                 <div class="uk-margin">
-                    <input class="uk-input" formControlName="bot_id" type="text" readonly hidden>
+                    <input class="uk-input" formControlName="va_id" type="text" readonly hidden>
                 </div>
 
                 <div class="uk-margin">
                     <div class="uk-text-small uk-margin-bottom">Update the VA name</div>
-                    <input class="uk-input" formControlName="bot_name" type="text" required>
+                    <input class="uk-input" formControlName="va_name" type="text" required>
                 </div>
 
                 <div class="uk-margin">
                     <div class="uk-text-small uk-margin-bottom">Update VA tag ("specialized" or "handoff")</div>
-                    <select formControlName="bot_tag" class="uk-select" required>
-                        <option value="bot_tag" selected disabled>{{ bot.bot_tag | titlecase }}</option>
+                    <select formControlName="va_tag" class="uk-select" required>
+                        <option value="va_tag" selected disabled>{{ va.va_tag | titlecase }}</option>
                         <option value="handoff">Handoff</option>
                         <option value="specialized">Specialized</option>
                     </select>
                   </div>
 
+                  <div class="uk-margin">
+                    <div class="uk-text-small uk-margin-bottom">Update VA project</div>
+                    <select formControlName="project" class="uk-select" required>
+                        <option value="project" selected disabled>{{ va.project }}</option>
+                        <option *ngFor="let project of projects" value="{{ project.id }}">{{ project.project_name }}</option>
+                    </select>
+                  </div>
+
                 <div class="uk-margin">
                     <div class="uk-text-small uk-margin-bottom">Update VA description</div>
-                    <textarea class="uk-textarea" formControlName="bot_desc" rows="5" required></textarea>
+                    <textarea class="uk-textarea" formControlName="va_desc" rows="5" required></textarea>
                 </div>
 
                 <div class="uk-margin">
                     <div class="uk-text-small uk-margin-bottom">Update the intents handled by your VA (enter at least two intents) e.g. check_prices, buy_item, stock_query</div>
-                    <input class="uk-input" formControlName="bot_intents" type="text" required>
+                    <input class="uk-input" formControlName="va_intents" type="text" required>
                 </div>
 
               <div class="uk-margin">
                 <div class="uk-text-small uk-margin-bottom">Update the slots your VA captures? (Leave blank for none) e.g. product, price, quantity</div>
-                <input class="uk-input" formControlName="bot_slots" type="text">
+                <input class="uk-input" formControlName="va_slots" type="text">
               </div>
 
-            </fieldset>
+            </fieldset> 
 
             <div class="uk-margin">
                 <button class="uk-button uk-button-secondary uk-button-small uk-margin-small-bottom">Update and Save VA</button>

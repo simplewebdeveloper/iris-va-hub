@@ -1,6 +1,6 @@
 export class Intent {
-  botId: number;
+  va_id: number;
   intent: string;
   utterance: string;
-  intentData: string;
+  intent_data: string;
 }

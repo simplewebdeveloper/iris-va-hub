@@ -1,6 +1,6 @@
 export class SlotEntity {
-  startIndex: number;
-  endIndex: number;
+  start_index: number;
+  end_index: number;
   slot: string;
 }
 

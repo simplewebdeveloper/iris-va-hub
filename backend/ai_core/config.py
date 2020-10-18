@@ -4,8 +4,10 @@ base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # HANDOFF VIRTUAL ASSISTANT PATHS #
 
+project_folder_structure = os.path.join(base_dir, 'ai_core/project_folder_structure.json')
 va_folder_structure = os.path.join(base_dir, 'ai_core/va_folder_structure.json')
 ai_core = os.path.join(base_dir, 'ai_core')
+project_dir_core = os.path.join(base_dir, 'ai_core/projects')
 handoff_vas_core = os.path.join(base_dir, 'ai_core/handoff_vas')
 specialized_vas_core = os.path.join(base_dir, 'ai_core/specialized_vas')
 
