@@ -1,0 +1,50 @@
+[
+    {
+        "intent": "update",
+        "utterance": "get the handover updated"
+    },
+    {
+        "intent": "update",
+        "utterance": "how do we update the handover"
+    },
+    {
+        "intent": "update",
+        "utterance": "can i update the handover"
+    },
+    {
+        "intent": "update",
+        "utterance": "lets change and update handover"
+    },
+    {
+        "intent": "update",
+        "utterance": "can we update the handover"
+    },
+    {
+        "intent": "update",
+        "utterance": "update the handover"
+    },
+    {
+        "intent": "update",
+        "utterance": "please update the handover"
+    },
+    {
+        "intent": "update",
+        "utterance": "lets update the hand over"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "get me legal"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "get me some legal advice please"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "i want an attorney"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "hand me over to a lawyer"
+    }
+]

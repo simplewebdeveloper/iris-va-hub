@@ -3,16 +3,16 @@
 <div class="uk-container">
     <div class="uk-card uk-card-body uk-margin-top">
 
-        <div class="uk-margin">
+        <!-- <div class="uk-margin">
             <div class="uk-text-small uk-margin-bottom">1. Select a VA.</div>
             <select class="uk-select" (change)="get_va($event)">
                 <option value="" selected disabled>Select a VA</option>
                 <option *ngFor="let va of vas" value="{{ va.id }}">{{ va.va_name }}</option>
             </select>
-        </div>
+        </div> -->
 
         <div class="uk-margin">
-            <div class="uk-text-small uk-margin-bottom">2. Select an intent you want to add utterances to.</div>
+            <div class="uk-text-small uk-margin-bottom">1. Select an intent you want to add utterances to.</div>
             <select class="uk-select" (change)="get_selected_intent($event)">
               <option value="" selected disabled>Select an intent</option>
               <option *ngFor="let intent of intents" value="{{ intent }}">{{ intent }}</option>

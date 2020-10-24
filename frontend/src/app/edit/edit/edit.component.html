@@ -1,4 +1,6 @@
+
 <div class="uk-container">
+    
     <div class="uk-card uk-card-body uk-margin-top">
 
     <!-- <div class="uk-margin">
@@ -9,6 +11,7 @@
     </div> -->
 
     <!-- <hr> -->
+
     <div class="uk-margin">
         <p class="uk-text-muted"><span uk-icon="icon: pencil; ratio: 2"></span></p>    
         <legend class="uk-legend">Edit your Virtual Assistant</legend> 
@@ -20,6 +23,14 @@
         <div *ngIf="va">
     <form [formGroup]="edit_va_form" (ngSubmit)="edit_va_form_submit()">
       <fieldset class="uk-fieldset">
+
+                <div class="uk-margin">
+                    <div class="uk-text-small uk-margin-bottom">Update VA project</div>
+                    <select formControlName="project" class="uk-select" required>
+                        <option value="project.id" selected disabled>{{ project?.project_name }}</option>
+                        <option *ngFor="let project of projects" value="{{ project.id }}">{{ project?.project_name }}</option>
+                    </select>
+                </div>
             
                 <div class="uk-margin">
                     <input class="uk-input" formControlName="va_id" type="text" readonly hidden>
@@ -39,13 +50,7 @@
                     </select>
                   </div>
 
-                  <div class="uk-margin">
-                    <div class="uk-text-small uk-margin-bottom">Update VA project</div>
-                    <select formControlName="project" class="uk-select" required>
-                        <option value="project" selected disabled>{{ va.project }}</option>
-                        <option *ngFor="let project of projects" value="{{ project.id }}">{{ project.project_name }}</option>
-                    </select>
-                  </div>
+               
 
                 <div class="uk-margin">
                     <div class="uk-text-small uk-margin-bottom">Update VA description</div>

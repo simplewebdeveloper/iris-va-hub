@@ -192,6 +192,7 @@ class get_single_project(APIView):
     authentication_classes = [JSONWebTokenAuthentication]
     permission_classes = [IsAuthenticated]
     def post(self, request, *args, **kwargs):
+        print(request.data)
         try:
             project_id = request.data['project_id']
             project = Project.objects.get(id=project_id)
@@ -201,8 +202,32 @@ class get_single_project(APIView):
             print(project_serializer.data)
             return Response(project_serializer.data, status=status.HTTP_200_OK)
         except:
-            user_message = 'Error getting va'
+            user_message = 'Error getting project'
             return Response(user_message, status=status.HTTP_400_BAD_REQUEST)
+
+
+
+# update a single project
+class update_single_project(APIView):
+    authentication_classes = [JSONWebTokenAuthentication]
+    permission_classes = [IsAuthenticated]
+    def post(self, request, *args, **kwargs):
+        try:
+            print(request.data)
+            project_id = request.data['project_id']
+            instance = Project.objects.get(id=project_id)
+            project_serializer = ProjectSerializer(instance, data=request.data)
+            if project_serializer.is_valid():
+                project_serializer.save()
+                user_message = 'Success updating project'
+                print(user_message)
+                return Response(project_serializer.data, status=status.HTTP_200_OK)
+        except:
+            user_message = 'Error updating project'
+            return Response(user_message, status=status.HTTP_400_BAD_REQUEST)
+
+
+
 # ------------------------------------------------------------------------
 
 
@@ -219,7 +244,7 @@ class create_va(APIView):
             va_serializer.save()
             latest_va = Va.objects.last()
             va_serializer = VaSerializer(latest_va, many=False)
-            project_id = request.data['project'];
+            project_id = request.data['project']
             va_id = va_serializer.data['id']
             va_tag = va_serializer.data['va_tag']
             user_message = 'Success creating bot'
@@ -341,11 +366,30 @@ class delete_single_va(APIView):
         # try:
         va_id = str(request.data['va_id'])
         va_tag = request.data['va_tag']
+        project_id = request.data['project_id']
 
-        if va_tag == 'handoff':
-            va_path = os.path.join(handoff_vas_core, va_id)
-        elif va_tag == 'specialized':
-            va_path = os.path.join(specialized_vas_core, va_id)
+        project_dir = project_dir_core
+
+        project = Project.objects.get(id=project_id)
+        project_serializer = ProjectSerializer(project, many=False)
+
+        project_id = project_serializer.data['id']
+        project_name = project_serializer.data['project_name']
+
+        string_lst = []
+        string_lst.append(str(project_id))
+        string_lst.append('_')
+        string_lst.append(project_name)
+        project_name_new = ''.join(string_lst)
+
+        path_of_project_to_delete_va_from = os.path.join(project_dir, project_name_new)
+
+        va_path = os.path.join(path_of_project_to_delete_va_from, va_tag)
+
+        # if va_tag == 'handoff':
+        #     va_path = os.path.join(handoff_vas_core, va_id)
+        # elif va_tag == 'specialized':
+        #     va_path = os.path.join(specialized_vas_core, va_id)
 
         va = Va.objects.get(id=va_id)
         intents = Intent.objects.filter(va=va)
@@ -359,7 +403,7 @@ class delete_single_va(APIView):
             shutil.rmtree(va_path)
         else:
             print('VA Path does not exist')
-        user_message = 'Success deleting bot'
+        user_message = 'Success deleting va'
         print(user_message)
         return Response(va_serializer.data, status=status.HTTP_200_OK)
         # except:
@@ -400,7 +444,6 @@ class get_intents(APIView):
     authentication_classes = [JSONWebTokenAuthentication]
     permission_classes = [IsAuthenticated]
     def post(self, request, *args, **kwargs):
-        print(request.data)
         try:
             va_id = request.data['va_id']
             selected_intent = request.data['selected_intent']
@@ -488,154 +531,102 @@ class feed_intents(APIView):
     authentication_classes = [JSONWebTokenAuthentication]
     permission_classes = [IsAuthenticated]
     def post(self, request, *args, **kwargs):
+        print(request.data)
         try:
+            project_id = str(request.data['project_id'])
             va_id = str(request.data['va_id'])
             va_tag = request.data['va_tag']
             selected_update_intent = request.data['selected_update_intent']
             # check if the there is a folder in handoff_vas_core that matches the id
-            path = os.path.join(handoff_vas_core, va_id)
-            # if the va_tag == handoff
-            if va_tag == 'handoff':
-                # check if the there is a folder in handoff_vas_core that matches the id
-                handoff_path = os.path.join(handoff_vas_core, va_id)
-                
-                if selected_update_intent != 'none':
-                    # get update intent data for bot
-                    va = Va.objects.get(id=va_id)
-                    va_serializer = VaSerializer(va, many=False)
-                    intents = Intent.objects.filter(va=va, intent=selected_update_intent).order_by('-id')
-                    # print(intents)
-                    intent_serializer = IntentSerializer(intents, many=True)
-                    serialized_intent_data = intent_serializer.data
-                    intent_data = json.dumps(serialized_intent_data)
-
-                    intent_data_list = json.loads(intent_data)
-
-                    new_intent_data_list = []
-
-                    for line in intent_data_list:
-                        string = line['intent_data']
-                        intent_data_dict = json.loads(string)
-                        intent_data_dict['text'] = intent_data_dict.pop('utterance')
-                        intent_data_dict['label'] = intent_data_dict.pop('intent')
-                        new_intent_data_list.append(intent_data_dict)
-
-                    update_intent_data = json.dumps(new_intent_data_list, indent=4)
-
-                    dir_to_create = selected_update_intent
-                    parent_dir = os.path.join(handoff_path, 'clf/clf_models/update_intents')
-                    path = os.path.join(parent_dir, dir_to_create)
-                    temp_update_intents_json_file = selected_update_intent+'.json'
-                    clf_model_update_intents_json_file = os.path.join(path, temp_update_intents_json_file)
-                    if not os.path.exists(path):
-                        os.mkdir(path)
-                        with open(clf_model_update_intents_json_file, 'w') as f:
-                            f.write(update_intent_data)
-
-                    else:
-                        shutil.rmtree(path)
-                        os.mkdir(path)
-                        with open(clf_model_update_intents_json_file, 'w') as f:
-                            f.write(update_intent_data)
-
-                else:
-                    # get root intent data for bot
-                    va = Va.objects.get(id=va_id)
-                    intents = Intent.objects.filter(va=va).order_by('-id')
-
-                    intent_serializer = IntentSerializer(intents, many=True)
-                    serialized_intent_data = intent_serializer.data
-
-                    # print(serialized_intent_data)
-                    intent_data = json.dumps(serialized_intent_data)
-                    intent_data_list = json.loads(intent_data)
-                    new_intent_data_list = []
-
-                    for line in intent_data_list:
-                        string = line['intent_data']
-                        intent_data_dict = json.loads(string)
-                        new_intent_data_list.append(intent_data_dict)
-
-                    root_intent_data = json.dumps(new_intent_data_list, indent=4)
-
-                    handoff_va_clf_model_root_intents_json_file = os.path.join(handoff_path, 'clf/clf_models/root/root_intents.json')
-                    with open(handoff_va_clf_model_root_intents_json_file, 'w') as f:
-                        f.write(root_intent_data)
-                
-                user_message = 'Success feeding intents'
-                print(user_message)
-                return Response(user_message, status=status.HTTP_202_ACCEPTED)
             
+            project_dir = project_dir_core
 
-            # if the va_tag == specialized
-            elif va_tag == 'specialized':
-                specialized_path = os.path.join(specialized_vas_core, va_id)
-                if selected_update_intent != 'none':
-                    # get update intent data for bot
-                    va = Va.objects.get(id=va_id)
-                    intents = Intent.objects.filter(va=va, intent=selected_update_intent).order_by('-id')
-                    # print(intents)
-                    intent_serializer = IntentSerializer(intents, many=True)
-                    serialized_intent_data = intent_serializer.data
-                    intent_data = json.dumps(serialized_intent_data)
+            project = Project.objects.get(id=project_id)
+            project_serializer = ProjectSerializer(project, many=False)
 
-                    intent_data_list = json.loads(intent_data)
+            project_id = project_serializer.data['id']
+            project_name = project_serializer.data['project_name']
 
-                    new_intent_data_list = []
-
-                    for line in intent_data_list:
-                        string = line['intent_data']
-                        intent_data_dict = json.loads(string)
-                        intent_data_dict['text'] = intent_data_dict.pop('utterance')
-                        intent_data_dict['label'] = intent_data_dict.pop('intent')
-                        new_intent_data_list.append(intent_data_dict)
-
-                    update_intent_data = json.dumps(new_intent_data_list, indent=4)
+            string_lst = []
+            string_lst.append(str(project_id))
+            string_lst.append('_')
+            string_lst.append(project_name)
+            project_name_new = ''.join(string_lst)
 
 
-                    dir_to_create = selected_update_intent
-                    parent_dir = os.path.join(specialized_path, 'clf/clf_models/update_intents')
-                    path = os.path.join(parent_dir, dir_to_create)
-                    temp_update_intents_json_file = selected_update_intent+'.json'
-                    clf_model_update_intents_json_file = os.path.join(path, temp_update_intents_json_file)
-                    if not os.path.exists(path):
-                        os.mkdir(path)
-                        with open(clf_model_update_intents_json_file, 'w') as f:
-                            f.write(update_intent_data)
 
-                    else:
-                        shutil.rmtree(path)
-                        os.mkdir(path)
-                        with open(clf_model_update_intents_json_file, 'w') as f:
-                            f.write(update_intent_data)
+            path_of_project_to_add_va_intents_to = os.path.join(project_dir, project_name_new)
+
+            path = os.path.join(path_of_project_to_add_va_intents_to, va_tag)
+            va_path = os.path.join(path, va_id)
+                
+            if selected_update_intent != 'none':
+                # get update intent data for bot
+                va = Va.objects.get(id=va_id)
+                va_serializer = VaSerializer(va, many=False)
+                intents = Intent.objects.filter(va=va, intent=selected_update_intent).order_by('-id')
+                # print(intents)
+                intent_serializer = IntentSerializer(intents, many=True)
+                serialized_intent_data = intent_serializer.data
+                intent_data = json.dumps(serialized_intent_data)
+
+                intent_data_list = json.loads(intent_data)
+
+                new_intent_data_list = []
+
+                for line in intent_data_list:
+                    string = line['intent_data']
+                    intent_data_dict = json.loads(string)
+                    intent_data_dict['text'] = intent_data_dict.pop('utterance')
+                    intent_data_dict['label'] = intent_data_dict.pop('intent')
+                    new_intent_data_list.append(intent_data_dict)
+
+                update_intent_data = json.dumps(new_intent_data_list, indent=4)
+
+                dir_to_create = selected_update_intent
+                parent_dir = os.path.join(va_path, 'clf/clf_models/update_intents')
+                path = os.path.join(parent_dir, dir_to_create)
+                temp_update_intents_json_file = selected_update_intent+'.json'
+                clf_model_update_intents_json_file = os.path.join(path, temp_update_intents_json_file)
+                if not os.path.exists(path):
+                    os.mkdir(path)
+                    with open(clf_model_update_intents_json_file, 'w') as f:
+                        f.write(update_intent_data)
 
                 else:
-                    # get root intent data for bot
-                    bot = Bot.objects.get(id=bot_id)
-                    intents = Intent.objects.filter(bot=bot).order_by('-id')
+                    shutil.rmtree(path)
+                    os.mkdir(path)
+                    with open(clf_model_update_intents_json_file, 'w') as f:
+                        f.write(update_intent_data)
 
-                    intent_serializer = IntentSerializer(intents, many=True)
-                    serialized_intent_data = intent_serializer.data
+            else:
+                # get root intent data for bot
+                va = Va.objects.get(id=va_id)
+                intents = Intent.objects.filter(va=va).order_by('-id')
 
-                    # print(serialized_intent_data)
-                    intent_data = json.dumps(serialized_intent_data)
-                    intent_data_list = json.loads(intent_data)
-                    new_intent_data_list = []
+                intent_serializer = IntentSerializer(intents, many=True)
+                serialized_intent_data = intent_serializer.data
 
-                    for line in intent_data_list:
-                        string = line['intent_data']
-                        intent_data_dict = json.loads(string)
-                        new_intent_data_list.append(intent_data_dict)
+                # print(serialized_intent_data)
+                intent_data = json.dumps(serialized_intent_data)
+                intent_data_list = json.loads(intent_data)
+                new_intent_data_list = []
 
-                    root_intent_data = json.dumps(new_intent_data_list, indent=4)
+                for line in intent_data_list:
+                    string = line['intent_data']
+                    intent_data_dict = json.loads(string)
+                    new_intent_data_list.append(intent_data_dict)
 
-                    specialized_va_clf_model_root_intents_json_file = os.path.join(specialized_path, 'clf/clf_models/root/root_intents.json')
-                    with open(specialized_va_clf_model_root_intents_json_file, 'w') as f:
-                        f.write(root_intent_data)
-                
-                user_message = 'Success feeding intents'
-                print(user_message)
-                return Response(user_message, status=status.HTTP_202_ACCEPTED)
+                root_intent_data = json.dumps(new_intent_data_list, indent=4)
+
+                handoff_va_clf_model_root_intents_json_file = os.path.join(va_path, 'clf/clf_models/root/root_intents.json')
+                with open(handoff_va_clf_model_root_intents_json_file, 'w') as f:
+                    f.write(root_intent_data)
+            
+            user_message = 'Success feeding intents'
+            print(user_message)
+            return Response(user_message, status=status.HTTP_202_ACCEPTED)
+            
         except:
             user_message = 'Error feeding intents'
             return Response(user_message, status=status.HTTP_400_BAD_REQUEST)
@@ -647,104 +638,83 @@ class feed_update_sense(APIView):
     permission_classes = [IsAuthenticated]
     def post(self, request, *args, **kwargs):
         print(request.data)
-        try:
+        # try:
+        project_id = request.data['project_id']
+        va_id = request.data['va_id']
+        # get root intent data for bot
+
+        va = Va.objects.get(id=va_id)
+        va_serializer = VaSerializer(va, many=False)
+
+        va_id = str(va_serializer.data['id'])
+        va_tag = str(va_serializer.data['va_tag'])
+
+        project = Project.objects.get(id=project_id)
+        project_serializer = ProjectSerializer(project, many=False)
+
+        project_id = str(project_serializer.data['id'])
+        project_name = str(project_serializer.data['project_name'])
+
+        project_dir = project_dir_core
+
+        string_lst = []
+        string_lst.append(str(project_id))
+        string_lst.append('_')
+        string_lst.append(project_name)
+        project_name_new = ''.join(string_lst)
+
+        path_of_project_to_add_va_intents_to = os.path.join(project_dir, project_name_new)
+
+        path = os.path.join(path_of_project_to_add_va_intents_to, va_tag)
+
+        va_path = os.path.join(path, va_id)
+
+        va = Va.objects.get(id=va_id)
+        intents = Intent.objects.filter(va=va).order_by('-id')
+        intent_serializer = IntentSerializer(intents, many=True)
+        serialized_intent_data = intent_serializer.data
+        intent_data = json.dumps(serialized_intent_data)
+
+        intent_data_list = json.loads(intent_data)
+
+        new_intent_data_list = []
+
+        for line in intent_data_list:
+            # print(line)
+            string = line['intent_data']
+            intent_data_dict = json.loads(string)
+            if 'update' in intent_data_dict['intent']:
+                intent_data_dict['intent'] = 'update'
+            else:
+                intent_data_dict['intent'] = 'not_update'
+
+            new_intent_data_list.append(intent_data_dict)
+
+        update_sense_data = json.dumps(new_intent_data_list, indent=4)
+
+        dir_to_create = 'update_sense'
+        parent_dir = os.path.join(va_path, 'clf/clf_models/update_intents')
+        path = os.path.join(parent_dir, dir_to_create)
+        temp_update_sense_json_file = 'update_sense.json'
+        update_sense_json_file = os.path.join(path, temp_update_sense_json_file)
+        if not os.path.exists(path):
+            os.mkdir(path)
+            with open(update_sense_json_file, 'w') as f:
+                f.write(update_sense_data)
             
-            va_id = str(request.data['va_id'])
-            va_tag = request.data['va_tag']
-            # get root intent data for bot
-
-            if va_tag == 'handoff':
-                handoff_path = os.path.join(handoff_vas_core, va_id)
-                va = Va.objects.get(id=va_id)
-                intents = Intent.objects.filter(va=va).order_by('-id')
-                intent_serializer = IntentSerializer(intents, many=True)
-                serialized_intent_data = intent_serializer.data
-                intent_data = json.dumps(serialized_intent_data)
-
-                intent_data_list = json.loads(intent_data)
-
-                new_intent_data_list = []
-
-                for line in intent_data_list:
-                    # print(line)
-                    string = line['intent_data']
-                    intent_data_dict = json.loads(string)
-                    if 'update' in intent_data_dict['intent']:
-                        intent_data_dict['intent'] = 'update'
-                    else:
-                        intent_data_dict['intent'] = 'not_update'
-
-                    new_intent_data_list.append(intent_data_dict)
-
-                update_sense_data = json.dumps(new_intent_data_list, indent=4)
-
-                dir_to_create = 'update_sense'
-                parent_dir = os.path.join(handoff_path, 'clf/clf_models/update_intents')
-                path = os.path.join(parent_dir, dir_to_create)
-                temp_update_sense_json_file = 'update_sense.json'
-                update_sense_json_file = os.path.join(path, temp_update_sense_json_file)
-                if not os.path.exists(path):
-                    os.mkdir(path)
-                    with open(update_sense_json_file, 'w') as f:
-                        f.write(update_sense_data)
-                    
-                else:
-                    shutil.rmtree(path)
-                    os.mkdir(path)
-                    with open(update_sense_json_file, 'w') as f:
-                        f.write(update_sense_data)
-                
-                user_message = 'Success feeding intents'
-                print(user_message)
-                return Response(user_message, status=status.HTTP_202_ACCEPTED)
+        else:
+            shutil.rmtree(path)
+            os.mkdir(path)
+            with open(update_sense_json_file, 'w') as f:
+                f.write(update_sense_data)
+        
+        user_message = 'Success feeding intents'
+        print(user_message)
+        return Response(user_message, status=status.HTTP_202_ACCEPTED)
             
-            elif va_tag == 'specialized':
-                specialized_path = os.path.join(specialized_vas_core, va_id)
-                va = Va.objects.get(id=va_id)
-                intents = Intent.objects.filter(va=va).order_by('-id')
-                intent_serializer = IntentSerializer(intents, many=True)
-                serialized_intent_data = intent_serializer.data
-                intent_data = json.dumps(serialized_intent_data)
-
-                intent_data_list = json.loads(intent_data)
-
-                new_intent_data_list = []
-
-                for line in intent_data_list:
-                    # print(line)
-                    string = line['intent_data']
-                    intent_data_dict = json.loads(string)
-                    if 'update' in intent_data_dict['intent']:
-                        intent_data_dict['intent'] = 'update'
-                    else:
-                        intent_data_dict['intent'] = 'not_update'
-
-                    new_intent_data_list.append(intent_data_dict)
-
-                update_sense_data = json.dumps(new_intent_data_list, indent=4)
-
-                dir_to_create = 'update_sense'
-                parent_dir = os.path.join(specialized_path, 'clf/clf_models/update_intents')
-                path = os.path.join(parent_dir, dir_to_create)
-                temp_update_sense_json_file = 'update_sense.json'
-                update_sense_json_file = os.path.join(path, temp_update_sense_json_file)
-                if not os.path.exists(path):
-                    os.mkdir(path)
-                    with open(update_sense_json_file, 'w') as f:
-                        f.write(update_sense_data)
-                    
-                else:
-                    shutil.rmtree(path)
-                    os.mkdir(path)
-                    with open(update_sense_json_file, 'w') as f:
-                        f.write(update_sense_data)
-                
-                user_message = 'Success feeding intents'
-                print(user_message)
-                return Response(user_message, status=status.HTTP_202_ACCEPTED)
-        except:
-            user_message = 'Error feeding intents'
-            return Response(user_message, status=status.HTTP_400_BAD_REQUEST)
+        # except:
+        #     user_message = 'Error feeding intents'
+        #     return Response(user_message, status=status.HTTP_400_BAD_REQUEST)
 # svps
 # create svp
 class create_svp(APIView):
@@ -849,68 +819,63 @@ class feed_svps(APIView):
     permission_classes = [IsAuthenticated]
     def post(self, request, *args, **kwargs):
         try:
-            va_id = str(request.data['va_id'])
-            va_tag = request.data['va_tag']
+            project_id = request.data['project_id']
+            va_id = request.data['va_id']
             selected_intent = request.data['selected_intent']
 
-            # if the va_tag == handoff
-            if va_tag == 'handoff':
-                handoff_path = os.path.join(handoff_vas_core, va_id)
-                if selected_intent:
-                    # get svp data for bot
-                    va = Va.objects.get(id=va_id)
-                    svps = Svp.objects.filter(va=va, intent=selected_intent).order_by('-id')
-                    svp_serializer = SvpSerializer(svps, many=True)
-                    serialized_svp_data = svp_serializer.data
-                    svp_data = json.dumps(serialized_svp_data)
-                    svp_data_list = json.loads(svp_data)
-                    new_svp_data_list = []
+            project_dir = project_dir_core
 
-                    for item in svp_data_list:
-                        temp_one = item['svp_data']
-                        python_dict = literal_eval(temp_one)
-                        new_svp_data_list.append(python_dict)
+            va = Va.objects.get(id=va_id)
+            va_serializer = VaSerializer(va, many=False)
 
-                    svp_data = json.dumps(new_svp_data_list, indent=4)
+            va_id = str(va_serializer.data['id'])
+            va_tag = str(va_serializer.data['va_tag'])
 
-                    temp_svp_json_file_to_create = selected_intent+'.json'
-                    parent_dir = os.path.join(handoff_path, 'svp/json')
-                    svp_json_file_to_create = os.path.join(parent_dir, temp_svp_json_file_to_create)
-                    with open(svp_json_file_to_create, 'w') as f:
-                        f.write(svp_data)
-                        print('SVP data written')
-                    user_message = 'Success feeding svps'
-                    print(user_message)
-                    return Response(user_message, status=status.HTTP_202_ACCEPTED)
-            elif va_tag == 'specialized':
-                specialized_path = os.path.join(specialized_vas_core, bot_id)
+            project = Project.objects.get(id=project_id)
+            project_serializer = ProjectSerializer(project, many=False)
 
-                if selected_intent:
-                    # get svp data for bot
-                    va = Va.objects.get(id=va_id)
-                    svps = Svp.objects.filter(va=va, intent=selected_intent).order_by('-id')
-                    svp_serializer = SvpSerializer(svps, many=True)
-                    serialized_svp_data = svp_serializer.data
-                    svp_data = json.dumps(serialized_svp_data)
-                    svp_data_list = json.loads(svp_data)
-                    new_svp_data_list = []
+            project_id = str(project_serializer.data['id'])
+            project_name = str(project_serializer.data['project_name'])
 
-                    for item in svp_data_list:
-                        temp_one = item['svp_data']
-                        python_dict = literal_eval(temp_one)
-                        new_svp_data_list.append(python_dict)
+            string_lst = []
+            string_lst.append(str(project_id))
+            string_lst.append('_')
+            string_lst.append(project_name)
+            project_name_new = ''.join(string_lst)
 
-                    svp_data = json.dumps(new_svp_data_list, indent=4)
+            path_of_project_to_train_svp = os.path.join(project_dir, project_name_new)
 
-                    temp_svp_json_file_to_create = selected_intent+'.json'
-                    parent_dir = os.path.join(specialized_path, 'svp/json')
-                    svp_json_file_to_create = os.path.join(parent_dir, temp_svp_json_file_to_create)
-                    with open(svp_json_file_to_create, 'w') as f:
-                        f.write(svp_data)
-                        print('SVP data written')
-                    user_message = 'Success feeding svps'
-                    print(user_message)
-                    return Response(user_message, status=status.HTTP_202_ACCEPTED)
+            path = os.path.join(path_of_project_to_train_svp, va_tag)
+
+            svp_model_path = os.path.join(path, va_id)
+
+
+            if selected_intent:
+                # get svp data for bot
+                va = Va.objects.get(id=va_id)
+                svps = Svp.objects.filter(va=va, intent=selected_intent).order_by('-id')
+                svp_serializer = SvpSerializer(svps, many=True)
+                serialized_svp_data = svp_serializer.data
+                svp_data = json.dumps(serialized_svp_data)
+                svp_data_list = json.loads(svp_data)
+                new_svp_data_list = []
+
+                for item in svp_data_list:
+                    temp_one = item['svp_data']
+                    python_dict = literal_eval(temp_one)
+                    new_svp_data_list.append(python_dict)
+
+                svp_data = json.dumps(new_svp_data_list, indent=4)
+
+                temp_svp_json_file_to_create = selected_intent+'.json'
+                parent_dir = os.path.join(svp_model_path, 'svp/json')
+                svp_json_file_to_create = os.path.join(parent_dir, temp_svp_json_file_to_create)
+                with open(svp_json_file_to_create, 'w') as f:
+                    f.write(svp_data)
+                    print('SVP data written')
+                user_message = 'Success feeding svps'
+                print(user_message)
+                return Response(user_message, status=status.HTTP_202_ACCEPTED)
 
         except:
             user_message = 'Error feeding svps'
@@ -921,17 +886,39 @@ class test_query(APIView):
     # authentication_classes = [JSONWebTokenAuthentication]
     # permission_classes = [IsAuthenticated]
     def post(self, request, *args, **kwargs):
+        print(request.data)
         # try:
         utterance = request.data['query']['query']
-        va_tag = request.data['va_tag']
-        va_id = str(request.data['va_id'])
+        project_id = request.data['project_id']
+        va_id = request.data['va_id']
+
+        project_dir = project_dir_core
+
+        va = Va.objects.get(id=va_id)
+        va_serializer = VaSerializer(va, many=False)
+
+        va_id = str(va_serializer.data['id'])
+        va_tag = str(va_serializer.data['va_tag'])
+
+        project = Project.objects.get(id=project_id)
+        project_serializer = ProjectSerializer(project, many=False)
+
+        project_id = str(project_serializer.data['id'])
+        project_name = str(project_serializer.data['project_name'])
+
+        string_lst = []
+        string_lst.append(str(project_id))
+        string_lst.append('_')
+        string_lst.append(project_name)
+        project_name_new = ''.join(string_lst)
+
+        path_of_project_to_test_va_from = os.path.join(project_dir, project_name_new)
 
         # -->> todo: handoff context
 
-        if va_tag == 'handoff':
-            va_path = os.path.join(handoff_vas_core, va_id)
-        elif va_tag == 'specialized':
-            va_path = os.path.join(specialized_vas_core, va_id)
+        path = os.path.join(path_of_project_to_test_va_from, va_tag)
+
+        va_path = os.path.join(path, va_id)
 
         response = TestQuery(utterance, va_path).test_query()
 
@@ -947,15 +934,42 @@ class train_classifier_model(APIView):
     authentication_classes = [JSONWebTokenAuthentication]
     permission_classes = [IsAuthenticated]
     def post(self, request, *args, **kwargs):
+        print('from train classifier: ')
         print(request.data)
         try:
+            project_id = request.data['project_id']
             va_tag = request.data['va_tag']
-            va_id = str(request.data['va_id'])
+            va_id = request.data['va_id']
             selected_update_intent = request.data['selected_update_intent']
-            if va_tag == 'handoff':
-                clf_model_path = os.path.join(handoff_vas_core, va_id)
-            elif va_tag == 'specialized':
-                clf_model_path = os.path.join(specialized_vas_core, va_id)    
+            # if va_tag == 'handoff':
+            #     clf_model_path = os.path.join(handoff_vas_core, va_id)
+            # elif va_tag == 'specialized':
+            #     clf_model_path = os.path.join(specialized_vas_core, va_id)
+            project_dir = project_dir_core
+
+            va = Va.objects.get(id=va_id)
+            va_serializer = VaSerializer(va, many=False)
+
+            va_id = str(va_serializer.data['id'])
+            va_tag = str(va_serializer.data['va_tag'])
+
+            project = Project.objects.get(id=project_id)
+            project_serializer = ProjectSerializer(project, many=False)
+
+            project_id = str(project_serializer.data['id'])
+            project_name = str(project_serializer.data['project_name'])
+
+            string_lst = []
+            string_lst.append(str(project_id))
+            string_lst.append('_')
+            string_lst.append(project_name)
+            project_name_new = ''.join(string_lst)
+
+            path_of_project_to_train_clf = os.path.join(project_dir, project_name_new)
+
+            path = os.path.join(path_of_project_to_train_clf, va_tag)
+
+            clf_model_path = os.path.join(path, va_id)    
                 
             TrainClassifierModel(selected_update_intent, clf_model_path).train_classifier_model()
             user_message = 'Success training classifier model'
@@ -969,21 +983,42 @@ class train_update_sense_classifier_model(APIView):
     authentication_classes = [JSONWebTokenAuthentication]
     permission_classes = [IsAuthenticated]
     def post(self, request, *args, **kwargs):
-        try:
-            va_tag = request.data['va_tag']
-            va_id = str(request.data['va_id'])
+        # try:
+        project_id = request.data['project_id']
+        va_id = request.data['va_id']
 
-            if va_tag == 'handoff':
-                clf_model_path = os.path.join(handoff_vas_core, va_id)
-            elif va_tag == 'specialized':
-                clf_model_path = os.path.join(specialized_vas_core, va_id)
+        project_dir = project_dir_core
 
-            TrainUpdateSenseClassifierModel(clf_model_path).train_update_sense_classifier_model()
-            user_message = 'Success training update sense classifier model'
-            return Response(user_message, status=status.HTTP_200_OK)
-        except:
-            user_message = 'Error training classifier model'
-            return Response(user_message, status=status.HTTP_400_BAD_REQUEST)
+        va = Va.objects.get(id=va_id)
+        va_serializer = VaSerializer(va, many=False)
+
+        va_id = str(va_serializer.data['id'])
+        va_tag = str(va_serializer.data['va_tag'])
+
+        project = Project.objects.get(id=project_id)
+        project_serializer = ProjectSerializer(project, many=False)
+
+        project_id = str(project_serializer.data['id'])
+        project_name = str(project_serializer.data['project_name'])
+
+        string_lst = []
+        string_lst.append(str(project_id))
+        string_lst.append('_')
+        string_lst.append(project_name)
+        project_name_new = ''.join(string_lst)
+
+        path_of_project_to_train_clf = os.path.join(project_dir, project_name_new)
+
+        path = os.path.join(path_of_project_to_train_clf, va_tag)
+
+        clf_model_path = os.path.join(path, va_id) 
+
+        TrainUpdateSenseClassifierModel(clf_model_path).train_update_sense_classifier_model()
+        user_message = 'Success training update sense classifier model'
+        return Response(user_message, status=status.HTTP_200_OK)
+        # except:
+        #     user_message = 'Error training classifier model'
+        #     return Response(user_message, status=status.HTTP_400_BAD_REQUEST)
 
 class train_svp_model(APIView):
     authentication_classes = [JSONWebTokenAuthentication]
@@ -991,15 +1026,36 @@ class train_svp_model(APIView):
     def post(self, request, *args, **kwargs):
         
         try:
-            va_tag = request.data['va_tag']
-            bot_id = str(request.data['va_id'])
+            project_id = request.data['project_id']
+            va_id = request.data['va_id']
             selected_intent = request.data['selected_intent']
-            if va_tag == 'handoff':
-                svp_model_path = os.path.join(handoff_vas_core, bot_id)
-                
-                
-            elif va_tag == 'specialized':
-                svp_model_path = os.path.join(specialized_vas_core, bot_id)
+
+            project_dir = project_dir_core
+
+
+            va = Va.objects.get(id=va_id)
+            va_serializer = VaSerializer(va, many=False)
+
+            va_id = str(va_serializer.data['id'])
+            va_tag = str(va_serializer.data['va_tag'])
+
+            project = Project.objects.get(id=project_id)
+            project_serializer = ProjectSerializer(project, many=False)
+
+            project_id = str(project_serializer.data['id'])
+            project_name = str(project_serializer.data['project_name'])
+
+            string_lst = []
+            string_lst.append(str(project_id))
+            string_lst.append('_')
+            string_lst.append(project_name)
+            project_name_new = ''.join(string_lst)
+
+            path_of_project_to_train_clf = os.path.join(project_dir, project_name_new)
+
+            path = os.path.join(path_of_project_to_train_clf, va_tag)
+
+            svp_model_path = os.path.join(path, va_id)  
 
             TrainSvpModel(selected_intent, svp_model_path).train_svp_model()
             user_message = 'Success training svp model'

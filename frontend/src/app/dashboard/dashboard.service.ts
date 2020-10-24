@@ -23,6 +23,26 @@ export class DashboardService {
     );
   }
 
+  get_single_project(project_id) {
+    return this.http.post<any>(
+      this.baseUrl + '/project/get_project', {project_id}
+    );
+  }
+
+  create_project(data: any) {
+    return this.http.post<any>(
+      this.baseUrl + '/project/create_project', data
+    );
+  }
+
+  save_project(data: any) {
+    return this.http.post<any>(
+      this.baseUrl + '/project/update_project', data
+    );
+  }
+
+
+
   delete_single_project(project_id) {
     return this.http.post<any>(
       this.baseUrl + '/project/delete_project', {project_id}

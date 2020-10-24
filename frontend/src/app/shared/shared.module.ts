@@ -7,9 +7,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatToolbarModule, MatIconModule, MatSidenavModule, MatListModule, MatButtonModule } from  '@angular/material';
 import { JumbotronComponent } from './jumbotron/jumbotron.component';
 import { ChatboxComponent } from './chatbox/chatbox.component';
-import {RouterModule} from "@angular/router";
-import {ReactiveFormsModule} from "@angular/forms";
+import { RouterModule } from "@angular/router";
+import { ReactiveFormsModule } from "@angular/forms";
 import { LeftnavComponent } from './leftnav/leftnav.component';
+import { EditModule } from '../edit/edit.module';
+
 
 @NgModule({
   declarations: [TopNavbarComponent, JumbotronComponent, ChatboxComponent, LeftnavComponent],
@@ -22,13 +24,15 @@ import { LeftnavComponent } from './leftnav/leftnav.component';
     MatButtonModule,
     MatIconModule,
     RouterModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    EditModule,
   ],
   exports: [
     CommonModule,
     TopNavbarComponent,
     JumbotronComponent,
     ChatboxComponent,
+    LeftnavComponent,
   ]
 })
 export class SharedModule { }

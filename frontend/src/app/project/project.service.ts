@@ -58,9 +58,9 @@ export class ProjectService {
 //    );
 //  }
 
- delete_single_va(va_id, va_tag) {
-  return this.http.get<any>(
-    this.baseUrl + '/va/delete_va'
+ delete_single_va(va_id, va_tag, project_id) {
+  return this.http.post<any>(
+    this.baseUrl + '/va/delete_va', {va_id, va_tag, project_id}
   );
  }
 

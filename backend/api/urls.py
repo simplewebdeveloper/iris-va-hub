@@ -8,7 +8,7 @@ urlpatterns = [
     path('get_projects', get_projects.as_view()),
     path('get_project', get_single_project.as_view()),
     path('delete_project', delete_single_project.as_view()),
-    path('update_va', update_single_va.as_view()),
+    path('update_project', update_single_project.as_view()),
 
     # Va paths
     path('create_va', create_va.as_view()),

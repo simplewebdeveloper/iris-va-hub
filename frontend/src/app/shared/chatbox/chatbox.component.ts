@@ -41,37 +41,37 @@ export class ChatboxComponent implements OnInit {
       query: [this.chatbox_model.query, Validators.required]
     });
   }
-  chatbox_query_form_submit(event: any) {
-    // this.va_tag = this.dashboard_service.get_va_tag();
-    // this.va_id = this.dashboard_service.get_va_id();
-    const query = this.chatbox_form.getRawValue();
-    const utterance = query.query;
-    if (utterance.length > 1) {
-      this.thinking = true;
-      this.chatbox_service.chatbox_query(query, this.va_id, this.va_tag).subscribe(
-      (test_response) => {
-        if (test_response) {
-          this.full_response = test_response
-          console.log(this.full_response)
+  // chatbox_query_form_submit(event: any) {
+  //   // this.va_tag = this.dashboard_service.get_va_tag();
+  //   // this.va_id = this.dashboard_service.get_va_id();
+  //   const query = this.chatbox_form.getRawValue();
+  //   const utterance = query.query;
+  //   if (utterance.length > 1) {
+  //     this.thinking = true;
+  //     this.chatbox_service.chatbox_query(query, '', this.va_id, this.va_tag).subscribe(
+  //     (test_response) => {
+  //       if (test_response) {
+  //         this.full_response = test_response
+  //         console.log(this.full_response)
 
-          // Default Template > Replace with any
-          this.formatted_response = this.default_template(test_response, utterance)
+  //         // Default Template > Replace with any
+  //         this.formatted_response = this.default_template(test_response, utterance)
 
-          // Clean up
-          this.res_and_que.unshift(this.formatted_response);
-          this.res_and_que.unshift(utterance);
-          this.thinking = false;
-          this.selectInputText();
-        }
-      },
-        (err: HttpErrorResponse) => {
-        console.log(err);
-        this.error_user_message = err.error;
-        this.toggle_user_message(this.error_user_message, 'danger');
-        }
-      );
-    }
-  }
+  //         // Clean up
+  //         this.res_and_que.unshift(this.formatted_response);
+  //         this.res_and_que.unshift(utterance);
+  //         this.thinking = false;
+  //         this.selectInputText();
+  //       }
+  //     },
+  //       (err: HttpErrorResponse) => {
+  //       console.log(err);
+  //       this.error_user_message = err.error;
+  //       this.toggle_user_message(this.error_user_message, 'danger');
+  //       }
+  //     );
+  //   }
+  // }
 
   // example default template
   default_template(response, utterance, format='') {

@@ -4,6 +4,7 @@
       <div class="uk-margin">
       <p class="uk-text-muted"><span uk-icon="icon: plus-circle; ratio: 2"></span></p>    
       <legend class="uk-legend"> Create a new Virtual Assistant</legend>
+      <p *ngIf="project">Project: {{ project.project_name }}</p>
       <!-- <div class="uk-flex uk-flex-center">
         
     </div> -->
@@ -12,11 +13,9 @@
             <fieldset class="uk-fieldset">
 
               <div class="uk-margin">
-                <div class="uk-text-small uk-margin-bottom">Select a project project</div>
-                <select formControlName="project" class="uk-select" required>
-                    <option *ngFor="let project of projects" value="{{ project.id }}">{{ project.project_name }}</option>
-                </select>
-              </div>
+                <!-- <div class="uk-text-small uk-margin-bottom">Project</div> -->
+                <input class="uk-input" formControlName="project" type="text" required readonly hidden>
+            </div>
 
                 <div class="uk-margin">
                     <div class="uk-text-small uk-margin-bottom">Give your VA a name</div>

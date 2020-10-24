@@ -11,13 +11,13 @@
       <div class="uk-child-width-1-3@m uk-grid-small uk-grid-match" uk-grid>
         
         
-          <div [routerLink]="['/create']" id="va-card" class="uk-card-light uk-card-body uk-border-rounded uk-box-shadow-medium uk-box-shadow-hover-large">
+          <div [routerLink]="['/create', project_id]" id="va-card" class="uk-card-light uk-card-body uk-border-rounded uk-box-shadow-medium uk-box-shadow-hover-large">
             <div class="uk-margin">
               <p class="uk-text-muted"><span uk-icon="icon: plus-circle; ratio: 2"></span></p>    
               <legend class="uk-legend"> Create VA</legend>
               <!-- <div class="uk-flex uk-flex-center">
                 
-            </div> -->
+              </div> -->
               </div>
           </div>
         
@@ -31,9 +31,8 @@
             <a class="uk-align-right" type="button"><span uk-icon="more-vertical"></span></a>
     <div uk-dropdown>
         <ul class="uk-nav uk-dropdown-nav">
-            <li><a href="#"><span uk-icon="forward"></span> View</a></li>
             <li><a (click)="send_tag_and_id_to_chatbox_service(va.va_tag, va.id)" href="#" uk-toggle="target: #modal-example" ><span uk-icon="microphone"></span> Quick Test</a></li>
-            <li><a [routerLink]="['/edit', va.id]"><span uk-icon="pencil"></span> Edit</a></li>
+            <li><a [routerLink]="['/edit', {va_id: va.id, project_id: project_id}]"><span uk-icon="pencil"></span> Edit</a></li>
             <li class="uk-nav-divider"></li>
             <li><a (click)="delete_va(i, va.id, va.va_tag)"><span uk-icon="trash"></span> Delete</a></li>
         </ul>

@@ -44,7 +44,8 @@
   <div class="uk-navbar-left">
 
       <ul class="uk-navbar-nav">
-        <li><a *ngIf="loggedIn" uk-toggle="target: #offcanvas-nav"><span uk-icon="icon: menu; ratio: 1.5"></span>Menu</a></li>
+        <a routerLink="/dashboard" class="uk-navbar-item uk-logo"><img src="../../../assets/logos/logo_iconic.png" width="50px"></a>
+        <!-- <li><a *ngIf="loggedIn" uk-toggle="target: #offcanvas-nav"><span uk-icon="icon: menu; ratio: 1.5"></span>Menu</a></li> -->
           
       </ul>
   </div>
@@ -52,8 +53,17 @@
     
     <div class="uk-navbar-center">
 
+        <ul class="uk-navbar-nav">
+            <!-- main menu links -->
+        <!-- <li><a ><button class="uk-button uk-button-primary uk-button-small" routerLink="/create">Dashboard</button></a></li> -->
 
-        <a class="uk-navbar-item uk-logo" href="#"><img src="../../../assets/logos/logo_iconic.png" width="50px"></a>
+           <!-- only show if there is va_id and project_id in url -->
+        <!-- <li><a (click)="navigate_to_intents()"><button class="uk-button uk-button-primary uk-button-small">Intents</button></a></li> -->
+        <!-- <li><a (click)="navigate_to_svps()"><button class="uk-button uk-button-primary uk-button-small">Svps</button></a></li> -->
+        <!-- <li><a (click)="navigate_to_train()"><button class="uk-button uk-button-primary uk-button-small">Train</button></a></li> -->
+        </ul>    
+
+        <!-- <a class="uk-navbar-item uk-logo" href="#"><img src="../../../assets/logos/logo_iconic.png" width="50px"></a> -->
         
 
     </div>

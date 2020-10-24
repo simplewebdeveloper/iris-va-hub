@@ -5,6 +5,7 @@ import { SharedModule } from '../shared/shared.module'
 import { Routes, RouterModule } from '@angular/router';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AuthGuardService as AuthGuard } from "../auth/auth-guard.service";
+import { ReactiveFormsModule } from '@angular/forms';
 
 const appRoutes: Routes = [
   {
@@ -19,7 +20,8 @@ const appRoutes: Routes = [
   imports: [
     CommonModule,
     SharedModule,
-    RouterModule.forChild(appRoutes)
+    RouterModule.forChild(appRoutes),
+    ReactiveFormsModule,
   ],
   exports: [
     ProjectsComponent,

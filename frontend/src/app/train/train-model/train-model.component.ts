@@ -2,6 +2,7 @@ import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import { TrainService } from '../train.service';
 import * as uikit from 'uikit';
 import { HttpErrorResponse } from '@angular/common/http';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-train-model',
@@ -10,7 +11,9 @@ import { HttpErrorResponse } from '@angular/common/http';
 })
 export class TrainModelComponent implements OnInit {
   private vas: any;
+  private va: any;
   private va_id: any;
+  private project_id: any;
   private intents: any;
   private update_intents: any;
   private selected_update_intent: string;
@@ -31,34 +34,38 @@ export class TrainModelComponent implements OnInit {
 
   constructor(
     private train_service: TrainService,
+    private route: ActivatedRoute,
   ) { }
 
   ngOnInit() {
-    this.get_vas();
+    this.get_va_from_url();
   }
-   get_vas() {
-    this.train_service.get_vas().subscribe(
-      (res) => {
-        // console.log(res);
-        this.vas = res;
-        // console.log(this.vas);
-        if(res.length > 0) {
-          this.success_user_message = 'Success getting vas';
-          this.toggle_user_message(this.success_user_message, 'success');
-        }
-      },
-      (err: HttpErrorResponse) => {
-        console.log(err);
-        this.error_user_message = err.error;
-        this.toggle_user_message(this.error_user_message, 'danger');
-      }
-    );
-  }
-  get_va(event: any) {
-    const va_id = +event.target.value;
-    this.va_id = va_id;
+  //  get_vas() {
+  //   this.train_service.get_vas().subscribe(
+  //     (res) => {
+  //       // console.log(res);
+  //       this.vas = res;
+  //       // console.log(this.vas);
+  //       if(res.length > 0) {
+  //         this.success_user_message = 'Success getting vas';
+  //         this.toggle_user_message(this.success_user_message, 'success');
+  //       }
+  //     },
+  //     (err: HttpErrorResponse) => {
+  //       console.log(err);
+  //       this.error_user_message = err.error;
+  //       this.toggle_user_message(this.error_user_message, 'danger');
+  //     }
+  //   );
+  // }
+  get_va_from_url() {
+    this.va = null;
+    const va_id_from_url = +this.route.snapshot.paramMap.get('va_id');
+    const project_id_from_url = +this.route.snapshot.paramMap.get('project_id');
+    this.project_id = project_id_from_url;
+    this.va_id = va_id_from_url;
     this.va_svps = [];
-    this.train_service.get_single_va(va_id).subscribe(
+    this.train_service.get_single_va(va_id_from_url).subscribe(
       (res) => {
         // console.log(res);
         this.selected_va = res;
@@ -121,7 +128,7 @@ export class TrainModelComponent implements OnInit {
     } else {
       this.selected_update_intent = 'none';
     }
-    this.train_service.feed_intents(this.va_id, va_tag, this.selected_update_intent).subscribe(
+    this.train_service.feed_intents(this.project_id, this.va_id, va_tag, this.selected_update_intent).subscribe(
     (res) => {
       // console.log(res);
       if(res.length > 1) {
@@ -142,7 +149,7 @@ export class TrainModelComponent implements OnInit {
   feed_update_sense(va_tag) {
     this.train_completed = false;
     this.train_progress = false;
-    this.train_service.feed_update_sense(this.va_id, va_tag).subscribe(
+    this.train_service.feed_update_sense(this.project_id, this.va_id, va_tag).subscribe(
     (res) => {
       // console.log(res);
       if(res.length > 1) {
@@ -163,7 +170,7 @@ export class TrainModelComponent implements OnInit {
     this.train_completed = false;
     this.train_progress = false;
     // console.log(intentData);
-    this.train_service.feed_svps(this.va_id, va_tag, selected_intent).subscribe(
+    this.train_service.feed_svps(this.project_id, this.va_id, va_tag, selected_intent).subscribe(
      (res) => {
       //  console.log(res);
       if(res.length > 1) {
@@ -183,7 +190,7 @@ export class TrainModelComponent implements OnInit {
 
   train_classifier_model(selected_intent, va_tag) {
     this.show_training_status_model();
-    this.train_service.train_classifier_model(this.va_id, va_tag, selected_intent).subscribe(
+    this.train_service.train_classifier_model(this.project_id, this.va_id, va_tag, selected_intent).subscribe(
       (res) => {
         // console.log(res);
         if(res.length > 1) {
@@ -207,7 +214,7 @@ export class TrainModelComponent implements OnInit {
     this.can_train_update_sense_classifier_model = false;
     this.show_training_status_model();
 
-    this.train_service.train_update_sense_classifier_model(this.va_id, va_tag).subscribe(
+    this.train_service.train_update_sense_classifier_model(this.project_id, this.va_id, va_tag).subscribe(
       (res) => {
         // console.log(res);
         if(res.length > 1) {
@@ -233,7 +240,7 @@ export class TrainModelComponent implements OnInit {
     this.train_completed = false;
     this.train_progress = true;
     this.show_training_status_model();
-    this.train_service.train_svp_model(selected_intent, this.va_id, va_tag).subscribe(
+    this.train_service.train_svp_model(selected_intent, this.project_id, this.va_id, va_tag).subscribe(
       (res) => {
         // console.log(res);
         if(res.length > 1) {

@@ -7,6 +7,7 @@ import { TrainService } from '../train.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Svp } from '../../models/svp.model';
 import { HttpErrorResponse } from '@angular/common/http';
+import { ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-train-svps',
   templateUrl: './train-svps.component.html',
@@ -63,13 +64,16 @@ export class TrainSvpsComponent implements OnInit {
               private train_service: TrainService,
               private form_builder: FormBuilder,
               private renderer: Renderer,
-              private elem_ref: ElementRef) {
+              private elem_ref: ElementRef,
+              private route: ActivatedRoute,
+              ) {
   }
 
   ngOnInit() {
     this.slot_value_pairings = [];
-    this.get_vas();
+    // this.get_vas();
     this.initialize_create_svp_form();
+    this.get_va_from_url();
   }
 
   initialize_create_svp_form(): void {
@@ -223,12 +227,13 @@ export class TrainSvpsComponent implements OnInit {
     );
   }
 
-  get_va(event: any) {
-    const va_id = +event.target.value;
+  get_va_from_url() {
+    this.va = null;
+    const va_id_from_url = +this.route.snapshot.paramMap.get('va_id');
     this.intents_and_utterances = [];
     this.va_svps = [];
-    this.va_id = va_id
-    this.train_service.get_single_va(va_id).subscribe(
+    this.va_id = va_id_from_url
+    this.train_service.get_single_va(va_id_from_url).subscribe(
       (res) => {
         //  console.log(res);
         this.va = res;

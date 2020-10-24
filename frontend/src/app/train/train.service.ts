@@ -82,40 +82,40 @@ export class TrainService {
       this.base_url + '/svp/delete_svp', svpId
     );
   }
-  feed_intents(va_id, va_tag, selected_update_intent) {
+  feed_intents(project_id, va_id, va_tag, selected_update_intent) {
     console.log(va_tag)
     return this.http.post<any>(
-      this.base_url + '/intent/feed_intents', {va_id, va_tag, selected_update_intent}
+      this.base_url + '/intent/feed_intents', {project_id, va_id, va_tag, selected_update_intent}
     );
   }
 
-  feed_update_sense(va_id, va_tag) {
+  feed_update_sense(project_id, va_id, va_tag) {
     return this.http.post<any>(
-      this.base_url + '/intent/feed_update_sense', {va_id, va_tag}, this.options
+      this.base_url + '/intent/feed_update_sense', {project_id, va_id, va_tag}, this.options
     );
   }
 
-  feed_svps(va_id, va_tag, selected_intent) {
+  feed_svps(project_id, va_id, va_tag, selected_intent) {
     return this.http.post<any>(
-      this.base_url + '/svp/feed_svps', {va_id, va_tag, selected_intent}, this.options
+      this.base_url + '/svp/feed_svps', {project_id, va_id, va_tag, selected_intent}, this.options
     );
   }
-  train_classifier_model(va_id, va_tag, selected_update_intent) {
+  train_classifier_model(project_id, va_id, va_tag, selected_update_intent) {
     return this.http.post<any>(
-      this.base_url + '/model/train_classifier_model', {va_id, va_tag, selected_update_intent}, this.options
+      this.base_url + '/model/train_classifier_model', {project_id, va_id, va_tag, selected_update_intent}, this.options
     );
   }
 
-  train_update_sense_classifier_model(va_id, va_tag) {
+  train_update_sense_classifier_model(project_id, va_id, va_tag) {
     return this.http.post<any>(
-      this.base_url + '/model/train_update_sense_classifier_model', {va_id, va_tag}, this.options
+      this.base_url + '/model/train_update_sense_classifier_model', {project_id, va_id, va_tag}, this.options
     );
 
   }
 
-  train_svp_model(selected_intent, va_id, va_tag) {
+  train_svp_model(selected_intent, project_id, va_id, va_tag) {
     return this.http.post<any>(
-      this.base_url + '/model/train_svp_model', {selected_intent, va_id, va_tag}, this.options
+      this.base_url + '/model/train_svp_model', {selected_intent, va_id, project_id, va_tag}, this.options
     );
   }
 

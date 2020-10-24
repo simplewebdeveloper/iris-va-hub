@@ -10,8 +10,18 @@ import { AuthGuardService as AuthGuard } from "../auth/auth-guard.service";
 
 const appRoutes: Routes = [
   {
+    path: 'intents/:va_id/project_id:',
+    component: TrainIntentsComponent,
+    canActivate: [AuthGuard],
+  },
+  {
     path: 'intents',
     component: TrainIntentsComponent,
+    canActivate: [AuthGuard],
+  },
+  {
+    path: 'svps/:va_id/project_id:',
+    component: TrainSvpsComponent,
     canActivate: [AuthGuard],
   },
   {
@@ -19,6 +29,12 @@ const appRoutes: Routes = [
     component: TrainSvpsComponent,
     canActivate: [AuthGuard],
   },
+  {
+    path: 'train/:va_id/project_id:',
+    component: TrainModelComponent,
+    canActivate: [AuthGuard],
+  },
+
   {
     path: 'train',
     component: TrainModelComponent,

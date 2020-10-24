@@ -5,6 +5,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Intent } from '../../models/intent.model';
 import * as uikit from 'uikit';
 import { HttpErrorResponse } from '@angular/common/http';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-train-intents',
@@ -30,13 +31,15 @@ export class TrainIntentsComponent implements OnInit {
 
   constructor(
     private train_service: TrainService,
-    private form_builder: FormBuilder
+    private form_builder: FormBuilder,
+    private route: ActivatedRoute,
   ) {
     this.intent_model = new Intent();
   }
 
   ngOnInit() {
-    this.get_vas();
+    // this.get_vas();
+    this.get_va_from_url();
     this.initialize_create_intent_form();
   }
 
@@ -62,7 +65,7 @@ export class TrainIntentsComponent implements OnInit {
           data.intent_data = '{' + '"intent":' + '"' + data.intent + '"' + ',' + '"utterance":' + '"' + data.utterance + '"' + '}';
           this.train_service.create_intent(data).subscribe(
             (res) => {
-              // console.log(res);
+              console.log(res);
               if(res) {
               this.intents_and_utterances.unshift(res);
               this.success_user_message = 'Success creating intent';
@@ -106,29 +109,29 @@ export class TrainIntentsComponent implements OnInit {
   }
 }
 
-  get_vas() {
-    this.train_service.get_vas().subscribe(
-      (res) => {
-        // console.log(res);
-        this.vas = res;
-        if(res.length > 0) {
-        this.success_user_message = 'Success getting vas';
-        this.toggle_user_message(this.success_user_message, 'success');
-        }
+  // get_vas() {
+  //   this.train_service.get_vas().subscribe(
+  //     (res) => {
+  //       // console.log(res);
+  //       this.vas = res;
+  //       if(res.length > 0) {
+  //       this.success_user_message = 'Success getting vas';
+  //       this.toggle_user_message(this.success_user_message, 'success');
+  //       }
         
-      },
-      (err: HttpErrorResponse) => {
-        console.log(err);
-        this.error_user_message = err.error;
-        this.toggle_user_message(this.error_user_message, 'danger');
-      }
-    );
-  }
+  //     },
+  //     (err: HttpErrorResponse) => {
+  //       console.log(err);
+  //       this.error_user_message = err.error;
+  //       this.toggle_user_message(this.error_user_message, 'danger');
+  //     }
+  //   );
+  // }
 
-  get_va(event: any) {
-    const va_id = +event.target.value;
-    this.va_id = va_id;
-    this.train_service.get_single_va(va_id).subscribe(
+  get_va_from_url() {
+    this.va = null;
+    const va_id_from_url = +this.route.snapshot.paramMap.get('va_id');
+    this.train_service.get_single_va(va_id_from_url).subscribe(
       (res) => {
         console.log(res);
         this.va = res;
@@ -137,7 +140,6 @@ export class TrainIntentsComponent implements OnInit {
         this.create_intent_form.patchValue({
           va_id: this.va.id,
         });
-        this.va_id = va_id;
         const va_name = this.va.va_name
         if(res.length > 0) {
           this.success_user_message = 'Success getting va: ' + va_name;
@@ -154,15 +156,16 @@ export class TrainIntentsComponent implements OnInit {
 
   get_selected_intent(event:any) {
     this.selected_intent = event.target.value;
-    // console.log(this.selectedIntent);
-    this.get_intents(this.va_id, this.selected_intent);
+    // console.log(this.selected_intent);
+    // console.log(this.va.id)
+    this.get_intents(this.va.id, this.selected_intent);
+    
     
   }
 
   get_intents(va_id: number, selected_intent: any) {
     this.train_service.get_all_intents(va_id, selected_intent).subscribe(
       (res) => {
-        // console.log(res);
         this.intents_and_utterances = [];
         this.intents_and_utterances = res;
         if(res.length > 0) {

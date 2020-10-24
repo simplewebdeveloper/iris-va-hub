@@ -7,7 +7,7 @@ import { AuthGuardService as AuthGuard } from "../auth/auth-guard.service";
 
 const appRoutes: Routes = [
   {
-    path: 'create',
+    path: 'create/:id',
     component: CreateComponent,
     canActivate: [AuthGuard],
   }

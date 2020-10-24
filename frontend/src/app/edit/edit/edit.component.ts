@@ -8,6 +8,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Va } from '../../models/va.model';
 import * as uikit from 'uikit';
 import { HttpErrorResponse } from '@angular/common/http';
+import { ProjectService } from 'src/app/project/project.service';
 
 @Component({
   selector: 'app-edit',
@@ -21,6 +22,7 @@ export class EditComponent implements OnInit, OnDestroy {
   projects: any;
   va_id_from_url: number;
   va: any;
+  project: any;
   public success_user_message: string;
   public error_user_message: string;
 
@@ -30,6 +32,7 @@ export class EditComponent implements OnInit, OnDestroy {
     private route: ActivatedRoute,
     private router: Router,
     private edit_service: EditService,
+    private project_service: ProjectService,
     private dashboard_service: DashboardService,
     private form_builder: FormBuilder,
   ) {
@@ -41,6 +44,7 @@ export class EditComponent implements OnInit, OnDestroy {
     // this.get_vas();
     this.get_projects();
     this.get_va_from_url();
+    this.get_project_from_url();
   }
 
   ngOnDestroy(): void {
@@ -90,14 +94,46 @@ export class EditComponent implements OnInit, OnDestroy {
     );
   }
 
+  get_project_from_url() {
+    this.project = null;
+    const project_id_from_url = +this.route.snapshot.paramMap.get('project_id');
+    // console.log(project_id_from_url)
+    
+    this.project_service.get_single_project(project_id_from_url).subscribe(
+    (res) => {
+      // console.log(res);
+      this.project = res;
+     
+      const project_name = this.project.project_name;
+      if (res.length > 0) {
+      this.success_user_message = 'Success getting va: ' + project_name;
+      this.toggle_user_message(this.success_user_message, 'success');
+      }
+  },
+  (err: HttpErrorResponse) => {
+      console.log(err);
+      this.error_user_message = err.error;
+      this.toggle_user_message(this.error_user_message, 'danger');
+  }
+    )
+
+}
+
+set_project_and_va_id(project_id, va_id) {
+  this.edit_service.set_project_and_va_id(project_id, va_id);
+}
+
+
   get_va_from_url() {
       this.va = null;
-      const va_id_from_url = +this.route.snapshot.paramMap.get('id');
+      const va_id_from_url = +this.route.snapshot.paramMap.get('va_id');
       if(this.get_va_from_url) (
       this.edit_service.get_single_va(va_id_from_url).subscribe(
       (res) => {
         console.log(res);
+        
         this.va = res;
+        this.set_project_and_va_id(this.va.project, this.va.id)
         this.edit_va_form.patchValue({
           va_id: this.va.id,
           project: this.va.project,
@@ -192,4 +228,7 @@ edit_va_form_submit() {
     toggle_user_message(notificationMessage, status) {
       uikit.notification(notificationMessage, {pos: 'bottom-right', status: status});
     }
+
+
+
 }
