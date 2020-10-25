@@ -51,28 +51,12 @@ export class ProjectService {
       this.baseUrl + '/va/delete_va', {project_id}
     );
   }
-
-//   get_all_vas() {
-//     return this.http.get<any>(
-//      this.baseUrl + '/va/get_vas'
-//    );
-//  }
-
+  
  delete_single_va(va_id, va_tag, project_id) {
   return this.http.post<any>(
     this.baseUrl + '/va/delete_va', {va_id, va_tag, project_id}
   );
  }
-
-
-//  add_va_tag(va_tag) {
-//   this.va_tag = va_tag;
-//  //  console.log(va_tag)
-// }
-
-// get_va_tag() {
-//  return this.va_tag;
-// }
 
 add_project_id(va_id) {
  this.project_id = va_id;
@@ -81,9 +65,5 @@ add_project_id(va_id) {
 get_project_id() {
 return this.project_id;
 }
-
-
-
-
   
 }

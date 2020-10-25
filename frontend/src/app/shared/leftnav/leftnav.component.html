@@ -41,30 +41,28 @@
     </div>
 </div> -->
 
-<!-- Updated to accordion -->
-<ul *ngIf="show_va_menu" uk-accordion class="uk-padding">
-    <li>
-        <a (click)="navigate_to_va()" class="uk-accordion-title">VA</a>
-        <div class="uk-accordion-content">
-            <p>
-                <a routerLink="/edit">Edit</a>  
-            </p>
-            <p>
-                <a routerLink="/intents">Intents</a>
-            </p>
-            <p>
-                <a routerLink="/svps">Labels</a>
-            </p>
-            <p>
-                <a routerLink="/train">Train</a>
-            </p>
+<!-- Updated side nav -->
+<div *ngIf="show_project_menu" class="uk-padding uk-padding-remove-bottom">
+    <ul class="uk-nav uk-nav-default">
+        <li class="uk-active"><a (click)="navigate_to_va()">Project Settings</a></li>
+        <li><a routerLink="#" routerLinkActive="active-link">Project Tags</a></li>
+        <li><a routerLink="#" routerLinkActive="active-link">Configure Context</a></li>
+    </ul>
+</div>
 
-            <p>
-                <a routerLink="/test">Test</a>
-            </p>
-            
-        </div>
-    </li>
-</ul>
+<div *ngIf="show_va_menu" class="uk-padding uk-padding-remove-bottom">
+    <ul class="uk-nav uk-nav-default">
+        <li class="uk-active"><a (click)="navigate_to_va()">Manage Virtual Assistant</a></li>
+        <li><a routerLink="#" routerLinkActive="active-link">VA Tags</a></li>
+        <li><a routerLink="/edit" routerLinkActive="active-link">Edit</a></li>
+        <li><a routerLink="/intents" routerLinkActive="active-link">Intents</a></li>
+        <li><a routerLink="/svps" routerLinkActive="active-link">Labels</a></li>
+        <li><a routerLink="/train" routerLinkActive="active-link">Train</a></li>
+        <li><a routerLink="/test" routerLinkActive="active-link">Test</a></li>
+        <li><a routerLink="#" routerLinkActive="active-link">Responses</a></li>
+    </ul>
+</div>
+
+
 
 

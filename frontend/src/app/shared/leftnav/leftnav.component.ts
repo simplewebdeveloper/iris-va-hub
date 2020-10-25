@@ -2,6 +2,7 @@ import { AfterContentChecked, AfterViewChecked, AfterViewInit, Component, OnChan
 import { Router, NavigationEnd, ActivatedRoute } from '@angular/router';
 import { AuthService } from "../../auth/auth.service";
 import { VaService } from '../../va/va.service';
+import { ProjectService } from '../../project/project.service';
 
 @Component({
   selector: 'app-leftnav',
@@ -11,11 +12,13 @@ import { VaService } from '../../va/va.service';
 export class LeftnavComponent implements OnInit {
   private currentPath = ""
   show_va_menu: boolean;
+  show_project_menu: boolean;
   project_id: any;
   va_id: any;
 
   constructor(
     private router: Router, 
+    private project_service: ProjectService,
     private va_service: VaService,
     private authService: AuthService,
     private route: ActivatedRoute,
@@ -48,12 +51,12 @@ export class LeftnavComponent implements OnInit {
 
     setInterval(()=>{                           
       this.check_for_va();
+      this.check_for_project();
     }, 1000);
   
 }
 
 check_for_va() {
-
   // check if va service contains a va
   const va = this.va_service.get_va_id();
  if(va) {
@@ -61,7 +64,16 @@ check_for_va() {
  } else {
    this.show_va_menu = false;
  }
+}
 
+check_for_project() {
+  // check if va service contains a va
+  const project = this.project_service.get_project_id();
+ if(project) {
+   this.show_project_menu = true;
+ } else {
+   this.show_project_menu = false;
+ }
 }
 
 // Navigation functions
@@ -91,7 +103,7 @@ navigate_to_train() {
 }
 
 navigate_to_test() {
-  this.project_id = this.va_service.get_project_id();
+  this.project_id = this.project_service.get_project_id();
   this.va_id = this.va_service.get_va_id();
   this.router.navigate(['/test', {va_id: this.va_id, project_id: this.project_id}]);
 }
