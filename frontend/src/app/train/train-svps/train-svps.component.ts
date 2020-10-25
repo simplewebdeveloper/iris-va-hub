@@ -8,6 +8,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Svp } from '../../models/svp.model';
 import { HttpErrorResponse } from '@angular/common/http';
 import { ActivatedRoute } from '@angular/router';
+import { VaService } from '../../va/va.service'
+
 @Component({
   selector: 'app-train-svps',
   templateUrl: './train-svps.component.html',
@@ -62,6 +64,7 @@ export class TrainSvpsComponent implements OnInit {
 
   constructor(@Inject(DOCUMENT) private document: Document,
               private train_service: TrainService,
+              private va_service: VaService,
               private form_builder: FormBuilder,
               private renderer: Renderer,
               private elem_ref: ElementRef,
@@ -71,9 +74,8 @@ export class TrainSvpsComponent implements OnInit {
 
   ngOnInit() {
     this.slot_value_pairings = [];
-    // this.get_vas();
     this.initialize_create_svp_form();
-    this.get_va_from_url();
+    this.get_va();
   }
 
   initialize_create_svp_form(): void {
@@ -208,35 +210,16 @@ export class TrainSvpsComponent implements OnInit {
     
   }
 
-  get_vas() {
-    this.train_service.get_vas().subscribe(
-      (res) => {
-        // console.log(res);
-        this.vas = res;
-        if(res.length > 0) {
-        this.success_user_message = 'Success getting vas';
-        this.toggle_user_message(this.success_user_message, 'success');
-        }
-        
-      },
-      (err: HttpErrorResponse) => {
-        console.log(err);
-        this.error_user_message = err.error;
-        this.toggle_user_message(this.error_user_message, 'danger');
-      }
-    );
-  }
-
-  get_va_from_url() {
+  get_va() {
     this.va = null;
-    const va_id_from_url = +this.route.snapshot.paramMap.get('va_id');
+    const const_va_id = this.va_service.get_va_id();
     this.intents_and_utterances = [];
     this.va_svps = [];
-    this.va_id = va_id_from_url
-    this.train_service.get_single_va(va_id_from_url).subscribe(
+    this.va_service.get_single_va(const_va_id).subscribe(
       (res) => {
         //  console.log(res);
         this.va = res;
+        this.va_id = this.va.id;
         if(this.va.va_slots == 'none') {
           this.has_slots = false;
           // console.log(this.has_slots);

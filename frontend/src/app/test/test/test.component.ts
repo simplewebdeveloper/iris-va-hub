@@ -5,6 +5,7 @@ import { FormBuilder, FormGroup, Validators} from '@angular/forms';
 import { Chatbox } from '../../models/chatbox.model';
 import { HttpErrorResponse } from '@angular/common/http';
 import { ActivatedRoute } from '@angular/router';
+import { VaService } from '../../va/va.service'
 
 @Component({
   selector: 'app-test',
@@ -30,6 +31,7 @@ export class TestComponent implements OnInit {
     private route: ActivatedRoute,
     private chatbox_service: ChatboxService,
     private form_builder: FormBuilder,
+    private va_service: VaService,
   ) { }
 
   ngOnInit() {
@@ -44,18 +46,16 @@ export class TestComponent implements OnInit {
   }
 
   get_project_and_va_id_from_url() {
-    this.project_id = +this.route.snapshot.paramMap.get('project_id');
-    this.va_id = +this.route.snapshot.paramMap.get('va_id');
+    this.project_id = this.va_service.get_project_id();
+    this.va_id = this.va_service.get_va_id();
   }
 
   chatbox_query_form_submit(event: any) {
-    const project_id = +this.route.snapshot.paramMap.get('project_id');
-    const va_id = +this.route.snapshot.paramMap.get('va_id');
     const query = this.chatbox_form.getRawValue();
     const utterance = query.query;
     if (utterance.length > 1) {
       this.thinking = true;
-      this.chatbox_service.chatbox_query(query, project_id, va_id).subscribe(
+      this.chatbox_service.chatbox_query(query, this.project_id, this.va_id).subscribe(
       (test_response) => {
         if (test_response) {
           this.full_response = test_response

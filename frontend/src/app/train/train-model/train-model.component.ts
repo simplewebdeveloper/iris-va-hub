@@ -3,6 +3,7 @@ import { TrainService } from '../train.service';
 import * as uikit from 'uikit';
 import { HttpErrorResponse } from '@angular/common/http';
 import { ActivatedRoute } from '@angular/router';
+import { VaService } from '../../va/va.service'
 
 @Component({
   selector: 'app-train-model',
@@ -34,38 +35,23 @@ export class TrainModelComponent implements OnInit {
 
   constructor(
     private train_service: TrainService,
+    private va_service: VaService,
     private route: ActivatedRoute,
   ) { }
 
   ngOnInit() {
-    this.get_va_from_url();
+    this.get_va();
   }
-  //  get_vas() {
-  //   this.train_service.get_vas().subscribe(
-  //     (res) => {
-  //       // console.log(res);
-  //       this.vas = res;
-  //       // console.log(this.vas);
-  //       if(res.length > 0) {
-  //         this.success_user_message = 'Success getting vas';
-  //         this.toggle_user_message(this.success_user_message, 'success');
-  //       }
-  //     },
-  //     (err: HttpErrorResponse) => {
-  //       console.log(err);
-  //       this.error_user_message = err.error;
-  //       this.toggle_user_message(this.error_user_message, 'danger');
-  //     }
-  //   );
-  // }
-  get_va_from_url() {
+
+  get_va() {
     this.va = null;
-    const va_id_from_url = +this.route.snapshot.paramMap.get('va_id');
-    const project_id_from_url = +this.route.snapshot.paramMap.get('project_id');
-    this.project_id = project_id_from_url;
-    this.va_id = va_id_from_url;
+    const va_id = this.va_service.get_va_id();
+    const project_id = this.va_service.get_project_id();
+
+    this.project_id = project_id;
+    this.va_id = va_id;
     this.va_svps = [];
-    this.train_service.get_single_va(va_id_from_url).subscribe(
+    this.train_service.get_single_va(va_id).subscribe(
       (res) => {
         // console.log(res);
         this.selected_va = res;

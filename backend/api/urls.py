@@ -6,6 +6,7 @@ urlpatterns = [
     # Project paths
     path('create_project', create_project.as_view()),
     path('get_projects', get_projects.as_view()),
+    path('get_last_five_projects', get_last_five_projects.as_view()),
     path('get_project', get_single_project.as_view()),
     path('delete_project', delete_single_project.as_view()),
     path('update_project', update_single_project.as_view()),

@@ -1,8 +1,22 @@
 <app-top-navbar></app-top-navbar>
-<div class="uk-container">
+<!-- <div class="uk-container">
     
     <div class="uk-card uk-card-body uk-margin-top">
         <app-va-nav></app-va-nav>
 </div>
-</div>        
-<router-outlet></router-outlet>
+</div>         -->
+
+
+
+<div uk-grid>
+    <div class="uk-width-1-6">
+        <div>
+            <app-leftnav></app-leftnav>
+        </div>
+    </div>
+    <div class="uk-width-3-4">
+        <div>
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>

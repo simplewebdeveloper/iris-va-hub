@@ -17,6 +17,7 @@ import { AuthModule } from './auth/auth.module'
 import { SettingsModule } from './settings/settings.module';
 import { VaNavModule } from './va-nav/va-nav.module';
 import { TestModule } from './test/test.module';
+import { VaModule } from './va/va.module';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { Routes, RouterModule, CanActivate } from '@angular/router';
@@ -45,6 +46,11 @@ const appRoutes: Routes = [
    loadChildren: './project/project.module#ProjectModule',
   
  },
+ {
+  path: 'va',
+  loadChildren: './va/va.module#VaModule',
+
+},
   {
     path: 'create',
     loadChildren: './create/create.module#CreateModule',
@@ -87,6 +93,7 @@ const appRoutes: Routes = [
     EditModule,
     SettingsModule,
     VaNavModule,
+    VaModule,
     AuthModule,
     HttpClientModule,
     BrowserAnimationsModule,

@@ -27,7 +27,7 @@
                 <div class="uk-margin">
                     <div class="uk-text-small uk-margin-bottom">Update VA project</div>
                     <select formControlName="project" class="uk-select" required>
-                        <option value="project.id" selected disabled>{{ project?.project_name }}</option>
+                        <option selected disabled>Select a project</option>
                         <option *ngFor="let project of projects" value="{{ project.id }}">{{ project?.project_name }}</option>
                     </select>
                 </div>

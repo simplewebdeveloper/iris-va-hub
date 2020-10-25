@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { TrainService } from '../train.service';
+import { VaService } from '../../va/va.service';
 
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Intent } from '../../models/intent.model';
@@ -31,6 +32,7 @@ export class TrainIntentsComponent implements OnInit {
 
   constructor(
     private train_service: TrainService,
+    private va_service: VaService,
     private form_builder: FormBuilder,
     private route: ActivatedRoute,
   ) {
@@ -38,8 +40,7 @@ export class TrainIntentsComponent implements OnInit {
   }
 
   ngOnInit() {
-    // this.get_vas();
-    this.get_va_from_url();
+    this.get_va();
     this.initialize_create_intent_form();
   }
 
@@ -109,29 +110,10 @@ export class TrainIntentsComponent implements OnInit {
   }
 }
 
-  // get_vas() {
-  //   this.train_service.get_vas().subscribe(
-  //     (res) => {
-  //       // console.log(res);
-  //       this.vas = res;
-  //       if(res.length > 0) {
-  //       this.success_user_message = 'Success getting vas';
-  //       this.toggle_user_message(this.success_user_message, 'success');
-  //       }
-        
-  //     },
-  //     (err: HttpErrorResponse) => {
-  //       console.log(err);
-  //       this.error_user_message = err.error;
-  //       this.toggle_user_message(this.error_user_message, 'danger');
-  //     }
-  //   );
-  // }
-
-  get_va_from_url() {
+  get_va() {
     this.va = null;
-    const va_id_from_url = +this.route.snapshot.paramMap.get('va_id');
-    this.train_service.get_single_va(va_id_from_url).subscribe(
+    const const_va_id = this.va_service.get_va_id();
+    this.va_service.get_single_va(const_va_id).subscribe(
       (res) => {
         console.log(res);
         this.va = res;
@@ -180,6 +162,7 @@ export class TrainIntentsComponent implements OnInit {
     }
     );
   }
+
   delete_intent(intent_id, i) {
     this.train_service.delete_single_utterance(intent_id).subscribe(
       (res) => {
@@ -200,23 +183,6 @@ export class TrainIntentsComponent implements OnInit {
   toggle_user_message(notificationMessage, status) {
     uikit.notification(notificationMessage, {pos: 'bottom-right', status: status});
   }
-
-  // Select text inside a div
-  // selectText(id){
-  //   var sel, range;
-  //   var el = document.getElementById(id); //get element id
-  //   if (window.getSelection && document.createRange) { //Browser compatibility
-  //     sel = window.getSelection();
-  //     if(sel.toString() == ''){ //no text selection
-  //      window.setTimeout(function(){
-  //       range = document.createRange(); //range object
-  //       range.selectNodeContents(el); //sets Range
-  //       sel.removeAllRanges(); //remove all ranges from selection
-  //       sel.addRange(range);//add Range to a Selection.
-  //     },1);
-  //     }
-  //   }
-  // }
 
   selectInputText() {
     <HTMLInputElement>this.intentInput.nativeElement.select();

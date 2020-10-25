@@ -88,6 +88,19 @@ class get_projects(APIView):
             # user_message = 'Error getting bots'
             # return Response(user_message, status=status.HTTP_400_BAD_REQUEST)
 
+class get_last_five_projects(APIView):
+    authentication_classes = [JSONWebTokenAuthentication]
+    permission_classes = [IsAuthenticated]
+    def get(self, request, *args, **kwargs):
+        # try:
+        projects = Project.objects.all().order_by('-id')[:5:-1]
+        project_serializer = ProjectSerializer(projects, many=True)
+        user_message = 'Success getting projects'
+        print(user_message)
+        return Response(project_serializer.data, status=status.HTTP_200_OK)
+        # except:
+            # user_message = 'Error getting bots'
+            # return Response(user_message, status=status.HTTP_400_BAD_REQUEST)
 
 # create project
 class create_project(APIView):
@@ -326,6 +339,7 @@ class get_single_va(APIView):
     authentication_classes = [JSONWebTokenAuthentication]
     permission_classes = [IsAuthenticated]
     def post(self, request, *args, **kwargs):
+        print(request.data)
         try:
             va_id = request.data['va_id']
             va = Va.objects.get(id=va_id)
