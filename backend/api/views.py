@@ -34,6 +34,9 @@ from train.train_models import TrainClassifierModel
 from train.train_models import TrainUpdateSenseClassifierModel
 from train.train_models import TrainSvpModel
 
+
+from .handoff_context import HandoffContext
+
 # reset import -> leave disabled
 # from train.wipe_reset import WipeReset
 
@@ -934,11 +937,30 @@ class test_query(APIView):
 
         va_path = os.path.join(path, va_id)
 
-        response = TestQuery(utterance, va_path).test_query()
+        # check the state first
+        with open(handoff_context) as f:
+            d = json.load(f)
+            try:
+                state = d[0]['state']
+                va_path_to_check = d[0]['va_path'][0]
+            except:
+                pass
+
+        if state != "root":
+
+            response = TestQuery(utterance, va_path_to_check).test_query()
+        
+        else:
+            response = TestQuery(utterance, va_path).test_query()
+
+        # SEND TO HANDOFF CONTEXT HERE TO DETERMINE WHICH VA TO GO TO
+
+        context_response = HandoffContext(response, project_dir).context()
+
 
         # print(response)
 
-        return Response(response, status=status.HTTP_200_OK)
+        return Response(context_response, status=status.HTTP_200_OK)
         # except:
         #     user_message = 'Error testing bot'
         #     return Response(user_message, status=status.HTTP_400_BAD_REQUEST)

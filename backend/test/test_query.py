@@ -191,36 +191,38 @@ class TestQuery:
 
             # Post processing
 
-            UpdateResponseContext(response).update_response_context()
-            UpdateContext(response).update_context()
-            context = GetContext().get_context()
-            last_intent = get_last_intent()
-            current_intent = get_current_intent()
-            ConversationContext(current_intent, last_intent, response).maintain_context()
-            last_intent = GetLastIntent(context).get_last_intent()
-            update_last_intent(last_intent)
+            # UpdateResponseContext(response).update_response_context()
+            # UpdateContext(response).update_context()
+            # context = GetContext().get_context()
+            # last_intent = get_last_intent()
+            # current_intent = get_current_intent()
+            # ConversationContext(current_intent, last_intent, response).maintain_context()
+            # last_intent = GetLastIntent(context).get_last_intent()
+            # update_last_intent(last_intent)
             
             final_response = response
 
-            # Slot mapping for service
-            if len(response['slots']) > 0:
-                if response['intent'] == 'ask_about_service':
+            # CONFIGURE HAND OFF CONTEXT HERE
+
+            # Example Slot mapping for service
+            # if len(response['slots']) > 0:
+                # if response['intent'] == 'ask_about_service':
                     # try to slot map the service
-                    service_slot = list(response['slots'])
+                    # service_slot = list(response['slots'])
                     # print(service_slot)
                     # service_slot = service_slot[0]['slot']
-                    service = service_slot[0]['value'][0]
-                    before_service_map = service
+                    # service = service_slot[0]['value'][0]
+                    # before_service_map = service
                     # run the csv word replacer on the name of the service
-                    word = csv_word_replacer(service, handoff_va_slot_mapper_csv_file)
-                    after_service_map = word[0]
+                    # word = csv_word_replacer(service, handoff_va_slot_mapper_csv_file)
+                    # after_service_map = word[0]
 
-                    if before_service_map == after_service_map:
-                        service_slot[0]['value'][0] = None
-                    else:
-                        service_slot[0]['value'][0] = after_service_map
+                    # if before_service_map == after_service_map:
+                        # service_slot[0]['value'][0] = None
+                    # else:
+                        # service_slot[0]['value'][0] = after_service_map
                 
-                    response['slots'] = service_slot
+                    # response['slots'] = service_slot
 
             # print(final_response)
 

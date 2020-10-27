@@ -1,5 +1,8 @@
 [
     {
-        "va_to_go_to": "handoff"
+        "va_tag": "",
+        "va_path": "",
+        "state": "root",
+        "last_intent": ""
     }
 ]

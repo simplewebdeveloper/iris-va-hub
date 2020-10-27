@@ -1,0 +1,78 @@
+[
+    {
+        "intent": "goodbye",
+        "utterance": "good byee"
+    },
+    {
+        "intent": "goodbye",
+        "utterance": "byeee"
+    },
+    {
+        "intent": "goodbye",
+        "utterance": "later"
+    },
+    {
+        "intent": "goodbye",
+        "utterance": "bye bye"
+    },
+    {
+        "intent": "goodbye",
+        "utterance": "good bye"
+    },
+    {
+        "intent": "goodbye",
+        "utterance": "bye"
+    },
+    {
+        "intent": "goodbye",
+        "utterance": "goodbye"
+    },
+    {
+        "intent": "what_is_court",
+        "utterance": "what is a court "
+    },
+    {
+        "intent": "what_is_court",
+        "utterance": "describe what court means"
+    },
+    {
+        "intent": "what_is_court",
+        "utterance": "tell me about a court"
+    },
+    {
+        "intent": "what_is_court",
+        "utterance": "what is a court house"
+    },
+    {
+        "intent": "what_is_court",
+        "utterance": "explain what court means"
+    },
+    {
+        "intent": "what_is_court",
+        "utterance": "what is a court"
+    },
+    {
+        "intent": "what_is_law",
+        "utterance": "is law a word"
+    },
+    {
+        "intent": "what_is_law",
+        "utterance": "what the heck is law"
+    },
+    {
+        "intent": "what_is_law",
+        "utterance": "what does law mean"
+    },
+    {
+        "intent": "what_is_law",
+        "utterance": "whats the meaning of the term law"
+    },
+    {
+        "intent": "what_is_law",
+        "utterance": "define the term law"
+    },
+    {
+        "intent": "what_is_law",
+        "utterance": "what is law"
+    }
+]

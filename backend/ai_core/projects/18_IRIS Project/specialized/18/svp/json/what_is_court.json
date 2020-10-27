@@ -1,0 +1,74 @@
+[
+    [
+        "what is a court",
+        {
+            "entities": [
+                [
+                    10,
+                    15,
+                    "term"
+                ]
+            ]
+        }
+    ],
+    [
+        "explain what court means",
+        {
+            "entities": [
+                [
+                    13,
+                    18,
+                    "term"
+                ]
+            ]
+        }
+    ],
+    [
+        "what is a court house",
+        {
+            "entities": [
+                [
+                    10,
+                    15,
+                    "term"
+                ]
+            ]
+        }
+    ],
+    [
+        "tell me about a court",
+        {
+            "entities": [
+                [
+                    16,
+                    21,
+                    "term"
+                ]
+            ]
+        }
+    ],
+    [
+        "describe what court means",
+        {
+            "entities": [
+                [
+                    14,
+                    19,
+                    "term"
+                ]
+            ]
+        }
+    ],
+    [
+        "what is a court ",
+        {
+            "entities": [
+                [
+                    10,
+                    15,
+                    "term"
+                ]
+            ]
+        }
+    ]
+]
