@@ -1,0 +1,34 @@
+<ul uk-tab class="uk-margin-top uk-flex-center">
+    <!-- <li><a routerLink="/dashboard">Dashboard / Projects</a></li> -->
+    <!-- Check if there is an AI Version then show the following paths -->
+    <li><a (click)="navigate_to_edit()">Edit</a></li>
+    <li><a (click)="navigate_to_intents()">Manage Intents</a></li>
+    <li><a (click)="navigate_to_svps()">Manage SVPs</a></li>
+    <!-- <li><a href="#">Edit Responses</a></li> -->
+    <li><a (click)="navigate_to_train()">Training</a></li>
+    <li><a (click)="navigate_to_test()">Test</a></li>
+  </ul>
+  
+  <ul class="uk-switcher uk-margin">
+    <li>
+        
+    </li>
+    <li>
+        <!-- place train intent component here -->
+    </li>
+    <li>
+        <!-- place train svp component here -->
+    </li>
+    <li>
+        <!-- place edit response component here -->
+
+    </li>
+    <li>
+        <!-- place train model component dollars -->
+    </li>
+
+    <li>
+        <!-- place test component dollars -->
+    </li>
+
+    </ul>

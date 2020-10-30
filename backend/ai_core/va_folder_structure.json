@@ -1,0 +1,16 @@
+[
+    {
+        "id": {
+            "clf": {
+                "clf_models": {
+                    "root": [],
+                    "update_intents": []
+                }
+            },
+            "svp": {
+                "json": [],
+                "svp_models": []
+            }
+        }
+    }
+]

@@ -1,0 +1,74 @@
+
+<div class="uk-container">
+    
+    <div class="uk-card uk-card-body uk-margin-top">
+
+    <!-- <div class="uk-margin">
+        <select class="uk-select" (change)="get_va_from_drop_down($event)">
+            <option value="" selected disabled>Choose a VA to edit</option>
+            <option *ngFor="let va of vas" value="{{ va.id }}">{{ va.va_name }}</option>
+        </select>
+    </div> -->
+
+    <!-- <hr> -->
+
+    <div class="uk-margin">
+        <p class="uk-text-muted"><span uk-icon="icon: comment; ratio: 2"></span></p>    
+        <legend class="uk-legend">Test your Virtual Assistant</legend> 
+        <div class="uk-flex uk-flex-center">
+            
+        </div>
+        </div>  
+
+        <!-- <div *ngIf="va"> -->
+            <form [formGroup]="chatbox_form" (ngSubmit)="chatbox_query_form_submit($event)">
+                <fieldset class="uk-fieldset">
+          
+                  <div class="uk-margin">
+                    <input #queryInput class="uk-input" type="text" formControlName="query" onclick="this.select()" placeholder="Enter an utterance and press enter">
+                  </div>
+          
+                </fieldset>
+                <div *ngIf="thinking" class="uk-text-small uk-margin-bottom">I'm Thinking... If I can't think this one through you will need to try again.</div>
+          <!--      <p class="uk-text-right">-->
+          <!--        <button  type="submit" class="uk-button uk-button-primary uk-button-small">Test Utterance</button>-->
+          <!--      </p>-->
+              </form>
+          
+                <section class="uk-textarea uk-padding" style="max-height: 20em; overflow-y: scroll;">
+          <!--        <ng-container *ngIf="queryResponse">-->
+          <!--          <span>You are asking about <span class="uk-text-bolder">{{ queryResponse.intent }}</span></span><br>-->
+          <!--          <span *ngIf="queryResponse.slots?.length>0">I have the</span><br>-->
+          <!--          <ng-container *ngFor="let slot of queryResponse.slots; let last = last">-->
+          <!--            <span *ngIf="last && queryResponse.slots?.length>1">and&nbsp;</span><span>{{slot.slot}} to be {{ slot.value }}</span><br>-->
+          <!--          </ng-container>-->
+          <!--        </ng-container>-->
+                  <ng-container *ngIf="res_and_que">
+                    <div *ngFor="let rq of res_and_que; let i = index" class="uk-text-right">
+                      <ng-container *ngIf="i % 2 == 0; else right">
+                        <div class="uk-text-right uk-card-primary uk-margin-small uk-padding-small uk-border-rounded" [innerHTML]="rq"></div>
+                      </ng-container>
+                      <ng-template #right>
+                        <div class="uk-text-left uk-card-primary uk-margin-small uk-padding-small uk-border-rounded" [innerHTML]="rq"></div>
+                        <hr>
+                      </ng-template>
+          
+                    </div>
+          
+                  </ng-container>
+          
+          
+                </section>
+          
+              <div *ngIf="full_response" class="uk-margin">
+                 <p>Full Response: </p>
+                  <textarea class="uk-textarea" rows="10" readonly>{{ full_response|json }}</textarea>
+              </div>
+              <p class="uk-text-right">
+                <span uk-icon="icon: microphone; ratio: 1" class="uk-margin-right"></span>
+                <button class="uk-button uk-button-danger uk-modal-close uk-button-small" type="button" (click)="close_conversation()">Close Conversation</button>
+              </p>
+        <!-- </div> -->
+    </div>
+
+</div>

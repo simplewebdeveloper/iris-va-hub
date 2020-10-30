@@ -1,3 +1,3 @@
-export class ChatboxModel {
+export class Chatbox {
   query: string;
 }

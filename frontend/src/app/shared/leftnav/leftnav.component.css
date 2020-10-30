@@ -1,3 +1,7 @@
 #current-path {
     text-transform: capitalize;
 }
+
+.active-link {
+    color: dodgerblue !important;
+}

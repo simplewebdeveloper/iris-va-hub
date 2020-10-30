@@ -2,19 +2,28 @@ from django.db import models
 
 # Create your models here.
 
-
-class Bot(models.Model):
-    bot_name = models.CharField(max_length=100)
-    bot_desc = models.CharField(max_length=1000)
-    bot_intents = models.CharField(max_length=256)
-    bot_slots = models.CharField(max_length=500, default='none')
+class Project(models.Model):
+    project_name = models.CharField(max_length=100)
+    project_tag = models.CharField(max_length=100, default='')
+    project_desc = models.CharField(max_length=1000)
 
     def __str__(self):
-        return self.bot_name
+        return self.project_name
+
+class Va(models.Model):
+    project = models.ForeignKey(Project, on_delete=models.CASCADE)
+    va_name = models.CharField(max_length=100)
+    va_tag = models.CharField(max_length=100, default='')
+    va_desc = models.CharField(max_length=1000)
+    va_intents = models.CharField(max_length=256)
+    va_slots = models.CharField(max_length=500, default='none')
+
+    def __str__(self):
+        return self.va_name
 
 
 class Intent(models.Model):
-    bot = models.ForeignKey(Bot, related_name='bot', on_delete=models.CASCADE, default=0)
+    va = models.ForeignKey(Va, on_delete=models.CASCADE)
     intent = models.CharField(max_length=100)
     utterance = models.CharField(max_length=2056, unique=True)
     intent_data = models.CharField(max_length=2056, default='')
@@ -24,7 +33,7 @@ class Intent(models.Model):
 
 
 class Svp(models.Model):
-    bot = models.ForeignKey(Bot, related_name='bot_svp', on_delete=models.CASCADE, default=0)
+    va = models.ForeignKey(Va, on_delete=models.CASCADE)
     slots = models.CharField(max_length=1024, default='')
     utterance = models.CharField(max_length=2056, default='', unique=True)
     svp_data = models.CharField(max_length=2056, default='')

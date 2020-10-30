@@ -24,23 +24,25 @@ from ai_core import config
 # Model Specific
 base_dir = config.base_dir
 # Rename the below to clf_dir
-clf_model_dir = config.clf_model_dir
-clf_models_dir = config.clf_models_dir
-clf_model_root_intents_json_file = config.clf_model_root_intents_json_file
-update_clf_model_dir = config.update_clf_model_dir
-update_sense_clf_model_dir = config.update_sense_clf_model_dir
-svp_model_dir_core = config.svp_model_dir_core
-svp_model_dir = config.svp_model_dir
-svp_model_json_file = config.svp_model_json_file
-root_clf_model_vectorizer = config.root_clf_model_vectorizer
-root_clf_model = config.root_clf_model
+handoff_va_clf_model_dir = config.handoff_va_clf_model_dir
+handoff_va_clf_model_root_intents_json_file = config.handoff_va_clf_model_root_intents_json_file
+handoff_va_update_clf_model_dir = config.handoff_va_update_clf_model_dir
+handoff_va_update_sense_clf_model_dir = config.handoff_va_update_sense_clf_model_dir
+handoff_va_svp_model_dir_core = config.handoff_va_svp_model_dir_core
+handoff_va_svp_model_dir = config.handoff_va_svp_model_dir
+handoff_va_svp_model_json_file = config.handoff_va_svp_model_json_file
+handoff_va_root_clf_model_vectorizer = config.handoff_va_root_clf_model_vectorizer
+handoff_va_root_clf_model = config.handoff_va_root_clf_model
 
 
 class TrainSvpModel:
-    def __init__(self, selected_intent, selected_intent_svp_json_file=''):
+    def __init__(self, selected_intent, svp_model_path, selected_intent_svp_json_file=''):
+        self.self = self
         self.selected_intent = selected_intent
+        self.svp_model_path = svp_model_path
+
         temp_svp_model_json_file = selected_intent+'.json'
-        temp_svp_model_json_file_path = os.path.join(svp_model_dir_core, 'json')
+        temp_svp_model_json_file_path = os.path.join(svp_model_path, 'svp/json')
         self.selected_intent_svp_json_file = os.path.join(temp_svp_model_json_file_path, temp_svp_model_json_file)
     def train_svp_model(self):
         try:
@@ -49,12 +51,13 @@ class TrainSvpModel:
 
             # create a new directory name with selected intent
             intent = self.selected_intent
-            intent_path = svp_model_dir + '/' + intent
+            intent_path = self.svp_model_path + '/svp/svp_models/' + intent
             if os.path.exists(intent_path):
                 shutil.rmtree(intent_path)
             os.mkdir(intent_path)
 
-            svp_model_output_path = os.path.join(svp_model_dir, intent)
+            temp_svp_model_output_path = os.path.join(self.svp_model_path, 'svp/svp_models')
+            svp_model_output_path = os.path.join(temp_svp_model_output_path, intent)
             # Without the init.py file, spacy will throw an error in locating the meta.json file
             init_py_file = os.path.join(svp_model_output_path, '__init__.py')
             with open(init_py_file, mode='a'): pass
@@ -126,12 +129,14 @@ class TrainSvpModel:
 
 
 class TrainClassifierModel:
-    def __init__(self, selected_update_intent):
+    def __init__(self, selected_update_intent, clf_model_path):
         self.self = self
         self.selected_update_intent = selected_update_intent
+        self.clf_model_path = clf_model_path
     def train_classifier_model(self):
         # try:
         if self.selected_update_intent == 'none':
+            clf_model_root_intents_json_file = os.path.join(self.clf_model_path, 'clf/clf_models/root/root_intents.json')
             df = pd.read_json(clf_model_root_intents_json_file)
             X_train, X_test, y_train, y_test = train_test_split(df['utterance'], df['intent'], random_state=0)
 
@@ -146,15 +151,17 @@ class TrainClassifierModel:
 
             # Save the vectorizer
             # vec_file = 'vectorizer.pickle'
+            root_clf_model_vectorizer = os.path.join(self.clf_model_path, 'clf/clf_models/root/vectorizer.pickle')
             pickle.dump(count_vect, open(root_clf_model_vectorizer, 'wb'))
 
             # Save the model
-            # mod_file = 'classification.model'
+            # mod_file = 'clf.model'
+            root_clf_model = os.path.join(self.clf_model_path, 'clf/clf_models/root/clf.model')
             pickle.dump(model, open(root_clf_model, 'wb'))
 
             print('------SVC CLASSIFICATION TRAINING COMPLETED------')
-            print("Vectorizer model saved to: ", root_clf_model_vectorizer)
-            print("Classification model saved to: ", root_clf_model)
+            print("Vectorizer model saved to: ", handoff_va_root_clf_model_vectorizer)
+            print("Classification model saved to: ", handoff_va_root_clf_model)
             # except:
             #     user_message = 'Error training classification model'
             #     print(user_message)
@@ -163,16 +170,17 @@ class TrainClassifierModel:
             print('------NB CLASSIFICATION TRAINING COMPLETED------')
 
 class TrainUpdateSenseClassifierModel:
-    def __init__(self):
+    def __init__(self, clf_model_path):
         self.self = self
+        self.clf_model_path = clf_model_path
     def train_update_sense_classifier_model(self):
         # try:
         update_sense_json_file = 'update_sense.json'
-        path_to_look_for = os.path.join(update_sense_clf_model_dir)
-        if os.path.exists(path_to_look_for):
-            update_sense_json_file = os.path.join(update_sense_clf_model_dir, 'update_sense.json') 
-            update_sense_clf_model = os.path.join(update_sense_clf_model_dir, 'update_sense.model')
-            update_sense_clf_vectorizer = os.path.join(update_sense_clf_model_dir, 'update_sense.pickle')
+        path_to_update_sense = os.path.join(self.clf_model_path, 'clf/clf_models/update_intents/update_sense')
+        if os.path.exists(path_to_update_sense):
+            update_sense_json_file = os.path.join(path_to_update_sense, 'update_sense.json') 
+            update_sense_clf_model = os.path.join(path_to_update_sense, 'update_sense.model')
+            update_sense_clf_vectorizer = os.path.join(path_to_update_sense, 'update_sense.pickle')
 
             df = pd.read_json(update_sense_json_file)
             X_train, X_test, y_train, y_test = train_test_split(df['utterance'], df['intent'], random_state=0)
@@ -193,8 +201,8 @@ class TrainUpdateSenseClassifierModel:
             pickle.dump(model, open(update_sense_clf_model, 'wb'))
 
             print('------UPDATE SENSE CLASSIFICATION TRAINING COMPLETED------')
-            print("Vectorizer model saved to: ", update_sense_clf_model_dir)
-            print("Classification model saved to: ", update_sense_clf_model_dir)
+            print("Vectorizer model saved to: ", path_to_update_sense)
+            print("Classification model saved to: ", path_to_update_sense)
             # except:
             #     user_message = 'Error training classification model'
             #     print(user_message)

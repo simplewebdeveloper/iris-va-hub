@@ -1,17 +1,17 @@
 <div class="uk-container">
   <div class="uk-card uk-card-body uk-margin-top">
 
-    <div class="uk-margin">
+    <!-- <div class="uk-margin">
       <div class="uk-text-small uk-margin-bottom">1. Select a VA.</div>
-      <select class="uk-select" (change)="getBot($event)">
+      <select class="uk-select" (change)="get_va($event)">
         <option value="" selected disabled>Select a VA</option>
-        <option *ngFor="let bot of bots" value="{{ bot.id }}">{{ bot.bot_name }}</option>
+        <option *ngFor="let va of vas" value="{{ va.id }}">{{ va.va_name }}</option>
       </select>
-    </div>
+    </div> -->
 
     <div class="uk-margin">
-      <div class="uk-text-small uk-margin-bottom">2. Select an intent you want to add SVP data to.</div>
-      <select class="uk-select" (change)="getSelectedIntent($event)">
+      <div class="uk-text-small uk-margin-bottom">1. Select an intent you want to add SVP data to.</div>
+      <select class="uk-select" (change)="get_selected_intent($event)">
         <option value="" selected disabled>Select an intent</option>
         <option *ngFor="let intent of intents" value="{{ intent }}">{{ intent }}</option>
       </select>
@@ -27,9 +27,9 @@
     </div> -->
     </div>
 
-    <p *ngIf="bot && !has_slots" class="uk-text-danger">No slot(s) were added to this bot. you can edit this VA to add some.</p>
+    <p *ngIf="va && !has_slots" class="uk-text-danger">No slot(s) were added to this va. you can edit this VA to add some.</p>
 
-    <div *ngIf="bot && has_slots">
+    <div *ngIf="va && has_slots">
 
     <ul class="uk-subnav uk-subnav-pill" uk-switcher>
       <li><a href="#">New Utterance</a></li>
@@ -41,15 +41,15 @@
         <!--      form section -->
         <div class="uk-margin">
           <div class="uk-text-small uk-margin-bottom">Enter a new utterance to label.</div>
-          <input class="uk-input" onclick="this.select()" type="text" #utteranceToLabel placeholder="Enter an utterance">
+          <input class="uk-input" onclick="this.select()" type="text" #utterance_to_label placeholder="Enter an utterance">
         </div>
         <div class="uk-margin">
-          <button type="submit" class="uk-button uk-button-secondary uk-button-small uk-margin-small-bottom" (click)="getNewUtteranceToLabel()">Send to label queue</button>
+          <button type="submit" class="uk-button uk-button-secondary uk-button-small uk-margin-small-bottom" (click)="get_new_utterance_to_label()">Send to label queue</button>
 
         </div>
       </li>
       <li>
-        <div *ngIf="intentsAndUtterances?.length>0; else noIntentsAndUtterances">
+        <div *ngIf="intents_and_utterances?.length>0; else no_intents_and_utterances">
         <div class="uk-text-small uk-margin-bottom">Send an utterance from your intent data to the LABEL QUEUE.</div>
         <div class="custom-container uk-padding-small">
           <table class="uk-table uk-table-justify uk-table-divider">
@@ -61,11 +61,11 @@
             </tr>
             </thead>
             <tbody>
-            <tr *ngFor="let intentAndUtterance of intentsAndUtterances; let i = index">
-              <td>{{ intentAndUtterance.utterance }}</td>
-              <td>{{ intentAndUtterance.intent }}</td>
+            <tr *ngFor="let intent_and_utterance of intents_and_utterances; let i = index">
+              <td>{{ intent_and_utterance.utterance }}</td>
+              <td>{{ intent_and_utterance.intent }}</td>
               <td>
-                <button class="uk-button uk-button-secondary uk-button-small" (click)="getUtteranceFromIntentData(i)">Send to label queue</button>
+                <button class="uk-button uk-button-secondary uk-button-small" (click)="get_utterance_from_intent_data(i)">label</button>
               </td>
             </tr>
 
@@ -73,7 +73,7 @@
           </table>
         </div>
         </div>
-        <ng-template #noIntentsAndUtterances>
+        <ng-template #no_intents_and_utterances>
           <p class="uk-text-danger">Could not find intent data. did you forgot to select an intent ? if no, go right ahead and add some.</p>
         </ng-template>
 
@@ -82,30 +82,30 @@
 
     <div class="uk-text-small uk-margin-bottom">LABEL QUEUE: Use your mouse to highlight a word from the utterance and select a label.</div>
     <div class="uk-margin uk-section-default">
-      <div #labelQueue id="labelled_utterance" class="uk-input" (mouseup)="labelSlot()">{{ uttToLabel }}</div>
+      <div #label_queue id="labelled_utterance" class="uk-input" (mouseup)="label_slot()">{{ utt_to_label }}</div>
 
     </div>
 
-    <div *ngIf="slotValuePairings.length > 0">
+    <div *ngIf="slot_value_pairings.length > 0">
       <p>Here are your Slot Value Pairings</p>
       <div class="uk-card uk-box-shadow-small uk-padding-small">
         <div class="uk-text-right">
-          <span class="uk-button uk-button-small" (click)="clearAll()" uk-icon="trash"></span>
+          <span class="uk-button uk-button-small" (click)="clear_all()" uk-icon="trash"></span>
           <hr>
         </div>
-        <p *ngFor="let temp of slotValuePairings"> <span class="uk-badge uk-padding-small"><span>{{temp['slot']}}</span>:&nbsp; <span class="uk-text-bolder">{{ temp['value'] }}</span></span></p>
+        <p *ngFor="let temp of slot_value_pairings"> <span class="uk-badge uk-padding-small"><span>{{temp['slot']}}</span>:&nbsp; <span class="uk-text-bolder">{{ temp['value'] }}</span></span></p>
       </div>
     </div>
 
 
     <div class="uk-margin">
-      <button class="uk-button uk-button-secondary uk-button-small uk-margin-small-bottom" (click)="createSvpFormSubmit()">Save SVP Data</button>
+      <button class="uk-button uk-button-secondary uk-button-small uk-margin-small-bottom" (click)="create_svp_form_submit()">Save SVP Data</button>
 
     </div>
 
 
 
-    <div *ngIf="botSvps?.length>0; else noBotSvps">
+    <div *ngIf="va_svps?.length > 0; else no_va_svps">
 
       <div class="custom-container uk-padding-small">
         <table class="uk-table uk-table-justify uk-table-divider">
@@ -117,24 +117,24 @@
           </tr>
           </thead>
           <tbody>
-          <tr *ngFor="let botSvp of botSvps; let i = index">
+          <tr *ngFor="let va_svp of va_svps; let i = index">
 
             <td>
               <div class="utterance">
-                <p class="utt">{{ botSvp.utterance }}</p>
+                <p class="utt">{{ va_svp.utterance }}</p>
                 <span><span class="slots_span"></span></span>
-                <input class="ai_slots" type="text" value="{{ botSvp.slots }}" hidden>
+                <input class="ai_slots" type="text" value="{{ va_svp.slots }}" hidden>
               </div>
               <div>
 
               </div>
-              <!--                                <input class="ai_slots" type="text" value="{{ botSvp.slots }}" hidden>-->
+              <!--                                <input class="ai_slots" type="text" value="{{ va_svps.slots }}" hidden>-->
             </td>
 
-            <td>{{ botSvp.intent }}</td>
+            <td>{{ va_svp.intent }}</td>
 
             <td>
-              <button class="uk-button uk-button-small"><span uk-icon="trash" (click)="deleteSvp(botSvp.id, i)"></span></button>
+              <button class="uk-button uk-button-small"><span uk-icon="trash" (click)="delete_svp(va_svp.id, i)"></span></button>
             </td>
 
 
@@ -145,7 +145,7 @@
 
     </div>
 
-      <ng-template #noBotSvps>
+      <ng-template #no_va_svps>
         <p class="uk-text-danger">Could not find svp data. did you forgot to select an intent ? if no, go right ahead and add some.</p>
       </ng-template>
 
@@ -161,7 +161,7 @@
     <button class="uk-modal-close-outside" type="button" uk-close></button>
     <p class="uk-text-bolder uk-text-muted">Choose a label</p>
     <div  class="uk-text-center">
-      <input *ngFor="let slot of slots" class="uk-button uk-button-primary uk-button-small uk-margin-right" type="button" (click)="getLabel($event)" value="{{ slot }}">
+      <input *ngFor="let slot of slots" class="uk-button uk-button-primary uk-button-small uk-margin-right" type="button" (click)="get_label($event)" value="{{ slot }}">
     </div>
   </div>
 </div>

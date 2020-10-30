@@ -6,12 +6,12 @@ import shutil
 from ai_core import config
 
 base_dir = config.base_dir
-clf_model_dir = config.clf_model_dir
-svp_model_dir_core = config.svp_model_dir_core
+handoff_va_clf_model_dir = config.handoff_va_clf_model_dir
+handoff_va_svp_model_dir_core = config.handoff_va_svp_model_dir_core
 
 # Classification model paths
-root_clf_path_to_wipe = config.root_clf_path_to_wipe
-update_clf_path_to_wipe = config.update_clf_path_to_wipe
+handoff_va_root_clf_path_to_wipe = config.root_clf_path_to_wipe
+handoff_va_update_clf_path_to_wipe = config.update_clf_path_to_wipe
 
 # SVP model paths
 svp_model_path_to_wipe = config.svp_model_path_to_wipe

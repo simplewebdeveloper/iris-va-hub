@@ -1,7 +1,9 @@
 import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
-import {TrainService} from '../train.service';
+import { TrainService } from '../train.service';
 import * as uikit from 'uikit';
 import { HttpErrorResponse } from '@angular/common/http';
+import { ActivatedRoute } from '@angular/router';
+import { VaService } from '../../va/va.service'
 
 @Component({
   selector: 'app-train-model',
@@ -9,265 +11,256 @@ import { HttpErrorResponse } from '@angular/common/http';
   styleUrls: ['./train-model.component.css']
 })
 export class TrainModelComponent implements OnInit {
-  private bots: any;
-  private botId: any;
+  private vas: any;
+  private va: any;
+  private va_id: any;
+  private project_id: any;
   private intents: any;
   private update_intents: any;
-  private selectedUpdateIntent: string;
-  private selectedBot: any;
-  private botSvps: any;
-  private selectedIntent: any;
+  private selected_update_intent: string;
+  private selected_va: any;
+  private va_svps: any;
+  private selected_intent: any;
   private string;
   private has_slots: boolean;
-  private canTrainClassifierModel: boolean;
-  private canTrainUpdateSenseClassifierModel: boolean;
-  private canTrainSvpModel: boolean;
-  private trainProgress: boolean;
-  private trainCompleted: boolean;
-  private intentsWithSvpData: any;
+  private can_train_classifier_model: boolean;
+  private can_train_update_sense_classifier_model: boolean;
+  private can_train_svp_model: boolean;
+  private train_progress: boolean;
+  private train_completed: boolean;
+  private intents_with_svp_data: any;
 
-  public successUserMessage: string;
-  public errorUserMessage: string;
+  public success_user_message: string;
+  public error_user_message: string;
 
   constructor(
-    private trainService: TrainService,
+    private train_service: TrainService,
+    private va_service: VaService,
+    private route: ActivatedRoute,
   ) { }
 
   ngOnInit() {
-    this.getBots();
+    this.get_va();
   }
-   getBots() {
-    this.trainService.getAllBots().subscribe(
+
+  get_va() {
+    this.va = null;
+    const va_id = this.va_service.get_va_id();
+    const project_id = this.va_service.get_project_id();
+
+    this.project_id = project_id;
+    this.va_id = va_id;
+    this.va_svps = [];
+    this.train_service.get_single_va(va_id).subscribe(
       (res) => {
         // console.log(res);
-        this.bots = res;
-        // console.log(this.bots);
-        if(res.length > 0) {
-          this.successUserMessage = 'Success getting bots';
-          this.toggleUserMessage(this.successUserMessage, 'success');
-        }
-      },
-      (err: HttpErrorResponse) => {
-        console.log(err);
-        this.errorUserMessage = err.error;
-        this.toggleUserMessage(this.errorUserMessage, 'danger');
-      }
-    );
-  }
-  getBot(event: any) {
-    const botId = +event.target.value;
-    this.botId = botId;
-    this.botSvps = [];
-    this.trainService.getSingleBot(botId).subscribe(
-      (res) => {
-        // console.log(res);
-        this.selectedBot = res;
-        this.getIntentsWithSvpData(this.botId);
-        if(this.selectedBot.bot_slots == 'none') {
+        this.selected_va = res;
+        this.get_intents_with_svp_data(this.va_id);
+        if(this.selected_va.va_slots == 'none') {
           this.has_slots = false;
           // console.log(this.has_slots);
         } else {
           this.has_slots = true;
         }
-        this.string = this.selectedBot.bot_intents.replace(/\s/g, '');
+        this.string = this.selected_va.va_intents.replace(/\s/g, '');
         this.intents = this.string.split(',');
         this.update_intents = this.intents.filter(s => s.includes('update'));
-        const botName = this.selectedBot.bot_name;
+        const va_name = this.selected_va.va_name;
         if (res) {
-        this.successUserMessage = 'Success getting bot: ' + botName;
-        this.toggleUserMessage(this.successUserMessage, 'success');
+        this.success_user_message = 'Success getting va: ' + va_name;
+        this.toggle_user_message(this.success_user_message, 'success');
         }
       },
       (err: HttpErrorResponse) => {
         console.log(err);
-        this.errorUserMessage = err.error;
-        this.toggleUserMessage(this.errorUserMessage, 'danger');
+        this.error_user_message = err.error;
+        this.toggle_user_message(this.error_user_message, 'danger');
       }
       );
   }
 
-  getSelectedIntent(event: any) {
-    this.selectedIntent = event.target.value;
+  get_selected_intent(event: any) {
+    this.selected_intent = event.target.value;
     if(this.has_slots == true) {
-    this.botSvps = [];
-    this.getSvps(this.botId, this.selectedIntent);
+    this.va_svps = [];
+    this.get_svps(this.va_id, this.selected_intent);
     }
   }
 
-    getSvps(botId: number, selectedIntent: any) {
-    this.trainService.getAllSvps(botId, selectedIntent).subscribe(
+    get_svps(va_id: number, selected_intent: any) {
+    this.train_service.get_all_svps(va_id, selected_intent).subscribe(
       (res) => {
         // console.log(res);
-        this.botSvps = [];
-        this.botSvps = res;
+        this.va_svps = [];
+        this.va_svps = res;
         if(res.length > 0) {
-          this.successUserMessage = 'Success getting svps';
-          this.toggleUserMessage(this.successUserMessage, 'success');
+          this.success_user_message = 'Success getting svps';
+          this.toggle_user_message(this.success_user_message, 'success');
         }
       },
       (err: HttpErrorResponse) => {
         console.log(err);
-        this.errorUserMessage = err.error;
-        this.toggleUserMessage(this.errorUserMessage, 'danger');
+        this.error_user_message = err.error;
+        this.toggle_user_message(this.error_user_message, 'danger');
       }
     );
   }
 
-  feedIntents(selectedIntent: string) {
-    this.trainCompleted = false;
-    this.trainProgress = false;
-    if(selectedIntent != 'none') {
-      this.selectedUpdateIntent = selectedIntent;
+  feed_intents(selected_intent: string, va_tag) {
+    this.train_completed = false;
+    this.train_progress = false;
+    if(selected_intent != 'none') {
+      this.selected_update_intent = selected_intent;
     } else {
-      this.selectedUpdateIntent = 'none';
+      this.selected_update_intent = 'none';
     }
-    this.trainService.feedIntents(this.botId, this.selectedUpdateIntent).subscribe(
+    this.train_service.feed_intents(this.project_id, this.va_id, va_tag, this.selected_update_intent).subscribe(
     (res) => {
       // console.log(res);
       if(res.length > 1) {
-      this.successUserMessage = 'Success feeding intents';
-      this.toggleUserMessage(this.successUserMessage, 'success');
-      this.canTrainClassifierModel = true;
+      this.success_user_message = 'Success feeding intents';
+      this.toggle_user_message(this.success_user_message, 'success');
+      this.can_train_classifier_model = true;
       }
       
     },
       (err: HttpErrorResponse) => {
       console.log(err);
-      this.errorUserMessage = err.error;
-      this.toggleUserMessage(this.errorUserMessage, 'danger');
+      this.error_user_message = err.error;
+      this.toggle_user_message(this.error_user_message, 'danger');
       }
       );
   }
 
-  feedUpdateSense() {
-    this.trainCompleted = false;
-    this.trainProgress = false;
-    this.trainService.feedUpdateSense(this.botId).subscribe(
+  feed_update_sense(va_tag) {
+    this.train_completed = false;
+    this.train_progress = false;
+    this.train_service.feed_update_sense(this.project_id, this.va_id, va_tag).subscribe(
     (res) => {
       // console.log(res);
       if(res.length > 1) {
-      this.successUserMessage = 'Success feeding Sense Data';
-      this.toggleUserMessage(this.successUserMessage, 'success');
+      this.success_user_message = 'Success feeding Sense Data';
+      this.toggle_user_message(this.success_user_message, 'success');
       }
       
     },
       (err: HttpErrorResponse) => {
       console.log(err);
-      this.errorUserMessage = err.error;
-      this.toggleUserMessage(this.errorUserMessage, 'danger');
+      this.error_user_message = err.error;
+      this.toggle_user_message(this.error_user_message, 'danger');
       }
       );
   }
 
- feedSvps(selectedIntent: string) {
-    this.trainCompleted = false;
-    this.trainProgress = false;
+ feed_svps(selected_intent: string, va_tag) {
+    this.train_completed = false;
+    this.train_progress = false;
     // console.log(intentData);
-    this.trainService.feedSvps(this.botId, selectedIntent).subscribe(
+    this.train_service.feed_svps(this.project_id, this.va_id, va_tag, selected_intent).subscribe(
      (res) => {
       //  console.log(res);
       if(res.length > 1) {
-        this.successUserMessage = 'Success feeding svps';
-        this.toggleUserMessage(this.successUserMessage, 'success');
-        this.canTrainSvpModel = true;
+        this.success_user_message = 'Success feeding svps';
+        this.toggle_user_message(this.success_user_message, 'success');
+        this.can_train_svp_model = true;
       }
       
      },
      (err: HttpErrorResponse) => {
        console.log(err);
-       this.errorUserMessage = err.error;
-       this.toggleUserMessage(this.errorUserMessage, 'danger');
+       this.error_user_message = err.error;
+       this.toggle_user_message(this.error_user_message, 'danger');
      }
    );
   }
 
-  trainClassifierModel(selectedIntent) {
+  train_classifier_model(selected_intent, va_tag) {
     this.show_training_status_model();
-    this.trainService.trainClassifierModel(selectedIntent).subscribe(
+    this.train_service.train_classifier_model(this.project_id, this.va_id, va_tag, selected_intent).subscribe(
       (res) => {
         // console.log(res);
         if(res.length > 1) {
-          this.successUserMessage = 'Success training classifier model';
-          this.toggleUserMessage(this.successUserMessage, 'success');
-          this.trainCompleted = true;
-          this.trainProgress = false;
+          this.success_user_message = 'Success training classifier model';
+          this.toggle_user_message(this.success_user_message, 'success');
+          this.train_completed = true;
+          this.train_progress = false;
         }
        
       },
       (err: HttpErrorResponse) => {
         console.log(err);
-        this.errorUserMessage = err.error;
-        this.toggleUserMessage(this.errorUserMessage, 'danger');
+        this.error_user_message = err.error;
+        this.toggle_user_message(this.error_user_message, 'danger');
         this.hide_training_status_model();
       }
     );
   }
 
-  trainUpdateSenseClassifierModel() {
-    this.canTrainUpdateSenseClassifierModel = false;
+  train_update_sense_classifier_model(va_tag) {
+    this.can_train_update_sense_classifier_model = false;
     this.show_training_status_model();
 
-    this.trainService.trainUpdateSenseClassifierModel().subscribe(
+    this.train_service.train_update_sense_classifier_model(this.project_id, this.va_id, va_tag).subscribe(
       (res) => {
         // console.log(res);
         if(res.length > 1) {
-          this.successUserMessage = 'Success training update sense classifier model';
-          this.toggleUserMessage(this.successUserMessage, 'success');
-          this.trainCompleted = true;
-          this.trainProgress = false;
+          this.success_user_message = 'Success training update sense classifier model';
+          this.toggle_user_message(this.success_user_message, 'success');
+          this.train_completed = true;
+          this.train_progress = false;
         }
        
       },
       (err: HttpErrorResponse) => {
         console.log(err);
-        this.errorUserMessage = err.error;
-        this.toggleUserMessage(this.errorUserMessage, 'danger');
+        this.error_user_message = err.error;
+        this.toggle_user_message(this.error_user_message, 'danger');
         this.hide_training_status_model();
       }
     );
 
   }
 
-    trainSvpModel(selectedIntent: string) {
-    this.canTrainSvpModel = false;
-    this.trainCompleted = false;
-    this.trainProgress = true;
+    train_svp_model(selected_intent: string, va_tag) {
+    this.can_train_svp_model = false;
+    this.train_completed = false;
+    this.train_progress = true;
     this.show_training_status_model();
-    this.trainService.trainSvpModel(selectedIntent).subscribe(
+    this.train_service.train_svp_model(selected_intent, this.project_id, this.va_id, va_tag).subscribe(
       (res) => {
         // console.log(res);
         if(res.length > 1) {
-          this.successUserMessage = 'Success training svp model';
-          this.toggleUserMessage(this.successUserMessage, 'success');
-          this.trainCompleted = true;
-          this.trainProgress = false;
+          this.success_user_message = 'Success training svp model';
+          this.toggle_user_message(this.success_user_message, 'success');
+          this.train_completed = true;
+          this.train_progress = false;
         }
        
       },
       (err: HttpErrorResponse) => {
         console.log(err);
-        this.errorUserMessage = err.error;
-        this.toggleUserMessage(this.errorUserMessage, 'danger');
+        this.error_user_message = err.error;
+        this.toggle_user_message(this.error_user_message, 'danger');
         this.hide_training_status_model();
       }
     );
   }
 
-  getIntentsWithSvpData(botId) {
-    this.trainService.getIntentsWithSvpData(botId).subscribe(
+  get_intents_with_svp_data(va_id) {
+    this.train_service.get_intents_with_svp_data(va_id).subscribe(
       (res) => {
         // console.log(res);
-          this.intentsWithSvpData = res;
-          this.successUserMessage = 'Success getting intents with svp data';
-          this.toggleUserMessage(this.successUserMessage, 'success');
-          this.trainCompleted = true;
-          this.trainProgress = false;
+          this.intents_with_svp_data = res;
+          this.success_user_message = 'Success getting intents with svp data';
+          this.toggle_user_message(this.success_user_message, 'success');
+          this.train_completed = true;
+          this.train_progress = false;
        
       },
       (err: HttpErrorResponse) => {
         console.log(err);
-        this.errorUserMessage = err.error;
-        this.toggleUserMessage(this.errorUserMessage, 'danger');
+        this.error_user_message = err.error;
+        this.toggle_user_message(this.error_user_message, 'danger');
         this.hide_training_status_model();
       }
     );
@@ -283,13 +276,13 @@ export class TrainModelComponent implements OnInit {
   //   fileReader.readAsText(file);
   // }
 
-  toggleUserMessage(notificationMessage, status) {
-    uikit.notification(notificationMessage, {pos: 'bottom-right', status: status});
+  toggle_user_message(notification_message, status) {
+    uikit.notification(notification_message, {pos: 'bottom-right', status: status});
   }
 
   show_training_status_model() {
-    this.trainCompleted = false;
-    this.trainProgress = true;
+    this.train_completed = false;
+    this.train_progress = true;
     uikit.modal('#training_status_modal').show();
   }  
 

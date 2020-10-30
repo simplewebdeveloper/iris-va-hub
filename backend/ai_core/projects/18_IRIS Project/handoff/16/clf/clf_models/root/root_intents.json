@@ -1,0 +1,110 @@
+[
+    {
+        "intent": "salon_handover",
+        "utterance": "let me book a makeup session"
+    },
+    {
+        "intent": "salon_handover",
+        "utterance": "can i book a cut"
+    },
+    {
+        "intent": "salon_handover",
+        "utterance": "can i get some waxing done"
+    },
+    {
+        "intent": "salon_handover",
+        "utterance": "can i cut my hair"
+    },
+    {
+        "intent": "salon_handover",
+        "utterance": "lets get my hair done"
+    },
+    {
+        "intent": "salon_handover",
+        "utterance": "get me a manicure"
+    },
+    {
+        "intent": "salon_handover",
+        "utterance": "i need a hair do"
+    },
+    {
+        "intent": "salon_handover",
+        "utterance": "book me a haircut"
+    },
+    {
+        "intent": "law_va",
+        "utterance": "get me the law va"
+    },
+    {
+        "intent": "law_va",
+        "utterance": "who is the law va"
+    },
+    {
+        "intent": "law_va",
+        "utterance": "speak with the law va"
+    },
+    {
+        "intent": "law_va",
+        "utterance": "where is the law va"
+    },
+    {
+        "intent": "law_va",
+        "utterance": "let me speak to the law va"
+    },
+    {
+        "intent": "law_va",
+        "utterance": "hand me over to the law va"
+    },
+    {
+        "intent": "law_va",
+        "utterance": "get me a lawyer"
+    },
+    {
+        "intent": "law_handover_update",
+        "utterance": "get the handover updated"
+    },
+    {
+        "intent": "law_handover_update",
+        "utterance": "how do we update the handover"
+    },
+    {
+        "intent": "law_handover_update",
+        "utterance": "can i update the handover"
+    },
+    {
+        "intent": "law_handover_update",
+        "utterance": "lets change and update handover"
+    },
+    {
+        "intent": "law_handover_update",
+        "utterance": "can we update the handover"
+    },
+    {
+        "intent": "law_handover_update",
+        "utterance": "update the handover"
+    },
+    {
+        "intent": "law_handover_update",
+        "utterance": "please update the handover"
+    },
+    {
+        "intent": "law_handover_update",
+        "utterance": "lets update the hand over"
+    },
+    {
+        "intent": "law_handover",
+        "utterance": "get me legal"
+    },
+    {
+        "intent": "law_handover",
+        "utterance": "get me some legal advice please"
+    },
+    {
+        "intent": "law_handover",
+        "utterance": "i want an attorney"
+    },
+    {
+        "intent": "law_handover",
+        "utterance": "hand me over to a lawyer"
+    }
+]

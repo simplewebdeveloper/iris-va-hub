@@ -7,113 +7,115 @@ import { environment } from '../../environments/environment'
 })
 export class TrainService {
   
-  private baseUrl: string;
+  private base_url: string;
 
   constructor(private http: HttpClient) { 
-    this.baseUrl = environment.restApi.uri
+    this.base_url = environment.restApi.uri
    }
   private options = { headers: new HttpHeaders().set('Content-Type', 'application/json') };
 
-  getAllBots() {
+  get_vas() {
      return this.http.get<any>(
-      this.baseUrl + '/bot/get_bots'
+      this.base_url + '/va/get_vas'
     );
   }
-  getSingleBot(botId: number) {
+  get_single_va(va_id: number) {
     return this.http.post<any>(
-      this.baseUrl + '/bot/get_bot', botId
+      this.base_url + '/va/get_va', {va_id}
     );
   }
-  createIntent(data: any) {
+  create_intent(data: any) {
+    console.log(data);
     return this.http.post<any>(
-      this.baseUrl + '/intent/create_intent', data
+      this.base_url + '/intent/create_intent', data
     );
   }
-  createSvp(data: any) {
+  create_svp(data: any) {
     return this.http.post<any>(
-      this.baseUrl + '/svp/create_svp', data
+      this.base_url + '/svp/create_svp', data
     );
   }
-  getAllIntents(botId: number, selectedIntent) {
+  get_all_intents(va_id: number, selected_intent) {
     return this.http.post<any>(
-      this.baseUrl + '/intent/get_intents', {botId, selectedIntent}
+      this.base_url + '/intent/get_intents', {va_id, selected_intent}
     );
   }
 
-  getSelectedUpdateIntents(botId: number, selectedIntent) {
+  get_selected_update_intents(va_id: number, selectedIntent) {
     console.log(selectedIntent);
     return this.http.post<any>(
-      this.baseUrl + '/intent/get_update_intents', {botId, selectedIntent}
+      this.base_url + '/intent/get_update_intents', {va_id, selectedIntent}
     );
   }
 
-  getAllTrainingIntents(botId: number) {
+  get_all_training_intents(va_id: number) {
     return this.http.post<any>(
-      this.baseUrl + '/intent/get_training_intents', botId
+      this.base_url + '/intent/get_training_intents', va_id
     );
   }
 
-  getUpdateSenseData(botId: number) {
+  get_update_sense_data(va_id: number) {
     return this.http.post<any>(
-      this.baseUrl + '/intent/get_update_sense_data', botId
+      this.base_url + '/intent/get_update_sense_data', va_id
     );
   }
 
-  getIntentsWithSvpData(botId) {
+  get_intents_with_svp_data(va_id) {
     return this.http.post<any>(
-      this.baseUrl + '/svp/get_intents_with_svp_data', botId
+      this.base_url + '/svp/get_intents_with_svp_data', {va_id}
     );
   }
 
 
-    getAllSvps(botId, selectedIntent) {
+    get_all_svps(va_id, selected_intent) {
     return this.http.post<any>(
-      this.baseUrl + '/svp/get_svps', {botId, selectedIntent}
+      this.base_url + '/svp/get_svps', {va_id, selected_intent}
     );
   }
-  deleteSingleUtterance(intentId) {
+  delete_single_utterance(intentId) {
     return this.http.post<any>(
-      this.baseUrl + '/intent/delete_intent', intentId
+      this.base_url + '/intent/delete_intent', intentId
     );
   }
-    deleteSingleSvp(svpId) {
+    delete_single_svp(svpId) {
     return this.http.post<any>(
-      this.baseUrl + '/svp/delete_svp', svpId
+      this.base_url + '/svp/delete_svp', svpId
     );
   }
-  feedIntents(botId, selectedUpdateIntent) {
+  feed_intents(project_id, va_id, va_tag, selected_update_intent) {
+    console.log(va_tag)
     return this.http.post<any>(
-      this.baseUrl + '/intent/feed_intents', {botId, selectedUpdateIntent}
-    );
-  }
-
-  feedUpdateSense(botId: any) {
-    return this.http.post<any>(
-      this.baseUrl + '/intent/feed_update_sense', botId, this.options
+      this.base_url + '/intent/feed_intents', {project_id, va_id, va_tag, selected_update_intent}
     );
   }
 
-  feedSvps(botId, selectedIntent) {
+  feed_update_sense(project_id, va_id, va_tag) {
     return this.http.post<any>(
-      this.baseUrl + '/svp/feed_svps', {botId, selectedIntent}
-    );
-  }
-  trainClassifierModel(selectedUpdateIntent) {
-    return this.http.post<any>(
-      this.baseUrl + '/model/train_classifier_model', {selectedUpdateIntent}, this.options
+      this.base_url + '/intent/feed_update_sense', {project_id, va_id, va_tag}, this.options
     );
   }
 
-  trainUpdateSenseClassifierModel() {
+  feed_svps(project_id, va_id, va_tag, selected_intent) {
     return this.http.post<any>(
-      this.baseUrl + '/model/train_update_sense_classifier_model', this.options
+      this.base_url + '/svp/feed_svps', {project_id, va_id, va_tag, selected_intent}, this.options
+    );
+  }
+  train_classifier_model(project_id, va_id, va_tag, selected_update_intent) {
+    return this.http.post<any>(
+      this.base_url + '/model/train_classifier_model', {project_id, va_id, va_tag, selected_update_intent}, this.options
+    );
+  }
+
+  train_update_sense_classifier_model(project_id, va_id, va_tag) {
+    return this.http.post<any>(
+      this.base_url + '/model/train_update_sense_classifier_model', {project_id, va_id, va_tag}, this.options
     );
 
   }
 
-  trainSvpModel(selectedIntent) {
+  train_svp_model(selected_intent, project_id, va_id, va_tag) {
     return this.http.post<any>(
-      this.baseUrl + '/model/train_svp_model', {selectedIntent}, this.options
+      this.base_url + '/model/train_svp_model', {selected_intent, va_id, project_id, va_tag}, this.options
     );
   }
 

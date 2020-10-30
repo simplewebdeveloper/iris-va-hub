@@ -1,3 +1,3 @@
-export class FeedSvpsModel {
-  svpData: string;
+export class FeedSvps {
+  svp_date: string;
 }

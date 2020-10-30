@@ -1,20 +1,21 @@
-<div id="offcanvas-nav" uk-offcanvas="overlay: true">
+<!-- <div id="offcanvas-nav" uk-offcanvas="mode: push; overlay: true">
     <div class="uk-offcanvas-bar">
-        <button class="uk-offcanvas-close" type="button" uk-close></button>
+        <button class="uk-offcanvas-close" type="button" uk-close></button> -->
 
-        <ul class="uk-nav uk-nav-default">
-            <li id="current-path" class="uk-active"><a [routerLink]="currentPath" class="uk-text-large"><span class="uk-margin-small-right" uk-icon="icon: link"></span> {{ currentPath }}</a></li>
+        <!-- <div id="left-nav" class="uk-section-secondary">
+        <ul class="uk-nav uk-nav-default"> -->
+            <!-- <li id="current-path" class="uk-active"><a [routerLink]="currentPath" class="uk-text-large"><span class="uk-margin-small-right" uk-icon="icon: link"></span> {{ currentPath }}</a></li> -->
             
-            <li class="uk-nav-divider"></li>
+            <!-- <li class="uk-nav-divider"></li> -->
 
-            <li class="uk-nav-header"><span class="uk-margin-small-right" uk-icon="icon: nut"></span>Manage</li>
-            <li><a routerLink="/home"><span class="uk-margin-small-right" uk-icon="icon: play"></span> My Virtual Assistants (home)</a></li>
+            <!-- <li class="uk-nav-header"><span class="uk-margin-small-right" uk-icon="icon: nut"></span>Manage</li>
+            <li><a routerLink="/home"><span class="uk-margin-small-right" uk-icon="icon: play"></span> My VAs</a></li>
             <li><a routerLink="/edit"><span class="uk-margin-small-right" uk-icon="icon: play"></span> Edit VA</a></li>
 
             <li class="uk-nav-header"><span class="uk-margin-small-right" uk-icon="icon: cog"></span> Build</li>
             <li><a routerLink="/create"><span class="uk-margin-small-right" uk-icon="icon: play"></span> Create VA</a></li>
-            <li><a routerLink="/intents"><span class="uk-margin-small-right" uk-icon="icon: play"></span> Add / Update Intents</a></li>
-            <li><a routerLink="/svps"><span class="uk-margin-small-right" uk-icon="icon: play"></span> Add / Update SVPs</a></li>
+            <li><a routerLink="/intents"><span class="uk-margin-small-right" uk-icon="icon: play"></span> Intents</a></li>
+            <li><a routerLink="/svps"><span class="uk-margin-small-right" uk-icon="icon: play"></span> Lebels</a></li>
             
 
             <li class="uk-nav-header"><span class="uk-margin-small-right" uk-icon="icon: settings"></span>Train</li>
@@ -35,5 +36,33 @@
             <li><a (click)="logout()"><span class="uk-margin-small-right" uk-icon="icon: play"></span> Logout</a></li>
         </ul>
 
+    </div> -->
+<!-- 
     </div>
+</div> -->
+
+<!-- Updated side nav -->
+<div *ngIf="show_project_menu" class="uk-padding uk-padding-remove-bottom">
+    <ul class="uk-nav uk-nav-default">
+        <li class="uk-active uk-text-lead"><a>{{ project.project_name }}</a></li>
+        <li><a routerLink="#" routerLinkActive="active-link">Project Tags</a></li>
+        <li><a routerLink="#" routerLinkActive="active-link">Configure Context</a></li>
+    </ul>
 </div>
+
+<div *ngIf="show_va_menu" class="uk-padding uk-padding-remove-bottom">
+    <ul class="uk-nav uk-nav-default">
+        <li class="uk-active"><a (click)="navigate_to_va()">Manage Virtual Assistant</a></li>
+        <li><a routerLink="#" routerLinkActive="active-link">VA Tags</a></li>
+        <li><a routerLink="/edit" routerLinkActive="active-link">Edit</a></li>
+        <li><a routerLink="/intents" routerLinkActive="active-link">Intents</a></li>
+        <li><a routerLink="/svps" routerLinkActive="active-link">Labels</a></li>
+        <li><a routerLink="/train" routerLinkActive="active-link">Train</a></li>
+        <li><a routerLink="/test" routerLinkActive="active-link">Test</a></li>
+        <li><a routerLink="#" routerLinkActive="active-link">Responses</a></li>
+    </ul>
+</div>
+
+
+
+

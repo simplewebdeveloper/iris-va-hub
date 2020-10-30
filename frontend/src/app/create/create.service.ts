@@ -13,9 +13,9 @@ export class CreateService {
     this.baseUrl = environment.restApi.uri
   }
 
-  createBot(data: any) {
+  create_va(data: any) {
     return this.http.post<any>(
-      this.baseUrl + '/bot/create_bot', data
+      this.baseUrl + '/va/create_va', data
     );
   }
 }

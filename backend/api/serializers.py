@@ -1,12 +1,18 @@
 from rest_framework import serializers
-from .models import Bot
+from .models import Project
+from .models import Va
 from .models import Intent
 from .models import Svp
 
-
-class BotSerializer(serializers.ModelSerializer):
+class ProjectSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Bot
+        model = Project
+        fields = '__all__'
+
+
+class VaSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Va
         fields = '__all__'
 
 

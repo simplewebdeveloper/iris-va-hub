@@ -94,7 +94,6 @@ class SvmClassification:
             'intent': intent,
             'probability': probability
         }
-        print(intent_response)
         return intent_response
 
 

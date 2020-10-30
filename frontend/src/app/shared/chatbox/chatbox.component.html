@@ -5,7 +5,7 @@
       <legend><span uk-icon="icon: microphone; ratio: 1"></span> Talk with your VA </legend>
     </div>
 
-    <form [formGroup]="chatboxForm" (ngSubmit)="chatboxQueryFormSubmit($event)">
+    <form [formGroup]="chatbox_form" (ngSubmit)="chatbox_query_form_submit($event)">
       <fieldset class="uk-fieldset">
 
         <div class="uk-margin">
@@ -27,8 +27,8 @@
 <!--            <span *ngIf="last && queryResponse.slots?.length>1">and&nbsp;</span><span>{{slot.slot}} to be {{ slot.value }}</span><br>-->
 <!--          </ng-container>-->
 <!--        </ng-container>-->
-        <ng-container *ngIf="resAndQue">
-          <div *ngFor="let rq of resAndQue; let i = index" class="uk-text-right">
+        <ng-container *ngIf="res_and_que">
+          <div *ngFor="let rq of res_and_que; let i = index" class="uk-text-right">
             <ng-container *ngIf="i % 2 == 0; else right">
               <div class="uk-text-right uk-card-primary uk-margin-small uk-padding-small uk-border-rounded" [innerHTML]="rq"></div>
             </ng-container>
@@ -44,13 +44,13 @@
 
       </section>
 
-    <div *ngIf="fullResponse" class="uk-margin">
+    <div *ngIf="full_response" class="uk-margin">
        <p>Full Response: </p>
-        <textarea class="uk-textarea" rows="10" readonly>{{ fullResponse|json }}</textarea>
+        <textarea class="uk-textarea" rows="10" readonly>{{ full_response|json }}</textarea>
     </div>
     <p class="uk-text-right">
       <span uk-icon="icon: microphone; ratio: 1" class="uk-margin-right"></span>
-      <button class="uk-button uk-button-danger uk-modal-close uk-button-small" type="button" (click)="closeConversation()">Close Conversation</button>
+      <button class="uk-button uk-button-danger uk-modal-close uk-button-small" type="button" (click)="close_conversation()">Close Conversation</button>
     </p>
 
   </div>

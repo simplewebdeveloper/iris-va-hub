@@ -43,7 +43,7 @@ export class AuthService {
           this.setSession(this.token, this.expires_in);
           this.userLoggedIn = this.isLoggedIn();
           this.userLoggedOut = this.isLoggedOut();
-          this.router.navigate(['home']);
+          this.router.navigate(['dashboard']);
         },
         (err) => {
           this.errors = err.error;

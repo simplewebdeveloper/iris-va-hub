@@ -1,0 +1,159 @@
+<div class="uk-section uk-section-muted">
+  <div class="uk-container">
+
+      <h1>Projects</h1>
+  </div>
+
+</div>
+<div class="uk-section">
+  <div class="uk-container">
+<ul uk-tab class="uk-margin-top">
+  <li><a href="#">All Projects</a></li>
+</ul>
+
+<ul class="uk-switcher uk-margin">
+  <li>
+    <div class="uk-child-width-1-3@m uk-grid-small uk-grid-match" uk-grid>
+      
+      
+        <div uk-toggle="target: #create-project-modal" id="va-card" class="uk-card-light uk-card-body uk-border-rounded uk-box-shadow-medium uk-box-shadow-hover-large">
+          <div class="uk-margin">
+            <p class="uk-text-muted"><span uk-icon="icon: plus-circle; ratio: 2"></span></p>    
+            <legend class="uk-legend"> Create Project</legend>
+            <!-- <div class="uk-flex uk-flex-center">
+              
+          </div> -->
+            </div>
+        </div>
+      
+
+      <div *ngFor="let project of projects; let i = index" id="project-card">
+
+        <!-- <div [routerLink]="['/project', project.id]"> -->
+      
+        <div class="uk-card-light uk-card-body uk-border-rounded uk-box-shadow-medium uk-box-shadow-hover-large">
+          <!-- <p class="uk-text-muted"><span uk-icon="icon: nut; ratio: 2"></span></p> -->
+          <a class="uk-align-right" type="button"><span uk-icon="more-vertical"></span></a>
+  <div uk-dropdown>
+      <ul class="uk-nav uk-dropdown-nav">
+          <li><a [routerLink]="['/project', project.id]"><span uk-icon="forward"></span> View</a></li>
+          <li class="uk-nav-divider"></li>
+          <li><a (click)="edit_project(project.id)" href="#" uk-toggle="target: #edit-project-modal"><span uk-icon="pencil"></span> Edit</a></li>
+          <li><a (click)="delete_project(i, project.id)"><span uk-icon="trash"></span> Delete</a></li>
+      </ul>
+  </div>
+          <p><span class="uk-badge">{{ project.project_tag }}</span></p>
+          <p class="uk-card-title">{{ project.project_name }}</p>
+          <p>{{ project.project_desc }}</p>
+          <div class="uk-button-group">
+          </div>
+        </div>
+      
+        <!-- </div> -->
+    </div>
+    </div>
+  </li>
+  <li>
+     Marketplace is not active on this version
+  </li>
+</ul>
+
+</div>
+</div>
+
+
+<!-- Create project modal -->
+
+<div id="create-project-modal" uk-modal>
+  <div class="uk-modal-dialog uk-modal-body">
+    <button class="uk-modal-close-outside" type="button" uk-close></button>
+    <div class="uk-margin">
+      <legend><span uk-icon="icon: plus-circle; ratio: 1"></span> Create project </legend>
+    </div>
+
+    <form [formGroup]="create_project_form" (ngSubmit)="create_project_form_submit()">
+      <fieldset class="uk-fieldset">
+
+          <div class="uk-margin">
+              <div class="uk-text-small uk-margin-bottom">Give your project a name</div>
+              <input class="uk-input" formControlName="project_name" type="text" required>
+          </div>
+
+          <div class="uk-margin">
+            <div class="uk-text-small uk-margin-bottom">Give your project a tag</div>
+            <select formControlName="project_tag" class="uk-select" required>
+              <option selected disabled>Choose a tag</option>
+              <option value="IDB">IDB</option>
+              <option value="COVID">COVID</option>
+          </select>
+          </div>
+
+          <div class="uk-margin">
+              <div class="uk-text-small uk-margin-bottom">Describe your project</div>
+              <textarea class="uk-textarea" formControlName="project_desc" rows="5" required></textarea>
+          </div>
+
+      </fieldset>
+
+      <div class="uk-margin">
+          <button class="uk-button uk-button-secondary uk-button-small">Create and Save Project</button>
+      </div>
+  </form>
+
+  </div>
+</div>
+
+
+<!-- Edit project modal -->
+
+<div id="edit-project-modal" uk-modal>
+  <div class="uk-modal-dialog uk-modal-body">
+    <button class="uk-modal-close-outside" type="button" uk-close></button>
+    <div class="uk-margin">
+      <legend><span uk-icon="icon: pencil; ratio: 1"></span> Edit project </legend>
+    </div>
+
+    <form [formGroup]="edit_project_form" (ngSubmit)="edit_project_form_submit()">
+      <fieldset class="uk-fieldset">
+            
+                <div class="uk-margin">
+                    <input class="uk-input" formControlName="project_id" type="text" readonly hidden>
+                </div>
+
+                <div class="uk-margin">
+                    <div class="uk-text-small uk-margin-bottom">Update the project name</div>
+                    <input class="uk-input" formControlName="project_name" type="text" required>
+                </div>
+
+                <div class="uk-margin">
+                    <div class="uk-text-small uk-margin-bottom">Update project tag</div>
+                    <select formControlName="project_tag" class="uk-select" required>
+                        <option selected disabled>{{ project?.project_tag }}</option>
+                        <option value="IDB">IDB</option>
+                        <option value="MOH">MOH</option>
+                    </select>
+                  </div>
+
+                <div class="uk-margin">
+                    <div class="uk-text-small uk-margin-bottom">Update project description</div>
+                    <textarea class="uk-textarea" formControlName="project_desc" rows="5" required></textarea>
+                </div>
+
+            </fieldset> 
+
+            <div class="uk-margin">
+                <button class="uk-button uk-button-secondary uk-button-small uk-margin-small-bottom">Update and Save Project</button>
+            </div>
+        </form>
+
+  </div>
+</div>
+
+
+
+
+
+
+
+
+

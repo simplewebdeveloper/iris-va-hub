@@ -1,7 +1,7 @@
 export class Svp {
-  botId: any;
+  va_id: any;
   slots: string;
   utterance: string;
-  svpData: string;
+  svp_data: string;
   intent: string;
 }

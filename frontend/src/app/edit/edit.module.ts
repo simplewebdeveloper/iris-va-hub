@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {Route, RouterModule, Routes} from '@angular/router';
-import {EditComponent} from './edit/edit.component';
-import {ReactiveFormsModule} from '@angular/forms';
+import { Route, RouterModule, Routes } from '@angular/router';
+import { EditComponent } from './edit/edit.component';
+import { ReactiveFormsModule } from '@angular/forms';
 import { AuthGuardService as AuthGuard } from "../auth/auth-guard.service";
 
 const appRoutes: Routes = [
   {
-    path: 'edit/:id',
+    path: 'edit/:va_id/project_id:',
     component: EditComponent,
     canActivate: [AuthGuard],
   },
@@ -19,11 +19,14 @@ const appRoutes: Routes = [
 ];
 
 @NgModule({
-  declarations: [],
+  declarations: [EditComponent],
   imports: [
     CommonModule,
     RouterModule.forChild(appRoutes),
     ReactiveFormsModule,
+  ],
+  exports: [
+    EditComponent,
   ]
 })
 export class EditModule { }

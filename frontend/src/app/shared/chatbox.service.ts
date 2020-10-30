@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 
 @Injectable({
@@ -12,9 +12,9 @@ export class ChatboxService {
   constructor(private http: HttpClient) {
     this.baseUrl = environment.restApi.uri
    }
-  chatboxQuery(query) {
+  chatbox_query(query, project_id, va_id) {
     return this.http.post<any>(
-      this.baseUrl + '/test/test_query', query
+      this.baseUrl + '/test/test_query', {query, project_id, va_id}
     );
   }
 }
