@@ -17,6 +17,8 @@ urlpatterns = [
     path('get_va', get_single_va.as_view()),
     path('delete_va', delete_single_va.as_view()),
     path('update_va', update_single_va.as_view()),
+    # add response path here
+    # path('add_response', update_single_va.as_view()),
 
     # Intent paths
     path('create_intent', create_intent.as_view()),

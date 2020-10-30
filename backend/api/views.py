@@ -958,6 +958,48 @@ class test_query(APIView):
         context_response = HandoffContext(response, project_dir).context()
 
 
+        # Add the response class will have to parse the below
+
+          #  WITHOUT SLOTS
+
+            #   {
+            #   "time_stamp": 1604075651.306505,
+            #   "time": {
+            #     "time_stamp": 1604075651.306505,
+            #     "time_format": "Fri Oct 30 16:34:11 2020"
+            #   },
+            #   "utterance": "hi",
+            #   "intent": {
+            #     "intent": "goodbye",
+            #     "probability": 0.24814
+            #   },
+            #   "slots": []
+            # }
+
+
+            #  WITH SLOTS
+            #             {
+            #   "time_stamp": 1604075815.447497,
+            #   "time": {
+            #     "time_stamp": 1604075815.447497,
+            #     "time_format": "Fri Oct 30 16:36:55 2020"
+            #   },
+            #   "utterance": "talk to a law",
+            #   "intent": {
+            #     "intent": "what_is_law",
+            #     "probability": 0.1446
+            #   },
+            #   "slots": [
+            #     {
+            #       "slot": "term",
+            #       "value": [
+            #         "law"
+            #       ]
+            #     }
+            #   ]
+            # }
+
+
         # print(response)
 
         return Response(context_response, status=status.HTTP_200_OK)
