@@ -1,5 +1,13 @@
 [
     {
+        "intent": "law_va",
+        "utterance": "talk to law"
+    },
+    {
+        "intent": "law_va",
+        "utterance": "lets talk about the law"
+    },
+    {
         "intent": "salon_handover",
         "utterance": "let me book a makeup session"
     },

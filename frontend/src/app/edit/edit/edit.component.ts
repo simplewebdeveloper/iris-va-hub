@@ -19,6 +19,7 @@ export class EditComponent implements OnInit, OnDestroy {
   vas: any;
   projects: any;
   va_id_from_url: number;
+  va_id: any;
   va: any;
   project: any;
   public success_user_message: string;
@@ -69,8 +70,9 @@ export class EditComponent implements OnInit, OnDestroy {
 
   get_va() {
       this.va = null;
-      const const_va_id = this.va_service.get_va_id();
-      this.va_service.get_single_va(const_va_id).subscribe(
+      this.va = this.va_service.get_current_va();
+      this.va_id = this.va.id;
+      this.va_service.get_single_va(this.va_id).subscribe(
       (res) => {
         console.log(res);
         

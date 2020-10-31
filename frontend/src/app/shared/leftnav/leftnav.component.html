@@ -44,7 +44,7 @@
 <!-- Updated side nav -->
 <div *ngIf="show_project_menu" class="uk-padding uk-padding-remove-bottom">
     <ul class="uk-nav uk-nav-default">
-        <li class="uk-active uk-text-lead"><a>{{ project.project_name }}</a></li>
+        <li class="uk-active uk-text-lead"><a [routerLink]="['/project', project?.id]">{{ project?.project_name }}</a></li>
         <li><a routerLink="#" routerLinkActive="active-link">Project Tags</a></li>
         <li><a routerLink="#" routerLinkActive="active-link">Configure Context</a></li>
     </ul>
@@ -52,7 +52,7 @@
 
 <div *ngIf="show_va_menu" class="uk-padding uk-padding-remove-bottom">
     <ul class="uk-nav uk-nav-default">
-        <li class="uk-active"><a (click)="navigate_to_va()">Manage Virtual Assistant</a></li>
+        <li class="uk-active uk-text-lead"><a [routerLink]="['/va', va?.id]">{{ va?.va_name }}</a></li>
         <li><a routerLink="#" routerLinkActive="active-link">VA Tags</a></li>
         <li><a routerLink="/edit" routerLinkActive="active-link">Edit</a></li>
         <li><a routerLink="/intents" routerLinkActive="active-link">Intents</a></li>

@@ -32,10 +32,10 @@ export class VaComponent implements OnInit {
     
     this.va_service.get_single_va(va_id_from_url).subscribe(
     (res) => {
-      console.log(res, 'get a single va');
+      // console.log(res);
       this.va = res;
-      this.va_service.set_va_id(this.va.id);
-      this.va_service.set_project_id(this.va.project);
+      this.va_service.set_current_va(this.va);
+      // this.va_service.set_project_id(this.va.project);
      
       const va_name = this.va.va_name;
       if (res.length > 0) {

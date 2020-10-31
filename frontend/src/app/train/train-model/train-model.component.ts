@@ -45,13 +45,12 @@ export class TrainModelComponent implements OnInit {
 
   get_va() {
     this.va = null;
-    const va_id = this.va_service.get_va_id();
-    const project_id = this.va_service.get_project_id();
 
-    this.project_id = project_id;
-    this.va_id = va_id;
+    this.va = this.va_service.get_current_va();
+    this.va_id = this.va.id;
+
     this.va_svps = [];
-    this.train_service.get_single_va(va_id).subscribe(
+    this.train_service.get_single_va(this.va_id).subscribe(
       (res) => {
         // console.log(res);
         this.selected_va = res;
@@ -106,7 +105,7 @@ export class TrainModelComponent implements OnInit {
     );
   }
 
-  feed_intents(selected_intent: string, va_tag) {
+  feed_intents(selected_intent: string) {
     this.train_completed = false;
     this.train_progress = false;
     if(selected_intent != 'none') {
@@ -114,7 +113,7 @@ export class TrainModelComponent implements OnInit {
     } else {
       this.selected_update_intent = 'none';
     }
-    this.train_service.feed_intents(this.project_id, this.va_id, va_tag, this.selected_update_intent).subscribe(
+    this.train_service.feed_intents(this.va_id, this.selected_update_intent).subscribe(
     (res) => {
       // console.log(res);
       if(res.length > 1) {
@@ -132,10 +131,10 @@ export class TrainModelComponent implements OnInit {
       );
   }
 
-  feed_update_sense(va_tag) {
+  feed_update_sense() {
     this.train_completed = false;
     this.train_progress = false;
-    this.train_service.feed_update_sense(this.project_id, this.va_id, va_tag).subscribe(
+    this.train_service.feed_update_sense(this.va_id).subscribe(
     (res) => {
       // console.log(res);
       if(res.length > 1) {
@@ -176,7 +175,7 @@ export class TrainModelComponent implements OnInit {
 
   train_classifier_model(selected_intent, va_tag) {
     this.show_training_status_model();
-    this.train_service.train_classifier_model(this.project_id, this.va_id, va_tag, selected_intent).subscribe(
+    this.train_service.train_classifier_model(this.va_id, selected_intent).subscribe(
       (res) => {
         // console.log(res);
         if(res.length > 1) {
@@ -196,11 +195,11 @@ export class TrainModelComponent implements OnInit {
     );
   }
 
-  train_update_sense_classifier_model(va_tag) {
+  train_update_sense_classifier_model() {
     this.can_train_update_sense_classifier_model = false;
     this.show_training_status_model();
 
-    this.train_service.train_update_sense_classifier_model(this.project_id, this.va_id, va_tag).subscribe(
+    this.train_service.train_update_sense_classifier_model(this.va_id).subscribe(
       (res) => {
         // console.log(res);
         if(res.length > 1) {

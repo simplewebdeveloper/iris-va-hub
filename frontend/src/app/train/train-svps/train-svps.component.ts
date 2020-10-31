@@ -212,10 +212,11 @@ export class TrainSvpsComponent implements OnInit {
 
   get_va() {
     this.va = null;
-    const const_va_id = this.va_service.get_va_id();
+    this.va = this.va_service.get_current_va();
+    this.va_id = this.va.id
     this.intents_and_utterances = [];
     this.va_svps = [];
-    this.va_service.get_single_va(const_va_id).subscribe(
+    this.va_service.get_single_va(this.va_id).subscribe(
       (res) => {
         //  console.log(res);
         this.va = res;

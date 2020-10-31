@@ -9,6 +9,7 @@ export class ProjectService {
 
   private baseUrl: string;
   project_id: any;
+  project: any;
   va_tag: any;
 
   constructor(private http: HttpClient) {
@@ -58,12 +59,13 @@ export class ProjectService {
   );
  }
 
-add_project_id(va_id) {
- this.project_id = va_id;
+
+set_current_project(project) {
+ this.project = project;
 }
 
-get_project_id() {
-return this.project_id;
+get_current_project() {
+return this.project;
 }
   
 }

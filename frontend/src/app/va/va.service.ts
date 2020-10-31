@@ -10,6 +10,7 @@ export class VaService {
   private baseUrl: string;
   project_id: any;
   va_id: any;
+  va: any;
   va_tag: any;
 
   constructor(private http: HttpClient) { 
@@ -28,16 +29,12 @@ export class VaService {
     return this.va_id;
   }
 
-  set_va_id(va_id) {
-    this.va_id = va_id;
+  set_current_va(va) {
+    this.va = va;
   }
 
-  set_project_id(project_id) {
-    this.project_id = project_id;
-  }
-
-  get_project_id() {
-    return this.project_id;
+  get_current_va() {
+    return this.va;
   }
 
 }

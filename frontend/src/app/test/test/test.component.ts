@@ -25,6 +25,7 @@ export class TestComponent implements OnInit {
   public error_user_message: string;
   project_id: any;
   va_id: any;
+  va: any;
   va_tag: any;
 
   constructor(
@@ -46,8 +47,8 @@ export class TestComponent implements OnInit {
   }
 
   get_project_and_va_id_from_url() {
-    this.project_id = this.va_service.get_project_id();
-    this.va_id = this.va_service.get_va_id();
+    this.va = this.va_service.get_current_va();
+    this.va_id = this.va_service.va_id;
   }
 
   chatbox_query_form_submit(event: any) {
@@ -55,7 +56,7 @@ export class TestComponent implements OnInit {
     const utterance = query.query;
     if (utterance.length > 1) {
       this.thinking = true;
-      this.chatbox_service.chatbox_query(query, this.project_id, this.va_id).subscribe(
+      this.chatbox_service.chatbox_query(query, this.va_id).subscribe(
       (test_response) => {
         if (test_response) {
           this.full_response = test_response

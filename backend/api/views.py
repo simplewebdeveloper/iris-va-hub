@@ -548,24 +548,28 @@ class feed_intents(APIView):
     authentication_classes = [JSONWebTokenAuthentication]
     permission_classes = [IsAuthenticated]
     def post(self, request, *args, **kwargs):
+        print('see the below')
         print(request.data)
         try:
-            project_id = str(request.data['project_id'])
-            va_id = str(request.data['va_id'])
-            va_tag = request.data['va_tag']
+            va_id = request.data['va_id']
             selected_update_intent = request.data['selected_update_intent']
             # check if the there is a folder in handoff_vas_core that matches the id
             
+            va = Va.objects.get(id=va_id)
+            va_serializer = VaSerializer(va, many=False)
+
+            va_id = str(va_serializer.data['id'])
+            va_tag = str(va_serializer.data['va_tag'])
+            project_id = str(va_serializer.data['project'])
+
             project_dir = project_dir_core
 
             project = Project.objects.get(id=project_id)
             project_serializer = ProjectSerializer(project, many=False)
-
-            project_id = project_serializer.data['id']
             project_name = project_serializer.data['project_name']
 
             string_lst = []
-            string_lst.append(str(project_id))
+            string_lst.append(project_id)
             string_lst.append('_')
             string_lst.append(project_name)
             project_name_new = ''.join(string_lst)
@@ -579,8 +583,6 @@ class feed_intents(APIView):
                 
             if selected_update_intent != 'none':
                 # get update intent data for bot
-                va = Va.objects.get(id=va_id)
-                va_serializer = VaSerializer(va, many=False)
                 intents = Intent.objects.filter(va=va, intent=selected_update_intent).order_by('-id')
                 # print(intents)
                 intent_serializer = IntentSerializer(intents, many=True)
@@ -618,7 +620,6 @@ class feed_intents(APIView):
 
             else:
                 # get root intent data for bot
-                va = Va.objects.get(id=va_id)
                 intents = Intent.objects.filter(va=va).order_by('-id')
 
                 intent_serializer = IntentSerializer(intents, many=True)
@@ -656,7 +657,6 @@ class feed_update_sense(APIView):
     def post(self, request, *args, **kwargs):
         print(request.data)
         # try:
-        project_id = request.data['project_id']
         va_id = request.data['va_id']
         # get root intent data for bot
 
@@ -665,6 +665,7 @@ class feed_update_sense(APIView):
 
         va_id = str(va_serializer.data['id'])
         va_tag = str(va_serializer.data['va_tag'])
+        project_id = va_serializer.data['project']
 
         project = Project.objects.get(id=project_id)
         project_serializer = ProjectSerializer(project, many=False)
@@ -675,7 +676,7 @@ class feed_update_sense(APIView):
         project_dir = project_dir_core
 
         string_lst = []
-        string_lst.append(str(project_id))
+        string_lst.append(project_id)
         string_lst.append('_')
         string_lst.append(project_name)
         project_name_new = ''.join(string_lst)
@@ -906,7 +907,6 @@ class test_query(APIView):
         print(request.data)
         # try:
         utterance = request.data['query']['query']
-        project_id = request.data['project_id']
         va_id = request.data['va_id']
 
         project_dir = project_dir_core
@@ -916,6 +916,7 @@ class test_query(APIView):
 
         va_id = str(va_serializer.data['id'])
         va_tag = str(va_serializer.data['va_tag'])
+        project_id = va_serializer.data['project']
 
         project = Project.objects.get(id=project_id)
         project_serializer = ProjectSerializer(project, many=False)
@@ -1012,17 +1013,15 @@ class train_classifier_model(APIView):
     authentication_classes = [JSONWebTokenAuthentication]
     permission_classes = [IsAuthenticated]
     def post(self, request, *args, **kwargs):
-        print('from train classifier: ')
-        print(request.data)
         try:
-            project_id = request.data['project_id']
-            va_tag = request.data['va_tag']
             va_id = request.data['va_id']
             selected_update_intent = request.data['selected_update_intent']
             # if va_tag == 'handoff':
             #     clf_model_path = os.path.join(handoff_vas_core, va_id)
             # elif va_tag == 'specialized':
             #     clf_model_path = os.path.join(specialized_vas_core, va_id)
+
+
             project_dir = project_dir_core
 
             va = Va.objects.get(id=va_id)
@@ -1030,6 +1029,7 @@ class train_classifier_model(APIView):
 
             va_id = str(va_serializer.data['id'])
             va_tag = str(va_serializer.data['va_tag'])
+            project_id = str(va_serializer.data['project'])
 
             project = Project.objects.get(id=project_id)
             project_serializer = ProjectSerializer(project, many=False)
@@ -1062,13 +1062,13 @@ class train_update_sense_classifier_model(APIView):
     permission_classes = [IsAuthenticated]
     def post(self, request, *args, **kwargs):
         # try:
-        project_id = request.data['project_id']
         va_id = request.data['va_id']
 
         project_dir = project_dir_core
 
         va = Va.objects.get(id=va_id)
         va_serializer = VaSerializer(va, many=False)
+        project_id = va_serializer.data['project']
 
         va_id = str(va_serializer.data['id'])
         va_tag = str(va_serializer.data['va_tag'])
@@ -1080,7 +1080,7 @@ class train_update_sense_classifier_model(APIView):
         project_name = str(project_serializer.data['project_name'])
 
         string_lst = []
-        string_lst.append(str(project_id))
+        string_lst.append(project_id)
         string_lst.append('_')
         string_lst.append(project_name)
         project_name_new = ''.join(string_lst)

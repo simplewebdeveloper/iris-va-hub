@@ -1,6 +1,14 @@
 [
     {
         "intent": "not_update",
+        "utterance": "talk to law"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "lets talk about the law"
+    },
+    {
+        "intent": "not_update",
         "utterance": "let me book a makeup session"
     },
     {

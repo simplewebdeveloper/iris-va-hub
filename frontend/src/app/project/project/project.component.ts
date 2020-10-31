@@ -35,7 +35,7 @@ export class ProjectComponent implements OnInit {
     (res) => {
       // console.log(res);
       this.project = res;
-      this.project_service.add_project_id(this.project.id);
+      this.project_service.set_current_project(this.project);
      
       const project_name = this.project.project_name;
       if (res.length > 0) {

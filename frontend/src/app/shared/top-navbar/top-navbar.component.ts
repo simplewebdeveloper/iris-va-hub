@@ -62,34 +62,6 @@ export class TopNavbarComponent implements OnInit {
     );
   }
 
-  navigate_to_edit() {
-    this.project_id = this.va_service.get_project_id();
-    this.va_id = this.va_service.get_va_id();
-    this.router.navigate(['/edit', {va_id: this.va_id, project_id: this.project_id}]);
-  }
-
-  navigate_to_intents() {
-    this.project_id = this.va_service.get_project_id();
-    this.va_id = this.va_service.get_va_id();
-    this.router.navigate(['/intents', {va_id: this.va_id, project_id: this.project_id}]);
-  }
-  
-  navigate_to_svps() {
-    this.project_id = this.va_service.get_project_id();
-    this.va_id = this.va_service.get_va_id();
-    this.router.navigate(['/svps', {va_id: this.va_id, project_id: this.project_id}]);
-  }
-
-  navigate_to_train() {
-    this.project_id = this.va_service.get_project_id();
-    this.va_id = this.va_service.get_va_id();
-    this.router.navigate(['/train', {va_id: this.va_id, project_id: this.project_id}]);
-  }
-
-
-
-
-
 
 
 }
