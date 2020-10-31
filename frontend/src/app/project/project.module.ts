@@ -5,6 +5,7 @@ import { ProjectComponent } from './project/project.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { VasComponent } from './vas/vas.component';
 import { AuthGuardService as AuthGuard } from "../auth/auth-guard.service";
+import { ContextComponent } from './context/context.component';
 
 const appRoutes: Routes = [
  
@@ -18,11 +19,16 @@ const appRoutes: Routes = [
     component: ProjectComponent,
     canActivate: [AuthGuard],
   },
+  {
+    path: 'project/:id/context',
+    component: ContextComponent,
+    canActivate: [AuthGuard],
+  },
 
 ];
 
 @NgModule({
-  declarations: [ProjectComponent, VasComponent],
+  declarations: [ProjectComponent, VasComponent, ContextComponent],
   imports: [
     CommonModule,
     RouterModule.forChild(appRoutes),

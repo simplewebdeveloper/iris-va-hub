@@ -262,6 +262,7 @@ class create_va(APIView):
             va_serializer = VaSerializer(latest_va, many=False)
             project_id = request.data['project']
             va_id = va_serializer.data['id']
+            va_name = va_serializer.data['va_name']
             va_tag = va_serializer.data['va_tag']
             user_message = 'Success creating bot'
             print(user_message)
@@ -286,8 +287,15 @@ class create_va(APIView):
             with open(va_folder_structure) as f:
                 d = json.load(f)
                 d_dict = d[0]
-                # replaces the id key with the bot id key
-                d_dict[va_id] = d_dict.pop('id')
+                # replaces the id key with the bot id_name
+
+                string_lst = []
+                string_lst.append(str(va_id))
+                string_lst.append('_')
+                string_lst.append(va_name)
+                va_name_new = ''.join(string_lst)
+
+                d_dict[va_name_new] = d_dict.pop('id')
                 structure = d_dict
 
                 parent_dir = ""
@@ -360,19 +368,101 @@ class update_single_va(APIView):
     authentication_classes = [JSONWebTokenAuthentication]
     permission_classes = [IsAuthenticated]
     def post(self, request, *args, **kwargs):
-        try:
-            print(request.data)
-            va_id = request.data['va_id']
-            instance = Va.objects.get(id=va_id)
-            va_serializer = VaSerializer(instance, data=request.data)
-            if va_serializer.is_valid():
-                va_serializer.save()
-                user_message = 'Success updating va'
-                print(user_message)
-                return Response(va_serializer.data, status=status.HTTP_200_OK)
-        except:
-            user_message = 'Error updating va'
-            return Response(user_message, status=status.HTTP_400_BAD_REQUEST)
+        # try:
+        print(request.data)
+        va_id = request.data['va_id']
+        instance = Va.objects.get(id=va_id)
+        va_serializer_from_post_req = VaSerializer(instance, data=request.data)
+
+        va_serializer = VaSerializer(instance, many=False)
+        va_id = str(va_serializer.data['id'])
+        old_va_tag = va_serializer.data['va_tag']
+        old_va_name = va_serializer.data['va_name']
+        old_project_id = va_serializer.data['project']
+
+        # -------------------------------------------------- #
+        # Old paths
+        va_old_instance = Va.objects.get(id=va_id)
+        va_serializer = VaSerializer(va_old_instance)
+        va_id = str(va_serializer.data['id'])
+        old_va_tag = va_serializer.data['va_tag']
+        old_va_name = va_serializer.data['va_name']
+        old_project_id = va_serializer.data['project']
+
+        project_dir = project_dir_core
+
+        project = Project.objects.get(id=old_project_id)
+        project_serializer = ProjectSerializer(project, many=False)
+
+        project_id = str(project_serializer.data['id'])
+        project_name = project_serializer.data['project_name']
+
+        string_lst = []
+        string_lst.append(project_id)
+        string_lst.append('_')
+        string_lst.append(project_name)
+        project_name_new = ''.join(string_lst)
+        path_of_project_to_update_va_from = os.path.join(project_dir, project_name_new)
+
+        va_path_temp = os.path.join(path_of_project_to_update_va_from, old_va_tag)
+        
+        string_lst = []
+        string_lst.append(va_id)
+        string_lst.append('_')
+        string_lst.append(old_va_name)
+        va_name_new = ''.join(string_lst)
+
+        old_va_path = os.path.join(va_path_temp, va_name_new)
+
+
+        if va_serializer_from_post_req.is_valid():
+            va_serializer_from_post_req.save()
+            # -------------------------------------------------- #
+            # New paths
+            va_updated_instance = Va.objects.get(id=va_id)
+            va_serializer = VaSerializer(va_updated_instance)
+            va_id = str(va_serializer.data['id'])
+            new_va_tag = va_serializer.data['va_tag']
+            new_va_name = va_serializer.data['va_name']
+            new_project_id = va_serializer.data['project']
+
+            project_dir = project_dir_core
+
+            project = Project.objects.get(id=new_project_id)
+            project_serializer = ProjectSerializer(project, many=False)
+
+            project_id = str(project_serializer.data['id'])
+            project_name = project_serializer.data['project_name']
+
+            string_lst = []
+            string_lst.append(project_id)
+            string_lst.append('_')
+            string_lst.append(project_name)
+            project_name_new = ''.join(string_lst)
+            path_of_project_to_update_va_from = os.path.join(project_dir, project_name_new)
+
+            va_path_temp = os.path.join(path_of_project_to_update_va_from, new_va_tag)
+
+            string_lst = []
+            string_lst.append(va_id)
+            string_lst.append('_')
+            string_lst.append(new_va_name)
+            va_name_new = ''.join(string_lst)
+
+            new_va_path = os.path.join(va_path_temp, va_name_new)
+
+            if (new_va_path != old_va_name):
+                    os.rename(old_va_path, new_va_path)
+            else:
+                pass
+        
+
+            user_message = 'Success updating va'
+            print(user_message)
+            return Response(va_serializer.data, status=status.HTTP_200_OK)
+        # except:
+        #     user_message = 'Error updating va'
+        #     return Response(user_message, status=status.HTTP_400_BAD_REQUEST)
 
 # delete a single va
 class delete_single_va(APIView):
@@ -401,17 +491,32 @@ class delete_single_va(APIView):
 
         path_of_project_to_delete_va_from = os.path.join(project_dir, project_name_new)
 
-        va_path = os.path.join(path_of_project_to_delete_va_from, va_tag)
+
+        va = Va.objects.get(id=va_id)
+        intents = Intent.objects.filter(va=va)
+        svps = Svp.objects.filter(va=va)
+
+        va_serializer = VaSerializer(va, many=False)
+
+        va_id = str(va_serializer.data['id'])
+        va_name = va_serializer.data['va_name']
+        va_tag = va_serializer.data['va_tag']
+
+        va_path_temp = os.path.join(path_of_project_to_delete_va_from, va_tag)
+
+        string_lst = []
+        string_lst.append(str(va_id))
+        string_lst.append('_')
+        string_lst.append(va_name)
+        va_name_new = ''.join(string_lst)
+
+        va_path = os.path.join(va_path_temp, va_name_new)
 
         # if va_tag == 'handoff':
         #     va_path = os.path.join(handoff_vas_core, va_id)
         # elif va_tag == 'specialized':
         #     va_path = os.path.join(specialized_vas_core, va_id)
 
-        va = Va.objects.get(id=va_id)
-        intents = Intent.objects.filter(va=va)
-        svps = Svp.objects.filter(va=va)
-        va_serializer = VaSerializer(va, many=False)
         intents.delete()
         svps.delete()
         va.delete()
