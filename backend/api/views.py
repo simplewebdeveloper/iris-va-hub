@@ -228,19 +228,53 @@ class update_single_project(APIView):
     authentication_classes = [JSONWebTokenAuthentication]
     permission_classes = [IsAuthenticated]
     def post(self, request, *args, **kwargs):
-        try:
-            print(request.data)
-            project_id = request.data['project_id']
-            instance = Project.objects.get(id=project_id)
-            project_serializer = ProjectSerializer(instance, data=request.data)
-            if project_serializer.is_valid():
-                project_serializer.save()
-                user_message = 'Success updating project'
-                print(user_message)
-                return Response(project_serializer.data, status=status.HTTP_200_OK)
-        except:
-            user_message = 'Error updating project'
-            return Response(user_message, status=status.HTTP_400_BAD_REQUEST)
+        # try:
+        print(request.data)
+        project_id = request.data['project_id']
+        instance = Project.objects.get(id=project_id)
+        project_serializer_from_post = ProjectSerializer(instance, data=request.data)
+
+        project_serializer = ProjectSerializer(instance, many=False)
+
+        project_id = str(project_serializer.data['id'])
+        old_project_name = project_serializer.data['project_name']
+
+        string_lst = []
+        string_lst.append(project_id)
+        string_lst.append('_')
+        string_lst.append(old_project_name)
+        old_project_name_new = ''.join(string_lst)
+
+        if project_serializer_from_post.is_valid():
+            project_serializer_from_post.save()
+
+            updated_project_instance = Project.objects.get(id=project_id)
+            updated_project_serializer = ProjectSerializer(updated_project_instance, many=False)
+
+            new_project_name = updated_project_serializer.data['project_name']
+
+            string_lst = []
+            string_lst.append(project_id)
+            string_lst.append('_')
+            string_lst.append(new_project_name)
+            new_project_name_new = ''.join(string_lst)
+
+
+        old_project_path = os.path.join(project_dir_core, old_project_name_new)
+        new_project_path = os.path.join(project_dir_core, new_project_name_new)
+
+        if (new_project_path != old_project_path):
+                os.rename(old_project_path, new_project_path)
+        else:
+            pass
+
+
+        user_message = 'Success updating project'
+        print(user_message)
+        return Response(project_serializer.data, status=status.HTTP_200_OK)
+        # except:
+        #     user_message = 'Error updating project'
+        #     return Response(user_message, status=status.HTTP_400_BAD_REQUEST)
 
 
 
@@ -402,6 +436,7 @@ class update_single_va(APIView):
         string_lst.append('_')
         string_lst.append(project_name)
         project_name_new = ''.join(string_lst)
+
         path_of_project_to_update_va_from = os.path.join(project_dir, project_name_new)
 
         va_path_temp = os.path.join(path_of_project_to_update_va_from, old_va_tag)
@@ -664,7 +699,8 @@ class feed_intents(APIView):
             va_serializer = VaSerializer(va, many=False)
 
             va_id = str(va_serializer.data['id'])
-            va_tag = str(va_serializer.data['va_tag'])
+            va_name = va_serializer.data['va_name']
+            va_tag = va_serializer.data['va_tag']
             project_id = str(va_serializer.data['project'])
 
             project_dir = project_dir_core
@@ -684,7 +720,14 @@ class feed_intents(APIView):
             path_of_project_to_add_va_intents_to = os.path.join(project_dir, project_name_new)
 
             path = os.path.join(path_of_project_to_add_va_intents_to, va_tag)
-            va_path = os.path.join(path, va_id)
+
+            string_lst = []
+            string_lst.append(va_id)
+            string_lst.append('_')
+            string_lst.append(va_name)
+            va_name_new = ''.join(string_lst)
+
+            va_path = os.path.join(path, va_name_new)
                 
             if selected_update_intent != 'none':
                 # get update intent data for bot
@@ -770,6 +813,7 @@ class feed_update_sense(APIView):
 
         va_id = str(va_serializer.data['id'])
         va_tag = str(va_serializer.data['va_tag'])
+        va_name = va_serializer.data['va_name']
         project_id = va_serializer.data['project']
 
         project = Project.objects.get(id=project_id)
@@ -790,7 +834,13 @@ class feed_update_sense(APIView):
 
         path = os.path.join(path_of_project_to_add_va_intents_to, va_tag)
 
-        va_path = os.path.join(path, va_id)
+        string_lst = []
+        string_lst.append(va_id)
+        string_lst.append('_')
+        string_lst.append(va_name)
+        va_name_new = ''.join(string_lst)
+
+        va_path = os.path.join(path, va_name_new)
 
         va = Va.objects.get(id=va_id)
         intents = Intent.objects.filter(va=va).order_by('-id')
@@ -941,68 +991,75 @@ class feed_svps(APIView):
     authentication_classes = [JSONWebTokenAuthentication]
     permission_classes = [IsAuthenticated]
     def post(self, request, *args, **kwargs):
-        try:
-            project_id = request.data['project_id']
-            va_id = request.data['va_id']
-            selected_intent = request.data['selected_intent']
+        # try:
+        va_id = request.data['va_id']
+        selected_intent = request.data['selected_intent']
 
-            project_dir = project_dir_core
+        project_dir = project_dir_core
 
+        va = Va.objects.get(id=va_id)
+        va_serializer = VaSerializer(va, many=False)
+
+        va_id = str(va_serializer.data['id'])
+        va_tag = str(va_serializer.data['va_tag'])
+        va_name = va_serializer.data['va_name']
+        project_id = va_serializer.data['project']
+
+        project = Project.objects.get(id=project_id)
+        project_serializer = ProjectSerializer(project, many=False)
+
+        project_id = str(project_serializer.data['id'])
+        project_name = str(project_serializer.data['project_name'])
+
+        string_lst = []
+        string_lst.append(project_id)
+        string_lst.append('_')
+        string_lst.append(project_name)
+        project_name_new = ''.join(string_lst)
+
+        path_of_project_to_train_svp = os.path.join(project_dir, project_name_new)
+
+        path = os.path.join(path_of_project_to_train_svp, va_tag)
+
+        string_lst = []
+        string_lst.append(va_id)
+        string_lst.append('_')
+        string_lst.append(va_name)
+        va_name_new = ''.join(string_lst)
+
+        svp_model_path = os.path.join(path, va_name_new)
+
+
+        if selected_intent:
+            # get svp data for bot
             va = Va.objects.get(id=va_id)
-            va_serializer = VaSerializer(va, many=False)
+            svps = Svp.objects.filter(va=va, intent=selected_intent).order_by('-id')
+            svp_serializer = SvpSerializer(svps, many=True)
+            serialized_svp_data = svp_serializer.data
+            svp_data = json.dumps(serialized_svp_data)
+            svp_data_list = json.loads(svp_data)
+            new_svp_data_list = []
 
-            va_id = str(va_serializer.data['id'])
-            va_tag = str(va_serializer.data['va_tag'])
+            for item in svp_data_list:
+                temp_one = item['svp_data']
+                python_dict = literal_eval(temp_one)
+                new_svp_data_list.append(python_dict)
 
-            project = Project.objects.get(id=project_id)
-            project_serializer = ProjectSerializer(project, many=False)
+            svp_data = json.dumps(new_svp_data_list, indent=4)
 
-            project_id = str(project_serializer.data['id'])
-            project_name = str(project_serializer.data['project_name'])
+            temp_svp_json_file_to_create = selected_intent+'.json'
+            parent_dir = os.path.join(svp_model_path, 'svp/json')
+            svp_json_file_to_create = os.path.join(parent_dir, temp_svp_json_file_to_create)
+            with open(svp_json_file_to_create, 'w') as f:
+                f.write(svp_data)
+                print('SVP data written')
+            user_message = 'Success feeding svps'
+            print(user_message)
+            return Response(user_message, status=status.HTTP_202_ACCEPTED)
 
-            string_lst = []
-            string_lst.append(str(project_id))
-            string_lst.append('_')
-            string_lst.append(project_name)
-            project_name_new = ''.join(string_lst)
-
-            path_of_project_to_train_svp = os.path.join(project_dir, project_name_new)
-
-            path = os.path.join(path_of_project_to_train_svp, va_tag)
-
-            svp_model_path = os.path.join(path, va_id)
-
-
-            if selected_intent:
-                # get svp data for bot
-                va = Va.objects.get(id=va_id)
-                svps = Svp.objects.filter(va=va, intent=selected_intent).order_by('-id')
-                svp_serializer = SvpSerializer(svps, many=True)
-                serialized_svp_data = svp_serializer.data
-                svp_data = json.dumps(serialized_svp_data)
-                svp_data_list = json.loads(svp_data)
-                new_svp_data_list = []
-
-                for item in svp_data_list:
-                    temp_one = item['svp_data']
-                    python_dict = literal_eval(temp_one)
-                    new_svp_data_list.append(python_dict)
-
-                svp_data = json.dumps(new_svp_data_list, indent=4)
-
-                temp_svp_json_file_to_create = selected_intent+'.json'
-                parent_dir = os.path.join(svp_model_path, 'svp/json')
-                svp_json_file_to_create = os.path.join(parent_dir, temp_svp_json_file_to_create)
-                with open(svp_json_file_to_create, 'w') as f:
-                    f.write(svp_data)
-                    print('SVP data written')
-                user_message = 'Success feeding svps'
-                print(user_message)
-                return Response(user_message, status=status.HTTP_202_ACCEPTED)
-
-        except:
-            user_message = 'Error feeding svps'
-            return Response(user_message, status=status.HTTP_400_BAD_REQUEST)
+        # except:
+        #     user_message = 'Error feeding svps'
+        #     return Response(user_message, status=status.HTTP_400_BAD_REQUEST)
 
 # test a query
 class test_query(APIView):
@@ -1021,6 +1078,7 @@ class test_query(APIView):
 
         va_id = str(va_serializer.data['id'])
         va_tag = str(va_serializer.data['va_tag'])
+        va_name = va_serializer.data['va_name']
         project_id = va_serializer.data['project']
 
         project = Project.objects.get(id=project_id)
@@ -1041,7 +1099,13 @@ class test_query(APIView):
 
         path = os.path.join(path_of_project_to_test_va_from, va_tag)
 
-        va_path = os.path.join(path, va_id)
+        string_lst = []
+        string_lst.append(va_id)
+        string_lst.append('_')
+        string_lst.append(va_name)
+        va_name_new = ''.join(string_lst)
+
+        va_path = os.path.join(path, va_name_new)
 
         # check the state first
         with open(handoff_context) as f:
@@ -1135,6 +1199,7 @@ class train_classifier_model(APIView):
             va_id = str(va_serializer.data['id'])
             va_tag = str(va_serializer.data['va_tag'])
             project_id = str(va_serializer.data['project'])
+            va_name = va_serializer.data['va_name']
 
             project = Project.objects.get(id=project_id)
             project_serializer = ProjectSerializer(project, many=False)
@@ -1152,7 +1217,13 @@ class train_classifier_model(APIView):
 
             path = os.path.join(path_of_project_to_train_clf, va_tag)
 
-            clf_model_path = os.path.join(path, va_id)    
+            string_lst = []
+            string_lst.append(va_id)
+            string_lst.append('_')
+            string_lst.append(va_name)
+            va_name_new = ''.join(string_lst)
+
+            clf_model_path = os.path.join(path, va_name_new)    
                 
             TrainClassifierModel(selected_update_intent, clf_model_path).train_classifier_model()
             user_message = 'Success training classifier model'
@@ -1177,6 +1248,7 @@ class train_update_sense_classifier_model(APIView):
 
         va_id = str(va_serializer.data['id'])
         va_tag = str(va_serializer.data['va_tag'])
+        va_name = va_serializer.data['va_name']
 
         project = Project.objects.get(id=project_id)
         project_serializer = ProjectSerializer(project, many=False)
@@ -1194,7 +1266,13 @@ class train_update_sense_classifier_model(APIView):
 
         path = os.path.join(path_of_project_to_train_clf, va_tag)
 
-        clf_model_path = os.path.join(path, va_id) 
+        string_lst = []
+        string_lst.append(va_id)
+        string_lst.append('_')
+        string_lst.append(va_name)
+        va_name_new = ''.join(string_lst)
+
+        clf_model_path = os.path.join(path, va_name_new) 
 
         TrainUpdateSenseClassifierModel(clf_model_path).train_update_sense_classifier_model()
         user_message = 'Success training update sense classifier model'
@@ -1208,44 +1286,52 @@ class train_svp_model(APIView):
     permission_classes = [IsAuthenticated]
     def post(self, request, *args, **kwargs):
         
-        try:
-            project_id = request.data['project_id']
-            va_id = request.data['va_id']
-            selected_intent = request.data['selected_intent']
+        # try:
+        # project_id = request.data['project_id']
+        va_id = request.data['va_id']
+        selected_intent = request.data['selected_intent']
 
-            project_dir = project_dir_core
+        project_dir = project_dir_core
 
 
-            va = Va.objects.get(id=va_id)
-            va_serializer = VaSerializer(va, many=False)
+        va = Va.objects.get(id=va_id)
+        va_serializer = VaSerializer(va, many=False)
 
-            va_id = str(va_serializer.data['id'])
-            va_tag = str(va_serializer.data['va_tag'])
+        va_id = str(va_serializer.data['id'])
+        va_tag = str(va_serializer.data['va_tag'])
+        va_name = va_serializer.data['va_name']
+        project_id = va_serializer.data['project']
 
-            project = Project.objects.get(id=project_id)
-            project_serializer = ProjectSerializer(project, many=False)
+        project = Project.objects.get(id=project_id)
+        project_serializer = ProjectSerializer(project, many=False)
 
-            project_id = str(project_serializer.data['id'])
-            project_name = str(project_serializer.data['project_name'])
+        project_id = str(project_serializer.data['id'])
+        project_name = str(project_serializer.data['project_name'])
 
-            string_lst = []
-            string_lst.append(str(project_id))
-            string_lst.append('_')
-            string_lst.append(project_name)
-            project_name_new = ''.join(string_lst)
+        string_lst = []
+        string_lst.append(project_id)
+        string_lst.append('_')
+        string_lst.append(project_name)
+        project_name_new = ''.join(string_lst)
 
-            path_of_project_to_train_clf = os.path.join(project_dir, project_name_new)
+        path_of_project_to_train_clf = os.path.join(project_dir, project_name_new)
 
-            path = os.path.join(path_of_project_to_train_clf, va_tag)
+        path = os.path.join(path_of_project_to_train_clf, va_tag)
 
-            svp_model_path = os.path.join(path, va_id)  
+        string_lst = []
+        string_lst.append(va_id)
+        string_lst.append('_')
+        string_lst.append(va_name)
+        va_name_new = ''.join(string_lst)
 
-            TrainSvpModel(selected_intent, svp_model_path).train_svp_model()
-            user_message = 'Success training svp model'
-            return Response(user_message, status=status.HTTP_200_OK)
-        except:
-            user_message = 'Error training bot'
-            return Response(user_message, status=status.HTTP_400_BAD_REQUEST)
+        svp_model_path = os.path.join(path, va_name_new)  
+
+        TrainSvpModel(selected_intent, svp_model_path).train_svp_model()
+        user_message = 'Success training svp model'
+        return Response(user_message, status=status.HTTP_200_OK)
+        # except:
+        #     user_message = 'Error training bot'
+        #     return Response(user_message, status=status.HTTP_400_BAD_REQUEST)
 
 # wipe data from va - does not remove the va -->> not implemented
 class wipe_and_reset_models(APIView):

@@ -1,0 +1,126 @@
+[
+    {
+        "intent": "update",
+        "utterance": "update to law guy"
+    },
+    {
+        "intent": "update",
+        "utterance": "update that to lawyer"
+    },
+    {
+        "intent": "update",
+        "utterance": "update to the legal guy"
+    },
+    {
+        "intent": "update",
+        "utterance": "update what i just said"
+    },
+    {
+        "intent": "update",
+        "utterance": "update that to the attorney"
+    },
+    {
+        "intent": "update",
+        "utterance": "actually its the lawyer"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "Hi friend"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "Good afternoon boss"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "Good morning to you"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "helllo everyone"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "Here the here the my mate"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "hey there whats up"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "I just heard a great new song on the radio"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "I am hoping to go to a movie later tonight"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "it is about time you called"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "What surprised you the most"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "I love to eat pizza,"
+    },
+    {
+        "intent": "not_update",
+        "utterance": " I have lived in Colorado my entire life,"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "Hi. My name is Sally. What is yours?,"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "how can i get a pedicure?"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "can you wax my arms and legs"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "who can cut my hair and do my nails"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "is there a salon rep near me"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "i want a haircut for the summar"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "i would like to book a manicure"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "who is a court official here"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "do we have a court marshall in the house"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "who is a lawyer here"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "is there some legal advice i can get"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "can i talk with an attorney?"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "get me a lawyer"
+    }
+]

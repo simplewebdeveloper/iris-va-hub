@@ -1,0 +1,102 @@
+[
+    {
+        "intent": "greeting",
+        "utterance": "Hi friend"
+    },
+    {
+        "intent": "greeting",
+        "utterance": "Good afternoon boss"
+    },
+    {
+        "intent": "greeting",
+        "utterance": "Good morning to you"
+    },
+    {
+        "intent": "greeting",
+        "utterance": "helllo everyone"
+    },
+    {
+        "intent": "greeting",
+        "utterance": "Here the here the my mate"
+    },
+    {
+        "intent": "greeting",
+        "utterance": "hey there whats up"
+    },
+    {
+        "intent": "small_talk",
+        "utterance": "I just heard a great new song on the radio"
+    },
+    {
+        "intent": "small_talk",
+        "utterance": "I am hoping to go to a movie later tonight"
+    },
+    {
+        "intent": "small_talk",
+        "utterance": "it is about time you called"
+    },
+    {
+        "intent": "small_talk",
+        "utterance": "What surprised you the most"
+    },
+    {
+        "intent": "small_talk",
+        "utterance": "I love to eat pizza,"
+    },
+    {
+        "intent": "small_talk",
+        "utterance": " I have lived in Colorado my entire life,"
+    },
+    {
+        "intent": "small_talk",
+        "utterance": "Hi. My name is Sally. What is yours?,"
+    },
+    {
+        "intent": "salon_va",
+        "utterance": "how can i get a pedicure?"
+    },
+    {
+        "intent": "salon_va",
+        "utterance": "can you wax my arms and legs"
+    },
+    {
+        "intent": "salon_va",
+        "utterance": "who can cut my hair and do my nails"
+    },
+    {
+        "intent": "salon_va",
+        "utterance": "is there a salon rep near me"
+    },
+    {
+        "intent": "salon_va",
+        "utterance": "i want a haircut for the summar"
+    },
+    {
+        "intent": "salon_va",
+        "utterance": "i would like to book a manicure"
+    },
+    {
+        "intent": "law_va",
+        "utterance": "who is a court official here"
+    },
+    {
+        "intent": "law_va",
+        "utterance": "do we have a court marshall in the house"
+    },
+    {
+        "intent": "law_va",
+        "utterance": "who is a lawyer here"
+    },
+    {
+        "intent": "law_va",
+        "utterance": "is there some legal advice i can get"
+    },
+    {
+        "intent": "law_va",
+        "utterance": "can i talk with an attorney?"
+    },
+    {
+        "intent": "law_va",
+        "utterance": "get me a lawyer"
+    }
+]

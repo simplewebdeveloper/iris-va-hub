@@ -1,0 +1,74 @@
+[
+    [
+        "get me a lawyer",
+        {
+            "entities": [
+                [
+                    9,
+                    15,
+                    "target_word"
+                ]
+            ]
+        }
+    ],
+    [
+        "can i talk with an attorney?",
+        {
+            "entities": [
+                [
+                    19,
+                    27,
+                    "target_word"
+                ]
+            ]
+        }
+    ],
+    [
+        "is there some legal advice i can get",
+        {
+            "entities": [
+                [
+                    14,
+                    19,
+                    "target_word"
+                ]
+            ]
+        }
+    ],
+    [
+        "who is a lawyer here",
+        {
+            "entities": [
+                [
+                    9,
+                    15,
+                    "target_word"
+                ]
+            ]
+        }
+    ],
+    [
+        "do we have a court marshall in the house",
+        {
+            "entities": [
+                [
+                    13,
+                    18,
+                    "target_word"
+                ]
+            ]
+        }
+    ],
+    [
+        "who is a court official here",
+        {
+            "entities": [
+                [
+                    9,
+                    14,
+                    "target_word"
+                ]
+            ]
+        }
+    ]
+]
