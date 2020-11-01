@@ -57,7 +57,7 @@ const appRoutes: Routes = [
     
   },
   {
-     path: 'edit',
+    path: 'profile',
     loadChildren: './edit/edit.module#EditModule',
    
   },

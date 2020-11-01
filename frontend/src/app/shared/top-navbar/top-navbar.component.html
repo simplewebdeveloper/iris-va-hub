@@ -20,6 +20,16 @@
                 </ul>
             </div>
         </li>
+
+        <li *ngIf="project">
+            <a a [routerLink]="['/project', project?.id]" class="uk-navbar-item uk-text-capitalize">{{project?.project_name}}</a>
+        </li>
+
+        <li *ngIf="va"><a class="uk-navbar-item">></a></li>
+
+        <li *ngIf="va">
+            <a [routerLink]="['/va', va?.id]" class="uk-navbar-item uk-text-capitalize">{{va?.va_name}}</a>
+        </li>
           
       </ul>
   </div>
