@@ -1,0 +1,74 @@
+[
+    {
+        "intent": "goodbye",
+        "utterance": "byeee"
+    },
+    {
+        "intent": "goodbye",
+        "utterance": "good bye"
+    },
+    {
+        "intent": "goodbye",
+        "utterance": "bye bye"
+    },
+    {
+        "intent": "goodbye",
+        "utterance": "by bye"
+    },
+    {
+        "intent": "goodbye",
+        "utterance": "goodbye"
+    },
+    {
+        "intent": "goodbye",
+        "utterance": "bye"
+    },
+    {
+        "intent": "building_works",
+        "utterance": "we need some building works"
+    },
+    {
+        "intent": "building_works",
+        "utterance": "please bring up buildingworks"
+    },
+    {
+        "intent": "building_works",
+        "utterance": "what are the buildingworks"
+    },
+    {
+        "intent": "building_works",
+        "utterance": "what are some building works"
+    },
+    {
+        "intent": "building_works",
+        "utterance": "can we see building works"
+    },
+    {
+        "intent": "building_works",
+        "utterance": "what are some buildingworks"
+    },
+    {
+        "intent": "road_works",
+        "utterance": "give me roadwork details"
+    },
+    {
+        "intent": "road_works",
+        "utterance": "can i get info in roadworks"
+    },
+    {
+        "intent": "road_works",
+        "utterance": "can i know about the roadworks"
+    },
+    {
+        "intent": "road_works",
+        "utterance": "talk about the roadworks"
+    },
+    {
+        "intent": "road_works",
+        "utterance": "are there any roadworks"
+    },
+    {
+        "intent": "road_works",
+        "utterance": "hey can you tell me about some roadworks happening"
+    }
+]

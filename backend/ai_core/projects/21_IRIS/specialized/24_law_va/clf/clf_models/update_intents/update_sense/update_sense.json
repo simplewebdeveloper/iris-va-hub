@@ -1,0 +1,74 @@
+[
+    {
+        "intent": "not_update",
+        "utterance": "bye goodbye"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "bye bye"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "good bye"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "byee"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "goodbye"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "bye"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "what is court"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "give some meaning to the term court"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "please define what court is"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "lets talk about the term court"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "i need to know what a court is"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "what is a court"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "can you give meaning to the word law"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "talk to me about what law is"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "can you define law"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "define the word law for me"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "what does law mean"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "what is law"
+    }
+]

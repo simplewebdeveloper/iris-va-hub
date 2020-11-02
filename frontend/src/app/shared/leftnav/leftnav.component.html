@@ -46,7 +46,8 @@
     <ul class="uk-nav uk-nav-default">
         <li class="uk-active uk-text-lead"><a [routerLink]="['/project', project?.id]">{{ project?.project_name }}</a></li>
         <li><a routerLink="#" routerLinkActive="active-link">Project Tags</a></li>
-        <li><a [routerLink]="['/project', project?.id, 'context']" routerLinkActive="active-link">Configure Context</a></li>
+        <li><a [routerLink]="['/create', project?.id]" routerLinkActive="active-link">Create VA</a></li>
+        <li><a [routerLink]="['/project', project?.id, 'transitions']" routerLinkActive="active-link">Project transitions</a></li>
     </ul>
 </div>
 
@@ -59,6 +60,8 @@
         <li><a routerLink="/profile" routerLinkActive="active-link">Profile</a></li>
         <li><a routerLink="/intents" routerLinkActive="active-link">Intents</a></li>
         <li><a routerLink="/svps" routerLinkActive="active-link">Labels</a></li>
+        <li class="uk-margin-top uk-text-bolder"><a routerLink="#">Train</a></li>
+        <li class="uk-nav-divider"></li>
         <li><a routerLink="/train" routerLinkActive="active-link">Train</a></li>
         <li class="uk-margin-top uk-text-bolder"><a routerLink="#">Personalize</a></li>
         <li class="uk-nav-divider"></li>

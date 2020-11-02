@@ -1,0 +1,74 @@
+[
+    {
+        "intent": "not_update",
+        "utterance": "byeee"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "good bye"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "bye bye"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "by bye"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "goodbye"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "bye"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "we need some building works"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "please bring up buildingworks"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "what are the buildingworks"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "what are some building works"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "can we see building works"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "what are some buildingworks"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "give me roadwork details"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "can i get info in roadworks"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "can i know about the roadworks"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "talk about the roadworks"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "are there any roadworks"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "hey can you tell me about some roadworks happening"
+    }
+]

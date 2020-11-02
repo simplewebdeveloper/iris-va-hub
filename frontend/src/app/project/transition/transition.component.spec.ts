@@ -1,6 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ContextComponent } from './context.component';
+import { ContextComponent } from './transition.component';
 
 describe('ContextComponent', () => {
   let component: ContextComponent;

@@ -19,7 +19,7 @@
         <div uk-toggle="target: #create-project-modal" id="va-card" class="uk-card-light uk-card-body uk-border-rounded uk-box-shadow-medium uk-box-shadow-hover-large">
           <div class="uk-margin">
             <p class="uk-text-muted"><span uk-icon="icon: plus-circle; ratio: 2"></span></p>    
-            <legend class="uk-legend"> Create Project</legend>
+            <legend class="uk-legend">Create Project</legend>
             <!-- <div class="uk-flex uk-flex-center">
               
           </div> -->
@@ -28,25 +28,23 @@
       
 
       <div *ngFor="let project of projects; let i = index" id="project-card">
-
-        <!-- <div [routerLink]="['/project', project.id]"> -->
       
         <div class="uk-card-light uk-card-body uk-border-rounded uk-box-shadow-medium uk-box-shadow-hover-large">
-          <!-- <p class="uk-text-muted"><span uk-icon="icon: nut; ratio: 2"></span></p> -->
           <a class="uk-align-right" type="button"><span uk-icon="more-vertical"></span></a>
   <div uk-dropdown>
       <ul class="uk-nav uk-dropdown-nav">
-          <li><a [routerLink]="['/project', project.id]"><span uk-icon="forward"></span> View</a></li>
-          <li class="uk-nav-divider"></li>
-          <li><a (click)="edit_project(project.id)" href="#" uk-toggle="target: #edit-project-modal"><span uk-icon="pencil"></span> Edit</a></li>
+          <li><a (click)="edit_project(project.id)" uk-toggle="target: #edit-project-modal"><span uk-icon="pencil"></span> Edit</a></li>
           <li><a (click)="delete_project(i, project.id)"><span uk-icon="trash"></span> Delete</a></li>
       </ul>
   </div>
+        <div [routerLink]="['/project', project.id]">
           <p><span class="uk-badge">{{ project.project_tag }}</span></p>
           <p class="uk-card-title">{{ project.project_name }}</p>
           <p>{{ project.project_desc }}</p>
           <div class="uk-button-group">
           </div>
+        </div>
+          
         </div>
       
         <!-- </div> -->
@@ -68,7 +66,7 @@
   <div class="uk-modal-dialog uk-modal-body">
     <button class="uk-modal-close-outside" type="button" uk-close></button>
     <div class="uk-margin">
-      <legend><span uk-icon="icon: plus-circle; ratio: 1"></span> Create project </legend>
+      <legend class="uk-legend">Create project </legend>
     </div>
 
     <form [formGroup]="create_project_form" (ngSubmit)="create_project_form_submit()">
@@ -110,7 +108,7 @@
   <div class="uk-modal-dialog uk-modal-body">
     <button class="uk-modal-close-outside" type="button" uk-close></button>
     <div class="uk-margin">
-      <legend><span uk-icon="icon: pencil; ratio: 1"></span> Edit project </legend>
+      <legend class="uk-legend">Edit project </legend>
     </div>
 
     <form [formGroup]="edit_project_form" (ngSubmit)="edit_project_form_submit()">

@@ -1,0 +1,62 @@
+[
+    [
+        "i would like to book a manicure",
+        {
+            "entities": [
+                [
+                    23,
+                    31,
+                    "target_word"
+                ]
+            ]
+        }
+    ],
+    [
+        "is there a salon rep near me",
+        {
+            "entities": [
+                [
+                    11,
+                    16,
+                    "target_word"
+                ]
+            ]
+        }
+    ],
+    [
+        "who can cut my hair and do my nails",
+        {
+            "entities": [
+                [
+                    8,
+                    11,
+                    "target_word"
+                ]
+            ]
+        }
+    ],
+    [
+        "can you wax my arms and legs",
+        {
+            "entities": [
+                [
+                    8,
+                    11,
+                    "target_word"
+                ]
+            ]
+        }
+    ],
+    [
+        "how can i get a pedicure?",
+        {
+            "entities": [
+                [
+                    16,
+                    24,
+                    "target_word"
+                ]
+            ]
+        }
+    ]
+]

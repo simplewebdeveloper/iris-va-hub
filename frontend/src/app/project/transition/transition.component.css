@@ -1,0 +1,6 @@
+.custom-container {
+    max-height: 30rem;
+    /* text-align: center; */
+    overflow-y: scroll;
+    border: 1px solid #1e87f0;
+}
