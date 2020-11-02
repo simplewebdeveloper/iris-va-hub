@@ -1,1 +1,26 @@
-[]
+[
+    {
+        "text": "update to law guy",
+        "label": "law_va_update"
+    },
+    {
+        "text": "update that to lawyer",
+        "label": "law_va_update"
+    },
+    {
+        "text": "update to the legal guy",
+        "label": "law_va_update"
+    },
+    {
+        "text": "update what i just said",
+        "label": "law_va_update"
+    },
+    {
+        "text": "update that to the attorney",
+        "label": "law_va_update"
+    },
+    {
+        "text": "actually its the lawyer",
+        "label": "law_va_update"
+    }
+]

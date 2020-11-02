@@ -1,5 +1,29 @@
 [
     {
+        "intent": "not_update",
+        "utterance": "are there any constructions"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "are roadworks happening on sherif"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "are there any construction on sherif mandela"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "talk to me about the road works"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "tell me about the road enhancement projects"
+    },
+    {
+        "intent": "not_update",
+        "utterance": "can i speak with the sherif va"
+    },
+    {
         "intent": "update",
         "utterance": "update to law guy"
     },

@@ -10,10 +10,16 @@ urlpatterns = [
     path('get_project', get_single_project.as_view()),
     path('delete_project', delete_single_project.as_view()),
     path('update_project', update_single_project.as_view()),
+    path('create_transition', create_transition.as_view()),
+
+    # Transition paths
+    path('get_transitions_for_project', get_transitions_for_project.as_view()),
+    path('delete_single_transition', delete_single_transition.as_view()),
 
     # Va paths
     path('create_va', create_va.as_view()),
     path('get_vas_for_project', get_vas_for_project.as_view()),
+    path('get_vas_for_project_by_tag', get_vas_for_project_based_on_tag.as_view()),
     path('get_va', get_single_va.as_view()),
     path('delete_va', delete_single_va.as_view()),
     path('update_va', update_single_va.as_view()),

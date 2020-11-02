@@ -3,10 +3,16 @@ from .models import Project
 from .models import Va
 from .models import Intent
 from .models import Svp
+from .models import Transition
 
 class ProjectSerializer(serializers.ModelSerializer):
     class Meta:
         model = Project
+        fields = '__all__'
+
+class TransitionSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Transition
         fields = '__all__'
 
 

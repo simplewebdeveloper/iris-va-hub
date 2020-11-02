@@ -1,0 +1,104 @@
+
+<div class="uk-container">
+    
+    <div class="uk-card uk-card-body uk-margin-top">
+        <div class="uk-margin">
+            <p class="uk-text-muted"><span uk-icon="icon: plus-circle; ratio: 2"></span></p>    
+            <legend class="uk-legend"> Create a new Project Transition</legend>
+            <p *ngIf="project">Project: {{ project?.project_name }}</p>
+            <!-- <div class="uk-flex uk-flex-center">
+              
+          </div> -->
+            </div>
+
+            <form [formGroup]="create_transition_form" (ngSubmit)="create_transition_form_submit()">
+                <fieldset class="uk-fieldset">
+    
+                  <div class="uk-margin">
+                    <!-- <div class="uk-text-small uk-margin-bottom">Project</div> -->
+                    <input class="uk-input" formControlName="project" type="text" required readonly hidden>
+                </div>
+
+                    <div class="uk-margin">
+                        <div class="uk-text-small uk-margin-bottom">Transition name</div>
+                        <input class="uk-input" formControlName="transition_name" type="text" required>
+                    </div>
+
+                    <div class="uk-margin">
+                        <!-- <div class="uk-text-small uk-margin-bottom">Project</div> -->
+                        <input class="uk-input" formControlName="source_va_id" type="text" required readonly hidden>
+                    </div>
+    
+                    <div class="uk-margin">
+                      <div class="uk-text-small uk-margin-bottom">Select a source VA</div>
+                      <select formControlName="source_va_name" class="uk-select" (change)="get_intents_for_selected_va($event)" required>
+                        <option value="" selected disabled>Choose a source va</option>
+                        <option *ngFor="let handoff_va of handoff_vas" value="{{ handoff_va?.id }}">{{ handoff_va?.va_name }}</option>
+                    </select>
+                    </div>
+
+                    <div class="uk-margin">
+                        <div class="uk-text-small uk-margin-bottom">Select the source VA Intent</div>
+                        <select formControlName="source_va_intent" class="uk-select" required>
+                          <option value="" selected disabled>Choose the source va intent</option>
+                          <option *ngFor="let source_va_intent of source_va_intents" value="{{ source_va_intent }}">{{ source_va_intent }}</option>
+                      </select>
+                      </div>
+
+                      <div class="uk-margin">
+                        <div class="uk-text-small uk-margin-bottom">Select the dest VA</div>
+                        <select formControlName="dest_va" class="uk-select" required>
+                          <option value="" selected disabled>Choose the dest va</option>
+                          <option *ngFor="let va_for_project of vas_for_project" value="{{ va_for_project.va_name }}">{{ va_for_project?.va_name }}</option>
+                      </select>
+                      </div>
+    
+                </fieldset>
+    
+                <div class="uk-margin">
+                    <button class="uk-button uk-button-secondary uk-button-small">Create and Save Transition</button>
+                </div>
+            </form>
+
+            <hr>
+
+            <div class="uk-margin">  
+                <legend class="uk-legend">Active transitions for this project</legend>
+                <p *ngIf="project">Project: {{ project?.project_name }}</p>
+                <!-- <div class="uk-flex uk-flex-center">
+                  
+              </div> -->
+                </div>
+
+                <div>
+                    <div class="custom-container uk-padding-small">
+                        <table *ngIf="transitions" class="uk-table uk-table-justify uk-table-divider">
+                            <thead>
+                                <tr class="uk-sticky">
+                                    <th>transition name</th>
+                                    <th>source va</th>
+                                    <th>source va intent</th>
+                                    <th>dest va</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let transition of transitions; let i = index">
+                                    <td>{{ transition.transition_name }}</td>
+                                    <td>{{ transition.source_va_name }}</td>
+                                    <td>{{ transition.source_va_intent }}</td>
+                                    <td>{{ transition.dest_va }}</td>
+                                    <td>
+                                        <button class="uk-button uk-button-small"><span uk-icon="trash" (click)="delete_transition(transition.id, i)"></span></button>
+                                    </td>
+                                </tr>
+        
+                            </tbody>
+                        </table>
+                    </div>
+        
+                </div>
+
+</div>
+
+</div>

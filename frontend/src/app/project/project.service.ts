@@ -41,9 +41,23 @@ export class ProjectService {
     );
   }
 
+
+
   get_vas_for_project(project_id: number) {
     return this.http.post<any>(
       this.baseUrl + '/va/get_vas_for_project', {project_id}
+    );
+  }
+
+  get_transitions_for_project(project_id: number) {
+    return this.http.post<any>(
+      this.baseUrl + '/project/get_transitions_for_project', {project_id}
+    );
+  }
+
+  get_vas_for_project_by_tag(project_id: number, va_tag) {
+    return this.http.post<any>(
+      this.baseUrl + '/va/get_vas_for_project_by_tag', {project_id, va_tag}
     );
   }
 
@@ -52,12 +66,25 @@ export class ProjectService {
       this.baseUrl + '/va/delete_va', {project_id}
     );
   }
+
+  delete_single_transition(transition_id) {
+    return this.http.post<any>(
+      this.baseUrl + '/project/delete_single_transition', {transition_id}
+    );
+  }
   
  delete_single_va(va_id, va_tag, project_id) {
   return this.http.post<any>(
     this.baseUrl + '/va/delete_va', {va_id, va_tag, project_id}
   );
  }
+
+
+ create_transition(data: any) {
+   return this.http.post<any>(
+     this.baseUrl + '/project/create_transition', data
+   )
+ } 
 
 
 set_current_project(project) {

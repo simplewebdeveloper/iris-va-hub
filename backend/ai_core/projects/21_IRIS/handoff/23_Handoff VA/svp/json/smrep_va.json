@@ -1,0 +1,62 @@
+[
+    [
+        "tell me about the road enhancement projects",
+        {
+            "entities": [
+                [
+                    18,
+                    22,
+                    "target_word"
+                ]
+            ]
+        }
+    ],
+    [
+        "talk to me about the road works",
+        {
+            "entities": [
+                [
+                    21,
+                    31,
+                    "target_word"
+                ]
+            ]
+        }
+    ],
+    [
+        "are there any construction on sherif mandela",
+        {
+            "entities": [
+                [
+                    14,
+                    26,
+                    "target_word"
+                ]
+            ]
+        }
+    ],
+    [
+        "are roadworks happening on sherif",
+        {
+            "entities": [
+                [
+                    4,
+                    13,
+                    "target_word"
+                ]
+            ]
+        }
+    ],
+    [
+        "are there any constructions",
+        {
+            "entities": [
+                [
+                    14,
+                    27,
+                    "target_word"
+                ]
+            ]
+        }
+    ]
+]

@@ -1,5 +1,53 @@
 [
     {
+        "intent": "smrep_va",
+        "utterance": "are there any constructions"
+    },
+    {
+        "intent": "smrep_va",
+        "utterance": "are roadworks happening on sherif"
+    },
+    {
+        "intent": "smrep_va",
+        "utterance": "are there any construction on sherif mandela"
+    },
+    {
+        "intent": "smrep_va",
+        "utterance": "talk to me about the road works"
+    },
+    {
+        "intent": "smrep_va",
+        "utterance": "tell me about the road enhancement projects"
+    },
+    {
+        "intent": "smrep_va",
+        "utterance": "can i speak with the sherif va"
+    },
+    {
+        "intent": "law_va_update",
+        "utterance": "update to law guy"
+    },
+    {
+        "intent": "law_va_update",
+        "utterance": "update that to lawyer"
+    },
+    {
+        "intent": "law_va_update",
+        "utterance": "update to the legal guy"
+    },
+    {
+        "intent": "law_va_update",
+        "utterance": "update what i just said"
+    },
+    {
+        "intent": "law_va_update",
+        "utterance": "update that to the attorney"
+    },
+    {
+        "intent": "law_va_update",
+        "utterance": "actually its the lawyer"
+    },
+    {
         "intent": "greeting",
         "utterance": "Hi friend"
     },

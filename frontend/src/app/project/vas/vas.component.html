@@ -31,16 +31,16 @@
             <a class="uk-align-right" type="button"><span uk-icon="more-vertical"></span></a>
     <div uk-dropdown>
         <ul class="uk-nav uk-dropdown-nav">
-            <li><a (click)="send_tag_and_id_to_chatbox_service(va.va_tag, va.id)" href="#" uk-toggle="target: #modal-example" ><span uk-icon="microphone"></span> Quick Test</a></li>
-            <li><a [routerLink]="['/va', va.id]"><span uk-icon="pencil"></span> View</a></li>
-            <li class="uk-nav-divider"></li>
+            <!-- <li><a (click)="send_tag_and_id_to_chatbox_service(va.va_tag, va.id)" href="#" uk-toggle="target: #modal-example" ><span uk-icon="microphone"></span> Quick Test</a></li> -->
             <li><a (click)="delete_va(i, va.id, va.va_tag)"><span uk-icon="trash"></span> Delete</a></li>
         </ul>
     </div>
-            <p><span class="uk-badge">{{ va.va_tag }}</span></p>
-            <p class="uk-card-title">{{ va.va_name }}</p>
-            <p>{{ va.va_desc }}</p>
-            <div class="uk-button-group">
+            <div [routerLink]="['/va', va.id]">
+              <p><span class="uk-badge">{{ va.va_tag }}</span></p>
+              <p class="uk-card-title">{{ va.va_name }}</p>
+              <p>{{ va.va_desc }}</p>
+              <div class="uk-button-group">
+            </div>
             </div>
           </div>
         

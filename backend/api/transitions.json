@@ -1,0 +1,20 @@
+[
+    {
+        "24": {
+            "transition_id": 24,
+            "transition_name": "handoff_to_law_va",
+            "source_va_id": "23",
+            "source_va_intent": "law_va",
+            "dest_va": "law_va"
+        }
+    },
+    {
+        "25": {
+            "transition_id": 25,
+            "transition_name": "handoff_to_smrep_va",
+            "source_va_id": "23",
+            "source_va_intent": "smrep_va",
+            "dest_va": "smrep_va"
+        }
+    }
+]
