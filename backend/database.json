@@ -1,0 +1,987 @@
+[
+{
+ "model": "api.project",
+ "pk": 21,
+ "fields": {
+  "project_name": "IRIS",
+  "project_tag": "MOH",
+  "project_desc": "A collection of IRIS related VAs"
+ }
+},
+{
+ "model": "api.transition",
+ "pk": 24,
+ "fields": {
+  "transition_name": "handoff_to_law_va",
+  "project": 21,
+  "source_va_id": "23",
+  "source_va_name": "Handoff VA",
+  "source_va_intent": "law_va",
+  "dest_va": "law_va"
+ }
+},
+{
+ "model": "api.transition",
+ "pk": 25,
+ "fields": {
+  "transition_name": "handoff_to_smrep_va",
+  "project": 21,
+  "source_va_id": "23",
+  "source_va_name": "Handoff VA",
+  "source_va_intent": "smrep_va",
+  "dest_va": "smrep_va"
+ }
+},
+{
+ "model": "api.va",
+ "pk": 23,
+ "fields": {
+  "project": 21,
+  "va_name": "Handoff VA",
+  "va_tag": "handoff",
+  "va_desc": "Handoff requests to specialized VAs",
+  "va_intents": "law_va, smrep_va, small_talk, greeting, handoff_update",
+  "va_slots": "target_word"
+ }
+},
+{
+ "model": "api.va",
+ "pk": 24,
+ "fields": {
+  "project": 21,
+  "va_name": "law_va",
+  "va_tag": "specialized",
+  "va_desc": "Handles FAQ on law-related topics",
+  "va_intents": "what_is_law, what_is_court, goodbye",
+  "va_slots": "term"
+ }
+},
+{
+ "model": "api.va",
+ "pk": 26,
+ "fields": {
+  "project": 21,
+  "va_name": "smrep_va",
+  "va_tag": "specialized",
+  "va_desc": "FAQs on Sherif Road Enhancement Projects",
+  "va_intents": "road_works, building_works, goodbye",
+  "va_slots": "term"
+ }
+},
+{
+ "model": "api.intent",
+ "pk": 75,
+ "fields": {
+  "va": 23,
+  "intent": "law_va",
+  "utterance": "get me a lawyer",
+  "intent_data": "{\"intent\":\"law_va\",\"utterance\":\"get me a lawyer\"}"
+ }
+},
+{
+ "model": "api.intent",
+ "pk": 76,
+ "fields": {
+  "va": 23,
+  "intent": "law_va",
+  "utterance": "can i talk with an attorney?",
+  "intent_data": "{\"intent\":\"law_va\",\"utterance\":\"can i talk with an attorney?\"}"
+ }
+},
+{
+ "model": "api.intent",
+ "pk": 77,
+ "fields": {
+  "va": 23,
+  "intent": "law_va",
+  "utterance": "is there some legal advice i can get",
+  "intent_data": "{\"intent\":\"law_va\",\"utterance\":\"is there some legal advice i can get\"}"
+ }
+},
+{
+ "model": "api.intent",
+ "pk": 78,
+ "fields": {
+  "va": 23,
+  "intent": "law_va",
+  "utterance": "who is a lawyer here",
+  "intent_data": "{\"intent\":\"law_va\",\"utterance\":\"who is a lawyer here\"}"
+ }
+},
+{
+ "model": "api.intent",
+ "pk": 79,
+ "fields": {
+  "va": 23,
+  "intent": "law_va",
+  "utterance": "do we have a court marshall in the house",
+  "intent_data": "{\"intent\":\"law_va\",\"utterance\":\"do we have a court marshall in the house\"}"
+ }
+},
+{
+ "model": "api.intent",
+ "pk": 80,
+ "fields": {
+  "va": 23,
+  "intent": "law_va",
+  "utterance": "who is a court official here",
+  "intent_data": "{\"intent\":\"law_va\",\"utterance\":\"who is a court official here\"}"
+ }
+},
+{
+ "model": "api.intent",
+ "pk": 81,
+ "fields": {
+  "va": 23,
+  "intent": "salon_va",
+  "utterance": "i would like to book a manicure",
+  "intent_data": "{\"intent\":\"salon_va\",\"utterance\":\"i would like to book a manicure\"}"
+ }
+},
+{
+ "model": "api.intent",
+ "pk": 82,
+ "fields": {
+  "va": 23,
+  "intent": "salon_va",
+  "utterance": "i want a haircut for the summar",
+  "intent_data": "{\"intent\":\"salon_va\",\"utterance\":\"i want a haircut for the summar\"}"
+ }
+},
+{
+ "model": "api.intent",
+ "pk": 83,
+ "fields": {
+  "va": 23,
+  "intent": "salon_va",
+  "utterance": "is there a salon rep near me",
+  "intent_data": "{\"intent\":\"salon_va\",\"utterance\":\"is there a salon rep near me\"}"
+ }
+},
+{
+ "model": "api.intent",
+ "pk": 84,
+ "fields": {
+  "va": 23,
+  "intent": "salon_va",
+  "utterance": "who can cut my hair and do my nails",
+  "intent_data": "{\"intent\":\"salon_va\",\"utterance\":\"who can cut my hair and do my nails\"}"
+ }
+},
+{
+ "model": "api.intent",
+ "pk": 85,
+ "fields": {
+  "va": 23,
+  "intent": "salon_va",
+  "utterance": "can you wax my arms and legs",
+  "intent_data": "{\"intent\":\"salon_va\",\"utterance\":\"can you wax my arms and legs\"}"
+ }
+},
+{
+ "model": "api.intent",
+ "pk": 86,
+ "fields": {
+  "va": 23,
+  "intent": "salon_va",
+  "utterance": "how can i get a pedicure?",
+  "intent_data": "{\"intent\":\"salon_va\",\"utterance\":\"how can i get a pedicure?\"}"
+ }
+},
+{
+ "model": "api.intent",
+ "pk": 87,
+ "fields": {
+  "va": 23,
+  "intent": "small_talk",
+  "utterance": "Hi. My name is Sally. What is yours?,",
+  "intent_data": "{\"intent\":\"small_talk\",\"utterance\":\"Hi. My name is Sally. What is yours?,\"}"
+ }
+},
+{
+ "model": "api.intent",
+ "pk": 88,
+ "fields": {
+  "va": 23,
+  "intent": "small_talk",
+  "utterance": " I have lived in Colorado my entire life,",
+  "intent_data": "{\"intent\":\"small_talk\",\"utterance\":\" I have lived in Colorado my entire life,\"}"
+ }
+},
+{
+ "model": "api.intent",
+ "pk": 89,
+ "fields": {
+  "va": 23,
+  "intent": "small_talk",
+  "utterance": "I love to eat pizza,",
+  "intent_data": "{\"intent\":\"small_talk\",\"utterance\":\"I love to eat pizza,\"}"
+ }
+},
+{
+ "model": "api.intent",
+ "pk": 90,
+ "fields": {
+  "va": 23,
+  "intent": "small_talk",
+  "utterance": "What surprised you the most",
+  "intent_data": "{\"intent\":\"small_talk\",\"utterance\":\"What surprised you the most\"}"
+ }
+},
+{
+ "model": "api.intent",
+ "pk": 91,
+ "fields": {
+  "va": 23,
+  "intent": "small_talk",
+  "utterance": "it is about time you called",
+  "intent_data": "{\"intent\":\"small_talk\",\"utterance\":\"it is about time you called\"}"
+ }
+},
+{
+ "model": "api.intent",
+ "pk": 92,
+ "fields": {
+  "va": 23,
+  "intent": "small_talk",
+  "utterance": "I am hoping to go to a movie later tonight",
+  "intent_data": "{\"intent\":\"small_talk\",\"utterance\":\"I am hoping to go to a movie later tonight\"}"
+ }
+},
+{
+ "model": "api.intent",
+ "pk": 93,
+ "fields": {
+  "va": 23,
+  "intent": "small_talk",
+  "utterance": "I just heard a great new song on the radio",
+  "intent_data": "{\"intent\":\"small_talk\",\"utterance\":\"I just heard a great new song on the radio\"}"
+ }
+},
+{
+ "model": "api.intent",
+ "pk": 94,
+ "fields": {
+  "va": 23,
+  "intent": "greeting",
+  "utterance": "hey there whats up",
+  "intent_data": "{\"intent\":\"greeting\",\"utterance\":\"hey there whats up\"}"
+ }
+},
+{
+ "model": "api.intent",
+ "pk": 95,
+ "fields": {
+  "va": 23,
+  "intent": "greeting",
+  "utterance": "Here the here the my mate",
+  "intent_data": "{\"intent\":\"greeting\",\"utterance\":\"Here the here the my mate\"}"
+ }
+},
+{
+ "model": "api.intent",
+ "pk": 96,
+ "fields": {
+  "va": 23,
+  "intent": "greeting",
+  "utterance": "helllo everyone",
+  "intent_data": "{\"intent\":\"greeting\",\"utterance\":\"helllo everyone\"}"
+ }
+},
+{
+ "model": "api.intent",
+ "pk": 97,
+ "fields": {
+  "va": 23,
+  "intent": "greeting",
+  "utterance": "Good morning to you",
+  "intent_data": "{\"intent\":\"greeting\",\"utterance\":\"Good morning to you\"}"
+ }
+},
+{
+ "model": "api.intent",
+ "pk": 98,
+ "fields": {
+  "va": 23,
+  "intent": "greeting",
+  "utterance": "Good afternoon boss",
+  "intent_data": "{\"intent\":\"greeting\",\"utterance\":\"Good afternoon boss\"}"
+ }
+},
+{
+ "model": "api.intent",
+ "pk": 99,
+ "fields": {
+  "va": 23,
+  "intent": "greeting",
+  "utterance": "Hi friend",
+  "intent_data": "{\"intent\":\"greeting\",\"utterance\":\"Hi friend\"}"
+ }
+},
+{
+ "model": "api.intent",
+ "pk": 100,
+ "fields": {
+  "va": 23,
+  "intent": "law_va_update",
+  "utterance": "actually its the lawyer",
+  "intent_data": "{\"intent\":\"law_va_update\",\"utterance\":\"actually its the lawyer\"}"
+ }
+},
+{
+ "model": "api.intent",
+ "pk": 101,
+ "fields": {
+  "va": 23,
+  "intent": "law_va_update",
+  "utterance": "update that to the attorney",
+  "intent_data": "{\"intent\":\"law_va_update\",\"utterance\":\"update that to the attorney\"}"
+ }
+},
+{
+ "model": "api.intent",
+ "pk": 102,
+ "fields": {
+  "va": 23,
+  "intent": "law_va_update",
+  "utterance": "update what i just said",
+  "intent_data": "{\"intent\":\"law_va_update\",\"utterance\":\"update what i just said\"}"
+ }
+},
+{
+ "model": "api.intent",
+ "pk": 103,
+ "fields": {
+  "va": 23,
+  "intent": "law_va_update",
+  "utterance": "update to the legal guy",
+  "intent_data": "{\"intent\":\"law_va_update\",\"utterance\":\"update to the legal guy\"}"
+ }
+},
+{
+ "model": "api.intent",
+ "pk": 104,
+ "fields": {
+  "va": 23,
+  "intent": "law_va_update",
+  "utterance": "update that to lawyer",
+  "intent_data": "{\"intent\":\"law_va_update\",\"utterance\":\"update that to lawyer\"}"
+ }
+},
+{
+ "model": "api.intent",
+ "pk": 105,
+ "fields": {
+  "va": 23,
+  "intent": "law_va_update",
+  "utterance": "update to law guy",
+  "intent_data": "{\"intent\":\"law_va_update\",\"utterance\":\"update to law guy\"}"
+ }
+},
+{
+ "model": "api.intent",
+ "pk": 106,
+ "fields": {
+  "va": 24,
+  "intent": "what_is_law",
+  "utterance": "what is law",
+  "intent_data": "{\"intent\":\"what_is_law\",\"utterance\":\"what is law\"}"
+ }
+},
+{
+ "model": "api.intent",
+ "pk": 109,
+ "fields": {
+  "va": 24,
+  "intent": "what_is_law",
+  "utterance": "what does law mean",
+  "intent_data": "{\"intent\":\"what_is_law\",\"utterance\":\"what does law mean\"}"
+ }
+},
+{
+ "model": "api.intent",
+ "pk": 110,
+ "fields": {
+  "va": 24,
+  "intent": "what_is_law",
+  "utterance": "define the word law for me",
+  "intent_data": "{\"intent\":\"what_is_law\",\"utterance\":\"define the word law for me\"}"
+ }
+},
+{
+ "model": "api.intent",
+ "pk": 111,
+ "fields": {
+  "va": 24,
+  "intent": "what_is_law",
+  "utterance": "can you define law",
+  "intent_data": "{\"intent\":\"what_is_law\",\"utterance\":\"can you define law\"}"
+ }
+},
+{
+ "model": "api.intent",
+ "pk": 112,
+ "fields": {
+  "va": 24,
+  "intent": "what_is_law",
+  "utterance": "talk to me about what law is",
+  "intent_data": "{\"intent\":\"what_is_law\",\"utterance\":\"talk to me about what law is\"}"
+ }
+},
+{
+ "model": "api.intent",
+ "pk": 113,
+ "fields": {
+  "va": 24,
+  "intent": "what_is_law",
+  "utterance": "can you give meaning to the word law",
+  "intent_data": "{\"intent\":\"what_is_law\",\"utterance\":\"can you give meaning to the word law\"}"
+ }
+},
+{
+ "model": "api.intent",
+ "pk": 114,
+ "fields": {
+  "va": 24,
+  "intent": "what_is_court",
+  "utterance": "what is a court",
+  "intent_data": "{\"intent\":\"what_is_court\",\"utterance\":\"what is a court\"}"
+ }
+},
+{
+ "model": "api.intent",
+ "pk": 115,
+ "fields": {
+  "va": 24,
+  "intent": "what_is_court",
+  "utterance": "i need to know what a court is",
+  "intent_data": "{\"intent\":\"what_is_court\",\"utterance\":\"i need to know what a court is\"}"
+ }
+},
+{
+ "model": "api.intent",
+ "pk": 116,
+ "fields": {
+  "va": 24,
+  "intent": "what_is_court",
+  "utterance": "lets talk about the term court",
+  "intent_data": "{\"intent\":\"what_is_court\",\"utterance\":\"lets talk about the term court\"}"
+ }
+},
+{
+ "model": "api.intent",
+ "pk": 117,
+ "fields": {
+  "va": 24,
+  "intent": "what_is_court",
+  "utterance": "please define what court is",
+  "intent_data": "{\"intent\":\"what_is_court\",\"utterance\":\"please define what court is\"}"
+ }
+},
+{
+ "model": "api.intent",
+ "pk": 118,
+ "fields": {
+  "va": 24,
+  "intent": "what_is_court",
+  "utterance": "give some meaning to the term court",
+  "intent_data": "{\"intent\":\"what_is_court\",\"utterance\":\"give some meaning to the term court\"}"
+ }
+},
+{
+ "model": "api.intent",
+ "pk": 119,
+ "fields": {
+  "va": 24,
+  "intent": "what_is_court",
+  "utterance": "what is court",
+  "intent_data": "{\"intent\":\"what_is_court\",\"utterance\":\"what is court\"}"
+ }
+},
+{
+ "model": "api.intent",
+ "pk": 120,
+ "fields": {
+  "va": 24,
+  "intent": "goodbye",
+  "utterance": "bye",
+  "intent_data": "{\"intent\":\"goodbye\",\"utterance\":\"bye\"}"
+ }
+},
+{
+ "model": "api.intent",
+ "pk": 121,
+ "fields": {
+  "va": 24,
+  "intent": "goodbye",
+  "utterance": "goodbye",
+  "intent_data": "{\"intent\":\"goodbye\",\"utterance\":\"goodbye\"}"
+ }
+},
+{
+ "model": "api.intent",
+ "pk": 122,
+ "fields": {
+  "va": 24,
+  "intent": "goodbye",
+  "utterance": "byee",
+  "intent_data": "{\"intent\":\"goodbye\",\"utterance\":\"byee\"}"
+ }
+},
+{
+ "model": "api.intent",
+ "pk": 123,
+ "fields": {
+  "va": 24,
+  "intent": "goodbye",
+  "utterance": "good bye",
+  "intent_data": "{\"intent\":\"goodbye\",\"utterance\":\"good bye\"}"
+ }
+},
+{
+ "model": "api.intent",
+ "pk": 124,
+ "fields": {
+  "va": 24,
+  "intent": "goodbye",
+  "utterance": "bye bye",
+  "intent_data": "{\"intent\":\"goodbye\",\"utterance\":\"bye bye\"}"
+ }
+},
+{
+ "model": "api.intent",
+ "pk": 125,
+ "fields": {
+  "va": 24,
+  "intent": "goodbye",
+  "utterance": "bye goodbye",
+  "intent_data": "{\"intent\":\"goodbye\",\"utterance\":\"bye goodbye\"}"
+ }
+},
+{
+ "model": "api.intent",
+ "pk": 126,
+ "fields": {
+  "va": 24,
+  "intent": "what_is_law",
+  "utterance": "teach me about law",
+  "intent_data": "{\"intent\":\"what_is_law\",\"utterance\":\"teach me about law\"}"
+ }
+},
+{
+ "model": "api.intent",
+ "pk": 127,
+ "fields": {
+  "va": 23,
+  "intent": "smrep_va",
+  "utterance": "can i speak with the sherif va",
+  "intent_data": "{\"intent\":\"smrep_va\",\"utterance\":\"can i speak with the sherif va\"}"
+ }
+},
+{
+ "model": "api.intent",
+ "pk": 128,
+ "fields": {
+  "va": 23,
+  "intent": "smrep_va",
+  "utterance": "tell me about the road enhancement projects",
+  "intent_data": "{\"intent\":\"smrep_va\",\"utterance\":\"tell me about the road enhancement projects\"}"
+ }
+},
+{
+ "model": "api.intent",
+ "pk": 129,
+ "fields": {
+  "va": 23,
+  "intent": "smrep_va",
+  "utterance": "talk to me about the road works",
+  "intent_data": "{\"intent\":\"smrep_va\",\"utterance\":\"talk to me about the road works\"}"
+ }
+},
+{
+ "model": "api.intent",
+ "pk": 130,
+ "fields": {
+  "va": 23,
+  "intent": "smrep_va",
+  "utterance": "are there any construction on sherif mandela",
+  "intent_data": "{\"intent\":\"smrep_va\",\"utterance\":\"are there any construction on sherif mandela\"}"
+ }
+},
+{
+ "model": "api.intent",
+ "pk": 131,
+ "fields": {
+  "va": 23,
+  "intent": "smrep_va",
+  "utterance": "are roadworks happening on sherif",
+  "intent_data": "{\"intent\":\"smrep_va\",\"utterance\":\"are roadworks happening on sherif\"}"
+ }
+},
+{
+ "model": "api.intent",
+ "pk": 132,
+ "fields": {
+  "va": 23,
+  "intent": "smrep_va",
+  "utterance": "are there any constructions",
+  "intent_data": "{\"intent\":\"smrep_va\",\"utterance\":\"are there any constructions\"}"
+ }
+},
+{
+ "model": "api.intent",
+ "pk": 133,
+ "fields": {
+  "va": 26,
+  "intent": "road_works",
+  "utterance": "hey can you tell me about some roadworks happening",
+  "intent_data": "{\"intent\":\"road_works\",\"utterance\":\"hey can you tell me about some roadworks happening\"}"
+ }
+},
+{
+ "model": "api.intent",
+ "pk": 134,
+ "fields": {
+  "va": 26,
+  "intent": "road_works",
+  "utterance": "are there any roadworks",
+  "intent_data": "{\"intent\":\"road_works\",\"utterance\":\"are there any roadworks\"}"
+ }
+},
+{
+ "model": "api.intent",
+ "pk": 135,
+ "fields": {
+  "va": 26,
+  "intent": "road_works",
+  "utterance": "talk about the roadworks",
+  "intent_data": "{\"intent\":\"road_works\",\"utterance\":\"talk about the roadworks\"}"
+ }
+},
+{
+ "model": "api.intent",
+ "pk": 136,
+ "fields": {
+  "va": 26,
+  "intent": "road_works",
+  "utterance": "can i know about the roadworks",
+  "intent_data": "{\"intent\":\"road_works\",\"utterance\":\"can i know about the roadworks\"}"
+ }
+},
+{
+ "model": "api.intent",
+ "pk": 137,
+ "fields": {
+  "va": 26,
+  "intent": "road_works",
+  "utterance": "can i get info in roadworks",
+  "intent_data": "{\"intent\":\"road_works\",\"utterance\":\"can i get info in roadworks\"}"
+ }
+},
+{
+ "model": "api.intent",
+ "pk": 138,
+ "fields": {
+  "va": 26,
+  "intent": "road_works",
+  "utterance": "give me roadwork details",
+  "intent_data": "{\"intent\":\"road_works\",\"utterance\":\"give me roadwork details\"}"
+ }
+},
+{
+ "model": "api.intent",
+ "pk": 139,
+ "fields": {
+  "va": 26,
+  "intent": "building_works",
+  "utterance": "what are some buildingworks",
+  "intent_data": "{\"intent\":\"building_works\",\"utterance\":\"what are some buildingworks\"}"
+ }
+},
+{
+ "model": "api.intent",
+ "pk": 140,
+ "fields": {
+  "va": 26,
+  "intent": "building_works",
+  "utterance": "can we see building works",
+  "intent_data": "{\"intent\":\"building_works\",\"utterance\":\"can we see building works\"}"
+ }
+},
+{
+ "model": "api.intent",
+ "pk": 141,
+ "fields": {
+  "va": 26,
+  "intent": "building_works",
+  "utterance": "what are some building works",
+  "intent_data": "{\"intent\":\"building_works\",\"utterance\":\"what are some building works\"}"
+ }
+},
+{
+ "model": "api.intent",
+ "pk": 142,
+ "fields": {
+  "va": 26,
+  "intent": "building_works",
+  "utterance": "what are the buildingworks",
+  "intent_data": "{\"intent\":\"building_works\",\"utterance\":\"what are the buildingworks\"}"
+ }
+},
+{
+ "model": "api.intent",
+ "pk": 143,
+ "fields": {
+  "va": 26,
+  "intent": "building_works",
+  "utterance": "please bring up buildingworks",
+  "intent_data": "{\"intent\":\"building_works\",\"utterance\":\"please bring up buildingworks\"}"
+ }
+},
+{
+ "model": "api.intent",
+ "pk": 144,
+ "fields": {
+  "va": 26,
+  "intent": "building_works",
+  "utterance": "we need some building works",
+  "intent_data": "{\"intent\":\"building_works\",\"utterance\":\"we need some building works\"}"
+ }
+},
+{
+ "model": "api.intent",
+ "pk": 145,
+ "fields": {
+  "va": 26,
+  "intent": "goodbye",
+  "utterance": "bye",
+  "intent_data": "{\"intent\":\"goodbye\",\"utterance\":\"bye\"}"
+ }
+},
+{
+ "model": "api.intent",
+ "pk": 146,
+ "fields": {
+  "va": 26,
+  "intent": "goodbye",
+  "utterance": "goodbye",
+  "intent_data": "{\"intent\":\"goodbye\",\"utterance\":\"goodbye\"}"
+ }
+},
+{
+ "model": "api.intent",
+ "pk": 147,
+ "fields": {
+  "va": 26,
+  "intent": "goodbye",
+  "utterance": "by bye",
+  "intent_data": "{\"intent\":\"goodbye\",\"utterance\":\"by bye\"}"
+ }
+},
+{
+ "model": "api.intent",
+ "pk": 148,
+ "fields": {
+  "va": 26,
+  "intent": "goodbye",
+  "utterance": "bye bye",
+  "intent_data": "{\"intent\":\"goodbye\",\"utterance\":\"bye bye\"}"
+ }
+},
+{
+ "model": "api.intent",
+ "pk": 149,
+ "fields": {
+  "va": 26,
+  "intent": "goodbye",
+  "utterance": "good bye",
+  "intent_data": "{\"intent\":\"goodbye\",\"utterance\":\"good bye\"}"
+ }
+},
+{
+ "model": "api.intent",
+ "pk": 150,
+ "fields": {
+  "va": 26,
+  "intent": "goodbye",
+  "utterance": "byeee",
+  "intent_data": "{\"intent\":\"goodbye\",\"utterance\":\"byeee\"}"
+ }
+},
+{
+ "model": "api.svp",
+ "pk": 30,
+ "fields": {
+  "va": 23,
+  "slots": "[9,14,\"target_word\"]",
+  "utterance": "who is a court official here",
+  "svp_data": "[\"who is a court official here\",{\"entities\":[[9,14,\"target_word\"]]}]",
+  "intent": "law_va"
+ }
+},
+{
+ "model": "api.svp",
+ "pk": 31,
+ "fields": {
+  "va": 23,
+  "slots": "[13,18,\"target_word\"]",
+  "utterance": "do we have a court marshall in the house",
+  "svp_data": "[\"do we have a court marshall in the house\",{\"entities\":[[13,18,\"target_word\"]]}]",
+  "intent": "law_va"
+ }
+},
+{
+ "model": "api.svp",
+ "pk": 32,
+ "fields": {
+  "va": 23,
+  "slots": "[9,15,\"target_word\"]",
+  "utterance": "who is a lawyer here",
+  "svp_data": "[\"who is a lawyer here\",{\"entities\":[[9,15,\"target_word\"]]}]",
+  "intent": "law_va"
+ }
+},
+{
+ "model": "api.svp",
+ "pk": 33,
+ "fields": {
+  "va": 23,
+  "slots": "[14,19,\"target_word\"]",
+  "utterance": "is there some legal advice i can get",
+  "svp_data": "[\"is there some legal advice i can get\",{\"entities\":[[14,19,\"target_word\"]]}]",
+  "intent": "law_va"
+ }
+},
+{
+ "model": "api.svp",
+ "pk": 34,
+ "fields": {
+  "va": 23,
+  "slots": "[19,27,\"target_word\"]",
+  "utterance": "can i talk with an attorney?",
+  "svp_data": "[\"can i talk with an attorney?\",{\"entities\":[[19,27,\"target_word\"]]}]",
+  "intent": "law_va"
+ }
+},
+{
+ "model": "api.svp",
+ "pk": 35,
+ "fields": {
+  "va": 23,
+  "slots": "[9,15,\"target_word\"]",
+  "utterance": "get me a lawyer",
+  "svp_data": "[\"get me a lawyer\",{\"entities\":[[9,15,\"target_word\"]]}]",
+  "intent": "law_va"
+ }
+},
+{
+ "model": "api.svp",
+ "pk": 36,
+ "fields": {
+  "va": 23,
+  "slots": "[16,24,\"target_word\"]",
+  "utterance": "how can i get a pedicure?",
+  "svp_data": "[\"how can i get a pedicure?\",{\"entities\":[[16,24,\"target_word\"]]}]",
+  "intent": "salon_va"
+ }
+},
+{
+ "model": "api.svp",
+ "pk": 37,
+ "fields": {
+  "va": 23,
+  "slots": "[8,11,\"target_word\"]",
+  "utterance": "can you wax my arms and legs",
+  "svp_data": "[\"can you wax my arms and legs\",{\"entities\":[[8,11,\"target_word\"]]}]",
+  "intent": "salon_va"
+ }
+},
+{
+ "model": "api.svp",
+ "pk": 38,
+ "fields": {
+  "va": 23,
+  "slots": "[8,11,\"target_word\"]",
+  "utterance": "who can cut my hair and do my nails",
+  "svp_data": "[\"who can cut my hair and do my nails\",{\"entities\":[[8,11,\"target_word\"]]}]",
+  "intent": "salon_va"
+ }
+},
+{
+ "model": "api.svp",
+ "pk": 39,
+ "fields": {
+  "va": 23,
+  "slots": "[11,16,\"target_word\"]",
+  "utterance": "is there a salon rep near me",
+  "svp_data": "[\"is there a salon rep near me\",{\"entities\":[[11,16,\"target_word\"]]}]",
+  "intent": "salon_va"
+ }
+},
+{
+ "model": "api.svp",
+ "pk": 40,
+ "fields": {
+  "va": 23,
+  "slots": "[23,31,\"target_word\"]",
+  "utterance": "i would like to book a manicure",
+  "svp_data": "[\"i would like to book a manicure\",{\"entities\":[[23,31,\"target_word\"]]}]",
+  "intent": "salon_va"
+ }
+},
+{
+ "model": "api.svp",
+ "pk": 42,
+ "fields": {
+  "va": 23,
+  "slots": "[14,27,\"target_word\"]",
+  "utterance": "are there any constructions",
+  "svp_data": "[\"are there any constructions\",{\"entities\":[[14,27,\"target_word\"]]}]",
+  "intent": "smrep_va"
+ }
+},
+{
+ "model": "api.svp",
+ "pk": 43,
+ "fields": {
+  "va": 23,
+  "slots": "[4,13,\"target_word\"]",
+  "utterance": "are roadworks happening on sherif",
+  "svp_data": "[\"are roadworks happening on sherif\",{\"entities\":[[4,13,\"target_word\"]]}]",
+  "intent": "smrep_va"
+ }
+},
+{
+ "model": "api.svp",
+ "pk": 44,
+ "fields": {
+  "va": 23,
+  "slots": "[14,26,\"target_word\"]",
+  "utterance": "are there any construction on sherif mandela",
+  "svp_data": "[\"are there any construction on sherif mandela\",{\"entities\":[[14,26,\"target_word\"]]}]",
+  "intent": "smrep_va"
+ }
+},
+{
+ "model": "api.svp",
+ "pk": 45,
+ "fields": {
+  "va": 23,
+  "slots": "[21,31,\"target_word\"]",
+  "utterance": "talk to me about the road works",
+  "svp_data": "[\"talk to me about the road works\",{\"entities\":[[21,31,\"target_word\"]]}]",
+  "intent": "smrep_va"
+ }
+},
+{
+ "model": "api.svp",
+ "pk": 46,
+ "fields": {
+  "va": 23,
+  "slots": "[18,22,\"target_word\"]",
+  "utterance": "tell me about the road enhancement projects",
+  "svp_data": "[\"tell me about the road enhancement projects\",{\"entities\":[[18,22,\"target_word\"]]}]",
+  "intent": "smrep_va"
+ }
+}
+]

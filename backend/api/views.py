@@ -42,6 +42,9 @@ from .context_utils import MakeProjectPath
 from .context_utils import ResetState
 from .context_utils import SetState
 
+from response.parser import ResponseParser
+from response.models import ResponseTemplate
+
 # reset import -> leave disabled
 # from train.wipe_reset import WipeReset
 
@@ -1112,6 +1115,18 @@ class test_query(APIView):
 
 
         # print(response)
+        intent = response['intent']['intent']
+        slots = response['slots']
+
+        template = ResponseTemplate.objects.get(va=va_id)
+
+        try:
+            template = template.template
+            parser = ResponseParser(intent, slots, template)
+
+            response['response'] = parser.render()
+        except:
+            response['response'] = 'No Responses Model In DB'
 
         return Response(response, status=status.HTTP_200_OK)
         # except:
