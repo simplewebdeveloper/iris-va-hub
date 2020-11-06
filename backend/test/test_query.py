@@ -61,9 +61,10 @@ conversation_context = []
 
 
 class TestQuery:
-    def __init__(self, utterance, va_path):
+    def __init__(self, utterance, va_path, device):
         self.utterance = utterance
         self.va_path = va_path
+        self.device = device
 
     def test_query(self):
         # try:
@@ -139,6 +140,11 @@ class TestQuery:
 
         utterance = ''.join(utterance)
 
+        # add device
+        device_dict = {
+            "device": self.device
+        }
+
         # Get time stamp
         now = datetime.now()
         time_stamp = datetime.timestamp(now)
@@ -164,6 +170,7 @@ class TestQuery:
             if len(svps) > 0:
                 response = {
                     "time_stamp": time_stamp,
+                    "device": device_dict,
                     "time": time_dict,
                     "utterance": utterance,
                     "intent": intent_response,
@@ -172,6 +179,7 @@ class TestQuery:
             else:
                 response = {
                 "time_stamp": time_stamp,
+                "device": device_dict,
                 "time": time_dict,
                 "utterance": utterance,
                 "intent": intent_response,
@@ -180,6 +188,7 @@ class TestQuery:
         else:
             response = {
             "time_stamp": time_stamp,
+            "agent": device_dict,
             "time": time_dict,
             "utterance": utterance,
             "intent": intent_response,

@@ -1014,6 +1014,7 @@ class test_query(APIView):
         # try:
         utterance = request.data['query']['query']
         va_id = request.data['va_id']
+        device = request.data['device']
 
         va = Va.objects.get(id=va_id)
         va_serializer = VaSerializer(va, many=False)
@@ -1036,7 +1037,7 @@ class test_query(APIView):
 
             # listen for reset type intents
 
-            response = TestQuery(utterance, va_path_to_check).test_query()
+            response = TestQuery(utterance, va_path_to_check, device).test_query()
 
             # add reset logic here --> Reset the state
             intent = response['intent']['intent']
@@ -1047,7 +1048,7 @@ class test_query(APIView):
 
         
         else:
-            response = TestQuery(utterance, va_path).test_query()
+            response = TestQuery(utterance, va_path, device).test_query()
             # if the state is root
             # check what the intent is
             intent = response['intent']['intent']
@@ -1063,7 +1064,7 @@ class test_query(APIView):
 
                             SetState(handoff_context_json_file, va_tag, va_path, state='special').set_state()
 
-                            response = TestQuery(utterance, va_path).test_query()
+                            response = TestQuery(utterance, va_path, device).test_query()
                         else:
                             pass
         # SEND TO HANDOFF CONTEXT HERE TO DETERMINE WHICH VA TO GO TO

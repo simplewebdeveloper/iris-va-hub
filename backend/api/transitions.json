@@ -16,5 +16,14 @@
             "source_va_intent": "smrep_va",
             "dest_va": "smrep_va"
         }
+    },
+    {
+        "26": {
+            "transition_id": 26,
+            "transition_name": "handoff_to_law_va",
+            "source_va_id": "23",
+            "source_va_intent": "law_va",
+            "dest_va": "law_va"
+        }
     }
 ]
