@@ -4,6 +4,7 @@ import { Route, RouterModule, Routes } from '@angular/router';
 import { TestComponent } from './test/test.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AuthGuardService as AuthGuard } from "../auth/auth-guard.service";
+import { DeviceDetectorService } from 'ngx-device-detector';
 
 const appRoutes: Routes = [
   {
@@ -27,6 +28,7 @@ const appRoutes: Routes = [
   ],
   exports: [
     TestComponent
-  ]
+  ],
+  providers: [DeviceDetectorService],
 })
 export class TestModule { }

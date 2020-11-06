@@ -27,6 +27,7 @@
     "jquery": "^3.4.1",
     "material-components-web": "^5.1.0",
     "moment": "^2.26.0",
+    "ngx-device-detector": "^2.0.0",
     "rxjs": "~6.4.0",
     "tslib": "^1.10.0",
     "uikit": "^3.3.3",
