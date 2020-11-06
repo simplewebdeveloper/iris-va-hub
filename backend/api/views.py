@@ -409,24 +409,31 @@ class delete_single_transition(APIView):
     permission_classes = [IsAuthenticated]
     def post(self, request, *args, **kwargs):
         print(request.data)
-        try:
-            transition_id = str(request.data['transition_id'])
-            # project_dir = project_dir_core
+        # try:
+        transition_id = str(request.data['transition_id'])
+        # project_dir = project_dir_core
 
-            transition = Transition.objects.get(id=transition_id)
-            transition_serializer = TransitionSerializer(transition, many=False)
-            
+        transition = Transition.objects.get(id=transition_id)
+        transition_serializer = TransitionSerializer(transition, many=False)
+
+        if transition_serializer:
+        
             transition.delete()
 
             # check the transition json file and delete the transition from there as well
             with open(transitions_json_file) as f:
                     transitions = json.load(f)
                     for i in range (len(transitions)):
+                        print(i)
                         for transition in transitions:
                             for transition_id, transition in transition.items():
-                                if transition_id == transition_id:
-                                    del transitions[i]
-                                    break
+                                try:
+                                    if transition_id == transition_id:
+                                        del transitions[i]
+                                        break
+                                except:
+                                    pass
+                                
                         
                         # transition.pop(transition_id, None)
                     update_file = open(transitions_json_file, 'w')
@@ -438,10 +445,13 @@ class delete_single_transition(APIView):
             user_message = 'Success deleting transition'
             print(user_message)
             return Response(transition_serializer.data, status=status.HTTP_200_OK)
-        except:
-            user_message = 'Error deleting transition'
-            print(user_message)
-            return Response(user_message, status=status.HTTP_400_BAD_REQUEST)
+        
+        else:
+            print('Transition serializer not valid')
+        # except:
+        #     user_message = 'Error deleting transition'
+        #     print(user_message)
+        #     return Response(user_message, status=status.HTTP_400_BAD_REQUEST)
 
 
 # get vas for project based on va_tag

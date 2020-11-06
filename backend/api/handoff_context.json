@@ -1,8 +1,8 @@
 [
     {
-        "va_tag": "",
-        "va_path": "",
-        "state": "root",
+        "va_tag": "handoff",
+        "va_path": "/Users/chavez/Desktop/v75 Projects/iris-va-hub/backend/ai_core/projects/21_IRIS/specialized/24_law_va",
+        "state": "special",
         "last_intent": ""
     }
 ]
