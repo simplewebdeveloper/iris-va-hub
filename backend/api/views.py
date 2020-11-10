@@ -43,7 +43,7 @@ from .context_utils import ResetState
 from .context_utils import SetState
 
 from response.parser import ResponseParser
-from response.models import ResponseTemplate
+from response.models import ResponseTemplate, ResponseValue
 
 # reset import -> leave disabled
 # from train.wipe_reset import WipeReset
@@ -1115,16 +1115,37 @@ class test_query(APIView):
 
 
         # print(response)
+
+        response['device'] = 'ios'
+        response['values'] = {
+            'name': 'jemmott'
+        }
+
         intent = response['intent']['intent']
         slots = response['slots']
+        device = response['device']
 
-        template = ResponseTemplate.objects.get(va=va_id)
+        values = response['values']
 
         try:
-            template = template.template
-            parser = ResponseParser(intent, slots, template)
+            template = ResponseTemplate.objects.filter(va=va_id, intent=intent, device=device).values()[0]
+
+        except:
+            try:
+                template = ResponseTemplate.objects.filter(va=va_id, device=device).values()[0]
+
+            except:
+                response['response'] = 'Error with ORM'
+
+        try:
+            template_id = template['id']
+            template = template['template']
+
+            response_value = ResponseValue.objects.filter(response=template_id).values()
+            parser = ResponseParser(intent, slots, template, response_value, values)
 
             response['response'] = parser.render()
+
         except:
             response['response'] = 'No Responses Model In DB'
 
