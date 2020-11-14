@@ -11,10 +11,11 @@ import { RouterModule } from "@angular/router";
 import { ReactiveFormsModule } from "@angular/forms";
 import { LeftnavComponent } from './leftnav/leftnav.component';
 import { EditModule } from '../edit/edit.module';
+import { BlsComponent } from './bls/bls.component';
 
 
 @NgModule({
-  declarations: [TopNavbarComponent, JumbotronComponent, ChatboxComponent, LeftnavComponent],
+  declarations: [TopNavbarComponent, JumbotronComponent, ChatboxComponent, LeftnavComponent, BlsComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
@@ -33,6 +34,7 @@ import { EditModule } from '../edit/edit.module';
     JumbotronComponent,
     ChatboxComponent,
     LeftnavComponent,
+    BlsComponent,
   ]
 })
 export class SharedModule { }

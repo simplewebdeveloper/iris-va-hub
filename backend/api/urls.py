@@ -12,6 +12,11 @@ urlpatterns = [
     path('update_project', update_single_project.as_view()),
     path('create_transition', create_transition.as_view()),
 
+    # project paths - config specific
+    path('save_bls', save_bls.as_view()),
+
+    path('get_current_bls_url', get_current_bls_url.as_view()),
+
     # Transition paths
     path('get_transitions_for_project', get_transitions_for_project.as_view()),
     path('delete_single_transition', delete_single_transition.as_view()),

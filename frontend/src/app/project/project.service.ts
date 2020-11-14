@@ -94,5 +94,17 @@ set_current_project(project) {
 get_current_project() {
 return this.project;
 }
+
+save_bls(data: any) {
+  return this.http.post<any>(
+    this.baseUrl + '/project/save_bls', data
+  );
+}
+
+get_current_bls_url() {
+  return this.http.get<any>(
+    this.baseUrl + '/project/get_current_bls_url'
+  );
+}
   
 }

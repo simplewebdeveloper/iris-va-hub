@@ -1,1 +1,11 @@
-[]
+[
+    {
+        "39": {
+            "transition_id": 39,
+            "transition_name": "handoff_to_law",
+            "source_va_id": "23",
+            "source_va_intent": "law_va",
+            "dest_va": "law_va"
+        }
+    }
+]
