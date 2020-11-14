@@ -834,12 +834,14 @@ class feed_intents(APIView):
 
                 # print(serialized_intent_data)
                 intent_data = json.dumps(serialized_intent_data)
+                # print(intent_data)
                 intent_data_list = json.loads(intent_data)
+                # print(intent_data_list)
                 new_intent_data_list = []
 
                 for line in intent_data_list:
                     string = line['intent_data']
-                    intent_data_dict = json.loads(string)
+                    intent_data_dict = json.loads(string, strict=False)
                     new_intent_data_list.append(intent_data_dict)
 
                 root_intent_data = json.dumps(new_intent_data_list, indent=4)
@@ -987,11 +989,13 @@ class get_intents_with_svp_data(APIView):
             intents_that_has_svp_data_list = []
             for intent in va_intents_lst:
                 svps = Svp.objects.filter(va=va, intent=intent).order_by('-id')
+                print(svps)
                 if svps:
                     intents_that_has_svp_data_list.append(intent)
                 else:
                     pass
             user_message = 'Success getting intents with svps'
+            print(intents_that_has_svp_data_list)
             print(user_message)
             return Response(intents_that_has_svp_data_list, status=status.HTTP_200_OK)
         except:

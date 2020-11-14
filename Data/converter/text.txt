@@ -1,0 +1,1 @@
+statistics,greeting,symptoms,spreading,prevention_methods,what_to_do,risk,what_is,news,social_distance,help_desk,goodbye

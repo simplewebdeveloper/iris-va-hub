@@ -1,5 +1,57 @@
 [
     {
+        "intent": "covid_va",
+        "utterance": "I want some info on the rona virus COVID-19"
+    },
+    {
+        "intent": "covid_va",
+        "utterance": "Could you provide me with information about COVID -19?"
+    },
+    {
+        "intent": "covid_va",
+        "utterance": "Can you give me information on corona virus"
+    },
+    {
+        "intent": "covid_va",
+        "utterance": "What information are you aware of with regards to Corona virus?"
+    },
+    {
+        "intent": "covid_va",
+        "utterance": "geme info on this virus"
+    },
+    {
+        "intent": "covid_va",
+        "utterance": "how about info on this covid-19"
+    },
+    {
+        "intent": "covid_va",
+        "utterance": "i need information on the coronavirus"
+    },
+    {
+        "intent": "covid_va",
+        "utterance": "how about info on this covid-19"
+    },
+    {
+        "intent": "covid_va",
+        "utterance": "some info on what this virus is would be great"
+    },
+    {
+        "intent": "covid_va",
+        "utterance": "Can you give me information about the corona virus known ad COVID -19"
+    },
+    {
+        "intent": "covid_va",
+        "utterance": "rona info please"
+    },
+    {
+        "intent": "covid_va",
+        "utterance": "i would like to know more information on this coronavirus"
+    },
+    {
+        "intent": "covid_va",
+        "utterance": "can i get some info on covid"
+    },
+    {
         "intent": "smrep_va",
         "utterance": "are there any constructions"
     },
