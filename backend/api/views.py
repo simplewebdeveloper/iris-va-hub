@@ -6,6 +6,7 @@ from collections import OrderedDict
 from ast import literal_eval
 
 from pathlib import Path
+from django.core.validators import URLValidator
 
 # rest_framework resources
 from rest_framework.response import Response
@@ -41,6 +42,7 @@ from .context_utils import MakeVaPath
 from .context_utils import MakeProjectPath
 from .context_utils import ResetState
 from .context_utils import SetState
+from .context_utils import Bls
 
 # reset import -> leave disabled
 # from train.wipe_reset import WipeReset
@@ -67,6 +69,8 @@ handoff_context_json_file = os.path.join(this_folder, 'handoff_context.json')
 
 # used to implement transition
 transitions_json_file = os.path.join(this_folder, 'transitions.json')
+
+
 
 # API views
 
@@ -292,7 +296,45 @@ class create_transition(APIView):
         except:
             user_message = 'Error creating transition'
             return Response(user_message, status=status.HTTP_400_BAD_REQUEST)
-            
+ 
+ # Business Logic Server config view
+
+class save_bls(APIView):
+    authentication_classes = [JSONWebTokenAuthentication]
+    permission_classes = [IsAuthenticated]
+    
+    def post(self, request, *args, **kwargs):
+        try:
+
+            url = request.data['bls_url']
+            validate = URLValidator()
+            validate(url)
+            if url:
+                bls_config_json_file_data = Bls(bls_url=url).save_bls_url()
+                user_message = 'Success saving bls'
+                print(user_message)
+                return Response(bls_config_json_file_data, status=status.HTTP_200_OK)
+        except:
+            user_message = 'Error saving bls'
+            return Response(user_message, status=status.HTTP_400_BAD_REQUEST)  
+
+
+class get_current_bls_url(APIView):
+    authentication_classes = [JSONWebTokenAuthentication]
+    permission_classes = [IsAuthenticated]
+    
+    def get(self, request, *args, **kwargs):
+        try:
+
+            current_bls_info = Bls().get_bls_url()
+
+            user_message = 'Success getting bls'
+            print(user_message)
+            return Response(current_bls_info, status=status.HTTP_200_OK)
+
+        except:
+            user_message = 'Error getting bls'
+            return Response(user_message, status=status.HTTP_400_BAD_REQUEST)  
 
 # ------------------------------------------------------------------------
 
@@ -1077,6 +1119,40 @@ class test_query(APIView):
                             response = TestQuery(utterance, va_path, device).test_query()
                         else:
                             pass
+
+
+        bls_response = Bls(raw_response=response).get_bls_response()
+
+        print(bls_response)
+
+
+        dual_response = {
+            "raw_response": response,
+            "bls_response": bls_response
+
+        }
+
+        # response > make post to bls
+        # 
+        #
+        # wait for response
+        #
+        # 
+        # resp is received
+        #
+        # 
+        # send to template parser | format for Desktop or Mobile
+        # 
+        # 
+        # -> send to UI                 
+        # 
+        # 
+        # 
+        # 
+        # 
+        # 
+        #    
+
         # SEND TO HANDOFF CONTEXT HERE TO DETERMINE WHICH VA TO GO TO
 
 
@@ -1084,7 +1160,7 @@ class test_query(APIView):
 
           #  WITHOUT SLOTS
 
-            #   {
+            #  {
             #   "time_stamp": 1604075651.306505,
             #   "time": {
             #     "time_stamp": 1604075651.306505,
@@ -1100,7 +1176,7 @@ class test_query(APIView):
 
 
             #  WITH SLOTS
-            #             {
+            #  {
             #   "time_stamp": 1604075815.447497,
             #   "time": {
             #     "time_stamp": 1604075815.447497,
@@ -1116,7 +1192,7 @@ class test_query(APIView):
             #       "slot": "term",
             #       "value": [
             #         "law"
-            #       ]
+            #       ],
             #     }
             #   ]
             # }
@@ -1124,7 +1200,9 @@ class test_query(APIView):
 
         # print(response)
 
-        return Response(response, status=status.HTTP_200_OK)
+
+
+        return Response(dual_response, status=status.HTTP_200_OK)
         # except:
         #     user_message = 'Error testing bot'
         #     return Response(user_message, status=status.HTTP_400_BAD_REQUEST)
