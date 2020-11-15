@@ -6,7 +6,6 @@ from os import walk
 # the current folder path we are in
 this_folder = os.path.dirname(os.path.abspath(__file__))
 
-# used to implement bls server
 input_folder = os.path.join(this_folder, 'input')
 output_folder = os.path.join(this_folder, 'output')
 
