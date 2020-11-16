@@ -1,5 +1,65 @@
 [
     [
+        "How many people in Czechia (Czech Republic) have COVID-19?",
+        {
+            "entities": [
+                [
+                    19,
+                    26,
+                    "country"
+                ]
+            ]
+        }
+    ],
+    [
+        "How many Bolivians have died?",
+        {
+            "entities": [
+                [
+                    9,
+                    18,
+                    "country"
+                ]
+            ]
+        }
+    ],
+    [
+        "stats of corona virus in maryland",
+        {
+            "entities": [
+                [
+                    25,
+                    33,
+                    "country"
+                ]
+            ]
+        }
+    ],
+    [
+        "Can you please tell me the total number of individuals that have the Coronavirus in Spain?",
+        {
+            "entities": [
+                [
+                    84,
+                    89,
+                    "country"
+                ]
+            ]
+        }
+    ],
+    [
+        "Get me the stats on the number of people infected with the coronavirus cases in Douglas county.",
+        {
+            "entities": [
+                [
+                    80,
+                    94,
+                    "country"
+                ]
+            ]
+        }
+    ],
+    [
         "How many people have died from Coronavirus since the beginning in Angola?",
         {
             "entities": [

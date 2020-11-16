@@ -36,6 +36,37 @@
       <li><a href="#">Utterance From Intent Data</a></li>
 
     </ul>
+
+    <div>
+      <!-- label que -->
+      <div class="uk-text-small uk-margin-bottom">LABEL QUEUE: Use your mouse to highlight a word from the utterance and select a label.</div>
+      <div class="uk-margin uk-section-default">
+      <div #label_queue id="labelled_utterance" class="uk-input" (mouseup)="label_slot()">{{ utt_to_label }}</div>
+      </div>
+     
+
+      <div *ngIf="slot_value_pairings.length > 0">
+        <p>Here are your Slot Value Pairings</p>
+        <div class="uk-card uk-box-shadow-small uk-padding-small">
+          <!-- <div class=""> -->
+            <span class="uk-button uk-button-small uk-text-right" (click)="clear_all()" uk-icon="trash"></span>
+            <!-- <hr> -->
+          <!-- </div> -->
+          <div class="uk-display-inline-block uk-margin-small-left uk-margin-small-top" *ngFor="let temp of slot_value_pairings">
+         
+              <span class="uk-badge uk-padding-small"><span>{{temp['slot']}}</span>:&nbsp; <span class="uk-text-bolder">{{ temp['value'] }}</span></span>
+            
+          </div>
+        </div>
+      </div>
+
+      <div class="uk-margin">
+        <button class="uk-button uk-button-secondary uk-button-small uk-margin-small-bottom" (click)="create_svp_form_submit()">Save SVP Data</button>
+      </div>
+      <!-- label que -->
+  </div>
+
+
     <ul class="uk-switcher uk-margin">
       <li>
         <!--      form section -->
@@ -49,8 +80,13 @@
         </div>
       </li>
       <li>
+        
+
+
+        <hr>
+
         <div *ngIf="intents_and_utterances?.length>0; else no_intents_and_utterances">
-        <div class="uk-text-small uk-margin-bottom">Send an utterance from your intent data to the LABEL QUEUE.</div>
+          <div class="uk-text-small uk-margin-bottom">Send an utterance from your intent data to the LABEL QUEUE.</div>
         <div class="custom-container uk-padding-small">
           <table class="uk-table uk-table-justify uk-table-divider">
             <thead>
@@ -80,34 +116,14 @@
       </li>
     </ul>
 
-    <div class="uk-text-small uk-margin-bottom">LABEL QUEUE: Use your mouse to highlight a word from the utterance and select a label.</div>
-    <div class="uk-margin uk-section-default">
-      <div #label_queue id="labelled_utterance" class="uk-input" (mouseup)="label_slot()">{{ utt_to_label }}</div>
 
-    </div>
-
-    <div *ngIf="slot_value_pairings.length > 0">
-      <p>Here are your Slot Value Pairings</p>
-      <div class="uk-card uk-box-shadow-small uk-padding-small">
-        <div class="uk-text-right">
-          <span class="uk-button uk-button-small" (click)="clear_all()" uk-icon="trash"></span>
-          <hr>
-        </div>
-        <p *ngFor="let temp of slot_value_pairings"> <span class="uk-badge uk-padding-small"><span>{{temp['slot']}}</span>:&nbsp; <span class="uk-text-bolder">{{ temp['value'] }}</span></span></p>
-      </div>
-    </div>
-
-
-    <div class="uk-margin">
-      <button class="uk-button uk-button-secondary uk-button-small uk-margin-small-bottom" (click)="create_svp_form_submit()">Save SVP Data</button>
-
-    </div>
-
+    <!-- here -->
 
 
     <div *ngIf="va_svps?.length > 0; else no_va_svps">
-
+      <button class="uk-button uk-button-secondary uk-button-small uk-margin-small-bottom" (click)="refresh()"><span uk-icon="refresh"></span></button>
       <div class="custom-container uk-padding-small">
+        
         <table class="uk-table uk-table-justify uk-table-divider">
           <thead>
           <tr class="uk-sticky">
