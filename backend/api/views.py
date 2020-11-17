@@ -1096,7 +1096,7 @@ class test_query(APIView):
             response = TestQuery(utterance, va_path_to_check, device).test_query()
 
             # add reset logic here --> Reset the state
-            intent = response['intent']['intent']
+            intent = response['intent']['name']
 
             # if the goodbye intent is hit while within the specialized va
             if intent == 'goodbye':
@@ -1107,7 +1107,7 @@ class test_query(APIView):
             response = TestQuery(utterance, va_path, device).test_query()
             # if the state is root
             # check what the intent is
-            intent = response['intent']['intent']
+            intent = response['intent']['name']
             # check our transitions
 
             with open(transitions_json_file) as f:

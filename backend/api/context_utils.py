@@ -201,13 +201,19 @@ class Bls:
 
     def get_bls_response(self):
         data = self.raw_response
+        
         temp_url = self.get_bls_url()
         bls_url = temp_url['bls_url']
-        # bls_response = requests.post(bls_url, data)
-        bls_response = {
-            "bls_url": bls_url,
-            "data": data
-        }
         
-        return bls_response
+        bls_response = requests.post(url=bls_url,json=data)
+
+        json_bls_response = json.loads(bls_response.text)
+
+        print(json_bls_response)
+        # bls_response = {
+        #     "bls_url": bls_url,
+        #     "data": data
+        # }
+        
+        return json_bls_response
         

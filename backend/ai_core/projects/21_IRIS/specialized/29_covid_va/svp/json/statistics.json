@@ -1,5 +1,109 @@
 [
     [
+        "What are the established number of people with the coronavirus in Ecuador?",
+        {
+            "entities": [
+                [
+                    35,
+                    41,
+                    "type"
+                ],
+                [
+                    66,
+                    73,
+                    "country"
+                ]
+            ]
+        }
+    ],
+    [
+        "What are the established number of people with the coronavirus in Ecuador?",
+        {
+            "entities": [
+                [
+                    35,
+                    41,
+                    "type"
+                ],
+                [
+                    66,
+                    73,
+                    "country"
+                ]
+            ]
+        }
+    ],
+    [
+        "What are the established number of people with the coronavirus in Ecuador?",
+        {
+            "entities": [
+                [
+                    35,
+                    41,
+                    "type"
+                ],
+                [
+                    66,
+                    73,
+                    "country"
+                ]
+            ]
+        }
+    ],
+    [
+        "What are the established number of people with the coronavirus in Ecuador?",
+        {
+            "entities": [
+                [
+                    35,
+                    41,
+                    "type"
+                ],
+                [
+                    66,
+                    73,
+                    "country"
+                ]
+            ]
+        }
+    ],
+    [
+        "How many people in Estonia have COVID-19?",
+        {
+            "entities": [
+                [
+                    19,
+                    26,
+                    "country"
+                ]
+            ]
+        }
+    ],
+    [
+        "How many people were diagnosed with the Coronavirus in Iraq?",
+        {
+            "entities": [
+                [
+                    55,
+                    59,
+                    "country"
+                ]
+            ]
+        }
+    ],
+    [
+        "how many cases has new hampshire got",
+        {
+            "entities": [
+                [
+                    19,
+                    32,
+                    "country"
+                ]
+            ]
+        }
+    ],
+    [
         "How many people in Czechia (Czech Republic) have COVID-19?",
         {
             "entities": [
