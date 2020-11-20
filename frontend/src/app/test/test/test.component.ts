@@ -105,17 +105,18 @@ export class TestComponent implements OnInit {
     // example default template
     default_template(response, utterance, format='') {
       console.log(response);
-          format = 'you are asking about: ' + '<span class="uk-text-bold">' + response.raw_response.intent['intent'] + '</span>' + '<br />';
+          format = 'you are asking about: ' + '<span class="uk-text-bold">' + response.raw_response.intent['name'] + '</span>' + '<br />';
           // if(response.intent['intent']== 'archivist_handover') {
           //   format = 'Welcome to the Archivist VA. You can ask me about news'
           // }
           if (response.raw_response.slots.length >= 1) {
+            console.log(response.raw_response.slots);
           format += ' I have the: <br/>';
           response.raw_response.slots.forEach((element, index, array) => {
             if (index === (array.length - 1) && array.length > 1) {
-              format += ' and ' + element.slot + ' to be ' + element.value;
+              format += ' and ' + element.name + ' to be ' + element.value;
             } else {
-              format += ' ' + element.slot + ' to be ' + element.value + '<br />';
+              format += ' ' + element.name + ' to be ' + element.value + '<br />';
             }
           });
         }

@@ -1,10 +1,11 @@
 <!-- Create/ update business logic url -->
+<button class="uk-button uk-button-small" uk-toggle="target: #create-bls-modal">Add a BL Server to this VA</button>
 
 <div id="create-bls-modal" uk-modal>
     <div class="uk-modal-dialog uk-modal-body">
       <button class="uk-modal-close-outside" type="button" uk-close></button>
       <div class="uk-margin">
-        <legend class="uk-legend">Configure BLS URL </legend>
+        <legend class="uk-legend">Add BL Server URL</legend>
       </div>
   
       <form [formGroup]="save_bls_form" (ngSubmit)="save_bls_form_submit()">

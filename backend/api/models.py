@@ -33,6 +33,12 @@ class Va(models.Model):
     def __str__(self):
         return self.va_name
 
+class BlsModel(models.Model):
+    va = models.ForeignKey(Va, on_delete=models.CASCADE)
+    bls_url = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.bls_url
 
 class Intent(models.Model):
     va = models.ForeignKey(Va, on_delete=models.CASCADE)

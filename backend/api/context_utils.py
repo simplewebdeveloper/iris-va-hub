@@ -8,8 +8,8 @@ from ai_core import config
 
 project_dir_core = config.project_dir_core
 
-from .models import Va, Project
-from .serializers import VaSerializer, ProjectSerializer
+from .models import Va, Project, BlsModel
+from .serializers import VaSerializer, ProjectSerializer, BlsSerializer
 
 from test.test_query import TestQuery
 
@@ -173,47 +173,39 @@ class MakeProjectPath:
 
 class Bls:
 
-    def __init__(self, bls_url='', raw_response=''):
-        self.bls_url = bls_url
+    def __init__(self, raw_response='', va_id=''):
+        self.va_id = va_id
         self.raw_response = raw_response
-
-    def save_bls_url(self):
-        with open(bls_config_json_file) as f:
-            pass
-            d = json.load(f)
-            d['bls_url'] = self.bls_url
-            update_file = open(bls_config_json_file, 'w')
-            json.dump(d, update_file, indent=4)
-            bls_config_json_file_data = d
-            f.close()
-        
-        return bls_config_json_file_data
 
     def get_bls_url(self):
 
-        with open(bls_config_json_file) as f:
-            pass
-            d = json.load(f)
-            current_bls_info = d
-            f.close()
+        # lookup va by id
+        va = Va.objects.get(id=self.va_id)
+        bls = BlsModel.objects.get(va=va)
 
-        return current_bls_info
+        bls_serializer = BlsSerializer(bls, many=False)
+
+        bls_url = bls_serializer.data['bls_url']
+
+        return bls_url
 
     def get_bls_response(self):
         data = self.raw_response
         
-        temp_url = self.get_bls_url()
-        bls_url = temp_url['bls_url']
+        bls_url = self.get_bls_url()
         
         bls_response = requests.post(url=bls_url,json=data)
-
         json_bls_response = json.loads(bls_response.text)
 
-        print(json_bls_response)
         # bls_response = {
         #     "bls_url": bls_url,
         #     "data": data
         # }
+
+        #  send to parser
+
+        # return formatted response
         
         return json_bls_response
+        # return bls_response
         
