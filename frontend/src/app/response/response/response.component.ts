@@ -8,7 +8,8 @@ import { Response } from '../../models/response.model';
 @Component({
   selector: 'app-response',
   templateUrl: './response.component.html',
-  styleUrls: ['./response.component.css']
+  styleUrls: ['./response.component.css'],
+  providers: [ResponseService]
 })
 export class ResponseComponent implements OnInit {
 

@@ -6,6 +6,7 @@ import { environment } from 'src/environments/environment'
   providedIn: 'root'
 })
 export class ResponseService {
+  private baseUrl: string;
 
   private baseUrl: string;
 
