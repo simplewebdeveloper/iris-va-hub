@@ -1,16 +1,25 @@
 # handoff_context.py
 import os
 import json
+import requests
 
 from ai_core import config
 
 
 project_dir_core = config.project_dir_core
 
-from .models import Va, Project
-from .serializers import VaSerializer, ProjectSerializer
+from .models import Va, Project, BlsModel
+from .serializers import VaSerializer, ProjectSerializer, BlsSerializer
 
 from test.test_query import TestQuery
+
+
+
+# the current folder path we are in
+this_folder = os.path.dirname(os.path.abspath(__file__))
+
+# used to implement bls server
+bls_config_json_file = os.path.join(this_folder, 'bls_config.json')
 
 context_response = ""
 
@@ -160,3 +169,43 @@ class MakeProjectPath:
         project_name = ''.join(string_lst)
 
         return project_name
+
+
+class Bls:
+
+    def __init__(self, raw_response='', va_id=''):
+        self.va_id = va_id
+        self.raw_response = raw_response
+
+    def get_bls_url(self):
+
+        # lookup va by id
+        va = Va.objects.get(id=self.va_id)
+        bls = BlsModel.objects.get(va=va)
+
+        bls_serializer = BlsSerializer(bls, many=False)
+
+        bls_url = bls_serializer.data['bls_url']
+
+        return bls_url
+
+    def get_bls_response(self):
+        data = self.raw_response
+        
+        bls_url = self.get_bls_url()
+        
+        bls_response = requests.post(url=bls_url,json=data)
+        json_bls_response = json.loads(bls_response.text)
+
+        # bls_response = {
+        #     "bls_url": bls_url,
+        #     "data": data
+        # }
+
+        #  send to parser
+
+        # return formatted response
+        
+        return json_bls_response
+        # return bls_response
+        

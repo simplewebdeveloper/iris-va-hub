@@ -6,6 +6,7 @@ import { Chatbox } from '../../models/chatbox.model';
 import { HttpErrorResponse } from '@angular/common/http';
 import { ActivatedRoute } from '@angular/router';
 import { VaService } from '../../va/va.service'
+import { DeviceDetectorService } from 'ngx-device-detector';
 
 @Component({
   selector: 'app-test',
@@ -27,17 +28,36 @@ export class TestComponent implements OnInit {
   va_id: any;
   va: any;
   va_tag: any;
+  device: any;
 
   constructor(
     private route: ActivatedRoute,
     private chatbox_service: ChatboxService,
     private form_builder: FormBuilder,
     private va_service: VaService,
+    private device_detector_service: DeviceDetectorService,
   ) { }
 
   ngOnInit() {
     this.initializeChatboxForm();
     this.get_project_and_va_id_from_url()
+    this.check_device_type();
+  }
+
+  check_device_type() {
+    this.device = 'null';
+
+    if(this.device_detector_service.isDesktop()) {
+      this.device = 'desktop'
+    }
+    else if(this.device_detector_service.isMobile()) {
+      this.device = 'mobile'
+    }
+    else if(this.device_detector_service.isTablet()) {
+      this.device = 'tablet'
+    }
+
+    return this.device;
   }
 
   initializeChatboxForm(): void {
@@ -54,9 +74,10 @@ export class TestComponent implements OnInit {
   chatbox_query_form_submit(event: any) {
     const query = this.chatbox_form.getRawValue();
     const utterance = query.query;
+    const device = this.check_device_type()
     if (utterance.length > 1) {
       this.thinking = true;
-      this.chatbox_service.chatbox_query(query, this.va_id).subscribe(
+      this.chatbox_service.chatbox_query(query, this.va_id, device).subscribe(
       (test_response) => {
         if (test_response) {
           this.full_response = test_response
@@ -84,17 +105,18 @@ export class TestComponent implements OnInit {
     // example default template
     default_template(response, utterance, format='') {
       console.log(response);
-          format = 'you are asking about: ' + '<span class="uk-text-bold">' + response.intent['intent'] + '</span>' + '<br />';
+          format = 'you are asking about: ' + '<span class="uk-text-bold">' + response.raw_response.intent['name'] + '</span>' + '<br />';
           // if(response.intent['intent']== 'archivist_handover') {
           //   format = 'Welcome to the Archivist VA. You can ask me about news'
           // }
-          if (response.slots.length >= 1) {
+          if (response.raw_response.slots.length >= 1) {
+            console.log(response.raw_response.slots);
           format += ' I have the: <br/>';
-          response.slots.forEach((element, index, array) => {
+          response.raw_response.slots.forEach((element, index, array) => {
             if (index === (array.length - 1) && array.length > 1) {
-              format += ' and ' + element.slot + ' to be ' + element.value;
+              format += ' and ' + element.name + ' to be ' + element.value;
             } else {
-              format += ' ' + element.slot + ' to be ' + element.value + '<br />';
+              format += ' ' + element.name + ' to be ' + element.value + '<br />';
             }
           });
         }

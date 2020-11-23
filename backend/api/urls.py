@@ -26,6 +26,10 @@ urlpatterns = [
     # add response path here
     # path('add_response', update_single_va.as_view()),
 
+    # va - bls
+    path('save_bls', save_bls.as_view()),
+    path('get_bls', get_bls.as_view()),
+
     # Intent paths
     path('create_intent', create_intent.as_view()),
     path('get_intents', get_intents.as_view()),

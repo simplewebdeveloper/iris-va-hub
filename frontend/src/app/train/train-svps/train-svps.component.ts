@@ -307,7 +307,7 @@ export class TrainSvpsComponent implements OnInit {
           //  console.log(res);
           // this.va_svps.unshift(res);
           if(res) {
-          this.get_svps(data.va_id, this.selected_intent);
+          // this.get_svps(data.va_id, this.selected_intent);
           this.clear_all();
           this.success_user_message = 'Success creating svp';
           this.toggle_user_message(this.success_user_message, 'success');
@@ -367,6 +367,11 @@ export class TrainSvpsComponent implements OnInit {
     });
 
   }
+
+  refresh() {
+    this.get_svps(this.va_id, this.selected_intent);
+  }
+
   toggle_user_message(notification_message, status) {
     uikit.notification(notification_message, { pos: 'bottom-right', status: status });
   }

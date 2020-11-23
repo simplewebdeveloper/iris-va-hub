@@ -25,6 +25,18 @@ export class VaService {
     
   }
 
+  save_bls(data: any) {
+    return this.http.post<any>(
+      this.baseUrl + '/va/save_bls', data
+    )
+  }
+
+  get_bls(va_id) {
+    return this.http.post<any>(
+      this.baseUrl + '/va/get_bls', {va_id}
+    )
+  }
+
   get_va_id() {
     return this.va_id;
   }

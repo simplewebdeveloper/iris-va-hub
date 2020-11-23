@@ -4,6 +4,12 @@ from .models import Va
 from .models import Intent
 from .models import Svp
 from .models import Transition
+from .models import BlsModel
+
+class BlsSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = BlsModel
+        fields = '__all__'
 
 class ProjectSerializer(serializers.ModelSerializer):
     class Meta:

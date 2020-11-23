@@ -1,2 +1,197 @@
-<input type="text" #template> <br> <br>
-<button (click)="save(template.value)">SAVE</button>
+<div class="uk-container">
+    
+    <div class="uk-card uk-card-body uk-margin-top">
+
+        <div class="uk-margin-bottom">
+        <p class="uk-text-muted"><span uk-icon="icon: users; ratio: 2"></span></p>    
+        <legend class="uk-legend">Personalize your Virtual Assistant</legend> 
+        <div class="uk-flex uk-flex-center">
+            
+        </div>
+        </div>  
+
+        <ul uk-tab class="uk-margin-top uk-margin-bottom" uk-switcher>
+            <li class="uk-active"><a href="#">Desktop</a></li>
+            <li><a href="#">Mobile</a></li>
+        </ul>
+
+        <ul class="uk-switcher uk-margin uk-margin-top">
+            <li>
+                <!-- display a list of virtual assistants with a desktop personality -->
+
+                <div id="va-resp-card" class="uk-border-rounded uk-box-shadow-small uk-margin uk-card uk-card-small uk-card-default uk-card-body">
+                    
+                        <button uk-toggle="target: #create-response-modal" class="uk-button uk-button-primary uk-button-small">Add new desktop personality</button>
+                    
+                    <ul uk-accordion>
+                        <li class="uk-open">
+                            <a class="uk-accordion-title" href="#">law_va</a>
+                            <div class="uk-accordion-content">
+                                    <div id="va-resp-card_response-card" class="uk-card uk-card-body">
+                                        <p>
+                                            {{ jinja_response }}
+                                        </p>
+                                    </div>
+
+                                    <div class="uk-align-right uk-margin-top">
+                                        <button uk-toggle="target: #edit-response-modal" class="uk-button uk-button-primary uk-button-small">Edit Response</button>
+                                    </div>
+                            </div>
+                        </li>
+                        <li>
+                            <a class="uk-accordion-title" href="#">smrep_va</a>
+                            <div class="uk-accordion-content">
+                                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor reprehenderit.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <a class="uk-accordion-title" href="#">greeting</a>
+                            <div class="uk-accordion-content">
+                                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat proident.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+            </li>
+            <li>
+                <!-- display a list of virtual assistants with a mobile personality -->
+
+                <div id="va-resp-card" class="uk-border-rounded uk-box-shadow-small uk-margin uk-card uk-card-small uk-card-default uk-card-body">
+                    
+                        <button uk-toggle="target: #create-response-modal" class="uk-button uk-button-primary uk-button-small">Add new mobile personality</button>
+                    
+                    <ul uk-accordion>
+                        <li class="uk-open">
+                            <a class="uk-accordion-title" href="#">law_va</a>
+                            <div class="uk-accordion-content">
+                                    <div id="va-resp-card_response-card" class="uk-card uk-card-body">
+                                        <p>
+                                            {{ jinja_response }}
+                                        </p>
+                                    </div>
+
+                                    <div class="uk-align-right uk-margin-top">
+                                        <button uk-toggle="target: #edit-response-modal" class="uk-button uk-button-primary uk-button-small">Edit Response</button>
+                                    </div>
+                            </div>
+                        </li>
+                        <li>
+                            <a class="uk-accordion-title" href="#">smrep_va</a>
+                            <div class="uk-accordion-content">
+                                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor reprehenderit.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <a class="uk-accordion-title" href="#">greeting</a>
+                            <div class="uk-accordion-content">
+                                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat proident.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+            </li>
+        </ul>
+
+
+        <!-- Create response modal -->
+
+        <div id="create-response-modal" uk-modal>
+            <div class="uk-modal-dialog uk-modal-body">
+              <button class="uk-modal-close-outside" type="button" uk-close></button>
+              <div class="uk-margin">
+                <legend class="uk-legend">Create response</legend>
+              </div>
+          
+              <form [formGroup]="create_response_form" (ngSubmit)="create_response_form_submit()">
+                <fieldset class="uk-fieldset">
+
+                    <!-- the below input will be filled by the current va and project -->
+                    <input class="uk-input" formControlName="project" type="text" required hidden>
+                    <input class="uk-input" formControlName="va" type="text" required hidden>
+                    <input class="uk-input" formControlName="intent" type="text" required hidden>
+
+                    <div class="uk-margin">
+                        <div class="uk-text-small uk-margin-bottom">Select intent</div>
+                        <div class="uk-form-controls">
+                            <select class="uk-select" id="form-stacked-select">
+                                <option>greeting</option>
+                                <option>law_va</option>
+                            </select>
+                        </div>
+                    </div>
+          
+                    <div class="uk-margin">
+                        <div class="uk-text-small uk-margin-bottom">Give your response a name</div>
+                        <input class="uk-input" formControlName="name" type="text" required>
+                    </div>
+          
+                    <div class="uk-margin">
+                        <div class="uk-text-small uk-margin-bottom">Describe your response</div>
+                        <textarea class="uk-textarea" formControlName="description" rows="5" required></textarea>
+                    </div>
+
+                    <div class="uk-margin">
+                        <div class="uk-text-small uk-margin-bottom">Add Template</div>
+                        <textarea id="response-template" class="uk-textarea" formControlName="template" rows="10" required></textarea>
+                    </div>
+
+
+          
+                </fieldset>
+          
+                <div class="uk-margin">
+                    <button class="uk-button uk-button-secondary uk-button-small">Create and Save Response</button>
+                </div>
+            </form>
+          
+            </div>
+          </div>
+
+
+
+        <!-- Edit response modal -->
+        <div id="edit-response-modal" uk-modal>
+            <div class="uk-modal-dialog uk-modal-body">
+              <button class="uk-modal-close-outside" type="button" uk-close></button>
+              <div class="uk-margin">
+                <legend class="uk-legend">Edit response </legend>
+              </div>
+          
+              <form [formGroup]="edit_response_form" (ngSubmit)="edit_response_form_submit()">
+                <fieldset class="uk-fieldset">
+                      
+                    <!-- auto filled  fields -->
+                        <input class="uk-input" formControlName="project" type="text" required hidden>
+                        <input class="uk-input" formControlName="va" type="text" required hidden>
+                        <input class="uk-input" formControlName="intent" type="text" required hidden>
+          
+                          <div class="uk-margin">
+                              <div class="uk-text-small uk-margin-bottom">Update the response name</div>
+                              <input class="uk-input" formControlName="name" type="text" required>
+                          </div>
+          
+                          <div class="uk-margin">
+                              <div class="uk-text-small uk-margin-bottom">Update response description</div>
+                              <textarea class="uk-textarea" formControlName="description" rows="5" required></textarea>
+                          </div>
+
+                          <div class="uk-margin">
+                            <div class="uk-text-small uk-margin-bottom">Update Template</div>
+                            <textarea id="response-template" class="uk-textarea" formControlName="template" rows="10" required></textarea>
+                        </div>
+          
+                      </fieldset> 
+          
+                      <div class="uk-margin">
+                          <button class="uk-button uk-button-secondary uk-button-small uk-margin-small-bottom">Update and Save Response</button>
+                      </div>
+                  </form>
+          
+            </div>
+          </div>
+
+    </div>
+
+</div>

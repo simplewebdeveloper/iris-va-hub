@@ -6,6 +6,7 @@ from collections import OrderedDict
 from ast import literal_eval
 
 from pathlib import Path
+from django.core.validators import URLValidator
 
 # rest_framework resources
 from rest_framework.response import Response
@@ -22,6 +23,7 @@ from .serializers import VaSerializer
 from .serializers import IntentSerializer
 from .serializers import SvpSerializer
 from .serializers import TransitionSerializer
+from .serializers import BlsSerializer
 
 # import models
 from .models import Project
@@ -29,6 +31,7 @@ from .models import Intent
 from .models import Svp
 from .models import Va
 from .models import Transition
+from .models import BlsModel
 
 # training imports
 from test.test_query import TestQuery
@@ -41,6 +44,7 @@ from .context_utils import MakeVaPath
 from .context_utils import MakeProjectPath
 from .context_utils import ResetState
 from .context_utils import SetState
+from .context_utils import Bls
 
 from response.parser import ResponseParser
 from response.models import ResponseTemplate, ResponseValue
@@ -70,6 +74,8 @@ handoff_context_json_file = os.path.join(this_folder, 'handoff_context.json')
 
 # used to implement transition
 transitions_json_file = os.path.join(this_folder, 'transitions.json')
+
+
 
 # API views
 
@@ -295,7 +301,73 @@ class create_transition(APIView):
         except:
             user_message = 'Error creating transition'
             return Response(user_message, status=status.HTTP_400_BAD_REQUEST)
-            
+ 
+ # Business Logic Server config view
+
+class save_bls(APIView):
+    authentication_classes = [JSONWebTokenAuthentication]
+    permission_classes = [IsAuthenticated]
+    
+    def post(self, request, *args, **kwargs):
+        try:
+            print(request.data)
+            url = request.data['bls_url']
+            va_id = request.data['va']
+            va = Va.objects.get(id=va_id)
+            # validate url
+            validate = URLValidator()
+            validate(url)
+            try:
+                instance = BlsModel.objects.get(va=va)
+                bls_serializer = BlsSerializer(instance, data=request.data)
+                if bls_serializer.is_valid():
+                    bls_serializer.save()
+                    user_message = 'Success saving bls'
+                    print(user_message)
+                    return Response(bls_serializer.data, status=status.HTTP_200_OK)
+            except:
+                bls_serializer = BlsSerializer(data=request.data)
+                if bls_serializer.is_valid():
+                    bls_serializer.save()
+
+                    # url = request.data['bls_url']
+                    #     validate = URLValidator()
+                    #     validate(url)
+                    #     if url:
+                    #         bls_config_json_file_data = Bls(bls_url=url).save_bls_url()
+                    user_message = 'Success saving bls'
+                    print(user_message)
+                    return Response(bls_serializer.data, status=status.HTTP_200_OK)
+        except:
+            user_message = 'Error saving bls'
+            return Response(user_message, status=status.HTTP_400_BAD_REQUEST)  
+
+
+class get_bls(APIView):
+    authentication_classes = [JSONWebTokenAuthentication]
+    permission_classes = [IsAuthenticated]
+    
+    def post(self, request, *args, **kwargs):
+        print('request to get bls data')
+        print(request.data)
+        try:
+            va_id = request.data['va_id']
+            va = Va.objects.get(id=va_id)
+
+            bls = BlsModel.objects.get(va=va)
+
+            bls_serializer = BlsSerializer(bls, many=False)
+
+            # if bls_serializer.is_valid():
+            bls_info = bls_serializer.data
+
+            user_message = 'Success getting bls'
+            print(user_message)
+            return Response(bls_info, status=status.HTTP_200_OK)
+
+        except:
+            user_message = 'Error getting bls'
+            return Response(user_message, status=status.HTTP_400_BAD_REQUEST)  
 
 # ------------------------------------------------------------------------
 
@@ -381,10 +453,10 @@ class get_vas_for_project(APIView):
             project_id = request.data['project_id']
             project = Project.objects.get(id=project_id)
             vas = Va.objects.filter(project=project).order_by('-id')
-            bot_serializer = VaSerializer(vas, many=True)
+            va_serializer = VaSerializer(vas, many=True)
             user_message = 'Success getting vas'
             print(user_message)
-            return Response(bot_serializer.data, status=status.HTTP_200_OK)
+            return Response(va_serializer.data, status=status.HTTP_200_OK)
         except:
             user_message = 'Error getting vas'
             return Response(user_message, status=status.HTTP_400_BAD_REQUEST)
@@ -412,24 +484,31 @@ class delete_single_transition(APIView):
     permission_classes = [IsAuthenticated]
     def post(self, request, *args, **kwargs):
         print(request.data)
-        try:
-            transition_id = str(request.data['transition_id'])
-            # project_dir = project_dir_core
+        # try:
+        transition_id = str(request.data['transition_id'])
+        # project_dir = project_dir_core
 
-            transition = Transition.objects.get(id=transition_id)
-            transition_serializer = TransitionSerializer(transition, many=False)
-            
+        transition = Transition.objects.get(id=transition_id)
+        transition_serializer = TransitionSerializer(transition, many=False)
+
+        if transition_serializer:
+        
             transition.delete()
 
             # check the transition json file and delete the transition from there as well
             with open(transitions_json_file) as f:
                     transitions = json.load(f)
                     for i in range (len(transitions)):
+                        print(i)
                         for transition in transitions:
                             for transition_id, transition in transition.items():
-                                if transition_id == transition_id:
-                                    del transitions[i]
-                                    break
+                                try:
+                                    if transition_id == transition_id:
+                                        del transitions[i]
+                                        break
+                                except:
+                                    pass
+                                
                         
                         # transition.pop(transition_id, None)
                     update_file = open(transitions_json_file, 'w')
@@ -441,10 +520,13 @@ class delete_single_transition(APIView):
             user_message = 'Success deleting transition'
             print(user_message)
             return Response(transition_serializer.data, status=status.HTTP_200_OK)
-        except:
-            user_message = 'Error deleting transition'
-            print(user_message)
-            return Response(user_message, status=status.HTTP_400_BAD_REQUEST)
+        
+        else:
+            print('Transition serializer not valid')
+        # except:
+        #     user_message = 'Error deleting transition'
+        #     print(user_message)
+        #     return Response(user_message, status=status.HTTP_400_BAD_REQUEST)
 
 
 # get vas for project based on va_tag
@@ -785,12 +867,14 @@ class feed_intents(APIView):
 
                 # print(serialized_intent_data)
                 intent_data = json.dumps(serialized_intent_data)
+                # print(intent_data)
                 intent_data_list = json.loads(intent_data)
+                # print(intent_data_list)
                 new_intent_data_list = []
 
                 for line in intent_data_list:
                     string = line['intent_data']
-                    intent_data_dict = json.loads(string)
+                    intent_data_dict = json.loads(string, strict=False)
                     new_intent_data_list.append(intent_data_dict)
 
                 root_intent_data = json.dumps(new_intent_data_list, indent=4)
@@ -938,11 +1022,13 @@ class get_intents_with_svp_data(APIView):
             intents_that_has_svp_data_list = []
             for intent in va_intents_lst:
                 svps = Svp.objects.filter(va=va, intent=intent).order_by('-id')
+                print(svps)
                 if svps:
                     intents_that_has_svp_data_list.append(intent)
                 else:
                     pass
             user_message = 'Success getting intents with svps'
+            print(intents_that_has_svp_data_list)
             print(user_message)
             return Response(intents_that_has_svp_data_list, status=status.HTTP_200_OK)
         except:
@@ -1017,6 +1103,7 @@ class test_query(APIView):
         # try:
         utterance = request.data['query']['query']
         va_id = request.data['va_id']
+        device = request.data['device']
 
         va = Va.objects.get(id=va_id)
         va_serializer = VaSerializer(va, many=False)
@@ -1039,10 +1126,10 @@ class test_query(APIView):
 
             # listen for reset type intents
 
-            response = TestQuery(utterance, va_path_to_check).test_query()
+            response = TestQuery(utterance, va_path_to_check, device).test_query()
 
             # add reset logic here --> Reset the state
-            intent = response['intent']['intent']
+            intent = response['intent']['name']
 
             # if the goodbye intent is hit while within the specialized va
             if intent == 'goodbye':
@@ -1050,10 +1137,10 @@ class test_query(APIView):
 
         
         else:
-            response = TestQuery(utterance, va_path).test_query()
+            response = TestQuery(utterance, va_path, device).test_query()
             # if the state is root
             # check what the intent is
-            intent = response['intent']['intent']
+            intent = response['intent']['name']
             # check our transitions
 
             with open(transitions_json_file) as f:
@@ -1066,90 +1153,32 @@ class test_query(APIView):
 
                             SetState(handoff_context_json_file, va_tag, va_path, state='special').set_state()
 
-                            response = TestQuery(utterance, va_path).test_query()
+                            response = TestQuery(utterance, va_path, device).test_query()
                         else:
                             pass
+
+
+        bls_response = Bls(raw_response=response, va_id=va_id).get_bls_response()
+
+        print(bls_response)
+
+
+        dual_response = {
+            "raw_response": response,
+            "bls_response": bls_response
+
+        }
+
+        # send to template parser | format for Desktop or Mobile
+        # 
+        # 
+        # -> send to UI    
+                     
+
         # SEND TO HANDOFF CONTEXT HERE TO DETERMINE WHICH VA TO GO TO
 
 
-        # Add the response class will have to parse the below
-
-          #  WITHOUT SLOTS
-
-            #   {
-            #   "time_stamp": 1604075651.306505,
-            #   "time": {
-            #     "time_stamp": 1604075651.306505,
-            #     "time_format": "Fri Oct 30 16:34:11 2020"
-            #   },
-            #   "utterance": "hi",
-            #   "intent": {
-            #     "intent": "goodbye",
-            #     "probability": 0.24814
-            #   },
-            #   "slots": []
-            # }
-
-
-            #  WITH SLOTS
-            #             {
-            #   "time_stamp": 1604075815.447497,
-            #   "time": {
-            #     "time_stamp": 1604075815.447497,
-            #     "time_format": "Fri Oct 30 16:36:55 2020"
-            #   },
-            #   "utterance": "talk to a law",
-            #   "intent": {
-            #     "intent": "what_is_law",
-            #     "probability": 0.1446
-            #   },
-            #   "slots": [
-            #     {
-            #       "slot": "term",
-            #       "value": [
-            #         "law"
-            #       ]
-            #     }
-            #   ]
-            # }
-
-
-        # print(response)
-
-        response['device'] = 'ios'
-        response['values'] = {
-            'name': 'jemmott'
-        }
-
-        intent = response['intent']['intent']
-        slots = response['slots']
-        device = response['device']
-
-        values = response['values']
-
-        try:
-            template = ResponseTemplate.objects.filter(va=va_id, intent=intent, device=device).values()[0]
-
-        except:
-            try:
-                template = ResponseTemplate.objects.filter(va=va_id, device=device).values()[0]
-
-            except:
-                response['response'] = 'Error with ORM'
-
-        try:
-            template_id = template['id']
-            template = template['template']
-
-            response_value = ResponseValue.objects.filter(response=template_id).values()
-            parser = ResponseParser(intent, slots, template, response_value, values)
-
-            response['response'] = parser.render()
-
-        except:
-            response['response'] = 'No Responses Model In DB'
-
-        return Response(response, status=status.HTTP_200_OK)
+        return Response(dual_response, status=status.HTTP_200_OK)
         # except:
         #     user_message = 'Error testing bot'
         #     return Response(user_message, status=status.HTTP_400_BAD_REQUEST)

@@ -91,7 +91,7 @@ class SvmClassification:
         probability = float(probability)
         intent = str(temp_intent[0])
         intent_response = {
-            'intent': intent,
+            'name': intent,
             'probability': probability
         }
         return intent_response

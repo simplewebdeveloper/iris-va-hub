@@ -1,0 +1,39 @@
+<!-- Create/ update business logic url -->
+<!-- <button class="uk-button uk-button-small" uk-toggle="target: #create-bls-modal">Add a BL Server to this VA</button> -->
+
+<div id="create-bls-modal" uk-modal>
+    <div class="uk-modal-dialog uk-modal-body">
+      <button class="uk-modal-close-outside" type="button" uk-close></button>
+      <div class="uk-margin">
+        <legend class="uk-legend">Add BL Server URL</legend>
+      </div>
+  
+      <form [formGroup]="save_bls_form" (ngSubmit)="save_bls_form_submit()">
+        <fieldset class="uk-fieldset">
+
+            <!-- The bls url from the json file will be returned here -->
+  
+            <div *ngIf="bls_url; else no_bls_url">
+              <div class="uk-margin">
+                <div class="uk-text-small uk-margin-bottom">BLS URL</div>
+                <input class="uk-input" value="{{ bls_url }}" formControlName="bls_url" type="text" required>
+            </div>
+          </div>
+
+            <ng-template #no_bls_url>
+              <div class="uk-margin">
+                <div class="uk-text-small uk-margin-bottom">BLS URL</div>
+                <input class="uk-input" formControlName="bls_url" type="text" required>
+            </div>
+            </ng-template>
+           
+  
+        </fieldset>
+  
+        <div class="uk-margin">
+            <button type="submit" class="uk-button uk-button-secondary uk-button-small">Save</button>
+        </div>
+    </form>
+  
+    </div>
+  </div>

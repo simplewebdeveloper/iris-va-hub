@@ -33,6 +33,6 @@ const appRoutes: Routes = [
     CommonModule,
     RouterModule.forChild(appRoutes),
     ReactiveFormsModule,
-  ]
+  ],
 })
 export class ProjectModule { }

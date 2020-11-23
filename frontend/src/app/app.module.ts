@@ -16,6 +16,7 @@ import { EditModule } from './edit/edit.module';
 import { AuthModule } from './auth/auth.module'
 import { SettingsModule } from './settings/settings.module';
 import { VaNavModule } from './va-nav/va-nav.module';
+import { ResponseModule } from './response/response.module';
 import { TestModule } from './test/test.module';
 import { VaModule } from './va/va.module';
 
@@ -68,7 +69,7 @@ const appRoutes: Routes = [
     
   },
   {
-    path: 'response',
+    path: 'responses',
     loadChildren: './response/response.module#ResponseModule',
     
   },
@@ -100,6 +101,7 @@ const appRoutes: Routes = [
     EditModule,
     SettingsModule,
     VaNavModule,
+    ResponseModule,
     VaModule,
     AuthModule,
     HttpClientModule,

@@ -1,9 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Route, RouterModule, Routes } from '@angular/router';
+import { ReactiveFormsModule } from '@angular/forms';
 import { VaComponent } from './va/va.component';
 import { AuthGuardService as AuthGuard } from "../auth/auth-guard.service";
 import { VaDashboardComponent } from './va-dashboard/va-dashboard.component';
+import { BlsComponent } from '../va/bls/bls.component';
 
 const appRoutes: Routes = [
  
@@ -21,9 +23,10 @@ const appRoutes: Routes = [
 ];
 
 @NgModule({
-  declarations: [VaComponent, VaDashboardComponent],
+  declarations: [VaComponent, VaDashboardComponent, BlsComponent],
   imports: [
     CommonModule,
+    ReactiveFormsModule,
     RouterModule.forChild(appRoutes),
   ]
 })

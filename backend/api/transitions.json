@@ -1,20 +1,20 @@
 [
     {
-        "24": {
-            "transition_id": 24,
-            "transition_name": "handoff_to_law_va",
+        "39": {
+            "transition_id": 39,
+            "transition_name": "handoff_to_law",
             "source_va_id": "23",
             "source_va_intent": "law_va",
             "dest_va": "law_va"
         }
     },
     {
-        "25": {
-            "transition_id": 25,
-            "transition_name": "handoff_to_smrep_va",
+        "40": {
+            "transition_id": 40,
+            "transition_name": "handoff_to_covid_va",
             "source_va_id": "23",
-            "source_va_intent": "smrep_va",
-            "dest_va": "smrep_va"
+            "source_va_intent": "covid_va",
+            "dest_va": "covid_va"
         }
     }
 ]
