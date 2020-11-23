@@ -248,7 +248,7 @@ export class TrainModelComponent implements OnInit {
   get_intents_with_svp_data(va_id) {
     this.train_service.get_intents_with_svp_data(va_id).subscribe(
       (res) => {
-        // console.log(res);
+        console.log(res);
           this.intents_with_svp_data = res;
           this.success_user_message = 'Success getting intents with svp data';
           this.toggle_user_message(this.success_user_message, 'success');

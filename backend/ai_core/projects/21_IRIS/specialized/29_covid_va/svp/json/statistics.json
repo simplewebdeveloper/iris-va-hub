@@ -1,0 +1,2254 @@
+[
+    [
+        "What are the established number of people with the coronavirus in Ecuador?",
+        {
+            "entities": [
+                [
+                    35,
+                    41,
+                    "type"
+                ],
+                [
+                    66,
+                    73,
+                    "country"
+                ]
+            ]
+        }
+    ],
+    [
+        "What are the established number of people with the coronavirus in Ecuador?",
+        {
+            "entities": [
+                [
+                    35,
+                    41,
+                    "type"
+                ],
+                [
+                    66,
+                    73,
+                    "country"
+                ]
+            ]
+        }
+    ],
+    [
+        "What are the established number of people with the coronavirus in Ecuador?",
+        {
+            "entities": [
+                [
+                    35,
+                    41,
+                    "type"
+                ],
+                [
+                    66,
+                    73,
+                    "country"
+                ]
+            ]
+        }
+    ],
+    [
+        "What are the established number of people with the coronavirus in Ecuador?",
+        {
+            "entities": [
+                [
+                    35,
+                    41,
+                    "type"
+                ],
+                [
+                    66,
+                    73,
+                    "country"
+                ]
+            ]
+        }
+    ],
+    [
+        "How many people in Estonia have COVID-19?",
+        {
+            "entities": [
+                [
+                    19,
+                    26,
+                    "country"
+                ]
+            ]
+        }
+    ],
+    [
+        "How many people were diagnosed with the Coronavirus in Iraq?",
+        {
+            "entities": [
+                [
+                    55,
+                    59,
+                    "country"
+                ]
+            ]
+        }
+    ],
+    [
+        "how many cases has new hampshire got",
+        {
+            "entities": [
+                [
+                    19,
+                    32,
+                    "country"
+                ]
+            ]
+        }
+    ],
+    [
+        "How many people in Czechia (Czech Republic) have COVID-19?",
+        {
+            "entities": [
+                [
+                    19,
+                    26,
+                    "country"
+                ]
+            ]
+        }
+    ],
+    [
+        "How many Bolivians have died?",
+        {
+            "entities": [
+                [
+                    9,
+                    18,
+                    "country"
+                ]
+            ]
+        }
+    ],
+    [
+        "stats of corona virus in maryland",
+        {
+            "entities": [
+                [
+                    25,
+                    33,
+                    "country"
+                ]
+            ]
+        }
+    ],
+    [
+        "Can you please tell me the total number of individuals that have the Coronavirus in Spain?",
+        {
+            "entities": [
+                [
+                    84,
+                    89,
+                    "country"
+                ]
+            ]
+        }
+    ],
+    [
+        "Get me the stats on the number of people infected with the coronavirus cases in Douglas county.",
+        {
+            "entities": [
+                [
+                    80,
+                    94,
+                    "country"
+                ]
+            ]
+        }
+    ],
+    [
+        "How many people have died from Coronavirus since the beginning in Angola?",
+        {
+            "entities": [
+                [
+                    66,
+                    72,
+                    "country"
+                ]
+            ]
+        }
+    ],
+    [
+        "Can you tell me the number of people positive for the corona virus in Italy?",
+        {
+            "entities": [
+                [
+                    70,
+                    75,
+                    "country"
+                ]
+            ]
+        }
+    ],
+    [
+        "How many cases of corona virus have appeared in the United States?",
+        {
+            "entities": [
+                [
+                    52,
+                    65,
+                    "country"
+                ]
+            ]
+        }
+    ],
+    [
+        "Has anyone in Mozambique been infected yet?",
+        {
+            "entities": [
+                [
+                    14,
+                    24,
+                    "country"
+                ]
+            ]
+        }
+    ],
+    [
+        "Can you tell me if there are many corona virus cases in Mexico?",
+        {
+            "entities": [
+                [
+                    56,
+                    62,
+                    "country"
+                ]
+            ]
+        }
+    ],
+    [
+        "How many people in Finland?",
+        {
+            "entities": [
+                [
+                    19,
+                    26,
+                    "country"
+                ]
+            ]
+        }
+    ],
+    [
+        "I want to know the number of persons sick with Corona in Finland .",
+        {
+            "entities": [
+                [
+                    57,
+                    64,
+                    "country"
+                ]
+            ]
+        }
+    ],
+    [
+        "How many in Slovakia?",
+        {
+            "entities": [
+                [
+                    12,
+                    20,
+                    "country"
+                ]
+            ]
+        }
+    ],
+    [
+        "whats the death in china from corona?",
+        {
+            "entities": [
+                [
+                    19,
+                    24,
+                    "country"
+                ]
+            ]
+        }
+    ],
+    [
+        "Has the coronavirus gotten to Vietnam yet?",
+        {
+            "entities": [
+                [
+                    30,
+                    37,
+                    "country"
+                ]
+            ]
+        }
+    ],
+    [
+        "Has venezuela been infected yet?",
+        {
+            "entities": [
+                [
+                    4,
+                    13,
+                    "country"
+                ]
+            ]
+        }
+    ],
+    [
+        "How many cases in the Netherlands?",
+        {
+            "entities": [
+                [
+                    22,
+                    33,
+                    "country"
+                ]
+            ]
+        }
+    ],
+    [
+        "How many people are infected with corona virus in Italy?",
+        {
+            "entities": [
+                [
+                    50,
+                    55,
+                    "country"
+                ]
+            ]
+        }
+    ],
+    [
+        "How many cases in Spain?",
+        {
+            "entities": [
+                [
+                    18,
+                    23,
+                    "country"
+                ]
+            ]
+        }
+    ],
+    [
+        "hey i'm a tourist that recent travelled to jamaica can you let me know how many cases were confirmed here",
+        {
+            "entities": [
+                [
+                    43,
+                    50,
+                    "country"
+                ]
+            ]
+        }
+    ],
+    [
+        "How many cases in Luxembourg?",
+        {
+            "entities": [
+                [
+                    18,
+                    28,
+                    "country"
+                ]
+            ]
+        }
+    ],
+    [
+        "How many people has died in America?",
+        {
+            "entities": [
+                [
+                    28,
+                    35,
+                    "country"
+                ]
+            ]
+        }
+    ],
+    [
+        "how many covid-19 cases in north dakot",
+        {
+            "entities": [
+                [
+                    27,
+                    38,
+                    "country"
+                ]
+            ]
+        }
+    ],
+    [
+        "let me have an update on the amount of corona cases in South Asia",
+        {
+            "entities": [
+                [
+                    55,
+                    65,
+                    "country"
+                ]
+            ]
+        }
+    ],
+    [
+        "how many cases of corona virus are there in england?",
+        {
+            "entities": [
+                [
+                    44,
+                    51,
+                    "country"
+                ]
+            ]
+        }
+    ],
+    [
+        "Update me on the positive cases in Hungary .",
+        {
+            "entities": [
+                [
+                    35,
+                    42,
+                    "country"
+                ]
+            ]
+        }
+    ],
+    [
+        "How many Ugandans have died?",
+        {
+            "entities": [
+                [
+                    9,
+                    17,
+                    "country"
+                ]
+            ]
+        }
+    ],
+    [
+        "What is the total number of people with coronavirus in Peru?",
+        {
+            "entities": [
+                [
+                    55,
+                    59,
+                    "country"
+                ]
+            ]
+        }
+    ],
+    [
+        "How many cases in Bahrain?",
+        {
+            "entities": [
+                [
+                    18,
+                    25,
+                    "country"
+                ]
+            ]
+        }
+    ],
+    [
+        "Has the coronavirus gotten to the country of Georgia yet?",
+        {
+            "entities": [
+                [
+                    45,
+                    52,
+                    "country"
+                ]
+            ]
+        }
+    ],
+    [
+        "What's the number of cases of the cirus in Russia?",
+        {
+            "entities": [
+                [
+                    43,
+                    49,
+                    "country"
+                ]
+            ]
+        }
+    ],
+    [
+        "How many people in guyana have Corona Virus?",
+        {
+            "entities": [
+                [
+                    19,
+                    25,
+                    "country"
+                ]
+            ]
+        }
+    ],
+    [
+        "How many people on South Korea have Corona Virus?",
+        {
+            "entities": [
+                [
+                    19,
+                    30,
+                    "country"
+                ]
+            ]
+        }
+    ],
+    [
+        "stats of corona virus in oregon",
+        {
+            "entities": [
+                [
+                    25,
+                    31,
+                    "country"
+                ]
+            ]
+        }
+    ],
+    [
+        "how many cases has peru got",
+        {
+            "entities": [
+                [
+                    19,
+                    23,
+                    "country"
+                ]
+            ]
+        }
+    ],
+    [
+        "how many cases has peru got",
+        {
+            "entities": [
+                [
+                    19,
+                    23,
+                    "country"
+                ]
+            ]
+        }
+    ],
+    [
+        "Has the coronavirus gotten to Poland yet?",
+        {
+            "entities": [
+                [
+                    30,
+                    36,
+                    "country"
+                ]
+            ]
+        }
+    ],
+    [
+        "give me the amount of persons affected with the corona in Europe",
+        {
+            "entities": [
+                [
+                    58,
+                    64,
+                    "country"
+                ]
+            ]
+        }
+    ],
+    [
+        "give me the amount of persons affected with the corona in Europe",
+        {
+            "entities": [
+                [
+                    58,
+                    64,
+                    "country"
+                ]
+            ]
+        }
+    ],
+    [
+        "What number of people have coronavirus in Japan?",
+        {
+            "entities": [
+                [
+                    42,
+                    47,
+                    "country"
+                ]
+            ]
+        }
+    ],
+    [
+        "do you know how many people have covid 19 in california",
+        {
+            "entities": [
+                [
+                    45,
+                    55,
+                    "country"
+                ]
+            ]
+        }
+    ],
+    [
+        "How many people in Tibet?",
+        {
+            "entities": [
+                [
+                    19,
+                    24,
+                    "country"
+                ]
+            ]
+        }
+    ],
+    [
+        "how many covid-19 cases that died in vancouver BC",
+        {
+            "entities": [
+                [
+                    37,
+                    49,
+                    "country"
+                ]
+            ]
+        }
+    ],
+    [
+        "Has the coronavirus gotten to Laos yet?",
+        {
+            "entities": [
+                [
+                    30,
+                    34,
+                    "country"
+                ]
+            ]
+        }
+    ],
+    [
+        "Number of cases of corona virus in us",
+        {
+            "entities": [
+                [
+                    29,
+                    31,
+                    "country"
+                ]
+            ]
+        }
+    ],
+    [
+        "Give me the current number of active Coronavirus cases in the United States.",
+        {
+            "entities": [
+                [
+                    62,
+                    75,
+                    "country"
+                ]
+            ]
+        }
+    ],
+    [
+        "Has California been greatly affected by the corona virus?",
+        {
+            "entities": [
+                [
+                    4,
+                    14,
+                    "country"
+                ]
+            ]
+        }
+    ],
+    [
+        "How many people have died from the Corona virus in Russia?",
+        {
+            "entities": [
+                [
+                    51,
+                    57,
+                    "country"
+                ]
+            ]
+        }
+    ],
+    [
+        "How many people have died from the Corona virus in Russia?",
+        {
+            "entities": [
+                [
+                    51,
+                    57,
+                    "country"
+                ]
+            ]
+        }
+    ],
+    [
+        "Give me the count for infected in Australia",
+        {
+            "entities": [
+                [
+                    34,
+                    43,
+                    "country"
+                ]
+            ]
+        }
+    ],
+    [
+        "How many cases in Belize?",
+        {
+            "entities": [
+                [
+                    18,
+                    24,
+                    "country"
+                ]
+            ]
+        }
+    ],
+    [
+        "Has Bangladesh been infected yet?",
+        {
+            "entities": [
+                [
+                    4,
+                    14,
+                    "country"
+                ]
+            ]
+        }
+    ],
+    [
+        "Calculate the number of people in the United States that have corona virus",
+        {
+            "entities": [
+                [
+                    38,
+                    51,
+                    "country"
+                ]
+            ]
+        }
+    ],
+    [
+        "let me know how much cases Guyana have",
+        {
+            "entities": [
+                [
+                    27,
+                    33,
+                    "country"
+                ]
+            ]
+        }
+    ],
+    [
+        "How many cases in Kyrgyzstan?",
+        {
+            "entities": [
+                [
+                    18,
+                    28,
+                    "country"
+                ]
+            ]
+        }
+    ],
+    [
+        "number of deaths in jersey",
+        {
+            "entities": [
+                [
+                    20,
+                    26,
+                    "country"
+                ]
+            ]
+        }
+    ],
+    [
+        "How many people in Uruguay have died?",
+        {
+            "entities": [
+                [
+                    19,
+                    26,
+                    "country"
+                ]
+            ]
+        }
+    ],
+    [
+        "please note the amount of cases affected corona cases in suriname",
+        {
+            "entities": [
+                [
+                    57,
+                    65,
+                    "country"
+                ]
+            ]
+        }
+    ],
+    [
+        "How many people in India?",
+        {
+            "entities": [
+                [
+                    19,
+                    24,
+                    "country"
+                ]
+            ]
+        }
+    ],
+    [
+        "How many people in Germany?",
+        {
+            "entities": [
+                [
+                    19,
+                    26,
+                    "country"
+                ]
+            ]
+        }
+    ],
+    [
+        "How many people have coronavirus in the US?",
+        {
+            "entities": [
+                [
+                    40,
+                    42,
+                    "country"
+                ]
+            ]
+        }
+    ],
+    [
+        "Give me an update on the number of confirmed cases of corona virus in Haiti .",
+        {
+            "entities": [
+                [
+                    70,
+                    75,
+                    "country"
+                ]
+            ]
+        }
+    ],
+    [
+        "How many individuals possess coronavirus in China?",
+        {
+            "entities": [
+                [
+                    44,
+                    49,
+                    "country"
+                ]
+            ]
+        }
+    ],
+    [
+        "What is the last number of coronavirus cases in the USA?",
+        {
+            "entities": [
+                [
+                    52,
+                    55,
+                    "country"
+                ]
+            ]
+        }
+    ],
+    [
+        "How many people have died from Coronavirus since the beginning in Mali?",
+        {
+            "entities": [
+                [
+                    66,
+                    70,
+                    "country"
+                ]
+            ]
+        }
+    ],
+    [
+        "How many Costa Ricans have died?",
+        {
+            "entities": [
+                [
+                    9,
+                    21,
+                    "country"
+                ]
+            ]
+        }
+    ],
+    [
+        "Has Jamaica been infected yet?",
+        {
+            "entities": [
+                [
+                    4,
+                    11,
+                    "country"
+                ]
+            ]
+        }
+    ],
+    [
+        "number of infections in china",
+        {
+            "entities": [
+                [
+                    24,
+                    29,
+                    "country"
+                ]
+            ]
+        }
+    ],
+    [
+        "How many cases in Qatar?",
+        {
+            "entities": [
+                [
+                    18,
+                    23,
+                    "country"
+                ]
+            ]
+        }
+    ],
+    [
+        "how many cases has france got",
+        {
+            "entities": [
+                [
+                    19,
+                    25,
+                    "country"
+                ]
+            ]
+        }
+    ],
+    [
+        "What is the daily average new cases of people infected in the US?",
+        {
+            "entities": [
+                [
+                    62,
+                    64,
+                    "country"
+                ]
+            ]
+        }
+    ],
+    [
+        "Has anyone in the Grenadines been infected yet?",
+        {
+            "entities": [
+                [
+                    18,
+                    28,
+                    "country"
+                ]
+            ]
+        }
+    ],
+    [
+        "how many cases has north korea got",
+        {
+            "entities": [
+                [
+                    19,
+                    30,
+                    "country"
+                ]
+            ]
+        }
+    ],
+    [
+        "Has Guatemala been infected yet?",
+        {
+            "entities": [
+                [
+                    4,
+                    13,
+                    "country"
+                ]
+            ]
+        }
+    ],
+    [
+        "Has the coronavirus gotten to Malta yet?",
+        {
+            "entities": [
+                [
+                    30,
+                    35,
+                    "country"
+                ]
+            ]
+        }
+    ],
+    [
+        "Can you tell me the stats in Ireland for corona?",
+        {
+            "entities": [
+                [
+                    29,
+                    36,
+                    "country"
+                ]
+            ]
+        }
+    ],
+    [
+        "Has the coronavirus gotten to Belize yet?",
+        {
+            "entities": [
+                [
+                    30,
+                    36,
+                    "country"
+                ]
+            ]
+        }
+    ],
+    [
+        "how many cases are in fraince",
+        {
+            "entities": [
+                [
+                    22,
+                    29,
+                    "country"
+                ]
+            ]
+        }
+    ],
+    [
+        "Whats the number of cases for corona in Canada?",
+        {
+            "entities": [
+                [
+                    40,
+                    46,
+                    "country"
+                ]
+            ]
+        }
+    ],
+    [
+        "What is the number of deaths from Covid-19 in Spain?",
+        {
+            "entities": [
+                [
+                    46,
+                    51,
+                    "country"
+                ]
+            ]
+        }
+    ],
+    [
+        "How many people have died from Coronavirus since the beginning in Belarus?",
+        {
+            "entities": [
+                [
+                    66,
+                    73,
+                    "country"
+                ]
+            ]
+        }
+    ],
+    [
+        "stats of corona virus in washington",
+        {
+            "entities": [
+                [
+                    25,
+                    35,
+                    "country"
+                ]
+            ]
+        }
+    ],
+    [
+        "How many cases in Kazakhstan?",
+        {
+            "entities": [
+                [
+                    18,
+                    28,
+                    "country"
+                ]
+            ]
+        }
+    ],
+    [
+        "How many cases in Benin?",
+        {
+            "entities": [
+                [
+                    18,
+                    23,
+                    "country"
+                ]
+            ]
+        }
+    ],
+    [
+        "What is the number of confirmed cases in Italy?",
+        {
+            "entities": [
+                [
+                    41,
+                    46,
+                    "country"
+                ]
+            ]
+        }
+    ],
+    [
+        "how many people died in slovakia?",
+        {
+            "entities": [
+                [
+                    24,
+                    32,
+                    "country"
+                ]
+            ]
+        }
+    ],
+    [
+        "What is the death rate from Coronavirus in Africa?",
+        {
+            "entities": [
+                [
+                    43,
+                    49,
+                    "country"
+                ]
+            ]
+        }
+    ],
+    [
+        "Are the corona cases in Italy declining or still growing?",
+        {
+            "entities": [
+                [
+                    24,
+                    29,
+                    "country"
+                ]
+            ]
+        }
+    ],
+    [
+        "What is the total number of confirmed corona virus cases across the country in USA?",
+        {
+            "entities": [
+                [
+                    79,
+                    82,
+                    "country"
+                ]
+            ]
+        }
+    ],
+    [
+        "stats of corona virus in arizona",
+        {
+            "entities": [
+                [
+                    25,
+                    32,
+                    "country"
+                ]
+            ]
+        }
+    ],
+    [
+        "tally of cases in barbados",
+        {
+            "entities": [
+                [
+                    18,
+                    26,
+                    "country"
+                ]
+            ]
+        }
+    ],
+    [
+        "I need to know the total number of confirmed cases of coronavirus in Japan.",
+        {
+            "entities": [
+                [
+                    69,
+                    74,
+                    "country"
+                ]
+            ]
+        }
+    ],
+    [
+        "how many persons have died from the virus in columbia place?",
+        {
+            "entities": [
+                [
+                    45,
+                    53,
+                    "country"
+                ]
+            ]
+        }
+    ],
+    [
+        "Has Jordan been infected yet?",
+        {
+            "entities": [
+                [
+                    4,
+                    10,
+                    "country"
+                ]
+            ]
+        }
+    ],
+    [
+        "How many have it in Toledo?",
+        {
+            "entities": [
+                [
+                    20,
+                    26,
+                    "country"
+                ]
+            ]
+        }
+    ],
+    [
+        "Please let me know how many people have gotten coronavirus in New Zealand .",
+        {
+            "entities": [
+                [
+                    62,
+                    73,
+                    "country"
+                ]
+            ]
+        }
+    ],
+    [
+        "How much of Japan's population has the corona virus?",
+        {
+            "entities": [
+                [
+                    12,
+                    19,
+                    "country"
+                ]
+            ]
+        }
+    ],
+    [
+        "how many trinidadians died from corona virus",
+        {
+            "entities": [
+                [
+                    9,
+                    21,
+                    "country"
+                ]
+            ]
+        }
+    ],
+    [
+        "query the amount confirmed corona cases in Pakistan please",
+        {
+            "entities": [
+                [
+                    43,
+                    51,
+                    "country"
+                ]
+            ]
+        }
+    ],
+    [
+        "How many Floridians have died?",
+        {
+            "entities": [
+                [
+                    9,
+                    19,
+                    "country"
+                ]
+            ]
+        }
+    ],
+    [
+        "How may confirmed cases of Covid-19 does Aruba have?",
+        {
+            "entities": [
+                [
+                    41,
+                    46,
+                    "country"
+                ]
+            ]
+        }
+    ],
+    [
+        "What is the number of people who are sick with corona in Israel?",
+        {
+            "entities": [
+                [
+                    57,
+                    63,
+                    "country"
+                ]
+            ]
+        }
+    ],
+    [
+        "how many cases have they confirmed in berbice right now",
+        {
+            "entities": [
+                [
+                    38,
+                    45,
+                    "country"
+                ]
+            ]
+        }
+    ],
+    [
+        "How many people have died from Coronavirus since the beginning in Hungary?",
+        {
+            "entities": [
+                [
+                    66,
+                    73,
+                    "country"
+                ]
+            ]
+        }
+    ],
+    [
+        "how many people dead in georgia",
+        {
+            "entities": [
+                [
+                    24,
+                    31,
+                    "country"
+                ]
+            ]
+        }
+    ],
+    [
+        "Tell me how many people now have corona in the US.",
+        {
+            "entities": [
+                [
+                    47,
+                    49,
+                    "country"
+                ]
+            ]
+        }
+    ],
+    [
+        "Statistics of Samoa",
+        {
+            "entities": [
+                [
+                    14,
+                    19,
+                    "country"
+                ]
+            ]
+        }
+    ],
+    [
+        "How many French have died?",
+        {
+            "entities": [
+                [
+                    9,
+                    15,
+                    "country"
+                ]
+            ]
+        }
+    ],
+    [
+        "ow many people died in slovakia?",
+        {
+            "entities": [
+                [
+                    23,
+                    31,
+                    "country"
+                ]
+            ]
+        }
+    ],
+    [
+        "How many people have gotten coronavirus in Nauru ?",
+        {
+            "entities": [
+                [
+                    43,
+                    48,
+                    "country"
+                ]
+            ]
+        }
+    ],
+    [
+        "how many cases has norawy got",
+        {
+            "entities": [
+                [
+                    19,
+                    25,
+                    "country"
+                ]
+            ]
+        }
+    ],
+    [
+        "How many people in Malaysia?",
+        {
+            "entities": [
+                [
+                    19,
+                    27,
+                    "country"
+                ]
+            ]
+        }
+    ],
+    [
+        "How many people in Nepal have died?",
+        {
+            "entities": [
+                [
+                    19,
+                    24,
+                    "country"
+                ]
+            ]
+        }
+    ],
+    [
+        "Please provide the latest WHO numbers for coronavirus cases in Iran",
+        {
+            "entities": [
+                [
+                    63,
+                    67,
+                    "country"
+                ]
+            ]
+        }
+    ],
+    [
+        "Does China have any new confirmed cases of corona virus since March 19th?",
+        {
+            "entities": [
+                [
+                    5,
+                    10,
+                    "country"
+                ]
+            ]
+        }
+    ],
+    [
+        "Has Ecuador been infected yet?",
+        {
+            "entities": [
+                [
+                    4,
+                    11,
+                    "country"
+                ]
+            ]
+        }
+    ],
+    [
+        "what is the count of people in Italy with the coronavirus?",
+        {
+            "entities": [
+                [
+                    31,
+                    36,
+                    "country"
+                ]
+            ]
+        }
+    ],
+    [
+        "How many Haitians have died?",
+        {
+            "entities": [
+                [
+                    9,
+                    17,
+                    "country"
+                ]
+            ]
+        }
+    ],
+    [
+        "What is the total number of people infected with the corona virus in Italy?",
+        {
+            "entities": [
+                [
+                    69,
+                    74,
+                    "country"
+                ]
+            ]
+        }
+    ],
+    [
+        "Can you tell me the exact number of corona virus cases in Mexico?",
+        {
+            "entities": [
+                [
+                    58,
+                    64,
+                    "country"
+                ]
+            ]
+        }
+    ],
+    [
+        "I am very concerned about the pandemic crisis of corona virus. I want to know the number of infected corona virus cases in USA now.",
+        {
+            "entities": [
+                [
+                    123,
+                    126,
+                    "country"
+                ]
+            ]
+        }
+    ],
+    [
+        "What are the numbers of patients in UCSF hospital who have coronavirus?",
+        {
+            "entities": [
+                [
+                    36,
+                    40,
+                    "country"
+                ]
+            ]
+        }
+    ],
+    [
+        "Corona virus infected number in Africa?",
+        {
+            "entities": [
+                [
+                    32,
+                    38,
+                    "country"
+                ]
+            ]
+        }
+    ],
+    [
+        "how many cases has oregon got",
+        {
+            "entities": [
+                [
+                    19,
+                    25,
+                    "country"
+                ]
+            ]
+        }
+    ],
+    [
+        "How many people in Sweden?",
+        {
+            "entities": [
+                [
+                    19,
+                    25,
+                    "country"
+                ]
+            ]
+        }
+    ],
+    [
+        "How many people have it in Romania?",
+        {
+            "entities": [
+                [
+                    27,
+                    34,
+                    "country"
+                ]
+            ]
+        }
+    ],
+    [
+        "Has the coronavirus gotten to Guam yet?",
+        {
+            "entities": [
+                [
+                    30,
+                    34,
+                    "country"
+                ]
+            ]
+        }
+    ],
+    [
+        "Has the coronavirus gotten to the Bahamas yet?",
+        {
+            "entities": [
+                [
+                    34,
+                    41,
+                    "country"
+                ]
+            ]
+        }
+    ],
+    [
+        "How many deaths are there in china",
+        {
+            "entities": [
+                [
+                    29,
+                    34,
+                    "country"
+                ]
+            ]
+        }
+    ],
+    [
+        "How many people in Azerbaijan have COVID-19?",
+        {
+            "entities": [
+                [
+                    19,
+                    29,
+                    "country"
+                ]
+            ]
+        }
+    ],
+    [
+        "How many confirmed cases of corona in Wales?",
+        {
+            "entities": [
+                [
+                    38,
+                    43,
+                    "country"
+                ]
+            ]
+        }
+    ],
+    [
+        "how many people have it in Taiwan",
+        {
+            "entities": [
+                [
+                    27,
+                    33,
+                    "country"
+                ]
+            ]
+        }
+    ],
+    [
+        "I need to know how many people have confirmed corona cases in Denmark.",
+        {
+            "entities": [
+                [
+                    62,
+                    69,
+                    "country"
+                ]
+            ]
+        }
+    ],
+    [
+        "How many cases in Iran?",
+        {
+            "entities": [
+                [
+                    18,
+                    22,
+                    "country"
+                ]
+            ]
+        }
+    ],
+    [
+        "I need to find out how many people are sick with the coronavirus in China.",
+        {
+            "entities": [
+                [
+                    68,
+                    73,
+                    "country"
+                ]
+            ]
+        }
+    ],
+    [
+        "How many people have died from Coronavirus since the beginning in Zimbabwe?",
+        {
+            "entities": [
+                [
+                    66,
+                    74,
+                    "country"
+                ]
+            ]
+        }
+    ],
+    [
+        "How many people have tested postive for the Corona Virus in the United States?",
+        {
+            "entities": [
+                [
+                    64,
+                    77,
+                    "country"
+                ]
+            ]
+        }
+    ],
+    [
+        "How many people have it in Belgium?",
+        {
+            "entities": [
+                [
+                    27,
+                    34,
+                    "country"
+                ]
+            ]
+        }
+    ],
+    [
+        "What is the number of corona virus cases in Papua New Guinea ?",
+        {
+            "entities": [
+                [
+                    44,
+                    60,
+                    "country"
+                ]
+            ]
+        }
+    ],
+    [
+        "corona virus are Nauru in spindled?",
+        {
+            "entities": [
+                [
+                    26,
+                    34,
+                    "country"
+                ]
+            ]
+        }
+    ],
+    [
+        "how many dead of COVID-19 in in coachella",
+        {
+            "entities": [
+                [
+                    32,
+                    41,
+                    "country"
+                ]
+            ]
+        }
+    ],
+    [
+        "What is the number of people with the corona virus in Australia?",
+        {
+            "entities": [
+                [
+                    54,
+                    63,
+                    "country"
+                ]
+            ]
+        }
+    ],
+    [
+        "Corona virus statistics in Italy?",
+        {
+            "entities": [
+                [
+                    27,
+                    32,
+                    "country"
+                ]
+            ]
+        }
+    ],
+    [
+        "Everyone around me is talking about corona virus. Can you tell me how many people got the virus in USA.",
+        {
+            "entities": [
+                [
+                    99,
+                    102,
+                    "country"
+                ]
+            ]
+        }
+    ],
+    [
+        "how many covid-19 cases in peru",
+        {
+            "entities": [
+                [
+                    27,
+                    31,
+                    "country"
+                ]
+            ]
+        }
+    ],
+    [
+        "Has the coronavirus gotten to the United States yet?",
+        {
+            "entities": [
+                [
+                    34,
+                    47,
+                    "country"
+                ]
+            ]
+        }
+    ],
+    [
+        "Has Chad been infected yet?",
+        {
+            "entities": [
+                [
+                    4,
+                    8,
+                    "country"
+                ]
+            ]
+        }
+    ],
+    [
+        "How many died in California?",
+        {
+            "entities": [
+                [
+                    17,
+                    27,
+                    "country"
+                ]
+            ]
+        }
+    ],
+    [
+        "stats of corona virus in eugene",
+        {
+            "entities": [
+                [
+                    25,
+                    31,
+                    "country"
+                ]
+            ]
+        }
+    ],
+    [
+        "Has Afghanistan been infected yet?",
+        {
+            "entities": [
+                [
+                    4,
+                    15,
+                    "country"
+                ]
+            ]
+        }
+    ],
+    [
+        "how many cases are in russia",
+        {
+            "entities": [
+                [
+                    22,
+                    28,
+                    "country"
+                ]
+            ]
+        }
+    ],
+    [
+        "How many have died in Riverside?",
+        {
+            "entities": [
+                [
+                    22,
+                    31,
+                    "country"
+                ]
+            ]
+        }
+    ],
+    [
+        "stats of corona virus in macchu picchu",
+        {
+            "entities": [
+                [
+                    25,
+                    38,
+                    "country"
+                ]
+            ]
+        }
+    ],
+    [
+        "What's the count of infected people in Seminole County, Florida?",
+        {
+            "entities": [
+                [
+                    39,
+                    63,
+                    "country"
+                ]
+            ]
+        }
+    ],
+    [
+        "Please tell me how many people are tested positive for corona virus in USA.",
+        {
+            "entities": [
+                [
+                    71,
+                    74,
+                    "country"
+                ]
+            ]
+        }
+    ],
+    [
+        "How many people in Pakistan?",
+        {
+            "entities": [
+                [
+                    19,
+                    27,
+                    "country"
+                ]
+            ]
+        }
+    ],
+    [
+        "the amount of cases that america has",
+        {
+            "entities": [
+                [
+                    25,
+                    32,
+                    "country"
+                ]
+            ]
+        }
+    ],
+    [
+        "Has the coronavirus gotten to Germany yet?",
+        {
+            "entities": [
+                [
+                    30,
+                    37,
+                    "country"
+                ]
+            ]
+        }
+    ],
+    [
+        "how many cases has south carolina got",
+        {
+            "entities": [
+                [
+                    19,
+                    33,
+                    "country"
+                ]
+            ]
+        }
+    ],
+    [
+        "Tell me the number of people that has gotten the corona virus in South Africa",
+        {
+            "entities": [
+                [
+                    65,
+                    77,
+                    "country"
+                ]
+            ]
+        }
+    ],
+    [
+        "please let me have an update on the cases of corona virus infected persons in Indonesia",
+        {
+            "entities": [
+                [
+                    78,
+                    87,
+                    "country"
+                ]
+            ]
+        }
+    ],
+    [
+        "i need belgium stats please",
+        {
+            "entities": [
+                [
+                    7,
+                    14,
+                    "country"
+                ]
+            ]
+        }
+    ],
+    [
+        "How many South Koreans have died?",
+        {
+            "entities": [
+                [
+                    9,
+                    22,
+                    "country"
+                ]
+            ]
+        }
+    ],
+    [
+        "how many people contracted corona virus in the us",
+        {
+            "entities": [
+                [
+                    37,
+                    39,
+                    "country"
+                ]
+            ]
+        }
+    ],
+    [
+        "How many cases in the US?",
+        {
+            "entities": [
+                [
+                    22,
+                    24,
+                    "country"
+                ]
+            ]
+        }
+    ],
+    [
+        "How many corona cases are being confirmed every day in Italy?",
+        {
+            "entities": [
+                [
+                    55,
+                    60,
+                    "country"
+                ]
+            ]
+        }
+    ],
+    [
+        "how many people died in china",
+        {
+            "entities": [
+                [
+                    24,
+                    29,
+                    "country"
+                ]
+            ]
+        }
+    ],
+    [
+        "How many individuals have corona in the Philippines?",
+        {
+            "entities": [
+                [
+                    40,
+                    51,
+                    "country"
+                ]
+            ]
+        }
+    ],
+    [
+        "Has the coronavirus gotten to Liberia yet?",
+        {
+            "entities": [
+                [
+                    30,
+                    37,
+                    "country"
+                ]
+            ]
+        }
+    ],
+    [
+        "Has Canada been infected yet?",
+        {
+            "entities": [
+                [
+                    4,
+                    10,
+                    "country"
+                ]
+            ]
+        }
+    ],
+    [
+        "Has Cambodia been infected yet?",
+        {
+            "entities": [
+                [
+                    4,
+                    12,
+                    "country"
+                ]
+            ]
+        }
+    ],
+    [
+        "how many people are sick in america with the rona",
+        {
+            "entities": [
+                [
+                    28,
+                    35,
+                    "country"
+                ]
+            ]
+        }
+    ],
+    [
+        "show me the deaths from corona virus in barbados please",
+        {
+            "entities": [
+                [
+                    40,
+                    48,
+                    "country"
+                ]
+            ]
+        }
+    ],
+    [
+        "Has the coronavirus gotten to Comoros yet?",
+        {
+            "entities": [
+                [
+                    30,
+                    37,
+                    "country"
+                ]
+            ]
+        }
+    ],
+    [
+        "What is the confirmed amount in the USA for positive in corona?",
+        {
+            "entities": [
+                [
+                    36,
+                    39,
+                    "country"
+                ]
+            ]
+        }
+    ],
+    [
+        "What are the established number of people with the coronavirus in Ecuador?",
+        {
+            "entities": [
+                [
+                    66,
+                    73,
+                    "country"
+                ]
+            ]
+        }
+    ],
+    [
+        "Id like to know the current stats of the corona virus in Mexico",
+        {
+            "entities": [
+                [
+                    57,
+                    63,
+                    "country"
+                ]
+            ]
+        }
+    ],
+    [
+        "Give me the number of cases in Canada!",
+        {
+            "entities": [
+                [
+                    31,
+                    37,
+                    "country"
+                ]
+            ]
+        }
+    ],
+    [
+        "Has Brunei been infected yet?",
+        {
+            "entities": [
+                [
+                    4,
+                    10,
+                    "country"
+                ]
+            ]
+        }
+    ]
+]

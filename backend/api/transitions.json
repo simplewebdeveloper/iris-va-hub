@@ -7,5 +7,14 @@
             "source_va_intent": "law_va",
             "dest_va": "law_va"
         }
+    },
+    {
+        "40": {
+            "transition_id": 40,
+            "transition_name": "handoff_to_covid_va",
+            "source_va_id": "23",
+            "source_va_intent": "covid_va",
+            "dest_va": "covid_va"
+        }
     }
 ]

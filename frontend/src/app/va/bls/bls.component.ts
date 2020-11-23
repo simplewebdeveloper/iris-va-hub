@@ -4,6 +4,7 @@ import * as uikit from 'uikit';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Bls } from 'src/app/models/bls.model';
 import { ProjectService } from '../../project/project.service';
+import { VaService } from '../../va/va.service';
 
 @Component({
   selector: 'app-bls',
@@ -21,6 +22,7 @@ export class BlsComponent implements OnInit {
 
   constructor(
     private project_service: ProjectService,
+    private va_service: VaService,
     private form_builder: FormBuilder,
   ) { 
       this.bls_model = new Bls();
@@ -28,45 +30,58 @@ export class BlsComponent implements OnInit {
 
   ngOnInit() {
     this.initialize_save_bls_form();
-    this.get_current_bls_url();
+    this.get_bls();
   }
 
   initialize_save_bls_form(): void {
     this.save_bls_form = this.form_builder.group({
       id: this.bls_model.id,
+      va: this.bls_model.va,
       bls_url: this.bls_model.bls_url,
     })
   }
 
   save_bls_form_submit() {
     const data = this.save_bls_form.getRawValue();
-    console.log(data)
-    if(this.save_bls_form.valid) {
+      // get current va
+      const current_va_id = this.va_service.get_va_id();
 
-    this.project_service.save_bls(data).subscribe(
-      (res) => {
-        console.log(res);
-        if(res) {
-        this.bls_url = res.bls_url
-        console.log(this.bls_url)
-        this.success_user_message = 'Success saving bls config: ' + this.bls_url;
-        this.toggle_user_message(this.success_user_message, 'success');
+      if(current_va_id) {
+        this.save_bls_form.patchValue({
+          va: current_va_id,
+        });
+
+        if(this.save_bls_form.valid) {
+
+          this.va_service.save_bls(data).subscribe(
+            (res) => {
+              // console.log(res);
+              if(res) {
+              this.success_user_message = 'Success saving BL Server URL';
+              this.toggle_user_message(this.success_user_message, 'success');
+              }
+            },
+            (err: HttpErrorResponse) => {
+              console.log(err);
+              this.error_user_message = err.error;
+              this.toggle_user_message(this.error_user_message, 'danger');
+            }
+          );
+      
         }
-      },
-      (err: HttpErrorResponse) => {
-        console.log(err);
-        this.error_user_message = err.error;
-        this.toggle_user_message(this.error_user_message, 'danger');
-      }
-    );
 
-  }
+      }
 
   }
 
   
-  get_current_bls_url() {
-    this.project_service.get_current_bls_url().subscribe(
+  get_bls() {
+    // get current va
+    const current_va_id = this.va_service.get_va_id();
+    console.log(current_va_id)
+
+    if(current_va_id) {
+    this.va_service.get_bls(current_va_id).subscribe(
       (res) => {
         console.log(res);
         if(res) {
@@ -83,7 +98,7 @@ export class BlsComponent implements OnInit {
       }
     );
 
-  
+    }
 
   }
 

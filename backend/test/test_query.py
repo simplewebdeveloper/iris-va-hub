@@ -96,7 +96,7 @@ class TestQuery:
         path_to_root_clf_model = os.path.join(self.va_path, 'clf/clf_models/root/clf.model')
         path_to_root_clf_vectorizer = os.path.join(self.va_path, 'clf/clf_models/root/vectorizer.pickle')
         intent_response = SvmClassification(utterance, path_to_root_clf_vectorizer, path_to_root_clf_model).classify_intent()
-        current_intent = intent_response['intent']
+        current_intent = intent_response['name']
 
         print(current_intent)
 
@@ -141,9 +141,9 @@ class TestQuery:
         utterance = ''.join(utterance)
 
         # add device
-        device_dict = {
-            "device": self.device
-        }
+        # device_dict = {
+        #     "device": self.device
+        # }
 
         # Get time stamp
         now = datetime.now()
@@ -162,15 +162,34 @@ class TestQuery:
         intent_response = intent_response
         print(intent_response)
 
+
+#   resp = {
+#   "device": "pc",
+#   "intent": {},
+#   "slots": [
+#     {
+#       "slot": "term",
+#       "values": [
+#         "law"
+#       ]
+#     }
+#   ],
+#   "time": {
+#     "time_format": "Fri Oct 30 16:36:55 2020",
+#     "time_stamp": 1604075815.447497
+#   },
+#   "utterance": "talk to a law"
+# }
+
         svp_model_dir = os.path.join(self.va_path, 'svp/svp_models')
-        svp_path_to_look_for = os.path.join(svp_model_dir, intent_response['intent'])
+        svp_path_to_look_for = os.path.join(svp_model_dir, intent_response['name'])
         if os.path.exists(svp_path_to_look_for):
             intent_svp_path = svp_path_to_look_for
             svps = Svps(utterance, intent_svp_path).extract_svps()
             if len(svps) > 0:
                 response = {
-                    "time_stamp": time_stamp,
-                    "device": device_dict,
+                    # "time_stamp": time_stamp,
+                    "device": self.device,
                     "time": time_dict,
                     "utterance": utterance,
                     "intent": intent_response,
@@ -178,8 +197,8 @@ class TestQuery:
                 }
             else:
                 response = {
-                "time_stamp": time_stamp,
-                "device": device_dict,
+                # "time_stamp": time_stamp,
+                "device": self.device,
                 "time": time_dict,
                 "utterance": utterance,
                 "intent": intent_response,
@@ -187,8 +206,8 @@ class TestQuery:
                 }
         else:
             response = {
-            "time_stamp": time_stamp,
-            "agent": device_dict,
+            # "time_stamp": time_stamp,
+            "device": self.device,
             "time": time_dict,
             "utterance": utterance,
             "intent": intent_response,

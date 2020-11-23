@@ -61,15 +61,15 @@ class Svps:
             # ner_list.append(ent.label_ + ' : ' + ent.text)
             if ent.label_ and ent.text:
                 ner_list.append({
-                    "slot": ent.label_,
+                    "name": ent.label_,
                     "value": ent.text
                 })
             else:
                 pass
 
-        key = operator.itemgetter('slot')
+        # key = operator.itemgetter('slot')
 
-        temp = [{'slot': x, 'value': [d['value'] for d in y]} 
-            for x, y in itertools.groupby(sorted(ner_list, key=key), key=key)]
+        # temp = [{'slot': x, 'value': [d['value'] for d in y]} 
+        #     for x, y in itertools.groupby(sorted(ner_list, key=key), key=key)]
 
-        return temp
+        return ner_list

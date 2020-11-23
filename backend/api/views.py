@@ -23,6 +23,7 @@ from .serializers import VaSerializer
 from .serializers import IntentSerializer
 from .serializers import SvpSerializer
 from .serializers import TransitionSerializer
+from .serializers import BlsSerializer
 
 # import models
 from .models import Project
@@ -30,6 +31,7 @@ from .models import Intent
 from .models import Svp
 from .models import Va
 from .models import Transition
+from .models import BlsModel
 
 # training imports
 from test.test_query import TestQuery
@@ -305,32 +307,60 @@ class save_bls(APIView):
     
     def post(self, request, *args, **kwargs):
         try:
-
+            print(request.data)
             url = request.data['bls_url']
+            va_id = request.data['va']
+            va = Va.objects.get(id=va_id)
+            # validate url
             validate = URLValidator()
             validate(url)
-            if url:
-                bls_config_json_file_data = Bls(bls_url=url).save_bls_url()
-                user_message = 'Success saving bls'
-                print(user_message)
-                return Response(bls_config_json_file_data, status=status.HTTP_200_OK)
+            try:
+                instance = BlsModel.objects.get(va=va)
+                bls_serializer = BlsSerializer(instance, data=request.data)
+                if bls_serializer.is_valid():
+                    bls_serializer.save()
+                    user_message = 'Success saving bls'
+                    print(user_message)
+                    return Response(bls_serializer.data, status=status.HTTP_200_OK)
+            except:
+                bls_serializer = BlsSerializer(data=request.data)
+                if bls_serializer.is_valid():
+                    bls_serializer.save()
+
+                    # url = request.data['bls_url']
+                    #     validate = URLValidator()
+                    #     validate(url)
+                    #     if url:
+                    #         bls_config_json_file_data = Bls(bls_url=url).save_bls_url()
+                    user_message = 'Success saving bls'
+                    print(user_message)
+                    return Response(bls_serializer.data, status=status.HTTP_200_OK)
         except:
             user_message = 'Error saving bls'
             return Response(user_message, status=status.HTTP_400_BAD_REQUEST)  
 
 
-class get_current_bls_url(APIView):
+class get_bls(APIView):
     authentication_classes = [JSONWebTokenAuthentication]
     permission_classes = [IsAuthenticated]
     
-    def get(self, request, *args, **kwargs):
+    def post(self, request, *args, **kwargs):
+        print('request to get bls data')
+        print(request.data)
         try:
+            va_id = request.data['va_id']
+            va = Va.objects.get(id=va_id)
 
-            current_bls_info = Bls().get_bls_url()
+            bls = BlsModel.objects.get(va=va)
+
+            bls_serializer = BlsSerializer(bls, many=False)
+
+            # if bls_serializer.is_valid():
+            bls_info = bls_serializer.data
 
             user_message = 'Success getting bls'
             print(user_message)
-            return Response(current_bls_info, status=status.HTTP_200_OK)
+            return Response(bls_info, status=status.HTTP_200_OK)
 
         except:
             user_message = 'Error getting bls'
@@ -420,10 +450,10 @@ class get_vas_for_project(APIView):
             project_id = request.data['project_id']
             project = Project.objects.get(id=project_id)
             vas = Va.objects.filter(project=project).order_by('-id')
-            bot_serializer = VaSerializer(vas, many=True)
+            va_serializer = VaSerializer(vas, many=True)
             user_message = 'Success getting vas'
             print(user_message)
-            return Response(bot_serializer.data, status=status.HTTP_200_OK)
+            return Response(va_serializer.data, status=status.HTTP_200_OK)
         except:
             user_message = 'Error getting vas'
             return Response(user_message, status=status.HTTP_400_BAD_REQUEST)
@@ -834,12 +864,14 @@ class feed_intents(APIView):
 
                 # print(serialized_intent_data)
                 intent_data = json.dumps(serialized_intent_data)
+                # print(intent_data)
                 intent_data_list = json.loads(intent_data)
+                # print(intent_data_list)
                 new_intent_data_list = []
 
                 for line in intent_data_list:
                     string = line['intent_data']
-                    intent_data_dict = json.loads(string)
+                    intent_data_dict = json.loads(string, strict=False)
                     new_intent_data_list.append(intent_data_dict)
 
                 root_intent_data = json.dumps(new_intent_data_list, indent=4)
@@ -987,11 +1019,13 @@ class get_intents_with_svp_data(APIView):
             intents_that_has_svp_data_list = []
             for intent in va_intents_lst:
                 svps = Svp.objects.filter(va=va, intent=intent).order_by('-id')
+                print(svps)
                 if svps:
                     intents_that_has_svp_data_list.append(intent)
                 else:
                     pass
             user_message = 'Success getting intents with svps'
+            print(intents_that_has_svp_data_list)
             print(user_message)
             return Response(intents_that_has_svp_data_list, status=status.HTTP_200_OK)
         except:
@@ -1092,7 +1126,7 @@ class test_query(APIView):
             response = TestQuery(utterance, va_path_to_check, device).test_query()
 
             # add reset logic here --> Reset the state
-            intent = response['intent']['intent']
+            intent = response['intent']['name']
 
             # if the goodbye intent is hit while within the specialized va
             if intent == 'goodbye':
@@ -1103,7 +1137,7 @@ class test_query(APIView):
             response = TestQuery(utterance, va_path, device).test_query()
             # if the state is root
             # check what the intent is
-            intent = response['intent']['intent']
+            intent = response['intent']['name']
             # check our transitions
 
             with open(transitions_json_file) as f:
@@ -1121,7 +1155,7 @@ class test_query(APIView):
                             pass
 
 
-        bls_response = Bls(raw_response=response).get_bls_response()
+        bls_response = Bls(raw_response=response, va_id=va_id).get_bls_response()
 
         print(bls_response)
 
@@ -1132,74 +1166,13 @@ class test_query(APIView):
 
         }
 
-        # response > make post to bls
-        # 
-        #
-        # wait for response
-        #
-        # 
-        # resp is received
-        #
-        # 
         # send to template parser | format for Desktop or Mobile
         # 
         # 
-        # -> send to UI                 
-        # 
-        # 
-        # 
-        # 
-        # 
-        # 
-        #    
+        # -> send to UI    
+                     
 
         # SEND TO HANDOFF CONTEXT HERE TO DETERMINE WHICH VA TO GO TO
-
-
-        # Add the response class will have to parse the below
-
-          #  WITHOUT SLOTS
-
-            #  {
-            #   "time_stamp": 1604075651.306505,
-            #   "time": {
-            #     "time_stamp": 1604075651.306505,
-            #     "time_format": "Fri Oct 30 16:34:11 2020"
-            #   },
-            #   "utterance": "hi",
-            #   "intent": {
-            #     "intent": "goodbye",
-            #     "probability": 0.24814
-            #   },
-            #   "slots": []
-            # }
-
-
-            #  WITH SLOTS
-            #  {
-            #   "time_stamp": 1604075815.447497,
-            #   "time": {
-            #     "time_stamp": 1604075815.447497,
-            #     "time_format": "Fri Oct 30 16:36:55 2020"
-            #   },
-            #   "utterance": "talk to a law",
-            #   "intent": {
-            #     "intent": "what_is_law",
-            #     "probability": 0.1446
-            #   },
-            #   "slots": [
-            #     {
-            #       "slot": "term",
-            #       "value": [
-            #         "law"
-            #       ],
-            #     }
-            #   ]
-            # }
-
-
-        # print(response)
-
 
 
         return Response(dual_response, status=status.HTTP_200_OK)
