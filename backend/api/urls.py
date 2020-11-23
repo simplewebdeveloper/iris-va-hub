@@ -24,9 +24,10 @@ urlpatterns = [
     path('delete_va', delete_single_va.as_view()),
     path('update_va', update_single_va.as_view()),
 
-    # add response path here
+    # response path here
     path('create_response', create_response.as_view()),
     path('update_response', update_response.as_view()),
+    path('delete_response', delete_response.as_view()),
 
     path('get_responses', get_responses.as_view()),
 

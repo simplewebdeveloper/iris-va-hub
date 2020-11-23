@@ -32,6 +32,12 @@ export class ResponseService {
       this.baseUrl + '/va/get_responses', {device}
     )
    }
+
+   delete_responses(response_id: number) {
+    return this.http.post<any>(
+      this.baseUrl + '/va/delete_response', {response_id}
+    )
+   }
 }
 
 

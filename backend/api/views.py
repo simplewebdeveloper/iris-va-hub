@@ -1259,41 +1259,63 @@ class create_response(APIView):
     authentication_classes = [JSONWebTokenAuthentication]
     permission_classes = [IsAuthenticated]
     def post(self, request, *args, **kwargs):
-        response_serializer_from_post = ResponseSerializer(data=request.data)
-        if response_serializer_from_post.is_valid():
-            response_serializer_from_post.save()
-            print(response_serializer_from_post.data)
-        user_message = 'Success creating response'
-        return Response(user_message, status=status.HTTP_200_OK)
+        try:
+            response_serializer_from_post = ResponseSerializer(data=request.data)
+            if response_serializer_from_post.is_valid():
+                response_serializer_from_post.save()
+                print(response_serializer_from_post.data)
+                user_message = 'Success creating response'
+                return Response(user_message, status=status.HTTP_200_OK)
+        except:
+            user_message = 'Error deleting response'
+            return Response(user_message, status=status.HTTP_400_BAD_REQUEST)
 
 class update_response(APIView):
     authentication_classes = [JSONWebTokenAuthentication]
     permission_classes = [IsAuthenticated]
     def post(self, request, *args, **kwargs):
-        response_id = request.data['id']
-        response_instance = ResponseTemplate.objects.get(id=response_id)
-        response_serializer_from_post = ResponseSerializer(response_instance, data=request.data)
-        if response_serializer_from_post.is_valid():
-            response_serializer_from_post.save()
-            print(response_serializer_from_post.data)
-        user_message = 'Success creating response'
-        return Response(user_message, status=status.HTTP_200_OK)
+        try:
+            response_id = request.data['id']
+            response_instance = ResponseTemplate.objects.get(id=response_id)
+            response_serializer_from_post = ResponseSerializer(response_instance, data=request.data)
+            if response_serializer_from_post.is_valid():
+                response_serializer_from_post.save()
+                print(response_serializer_from_post.data)
+                user_message = 'Success updating response'
+                return Response(user_message, status=status.HTTP_200_OK)
+        except:
+            user_message = 'Error updating response'
+            return Response(user_message, status=status.HTTP_400_BAD_REQUEST)
+
+class delete_response(APIView):
+    authentication_classes = [JSONWebTokenAuthentication]
+    permission_classes = [IsAuthenticated]
+    def post(self, request, *args, **kwargs):
+        try:
+            response_id = request.data['response_id']
+            response_instance = ResponseTemplate.objects.get(id=response_id)
+            response_instance.delete()
+            user_message = 'Success deleting response'
+            return Response(user_message, status=status.HTTP_200_OK)
+        except:
+            user_message = 'Error deleting response'
+            return Response(user_message, status=status.HTTP_400_BAD_REQUEST)
 
 # get responses
 class get_responses(APIView):
     authentication_classes = [JSONWebTokenAuthentication]
     permission_classes = [IsAuthenticated]
     def post(self, request, *args, **kwargs):
-        # try:
-        device = request.data['device']
-        responses = ResponseTemplate.objects.filter(device=device)
-        response_serializer = ResponseSerializer(responses, many=True)
-        user_message = 'Success getting responses'
-        print(user_message)
-        return Response(response_serializer.data, status=status.HTTP_200_OK)
-        # except:
-        #     user_message = 'Error getting responses'
-        #     return Response(user_message, status=status.HTTP_400_BAD_REQUEST)
+        try:
+            device = request.data['device']
+            responses = ResponseTemplate.objects.filter(device=device)
+            response_serializer = ResponseSerializer(responses, many=True)
+            user_message = 'Success getting responses'
+            print(user_message)
+            return Response(response_serializer.data, status=status.HTTP_200_OK)
+        except:
+            user_message = 'Error getting responses'
+            return Response(user_message, status=status.HTTP_400_BAD_REQUEST)
 
 # wipe data from va - does not remove the va -->> not implemented
 class wipe_and_reset_models(APIView):

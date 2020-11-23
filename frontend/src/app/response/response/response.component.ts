@@ -167,7 +167,7 @@ export class ResponseComponent implements OnInit {
   get_responses(device: string) {
     this.response_service.get_responses(device).subscribe(
       (res) => {
-        console.log(res);
+        // console.log(res);
         if(res) {
         this.responses = res;
         this.success_user_message = 'Success getting responses';
@@ -181,6 +181,30 @@ export class ResponseComponent implements OnInit {
       }
     );
   }
+
+  delete_response(response_id: number) {
+    console.log(response_id)
+    const confirmed = window.confirm('Are you sure?');
+
+    if(confirmed) {
+    this.response_service.delete_responses(response_id).subscribe(
+      
+      (res) => {
+        // console.log(res);
+        if(res) {
+        this.success_user_message = 'Success deleting responses';
+        this.toggle_user_message(this.success_user_message, 'success');
+        }
+      },
+      (err: HttpErrorResponse) => {
+        console.log(err);
+        this.error_user_message = err.error;
+        this.toggle_user_message(this.error_user_message, 'danger');
+      }
+    );
+    }
+  }
+  
 
   toggle_user_message(notificationMessage, status) {
     uikit.notification(notificationMessage, {pos: 'bottom-right', status: status});

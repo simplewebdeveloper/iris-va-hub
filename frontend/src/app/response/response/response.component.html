@@ -33,8 +33,9 @@
                                         </p>
                                     </div>
 
-                                    <div class="uk-align-right uk-margin-top">
+                                    <div class="uk-float-right uk-margin-top">
                                         <button (click)="populate_edit_resp_form(response)" uk-toggle="target: #edit-response-modal" class="uk-button uk-button-primary uk-button-small">Edit Response</button>
+                                        <button (click)="delete_response(response.id)" class="uk-button uk-button-danger uk-button-small uk-margin-left"><span uk-icon="icon: trash"></span></button>
                                     </div>
                             </div>
                         </li>
@@ -60,17 +61,16 @@
                                         </p>
                                     </div>
 
-                                    <div class="uk-align-right uk-margin-top">
+                                    <div class="uk-float-right uk-margin-top">
                                         <button (click)="populate_edit_resp_form(response)" uk-toggle="target: #edit-response-modal" class="uk-button uk-button-primary uk-button-small">Edit Response</button>
+                                        <button (click)="delete_response(response.id)" class="uk-button uk-button-danger uk-button-small uk-margin-left"><span uk-icon="icon: trash"></span></button>
                                     </div>
                             </div>
                         </li>
                     </ul>
                 </div>
-
             </li>
         </ul>
-
 
         <!-- Create response modal -->
 
