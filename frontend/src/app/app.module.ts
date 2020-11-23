@@ -25,7 +25,6 @@ import { Routes, RouterModule, CanActivate } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AuthGuardService} from "./auth/auth-guard.service";
 import { AuthService } from './auth/auth.service';
-import { ResponseModule } from './response/response.module';
 
 
 const appRoutes: Routes = [

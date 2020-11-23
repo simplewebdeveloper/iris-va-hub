@@ -13,6 +13,10 @@ from .serializers import VaSerializer, ProjectSerializer, BlsSerializer
 
 from test.test_query import TestQuery
 
+# import response parsers
+from response.parser import ResponseParser
+from response.models import ResponseTemplate, ResponseValue
+
 
 
 # the current folder path we are in
@@ -203,6 +207,8 @@ class Bls:
         # }
 
         #  send to parser
+
+
 
         # return formatted response
         
