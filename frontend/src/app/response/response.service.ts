@@ -14,6 +14,7 @@ export class ResponseService {
 
 
    create_response(data: any) {
+     console.log(data)
       return this.http.post<any>(
         this.baseUrl + '/va/create_response', data
       )
@@ -23,6 +24,13 @@ export class ResponseService {
      return this.http.post<any>(
        this.baseUrl + '/va/update_response', data
      )
+   }
+
+
+   get_responses(device: string) {
+    return this.http.post<any>(
+      this.baseUrl + '/va/get_responses', {device}
+    )
    }
 }
 

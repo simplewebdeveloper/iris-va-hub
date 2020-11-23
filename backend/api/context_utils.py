@@ -198,20 +198,67 @@ class Bls:
         
         bls_url = self.get_bls_url()
         
-        bls_response = requests.post(url=bls_url,json=data)
-        json_bls_response = json.loads(bls_response.text)
+        # bls_response = requests.post(url=bls_url,json=data)
+        # json_bls_response = json.loads(bls_response.text)
 
-        # bls_response = {
-        #     "bls_url": bls_url,
-        #     "data": data
-        # }
+        bls_response = {
+            "bls_url": bls_url,
+            "data": data
+        }
 
-        #  send to parser
+        intent = self.raw_response['intent']['name']
+        slots = self.raw_response['slots']
+        device = self.raw_response['device']
 
+        # values = response['values']
 
+        try:
+            va = Va.objects.get(id=self.va_id)
+            template = ResponseTemplate.objects.filter(va=va, intent=intent, device=device).values()[0]
+            template_content = template['template']
+            parsed_response = ResponseParser(intent, slots, template_content, self.raw_response)
 
-        # return formatted response
+            parsed_response = parsed_response.render()
+    
+            parsed_response = parsed_response.replace('\n',' ')
+
+            processed_response = {
+            'bls_response': bls_response,
+            'parsed_response': parsed_response,
+            }
+
+        except:
+
+            processed_response = {
+                'bls_response': bls_response,
+                'parsed_response': 'none',
+            }
+            
+
+       
         
-        return json_bls_response
+        return processed_response
         # return bls_response
         
+
+
+        # except:
+        #     try:
+        #         template = ResponseTemplate.objects.filter(va=va_instance, device=device).values()[0]
+
+        #     except:
+        #         response['response'] = 'Error with ORM'
+
+        # try:
+        #     template_id = template['id']
+        #     template = template['template']
+
+        #     response_value = ResponseValue.objects.filter(response=template_id).values()
+        #     parser = ResponseParser(intent, slots, template, response_value, values)
+
+        #     response['response'] = parser.render()
+
+        # except:
+        #     response['response'] = 'No Responses Model In DB'
+
+        # parsed_response = ResponseParser(response=json_bls_response).render()

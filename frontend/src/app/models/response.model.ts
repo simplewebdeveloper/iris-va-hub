@@ -1,9 +1,7 @@
 export class Response {
     id: number;
-    va: number;
+    va: string;
+    device: string;
     intent: string;
-    project: number;
-    name: string;
-    description: string;
     template: string;
   }

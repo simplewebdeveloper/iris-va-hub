@@ -48,6 +48,7 @@ from .context_utils import Bls
 
 from response.parser import ResponseParser
 from response.models import ResponseTemplate, ResponseValue
+from response.serializers import ResponseSerializer
 
 # reset import -> leave disabled
 # from train.wipe_reset import WipeReset
@@ -1158,15 +1159,12 @@ class test_query(APIView):
                             pass
 
 
-        bls_response = Bls(raw_response=response, va_id=va_id).get_bls_response()
-
-        print(bls_response)
+        bls_and_parsed_response = Bls(raw_response=response, va_id=va_id).get_bls_response()
 
 
         dual_response = {
             "raw_response": response,
-            "bls_response": bls_response
-
+            "bls_response": bls_and_parsed_response,
         }
 
         # send to template parser | format for Desktop or Mobile
@@ -1255,6 +1253,48 @@ class train_svp_model(APIView):
             user_message = 'Error training bot'
             return Response(user_message, status=status.HTTP_400_BAD_REQUEST)
 
+
+# response template views
+class create_response(APIView):
+    authentication_classes = [JSONWebTokenAuthentication]
+    permission_classes = [IsAuthenticated]
+    def post(self, request, *args, **kwargs):
+        response_serializer_from_post = ResponseSerializer(data=request.data)
+        if response_serializer_from_post.is_valid():
+            response_serializer_from_post.save()
+            print(response_serializer_from_post.data)
+        user_message = 'Success creating response'
+        return Response(user_message, status=status.HTTP_200_OK)
+
+class update_response(APIView):
+    authentication_classes = [JSONWebTokenAuthentication]
+    permission_classes = [IsAuthenticated]
+    def post(self, request, *args, **kwargs):
+        response_id = request.data['id']
+        response_instance = ResponseTemplate.objects.get(id=response_id)
+        response_serializer_from_post = ResponseSerializer(response_instance, data=request.data)
+        if response_serializer_from_post.is_valid():
+            response_serializer_from_post.save()
+            print(response_serializer_from_post.data)
+        user_message = 'Success creating response'
+        return Response(user_message, status=status.HTTP_200_OK)
+
+# get responses
+class get_responses(APIView):
+    authentication_classes = [JSONWebTokenAuthentication]
+    permission_classes = [IsAuthenticated]
+    def post(self, request, *args, **kwargs):
+        # try:
+        device = request.data['device']
+        responses = ResponseTemplate.objects.filter(device=device)
+        response_serializer = ResponseSerializer(responses, many=True)
+        user_message = 'Success getting responses'
+        print(user_message)
+        return Response(response_serializer.data, status=status.HTTP_200_OK)
+        # except:
+        #     user_message = 'Error getting responses'
+        #     return Response(user_message, status=status.HTTP_400_BAD_REQUEST)
+
 # wipe data from va - does not remove the va -->> not implemented
 class wipe_and_reset_models(APIView):
     authentication_classes = [JSONWebTokenAuthentication]
@@ -1269,3 +1309,4 @@ class wipe_and_reset_models(APIView):
         except:
             user_message = 'Error wiping and resetting models'
             return Response(user_message, status=status.HTTP_400_BAD_REQUEST)
+

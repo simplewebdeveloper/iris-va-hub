@@ -84,7 +84,7 @@ export class TestComponent implements OnInit {
           console.log(this.full_response)
 
           // Default Template > Replace with any
-          this.formatted_response = this.default_template(test_response, utterance)
+          this.formatted_response = this.check_response_type(this.full_response);
 
           // Clean up
           this.res_and_que.unshift(this.formatted_response);
@@ -103,7 +103,7 @@ export class TestComponent implements OnInit {
   }
 
     // example default template
-    default_template(response, utterance, format='') {
+    default_template(response, format='') {
       console.log(response);
           format = 'you are asking about: ' + '<span class="uk-text-bold">' + response.raw_response.intent['name'] + '</span>' + '<br />';
           // if(response.intent['intent']== 'archivist_handover') {
@@ -121,6 +121,21 @@ export class TestComponent implements OnInit {
           });
         }
           return format
+  }
+
+  parsed_response(response, format='') {
+    format = response.bls_response['parsed_response']
+    return format
+  }
+
+  check_response_type(response) {
+    if(response.bls_response['parsed_response'] != 'none') {
+      response = this.parsed_response(response)
+    } else {
+      response = this.default_template(response)
+    }
+
+    return response
   }
 
   selectInputText() {
