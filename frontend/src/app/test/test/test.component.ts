@@ -84,7 +84,7 @@ export class TestComponent implements OnInit {
           console.log(this.full_response)
 
           // Default Template > Replace with any
-          this.formatted_response = this.check_response_type(this.full_response);
+          this.formatted_response = this.parsed_response(this.full_response);
 
           // Clean up
           this.res_and_que.unshift(this.formatted_response);
@@ -102,41 +102,40 @@ export class TestComponent implements OnInit {
     }
   }
 
-    // example default template
-    default_template(response, format='') {
-      console.log(response);
-          format = 'you are asking about: ' + '<span class="uk-text-bold">' + response.raw_response.intent['name'] + '</span>' + '<br />';
-          // if(response.intent['intent']== 'archivist_handover') {
-          //   format = 'Welcome to the Archivist VA. You can ask me about news'
-          // }
-          if (response.raw_response.slots.length >= 1) {
-            console.log(response.raw_response.slots);
-          format += ' I have the: <br/>';
-          response.raw_response.slots.forEach((element, index, array) => {
-            if (index === (array.length - 1) && array.length > 1) {
-              format += ' and ' + element.name + ' to be ' + element.value;
-            } else {
-              format += ' ' + element.name + ' to be ' + element.value + '<br />';
-            }
-          });
-        }
-          return format
-  }
-
   parsed_response(response, format='') {
     format = response.bls_response['parsed_response']
     return format
   }
 
-  check_response_type(response) {
-    if(response.bls_response['parsed_response'] != 'none') {
-      response = this.parsed_response(response)
-    } else {
-      response = this.default_template(response)
-    }
+    // example default template
+  //   default_template(response, format='') {
+  //     console.log(response);
+  //         format = 'you are asking about: ' + '<span class="uk-text-bold">' + response.raw_response.intent['name'] + '</span>' + '<br />';
 
-    return response
-  }
+  //         if (response.raw_response.slots.length >= 1) {
+  //           console.log(response.raw_response.slots);
+  //         format += ' I have the: <br/>';
+  //         response.raw_response.slots.forEach((element, index, array) => {
+  //           if (index === (array.length - 1) && array.length > 1) {
+  //             format += ' and ' + element.name + ' to be ' + element.value;
+  //           } else {
+  //             format += ' ' + element.name + ' to be ' + element.value + '<br />';
+  //           }
+  //         });
+  //       }
+  //         return format
+  // }
+
+
+  // check_response_type(response) {
+  //   if(response.bls_response['parsed_response'] != 'none') {
+  //     response = this.parsed_response(response)
+  //   } else {
+  //     response = this.default_template(response)
+  //   }
+
+  //   return response
+  // }
 
   selectInputText() {
     <HTMLInputElement>this.queryInput.nativeElement.select();

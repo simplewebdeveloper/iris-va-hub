@@ -384,6 +384,8 @@ class create_va(APIView):
             
             if va_serializer.is_valid():
                 va_serializer.save()
+                # create default response
+                
                 latest_va = Va.objects.last()
                 va_serializer = VaSerializer(latest_va, many=False)
                 project_id = request.data['project']
@@ -1118,6 +1120,9 @@ class test_query(APIView):
         with open(handoff_context_json_file) as f:
             d = json.load(f)
             try:
+                if d[0]['va_id'] != 0:
+                    va_id = d[0]['va_id']
+                    context_va_id = d[0]['va_id']
                 state = d[0]['state']
                 va_path_to_check = d[0]['va_path']
             except:
@@ -1128,6 +1133,7 @@ class test_query(APIView):
             # listen for reset type intents
 
             response = TestQuery(utterance, va_path_to_check, device).test_query()
+            va_id = context_va_id
 
             # add reset logic here --> Reset the state
             intent = response['intent']['name']
@@ -1150,15 +1156,19 @@ class test_query(APIView):
                     for project_id, transition in transition.items():
                         if transition['source_va_intent'] == intent:
                             dest_va = transition['dest_va']
+                            va = Va.objects.get(va_name=dest_va)
+                            va_serializer = VaSerializer(instance=va)
+                            va_id = va_serializer.data['id']
                             va_path = MakeVaPath(va_name=dest_va, va_id=0).make_va_path_from_va_name_or_va_id()
 
-                            SetState(handoff_context_json_file, va_tag, va_path, state='special').set_state()
+                            SetState(va_id, handoff_context_json_file, va_tag, va_path, state='special').set_state()
 
                             response = TestQuery(utterance, va_path, device).test_query()
                         else:
                             pass
 
 
+        print('the va id is ', va_id)
         bls_and_parsed_response = Bls(raw_response=response, va_id=va_id).get_bls_response()
 
 
@@ -1306,16 +1316,20 @@ class get_responses(APIView):
     authentication_classes = [JSONWebTokenAuthentication]
     permission_classes = [IsAuthenticated]
     def post(self, request, *args, **kwargs):
-        try:
-            device = request.data['device']
-            responses = ResponseTemplate.objects.filter(device=device)
-            response_serializer = ResponseSerializer(responses, many=True)
-            user_message = 'Success getting responses'
-            print(user_message)
-            return Response(response_serializer.data, status=status.HTTP_200_OK)
-        except:
-            user_message = 'Error getting responses'
-            return Response(user_message, status=status.HTTP_400_BAD_REQUEST)
+        # try:
+        device = request.data['device']
+        va_id = request.data['va_id']
+        va = Va.objects.get(id=va_id)
+        responses = ResponseTemplate.objects.filter(va=va, device=device)
+        response_serializer = ResponseSerializer(responses, many=True)
+        user_message = 'Success getting responses'
+        print(user_message)
+        return Response(response_serializer.data, status=status.HTTP_200_OK)
+        # return Response(user_message, status=status.HTTP_200_OK)
+
+        # except:
+        #     user_message = 'Error getting responses'
+        #     return Response(user_message, status=status.HTTP_400_BAD_REQUEST)
 
 # wipe data from va - does not remove the va -->> not implemented
 class wipe_and_reset_models(APIView):

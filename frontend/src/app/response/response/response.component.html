@@ -4,24 +4,52 @@
 
         <div class="uk-margin-bottom">
         <p class="uk-text-muted"><span uk-icon="icon: users; ratio: 2"></span></p>    
-        <legend class="uk-legend">Personalize your Virtual Assistant</legend> 
+        <legend class="uk-legend">Configure VA Responses</legend> 
         <div class="uk-flex uk-flex-center">
             
         </div>
         </div>  
 
         <ul uk-tab class="uk-margin-top uk-margin-bottom" uk-switcher>
+            <li><a (click)="switch_device('default')" href="#">Default</a></li>
             <li><a (click)="switch_device('desktop')" href="#">Desktop</a></li>
             <li><a (click)="switch_device('mobile')" href="#">Mobile</a></li>
         </ul>
 
         <ul class="uk-switcher uk-margin uk-margin-top">
             <li>
-                <!-- display a list of virtual assistants with a desktop personality -->
+                <!-- display a list of default -->
+
+                <div id="va-resp-card" class="uk-border-rounded uk-box-shadow-small uk-margin uk-card uk-card-small uk-card-default uk-card-body">
+                    <legend class="uk-text-lead uk-text-lighter">Default responses for this VA</legend>
+                    <ul uk-accordion>
+                        <li *ngFor="let response of responses">
+                            <a class="uk-accordion-title" href="#">{{ response.intent }}</a>
+                            <div class="uk-accordion-content">
+                                    <div id="va-resp-card_response-card" class="uk-card uk-card-body">
+                                        <p>
+                                            {{ response.template }}
+                                        </p>
+                                    </div>
+
+                                    <div class="uk-float-right uk-margin-top">
+                                        <button (click)="populate_edit_resp_form(response)" uk-toggle="target: #edit-response-modal" class="uk-button uk-button-primary uk-button-small">Edit Response</button>
+                                        <!-- <button (click)="delete_response(response.id)" class="uk-button uk-button-danger uk-button-small uk-margin-left"><span uk-icon="icon: trash"></span></button> -->
+                                    </div>
+                            </div>
+                        </li>
+                        
+                    </ul>
+                </div>
+
+            </li>
+
+            <li>
+                <!-- display a list of virtual assistants with a desktop response -->
 
                 <div id="va-resp-card" class="uk-border-rounded uk-box-shadow-small uk-margin uk-card uk-card-small uk-card-default uk-card-body">
                     
-                        <button uk-toggle="target: #create-response-modal" class="uk-button uk-button-primary uk-button-small">Add new desktop personality</button>
+                        <button uk-toggle="target: #create-response-modal" class="uk-button uk-button-primary uk-button-small">Add new desktop response</button>
                     
                     <ul uk-accordion>
                         <li *ngFor="let response of responses">
@@ -45,11 +73,11 @@
 
             </li>
             <li>
-                <!-- display a list of virtual assistants with a mobile personality -->
+                <!-- display a list of virtual assistants with a mobile response -->
 
                 <div id="va-resp-card" class="uk-border-rounded uk-box-shadow-small uk-margin uk-card uk-card-small uk-card-default uk-card-body">
                     
-                        <button uk-toggle="target: #create-response-modal" class="uk-button uk-button-primary uk-button-small">Add new mobile personality</button>
+                        <button uk-toggle="target: #create-response-modal" class="uk-button uk-button-primary uk-button-small">Add new mobile response</button>
                     
                     <ul uk-accordion>
                         <li *ngFor="let response of responses">

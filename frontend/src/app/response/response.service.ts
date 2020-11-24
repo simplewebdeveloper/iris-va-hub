@@ -27,9 +27,9 @@ export class ResponseService {
    }
 
 
-   get_responses(device: string) {
+   get_responses(device: string, va_id: any) {
     return this.http.post<any>(
-      this.baseUrl + '/va/get_responses', {device}
+      this.baseUrl + '/va/get_responses', {device, va_id}
     )
    }
 

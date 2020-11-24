@@ -39,15 +39,11 @@ export class ResponseComponent implements OnInit {
 
   ngOnInit() {
     // this.get_response();
+    this.get_va();
+    this.get_responses('default', this.va_id);
     this.initialize_edit_response_form();
     this.initialize_create_response_form();
-    this.get_va();
-
-    this.jinja_response = `
-    {% if not can_create_collections %}
-    {% if can_create_collections %}
-    {% if can_create_collections %}
-    `
+    
   }
 
   // get current va
@@ -58,7 +54,7 @@ export class ResponseComponent implements OnInit {
     this.va_id = this.va.id;
     this.va_service.get_single_va(this.va_id).subscribe(
       (res) => {
-        console.log(res);
+        // console.log(res);
         this.va = res;
         this.string = this.va.va_intents.replace(/\s/g, '');
         this.intents = this.string.split(',');
@@ -85,7 +81,7 @@ export class ResponseComponent implements OnInit {
     this.create_response_form.patchValue({
       device: device,
     });
-    this.get_responses(device);
+    this.get_responses(device, this.va_id);
   }
 
   // get all intents
@@ -101,8 +97,6 @@ export class ResponseComponent implements OnInit {
     this.create_response_form.patchValue({
       device: 'desktop',
     });
-
-    this.get_responses('desktop');
   }
 
   initialize_edit_response_form(): void {
@@ -118,7 +112,7 @@ export class ResponseComponent implements OnInit {
 
   create_response_form_submit() {
     const data = this.create_response_form.getRawValue();
-    console.log(data)
+    // console.log(data)
     if(this.create_response_form.valid) {
 
     this.response_service.create_response(data).subscribe(
@@ -127,7 +121,7 @@ export class ResponseComponent implements OnInit {
         if(res) {
         this.success_user_message = 'Success creating response';
         this.toggle_user_message(this.success_user_message, 'success');
-        this.get_responses(data['device']);
+        this.get_responses(data['device'], this.va_id);
         }
       },
       (err: HttpErrorResponse) => {
@@ -144,7 +138,7 @@ export class ResponseComponent implements OnInit {
 
   edit_response_form_submit() {
     const data = this.edit_response_form.getRawValue();
-    console.log(data);
+    // console.log(data);
     if(this.edit_response_form.valid) {
     this.response_service.save_response(data).subscribe(
       (res) => {
@@ -152,7 +146,7 @@ export class ResponseComponent implements OnInit {
         if(res) {
         this.success_user_message = 'Success updating response';
         this.toggle_user_message(this.success_user_message, 'success');
-        this.get_responses(data['device']);
+        this.get_responses(data['device'], this.va_id);
         }
       },
       (err: HttpErrorResponse) => {
@@ -164,8 +158,8 @@ export class ResponseComponent implements OnInit {
   }
   }
 
-  get_responses(device: string) {
-    this.response_service.get_responses(device).subscribe(
+  get_responses(device: string, va_id: any) {
+    this.response_service.get_responses(device, va_id).subscribe(
       (res) => {
         // console.log(res);
         if(res) {
@@ -183,7 +177,7 @@ export class ResponseComponent implements OnInit {
   }
 
   delete_response(response_id: number) {
-    console.log(response_id)
+    // console.log(response_id)
     const confirmed = window.confirm('Are you sure?');
 
     if(confirmed) {
@@ -195,6 +189,7 @@ export class ResponseComponent implements OnInit {
         this.success_user_message = 'Success deleting responses';
         this.toggle_user_message(this.success_user_message, 'success');
         }
+        this.get_responses('desktop', this.va_id)
       },
       (err: HttpErrorResponse) => {
         console.log(err);
