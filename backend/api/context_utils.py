@@ -17,8 +17,6 @@ from test.test_query import TestQuery
 from response.parser import ResponseParser
 from response.models import ResponseTemplate, ResponseValue
 
-
-
 # the current folder path we are in
 this_folder = os.path.dirname(os.path.abspath(__file__))
 
@@ -37,8 +35,9 @@ def get_response(response):
 
 class SetState():
 
-    def __init__(self, handoff_context_json_file, va_tag, va_path, state):
+    def __init__(self, va_id, handoff_context_json_file, va_tag, va_path, state):
         self.self = self
+        self.va_id = va_id
         self.handoff_context_json_file = handoff_context_json_file
         self.va_tag = va_tag
         self.va_path = va_path
@@ -49,6 +48,8 @@ class SetState():
         handoff_context = os.path.join(this_folder, self.handoff_context_json_file)
         with open(handoff_context) as f:
             d = json.load(f)
+            # 0. set the va_id
+            d[0]['va_id'] = self.va_id
             # 1. set the va_tag
             d[0]['va_tag'] = self.va_tag
             # 2. set the va_path
@@ -69,6 +70,8 @@ class ResetState():
         handoff_context = os.path.join(this_folder, self.handoff_context_json_file)
         with open(handoff_context) as f:
             d = json.load(f)
+            # 0. set the va_id
+            d[0]['va_id'] = 0
             # 1. set the va_tag
             d[0]['va_tag'] = ""
             # 2. set the va_path
@@ -217,21 +220,26 @@ class Bls:
             template = ResponseTemplate.objects.filter(va=va, intent=intent, device=device).values()[0]
             template_content = template['template']
             parsed_response = ResponseParser(intent, slots, template_content, self.raw_response)
-
             parsed_response = parsed_response.render()
-    
             parsed_response = parsed_response.replace('\n',' ')
-
             processed_response = {
             'bls_response': bls_response,
             'parsed_response': parsed_response,
             }
 
         except:
+            va = Va.objects.get(id=self.va_id)
+            template = ResponseTemplate.objects.filter(va=va, device='default').values()[0]
+            template_content = template['template']
+            parsed_response = ResponseParser('default', slots, template_content, self.raw_response)
+
+            parsed_response = parsed_response.render()
+    
+            parsed_response = parsed_response.replace('\n',' ')
 
             processed_response = {
                 'bls_response': bls_response,
-                'parsed_response': 'none',
+                'parsed_response': parsed_response,
             }
             
         
@@ -248,7 +256,7 @@ class Bls:
 
 
 
-        
+
         # return bls_response
         
 
