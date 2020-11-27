@@ -25,5 +25,7 @@ services:
             - ./nginx/iris-vahub-dev.gy.conf:/etc/nginx/conf.d/iris-vahub-dev.gy.conf
         ports:
             - "90:90"
+        expose:
+            - 90
         depends_on:
             - backend
