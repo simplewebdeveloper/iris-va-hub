@@ -10,5 +10,7 @@ COPY . /backend
 
 RUN pip install -r requirements.txt
 
+RUN python manage.py createsuperuser
+
 # run entrypoint.sh
 ENTRYPOINT ["sh","./entrypoint.sh"]
