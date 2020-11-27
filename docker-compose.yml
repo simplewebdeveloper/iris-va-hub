@@ -1,0 +1,27 @@
+version: '3'
+services:
+    backend: &backend
+        build: ./backend
+        command: python manage.py runserver 0.0.0.0:9000
+        restart: always
+        volumes:
+            - ./backend:/backend
+            - ./backend/staticfiles:/var/www/staticfiles
+        ports:
+            - "9000:9000"
+        expose:
+            - 9000
+
+    nginx:
+        build: ./nginx
+        container_name: iris_vahub_nginx
+        restart: always
+        volumes:
+            - ./backend/staticfiles:/var/www/staticfiles
+            - ./frontend:/var/www/iris-vahub
+            - ./nginx/iris-vahub-backend.gy.conf:/etc/nginx/conf.d/iris-vahub-backend.gy.conf
+            - ./nginx/iris-vahub-dev.gy.conf:/etc/nginx/conf.d/iris-vahub-dev.gy.conf
+        ports:
+            - "90:90"
+        depends_on:
+            - backend

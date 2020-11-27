@@ -1,32 +1,7 @@
-<div id="modal-example" uk-modal>
-  <div class="uk-modal-dialog uk-modal-body">
-    <button class="uk-modal-close-outside" type="button" uk-close></button>
-    <div class="uk-margin">
-      <legend><span uk-icon="icon: microphone; ratio: 1"></span> Talk with your VA </legend>
-    </div>
-
-    <form [formGroup]="chatbox_form" (ngSubmit)="chatbox_query_form_submit($event)">
-      <fieldset class="uk-fieldset">
-
-        <div class="uk-margin">
-          <input #queryInput class="uk-input" type="text" formControlName="query" onclick="this.select()" placeholder="Enter an utterance and press enter">
-        </div>
-
-      </fieldset>
-      <div *ngIf="thinking" class="uk-text-small uk-margin-bottom">I'm Thinking... If I can't think this one through you will need to try again.</div>
-<!--      <p class="uk-text-right">-->
-<!--        <button  type="submit" class="uk-button uk-button-primary uk-button-small">Test Utterance</button>-->
-<!--      </p>-->
-    </form>
+<!-- </form>
 
       <section class="uk-textarea uk-padding" style="max-height: 20em; overflow-y: scroll;">
-<!--        <ng-container *ngIf="queryResponse">-->
-<!--          <span>You are asking about <span class="uk-text-bolder">{{ queryResponse.intent }}</span></span><br>-->
-<!--          <span *ngIf="queryResponse.slots?.length>0">I have the</span><br>-->
-<!--          <ng-container *ngFor="let slot of queryResponse.slots; let last = last">-->
-<!--            <span *ngIf="last && queryResponse.slots?.length>1">and&nbsp;</span><span>{{slot.slot}} to be {{ slot.value }}</span><br>-->
-<!--          </ng-container>-->
-<!--        </ng-container>-->
+
         <ng-container *ngIf="res_and_que">
           <div *ngFor="let rq of res_and_que; let i = index" class="uk-text-right">
             <ng-container *ngIf="i % 2 == 0; else right">
@@ -54,4 +29,4 @@
     </p>
 
   </div>
-</div>
+</div>  -->

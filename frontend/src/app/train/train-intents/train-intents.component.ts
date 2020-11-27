@@ -18,23 +18,23 @@ export class TrainIntentsComponent implements OnInit {
 
   create_intent_form: FormGroup;
   intent_model = new Intent();
-  private vas: any;
-  private va: any;
-  private intents: any;
-  private selected_intent: any;
-  private string;
-  private intents_and_utterances: any;
+  public vas: any;
+  public va: any;
+  public intents: any;
+  public selected_intent: any;
+  public string;
+  public intents_and_utterances: any;
   public va_id: any;
-  private intent_data_temp;
+  public intent_data_temp;
   public success_user_message: string;
   public error_user_message: string;
   public textFile: any;
 
   constructor(
-    private train_service: TrainService,
-    private va_service: VaService,
-    private form_builder: FormBuilder,
-    private route: ActivatedRoute,
+    public train_service: TrainService,
+    public va_service: VaService,
+    public form_builder: FormBuilder,
+    public route: ActivatedRoute,
   ) {
     this.intent_model = new Intent();
   }

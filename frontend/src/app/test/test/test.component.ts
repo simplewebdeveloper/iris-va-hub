@@ -18,10 +18,10 @@ export class TestComponent implements OnInit {
 
   chatbox_form: FormGroup;
   chatbox_model = new Chatbox();
-  private full_response: any;
-  private thinking = false;
-  private res_and_que = [];
-  private formatted_response = '';
+  public full_response: any;
+  public thinking = false;
+  public res_and_que = [];
+  public formatted_response = '';
   public success_user_message: string;
   public error_user_message: string;
   project_id: any;
@@ -31,11 +31,11 @@ export class TestComponent implements OnInit {
   device: any;
 
   constructor(
-    private route: ActivatedRoute,
-    private chatbox_service: ChatboxService,
-    private form_builder: FormBuilder,
-    private va_service: VaService,
-    private device_detector_service: DeviceDetectorService,
+    public route: ActivatedRoute,
+    public chatbox_service: ChatboxService,
+    public form_builder: FormBuilder,
+    public va_service: VaService,
+    public device_detector_service: DeviceDetectorService,
   ) { }
 
   ngOnInit() {

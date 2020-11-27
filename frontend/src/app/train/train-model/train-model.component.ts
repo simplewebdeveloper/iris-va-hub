@@ -11,32 +11,32 @@ import { VaService } from '../../va/va.service'
   styleUrls: ['./train-model.component.css']
 })
 export class TrainModelComponent implements OnInit {
-  private vas: any;
-  private va: any;
-  private va_id: any;
-  private project_id: any;
-  private intents: any;
-  private update_intents: any;
-  private selected_update_intent: string;
-  private selected_va: any;
-  private va_svps: any;
-  private selected_intent: any;
-  private string;
-  private has_slots: boolean;
-  private can_train_classifier_model: boolean;
-  private can_train_update_sense_classifier_model: boolean;
-  private can_train_svp_model: boolean;
-  private train_progress: boolean;
-  private train_completed: boolean;
-  private intents_with_svp_data: any;
+  public vas: any;
+  public va: any;
+  public va_id: any;
+  public project_id: any;
+  public intents: any;
+  public update_intents: any;
+  public selected_update_intent: string;
+  public selected_va: any;
+  public va_svps: any;
+  public selected_intent: any;
+  public string;
+  public has_slots: boolean;
+  public can_train_classifier_model: boolean;
+  public can_train_update_sense_classifier_model: boolean;
+  public can_train_svp_model: boolean;
+  public train_progress: boolean;
+  public train_completed: boolean;
+  public intents_with_svp_data: any;
 
   public success_user_message: string;
   public error_user_message: string;
 
   constructor(
-    private train_service: TrainService,
-    private va_service: VaService,
-    private route: ActivatedRoute,
+    public train_service: TrainService,
+    public va_service: VaService,
+    public route: ActivatedRoute,
   ) { }
 
   ngOnInit() {

@@ -21,9 +21,9 @@ export class BlsComponent implements OnInit {
   public show_user_message: false;
 
   constructor(
-    private project_service: ProjectService,
-    private va_service: VaService,
-    private form_builder: FormBuilder,
+    public project_service: ProjectService,
+    public va_service: VaService,
+    public form_builder: FormBuilder,
   ) { 
       this.bls_model = new Bls();
   }

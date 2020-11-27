@@ -27,11 +27,11 @@ export class CreateComponent implements OnInit, OnDestroy {
 
 
   constructor(
-    private route: ActivatedRoute,
-    private project_service: ProjectService,
-    private create_service: CreateService,
-    private dashboard_service: DashboardService,
-    private form_builder: FormBuilder,
+    public route: ActivatedRoute,
+    public project_service: ProjectService,
+    public create_service: CreateService,
+    public dashboard_service: DashboardService,
+    public form_builder: FormBuilder,
   ) {
     this.va_model = new Va();
   }

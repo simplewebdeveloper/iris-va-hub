@@ -21,15 +21,15 @@ export class TrainSvpsComponent implements OnInit {
   @ViewChild('label_queue', {static: false}) label_queue: ElementRef;
   create_svp_form: FormGroup;
   svp_model = new Svp();
-  private utt_to_label = '';
-  private slot_value: string;
-  private text: string;
-  private start_index: number;
-  private end_index: number;
-  private len_of_str: number;
-  private slot_entity: any;
-  private slot_entities: any[];
-  private slot_data: string;
+  public utt_to_label = '';
+  public slot_value: string;
+  public text: string;
+  public start_index: number;
+  public end_index: number;
+  public len_of_str: number;
+  public slot_entity: any;
+  public slot_entities: any[];
+  public slot_data: string;
   permanent: string;
   temp: string;
   public entity: any;
@@ -37,15 +37,15 @@ export class TrainSvpsComponent implements OnInit {
   public label = '';
   public slot_value_pairings: any[];
   public slot_value_pair: any;
-  private vas: any;
-  private va: any;
-  private va_id: any;
-  private intents: any;
-  private selected_intent: any;
-  private string;
-  private slots: any;
-  private has_slots: boolean;
-  private va_svps: any;
+  public vas: any;
+  public va: any;
+  public va_id: any;
+  public intents: any;
+  public selected_intent: any;
+  public string;
+  public slots: any;
+  public has_slots: boolean;
+  public va_svps: any;
   public elem: any;
   public str: any;
   public ai_slots: any;
@@ -62,13 +62,13 @@ export class TrainSvpsComponent implements OnInit {
   public success_user_message: string;
   public error_user_message: string;
 
-  constructor(@Inject(DOCUMENT) private document: Document,
-              private train_service: TrainService,
-              private va_service: VaService,
-              private form_builder: FormBuilder,
-              private renderer: Renderer,
-              private elem_ref: ElementRef,
-              private route: ActivatedRoute,
+  constructor(@Inject(DOCUMENT) public document: Document,
+              public train_service: TrainService,
+              public va_service: VaService,
+              public form_builder: FormBuilder,
+              public renderer: Renderer,
+              public elem_ref: ElementRef,
+              public route: ActivatedRoute,
               ) {
   }
 

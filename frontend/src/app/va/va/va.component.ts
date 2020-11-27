@@ -17,8 +17,8 @@ export class VaComponent implements OnInit {
   public error_user_message: string;
 
   constructor(
-    private route: ActivatedRoute,
-    private va_service: VaService,
+    public route: ActivatedRoute,
+    public va_service: VaService,
   ) { }
 
   ngOnInit() {

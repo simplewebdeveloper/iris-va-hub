@@ -12,8 +12,8 @@ export class VaNavComponent implements OnInit {
   project_id: any;
   va_id: any;  
   constructor(
-    private edit_service: EditService,
-    private router: Router,
+    public edit_service: EditService,
+    public router: Router,
   ) { }
 
   ngOnInit() {

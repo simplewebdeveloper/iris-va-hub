@@ -17,19 +17,19 @@ export class ChatboxComponent implements OnInit {
 
   chatbox_form: FormGroup;
   chatbox_model = new Chatbox();
-  private full_response: any;
-  private thinking = false;
-  private res_and_que = [];
-  private formatted_response = '';
+  public full_response: any;
+  public thinking = false;
+  public res_and_que = [];
+  public formatted_response = '';
   public success_user_message: string;
   public error_user_message: string;
   va_id: any;
   va_tag: any;
 
   constructor(
-    private chatbox_service: ChatboxService,
-    private dashboard_service: DashboardService,
-    private form_builder: FormBuilder,
+    public chatbox_service: ChatboxService,
+    public dashboard_service: DashboardService,
+    public form_builder: FormBuilder,
   ) {
   }
 

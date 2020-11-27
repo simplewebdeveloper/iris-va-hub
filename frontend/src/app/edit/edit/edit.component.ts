@@ -26,10 +26,10 @@ export class EditComponent implements OnInit, OnDestroy {
   public error_user_message: string;
 
   constructor(
-    private edit_service: EditService,
-    private va_service: VaService,
-    private dashboard_service: DashboardService,
-    private form_builder: FormBuilder,
+    public edit_service: EditService,
+    public va_service: VaService,
+    public dashboard_service: DashboardService,
+    public form_builder: FormBuilder,
   ) {
     this.va_model = new Va();
   }
