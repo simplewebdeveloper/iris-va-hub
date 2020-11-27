@@ -15,15 +15,15 @@ export class ProjectsComponent implements OnInit {
   edit_project_form: FormGroup;
   create_project_form: FormGroup;
   project_model = new Project();
-  private projects: any;
+  public projects: any;
   project: any;
   public success_user_message: string;
   public error_user_message: string;
   public show_user_message = false;
 
   constructor(
-    private dashboard_service: DashboardService,
-    private form_builder: FormBuilder,
+    public dashboard_service: DashboardService,
+    public form_builder: FormBuilder,
   ) { 
     this.project_model = new Project();
   }
@@ -140,7 +140,7 @@ export class ProjectsComponent implements OnInit {
   );
   }
 
-  delete_project(index, project_id, project_tag) {
+  delete_project(index, project_id) {
       const sure = window.confirm('Are you sure ?')
       if(sure) {
         this.dashboard_service.delete_single_project(project_id).subscribe(

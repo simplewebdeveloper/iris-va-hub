@@ -14,25 +14,25 @@ import { VaService } from '../../va/va.service';
 })
 export class ResponseComponent implements OnInit {
 
-  private va: any;
+  public va: any;
   public va_id: any;
-  private string;
+  public string;
   create_response_form: FormGroup;
   edit_response_form: FormGroup;
   response_model = new Response();
-  private responses: any;
+  public responses: any;
   response: any;
   public success_user_message: string;
   public error_user_message: string;
   public show_user_message: false;
-  private intents: any;
+  public intents: any;
 
   jinja_response: string;
 
   constructor(
-    private response_service: ResponseService,
-    private va_service: VaService,
-    private form_builder: FormBuilder,
+    public response_service: ResponseService,
+    public va_service: VaService,
+    public form_builder: FormBuilder,
   ) { 
     this.response_model = new Response();
    }

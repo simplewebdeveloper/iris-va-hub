@@ -26,13 +26,13 @@ export class TopNavbarComponent implements OnInit {
   va: any;
 
   constructor(
-    private edit_service: EditService,
-    private dashboard_service: DashboardService,
-    private project_service: ProjectService,
-    private va_service: VaService,
-    private authService: AuthService,
-    private route: ActivatedRoute,
-    private router: Router,
+    public edit_service: EditService,
+    public dashboard_service: DashboardService,
+    public project_service: ProjectService,
+    public va_service: VaService,
+    public authService: AuthService,
+    public route: ActivatedRoute,
+    public router: Router,
     ) { }
 
   ngOnInit() {

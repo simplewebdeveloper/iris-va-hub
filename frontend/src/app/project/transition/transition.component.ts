@@ -27,9 +27,9 @@ export class TransitionComponent implements OnInit {
   public error_user_message: string;
 
   constructor(
-    private project_service: ProjectService,
-    private va_service: VaService,
-    private form_builder: FormBuilder,
+    public project_service: ProjectService,
+    public va_service: VaService,
+    public form_builder: FormBuilder,
   ) { 
     this.transition_model = new Transition();
    }

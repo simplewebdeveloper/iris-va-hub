@@ -14,7 +14,7 @@ export class SetttingsComponent implements OnInit {
   public errorUserMessage: string;
 
   constructor(
-    private settingsService: SettingsService,
+    public settingsService: SettingsService,
   ) { }
 
   ngOnInit() {

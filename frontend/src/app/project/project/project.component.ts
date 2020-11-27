@@ -17,8 +17,8 @@ export class ProjectComponent implements OnInit {
   public error_user_message: string;
 
   constructor(
-    private route: ActivatedRoute,
-    private project_service: ProjectService,
+    public route: ActivatedRoute,
+    public project_service: ProjectService,
   ) { }
 
   ngOnInit() {

@@ -14,8 +14,8 @@ export class LoginComponent implements OnInit {
   userLoginForm: FormGroup;
 
   constructor(
-    private authService: AuthService,
-    private formBuilder: FormBuilder,
+    public authService: AuthService,
+    public formBuilder: FormBuilder,
   ) {
     this.userLogin = new UserLogin();
    }

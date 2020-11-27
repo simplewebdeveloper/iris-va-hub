@@ -19,7 +19,7 @@ export class LeftnavComponent implements OnInit {
   project_model = new Project();
   public success_user_message: string;
   public error_user_message: string;
-  private currentPath = ""
+  public currentPath = ""
   show_va_menu: boolean;
   show_project_menu: boolean;
   project_id: any;
@@ -28,12 +28,12 @@ export class LeftnavComponent implements OnInit {
   va: any;
 
   constructor(
-    private router: Router, 
-    private project_service: ProjectService,
-    private va_service: VaService,
-    private authService: AuthService,
-    private route: ActivatedRoute,
-    private form_builder: FormBuilder
+    public router: Router, 
+    public project_service: ProjectService,
+    public va_service: VaService,
+    public authService: AuthService,
+    public route: ActivatedRoute,
+    public form_builder: FormBuilder
     ) { 
   }
 

@@ -38,7 +38,7 @@
         <!-- Train root classifier -->
         <p>Prep and Train Primary Classifier.</p>
         <!-- <input id="file" type="file" (change)="importJson($event, '.intentData')" class="uk-margin-small-bottom uk-margin-left"> -->
-        <button type="submit" class="uk-button uk-button-secondary uk-button-small uk-margin-small-bottom" (click)="feed_intents('none', selected_va.va_tag)">PREP DATA</button>
+        <button type="submit" class="uk-button uk-button-secondary uk-button-small uk-margin-small-bottom" (click)="feed_intents('none')">PREP DATA</button>
         <button type="submit" class="uk-button uk-button-danger uk-button-small uk-margin-small-bottom uk-margin-left" (click)="train_classifier_model('none', selected_va.va_tag)"><span uk-icon="play-circle"></span> TRAIN</button>
         <!-- <button type="submit" class="uk-button uk-button-danger uk-button-small uk-margin-small-bottom uk-margin-left" (click)="trainClassifierModel('none')"><span uk-icon="history"></span> Un-train</button> -->
 
@@ -48,7 +48,7 @@
         <p>Prep and Train Secondary Classifier.</p>
         <!-- <input id="file" type="file" (change)="importJson($event, '.intentData')" class="uk-margin-small-bottom uk-margin-left"> -->
         <div *ngFor="let update_intent of update_intents; last as isLast">  
-        <button type="submit" class="uk-button uk-button-secondary uk-button-small uk-margin-small-bottom" (click)='feed_intents(update_intent, selected_va.va_tag)'>PREP {{ update_intent }} DATA</button>
+        <button type="submit" class="uk-button uk-button-secondary uk-button-small uk-margin-small-bottom" (click)='feed_intents(update_intent)'>PREP {{ update_intent }} DATA</button>
         <button type="submit" class="uk-button uk-button-danger uk-button-small uk-margin-small-bottom uk-margin-left" (click)="train_classifier_model(update_intent, selected_va.va_tag)"><span uk-icon="play-circle"></span> TRAIN</button>
         <!-- <button type="submit" class="uk-button uk-button-danger uk-button-small uk-margin-small-bottom uk-margin-left" (click)="train_classifier_model(update_intent)"><span uk-icon="history"></span> Un-train</button> -->
         <div *ngIf="!isLast"><hr class="uk-margin"></div>
@@ -64,8 +64,8 @@
         <p>Prep and Train UpdateSense Classifier (Useful for Maintaining Conversational Context).</p>
         <div class="uk-margin">
           <!-- <input id="file" type="file" (change)="importJson($event, '.intentData')" class="uk-margin-small-bottom uk-margin-left"> -->
-          <button type="submit" class="uk-button uk-button-secondary uk-button-small uk-margin-small-bottom" (click)="feed_update_sense(selected_va.va_tag)">PREP DATA</button>
-          <button type="submit" class="uk-button uk-button-danger uk-button-small uk-margin-small-bottom uk-margin-left" (click)="train_update_sense_classifier_model(selected_va.va_tag)"><span uk-icon="play-circle"></span> TRAIN</button>
+          <button type="submit" class="uk-button uk-button-secondary uk-button-small uk-margin-small-bottom" (click)="feed_update_sense()">PREP DATA</button>
+          <button type="submit" class="uk-button uk-button-danger uk-button-small uk-margin-small-bottom uk-margin-left" (click)="train_update_sense_classifier_model()"><span uk-icon="play-circle"></span> TRAIN</button>
           <!-- <button type="submit" class="uk-button uk-button-danger uk-button-small uk-margin-small-bottom uk-margin-left" (click)="train_update_sense_classifier_model()"><span uk-icon="history"></span> Un-train</button> -->
          </div>
       </div>

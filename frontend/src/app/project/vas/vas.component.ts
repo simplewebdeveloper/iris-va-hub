@@ -13,15 +13,15 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class VasComponent implements OnInit {
 
-  private vas: any;
+  public vas: any;
   public success_user_message: string;
   public error_user_message: string;
   public show_user_message = false;
   project_id: any;
 
   constructor(
-    private route: ActivatedRoute,
-    private project_service: ProjectService
+    public route: ActivatedRoute,
+    public project_service: ProjectService
   ) { }
 
   ngOnInit() {
